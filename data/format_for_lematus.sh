@@ -1,6 +1,7 @@
 #!/bin/bash
 UD_directory=ud-treebanks-v2.1 #change for other versions
 languages=( Latvian ) # list of languages to process 
+mkdir -p languages
 for lang in "${languages[@]}"
 do
     # This script rewrites sentences from UDT format to a format that is 
