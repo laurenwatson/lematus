@@ -1,4 +1,5 @@
 #!/bin/bash
+#Author: Toms Bergmanis toms.bergmanis@gmail.com
 UD_directory=ud-treebanks-v2.1 #change for other versions
 languages=( Latvian ) # list of languages to process 
 mkdir -p languages

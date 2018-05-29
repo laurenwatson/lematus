@@ -1,3 +1,5 @@
+#Author: Toms Bergmanis toms.bergmanis@gmail.com
+
 #The get the latest versions of UD (v2.1):
 curl --remote-name-all https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11234/1-2515{/ud-treebanks-v2.1.tgz}
 tar xvzf ud-treebanks-v2.1.tgz

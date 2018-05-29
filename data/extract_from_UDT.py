@@ -1,3 +1,4 @@
+#Author: Toms Bergmanis toms.bergmanis@gmail.com
 import os
 import sys
 import glob

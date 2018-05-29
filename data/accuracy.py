@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+#Author: Toms Bergmanis toms.bergmanis@gmail.com
 import sys
 
 reference = sys.argv[1]

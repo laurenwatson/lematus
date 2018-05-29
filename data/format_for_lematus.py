@@ -1,3 +1,4 @@
+#Author: Toms Bergmanis toms.bergmanis@gmail.com
 import sys
 from collections import defaultdict
 
