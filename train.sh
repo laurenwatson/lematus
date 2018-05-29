@@ -50,7 +50,7 @@ validate_every_n_epochs=1 #increase to make training faster
 valid_freq=($(wc -l ${modeldir}/data/train-sources))
 valid_freq=$((valid_freq / batch_size * ${validate_every_n_epochs})) 
 
-burn_in_for_n_epochs=1 #increase to make training faster
+burn_in_for_n_epochs=10 #increase to make training faster
 validBurnIn=($(wc -l ${modeldir}/data/train-sources))
 validBurnIn=$((validBurnIn *${burn_in_for_n_epochs} / batch_size))
 
@@ -81,15 +81,15 @@ THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=$device,base_compiledir=${base_
     --dec_depth 2 \
     --patience 10 \
     --validBurnIn ${validBurnIn} \
-    --validFreq ${valid_freq} #&>> ${modeldir}/training.log
+    --validFreq ${valid_freq} &>> ${modeldir}/training.log
 echo "End of training"
 
 echo "Lemmatizing test set"
-#THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=$device,on_unused_input=warn,base_compiledir=${base_compiledir} python ${basedir}/nematus/translate.py \
-#     -m ${modeldir}/best_model/model.npz \
-#     -i ${modeldir}/data/test-sources  \
-#     -o ${modeldir}/best_model/test-hypothesis \
-#     -k 12 -n -p 1
+THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=$device,on_unused_input=warn,base_compiledir=${base_compiledir} python ${basedir}/nematus/translate.py \
+     -m ${modeldir}/best_model/model.npz \
+     -i ${modeldir}/data/test-sources  \
+     -o ${modeldir}/best_model/test-hypothesis \
+     -k 12 -n -p 1
 
 echo "Done"
 
