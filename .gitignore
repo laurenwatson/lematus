@@ -2,7 +2,8 @@
 models/
 venv/
 theano/
-data/ud-treebanks-*/
+data/languages/ 
+data/ud-treebanks-v2.1/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
