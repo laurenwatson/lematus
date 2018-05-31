@@ -5,7 +5,7 @@ type=$2
 experiment_id=$3
 
 # theano device, in case you do not want to compute on gpu, change it to cpu
-device=gpu0
+device=cpu
 
 basedir=.
 datadir=${basedir}/data/languages
@@ -16,7 +16,7 @@ mkdir -p ${modeldir}
 mkdir -p ${modeldir}/data
 
 #theano compilation directory
-base_compiledir=theano
+base_compiledir=tf
 mkdir -p ${base_compiledir}
 
 cp ${basedir}/validate.sh ${modeldir}/.
@@ -42,13 +42,13 @@ n_words_trg=$((n_words_trg-1))
 
 maxlen=75
 
-optimizer="adadelta"
+optimizer="adam"
 
-dispFreq=100
+dispFreq=1000
 
-validate_every_n_epochs=1 #increase to make training faster
+validate_every_n_epochs=10 #increase to make training faster
 valid_freq=($(wc -l ${modeldir}/data/train-sources))
-valid_freq=$((valid_freq / batch_size * ${validate_every_n_epochs})) 
+valid_freq=$((valid_freq / batch_size * ${validate_every_n_epochs}))
 
 burn_in_for_n_epochs=10 #increase to make training faster
 validBurnIn=($(wc -l ${modeldir}/data/train-sources))
@@ -56,42 +56,31 @@ validBurnIn=$((validBurnIn *${burn_in_for_n_epochs} / batch_size))
 
 max_epochs=1000
 
-echo "Sarting training"
-
-THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=$device,base_compiledir=${base_compiledir} python ${basedir}/nematus/nmt.py \
-    --model ${modeldir}/model.npz \
-    --datasets ${modeldir}/data/train-sources ${modeldir}/data/train-targets \
-    --valid_datasets ${modeldir}/data/dev-sources ${modeldir}/data/dev-targets \
-    --dictionaries ${modeldir}/data/train-sources.json ${modeldir}/data/train-targets.json \
-    --dim_word ${dim_word} \
-    --dim ${dim} \
-    --n_words_src ${n_words_src} \
-    --n_words ${n_words_trg} \
-    --maxlen ${maxlen} \
-    --optimizer ${optimizer} \
-    --batch_size ${batch_size} \
-    --dispFreq ${dispFreq} \
-    --max_epochs ${max_epochs} \
-    --external_validation_script ${modeldir}/validate.sh \
-    --weight_normalisation \
-    --reload \
-    --no_reload_training_progress \
-    --use_dropout \
-    --enc_depth 2 \
-    --dec_depth 2 \
-    --patience 10 \
-    --validBurnIn ${validBurnIn} \
-    --validFreq ${valid_freq} &>> ${modeldir}/training.log
+echo "Starting training"
+python ${basedir}/nematus_tf/nmt.py \
+  --model ${modeldir}/model.npz \
+  --datasets ${modeldir}/data/train-sources ${modeldir}/data/train-targets \
+  --dictionaries ${modeldir}/data/train-sources.json ${modeldir}/data/train-targets.json \
+  --dim ${dim} \
+  --n_words_src ${n_words_src} \
+  --n_words ${n_words_trg} \
+  --maxlen ${maxlen} \
+  --optimizer ${optimizer} \
+  --batch_size ${batch_size} \
+  --dispFreq ${dispFreq} \
+  --max_epochs ${max_epochs} \
+  --dim_word ${dim_word} \
+  --batch_size ${batch_size} \
+  --no_shuffle
 echo "End of training"
 
+#the following is to be added when a model has been fully trained
+'''
 echo "Lemmatizing test set"
-THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=$device,on_unused_input=warn,base_compiledir=${base_compiledir} python ${basedir}/nematus/translate.py \
+python ${basedir}/nematus_tf/translate.py \
      -m ${modeldir}/best_model/model.npz \
      -i ${modeldir}/data/test-sources  \
      -o ${modeldir}/best_model/test-hypothesis \
      -k 12 -n -p 1
-
 echo "Done"
-
-
-
+'''

@@ -1,14 +1,14 @@
 #!/bin/sh
 
 # theano device, in case you do not want to compute on gpu, change it to cpu
-device=gpu0
+device=cpu
 
 basedir=../..
 
 currentdir=$(dirname $0)
 
 #theano compilation directory
-base_compiledir=${basedir}/theano
+base_compiledir=${basedir}/tf
 mkdir -p ${base_compiledir}
 
 mkdir -p ${currentdir}/best_model

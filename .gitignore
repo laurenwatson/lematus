@@ -2,6 +2,7 @@
 models/
 venv/
 theano/
+tf/
 data/languages/
 data/ud-treebanks-v2.1/
 
