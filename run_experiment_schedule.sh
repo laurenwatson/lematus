@@ -1,6 +1,6 @@
 #!/bin/bash
 
-languages=( Latvian )
+languages=( English, French, Hindi, Hungarian, Turkish, Croatian )
 for lang in "${languages[@]}"
 do
     # for data set in data/languages/Latvian-20-char-context parameters are:
