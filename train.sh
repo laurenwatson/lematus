@@ -60,6 +60,7 @@ echo "Starting training"
 python ${basedir}/nematus_tf/nmt.py \
   --model ${modeldir}/model.npz \
   --datasets ${modeldir}/data/train-sources ${modeldir}/data/train-targets \
+  --valid_datasets ${modeldir}/data/dev-sources ${modeldir}/data/dev-targets \
   --dictionaries ${modeldir}/data/train-sources.json ${modeldir}/data/train-targets.json \
   --dim ${dim} \
   --n_words_src ${n_words_src} \
