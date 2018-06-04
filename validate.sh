@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # theano device, in case you do not want to compute on gpu, change it to cpu
-device=cpu
+device=gpu0
 
 basedir=../..
 
