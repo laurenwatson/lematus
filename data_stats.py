@@ -1,8 +1,8 @@
-#Author: Lauren Watson (from work by Toms Bergmanis toms.bergmanis@gmail.com)
-#Usage example python3 get_stats.py 20-char-context-v1 test Latvian
+#Author: Lauren Watson github: laurenwatson (based heavily on work by Toms Bergmanis toms.bergmanis@gmail.com)
+#Use example python get_stats.py 20-char-context
 
 #get num tokens for each languages
-#get num tokens where worform=lemma
+#get num tokens where worform==lemma
 #get num unseen tokens for each language
 
 #TO DO: get num ambiguous tokens for each language
