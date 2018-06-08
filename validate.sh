@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# theano device, in case you do not want to compute on gpu, change it to cpu
+# device, in case you do not want to compute on gpu, change it to cpu
 device=gpu0
 
 basedir=../..
@@ -14,15 +14,22 @@ mkdir -p ${base_compiledir}
 mkdir -p ${currentdir}/best_model
 
 # decode
+#flags:
+# -m models to use
+# -i input file
+# -o output file
+# -k beam size (default 5)
+# -n normalize scores by sentence Length
+# -p number of processes (default 5)
 echo ${currentdir}
-THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=$device,on_unused_input=warn,base_compiledir=${base_compiledir} python ./nematus/translate.py \
+#THEANO_FLAGS=mode=FAST_RUN,floatX=float32,device=$device,on_unused_input=warn,base_compiledir=${base_compiledir} python ./nematus_tf/translate.py \
+CUDA_VISIBLE_DEVICES=0 python ./nematus_tf/translate.py \
      -m ${currentdir}/model.npz.dev.npz \
      -i ${currentdir}/data/dev-sources \
      -o ${currentdir}/dev-hypothesis \
      -k 12 -n -p 1
 
 #model selection based on dev set accuracy
-
 BEST=`cat ${currentdir}/best_model/best_accuracy || echo 0`
 python3 ./data/accuracy.py ${currentdir}/data/dev-targets < ${currentdir}/dev-hypothesis >> ${currentdir}/accuracy
 ACCURACY=`python3 ./data/accuracy.py ${currentdir}/data/dev-targets < ${currentdir}/dev-hypothesis`

@@ -72,4 +72,5 @@ for lang in languages:
 
             if wordform not in seen_tokens.keys():
                 unseen_count +=1
+                
     print( lang + ' has percent unseen in dev_set: ', unseen_count/dev_count)

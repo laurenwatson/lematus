@@ -56,12 +56,14 @@ validBurnIn=$((validBurnIn *${burn_in_for_n_epochs} / batch_size))
 
 max_epochs=1000
 
+#had to delete weight_normalization, valid_burnin and --reload
 echo "Starting training"
 python ${basedir}/nematus_tf/nmt.py \
   --model ${modeldir}/model.npz \
   --datasets ${modeldir}/data/train-sources ${modeldir}/data/train-targets \
   --valid_datasets ${modeldir}/data/dev-sources ${modeldir}/data/dev-targets \
   --dictionaries ${modeldir}/data/train-sources.json ${modeldir}/data/train-targets.json \
+  --dim_word ${dim_word} \
   --dim ${dim} \
   --n_words_src ${n_words_src} \
   --n_words ${n_words_trg} \
@@ -70,18 +72,18 @@ python ${basedir}/nematus_tf/nmt.py \
   --batch_size ${batch_size} \
   --dispFreq ${dispFreq} \
   --max_epochs ${max_epochs} \
-  --dim_word ${dim_word} \
-  --batch_size ${batch_size} \
-  --no_shuffle
+  --no_reload_training_progress \
+  --use_dropout \
+  --enc_depth 2 \
+  --dec_depth 2 \
+  --patience 10 \
+  --validFreq ${valid_freq}
 echo "End of training"
 
-#the following is to be added when a model has been fully trained
-'''
-echo "Lemmatizing test set"
-python ${basedir}/nematus_tf/translate.py \
-     -m ${modeldir}/best_model/model.npz \
-     -i ${modeldir}/data/test-sources  \
-     -o ${modeldir}/best_model/test-hypothesis \
-     -k 12 -n -p 1
-echo "Done"
-'''
+#echo "Lemmatizing test set"
+#python ${basedir}/nematus_tf/translate.py \
+#     -m ${modeldir}/best_model/model.npz \
+#     -i ${modeldir}/data/test-sources  \
+#     -o ${modeldir}/best_model/test-hypothesis \
+#     -k 12 -n -p 1
+#echo "Done"
