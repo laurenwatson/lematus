@@ -1,0 +1,27 @@
+INFO: Namespace(batch_size=60, beamFreq=10000, beam_size=12, clip_c=1, datasets=['./models/Turkish-20-char-context-base1/data/train-sources', './models/Turkish-20-char-context-base1/data/train-targets'], dec_base_recurrence_transition_depth=2, dec_deep_context=False, dec_depth=2, dec_high_recurrence_transition_depth=1, decay_c=0, dictionaries=['./models/Turkish-20-char-context-base1/data/train-sources.json', './models/Turkish-20-char-context-base1/data/train-targets.json'], dim_per_factor=[300], dispFreq=1000, dropout_embedding=0.2, dropout_hidden=0.2, dropout_source=0, dropout_target=0, embedding_size=300, enc_depth=2, enc_recurrence_transition_depth=1, factors=1, finish_after=10000000, keep_train_set_in_memory=False, learning_rate=0.0001, map_decay_c=0, max_epochs=1, maxibatch_size=20, maxlen=75, model_version=0.2, n_best=False, n_threads=5, normalize=True, optimizer='adam', output_hidden_activation='tanh', patience=10, prior_model=None, reload=None, reload_training_progress=True, run_validation=False, sampleFreq=10000, saveFreq=30000, saveto='./models/Turkish-20-char-context-base1/model.npz', shuffle_each_epoch=True, sort_by_length=True, source_dataset='./models/Turkish-20-char-context-base1/data/train-sources', source_dicts=['./models/Turkish-20-char-context-base1/data/train-sources.json'], source_vocab_sizes=[75], state_size=100, summaryFreq=0, summary_dir=None, target_dataset='./models/Turkish-20-char-context-base1/data/train-targets', target_dict='./models/Turkish-20-char-context-base1/data/train-targets.json', target_vocab_size=70, tie_decoder_embeddings=False, token_batch_size=0, translate_valid=False, translation_maxlen=200, use_dropout=True, use_layer_norm=False, validFreq=5200, valid_batch_size=80, valid_datasets=['./models/Turkish-20-char-context-base1/data/dev-sources', './models/Turkish-20-char-context-base1/data/dev-targets'], valid_source_dataset='./models/Turkish-20-char-context-base1/data/dev-sources', valid_target_dataset='./models/Turkish-20-char-context-base1/data/dev-targets', valid_token_batch_size=0)
+2018-06-09 21:28:02.436192: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+INFO: Building model...
+WARNING:tensorflow:From /Users/laurenwatson/lematus_copy/nematus_tf/layers.py:518: calling reduce_max (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+WARNING: From /Users/laurenwatson/lematus_copy/nematus_tf/layers.py:518: calling reduce_max (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+WARNING:tensorflow:From /Users/laurenwatson/lematus_copy/nematus_tf/layers.py:521: calling reduce_sum (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+WARNING: From /Users/laurenwatson/lematus_copy/nematus_tf/layers.py:521: calling reduce_sum (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+WARNING:tensorflow:From /Users/laurenwatson/lematus_copy/nematus_tf/model.py:405: calling reduce_mean (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+WARNING: From /Users/laurenwatson/lematus_copy/nematus_tf/model.py:405: calling reduce_mean (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+INFO: Initializing model parameters from scratch...
+INFO: Done
+INFO: Reading data...
+INFO: Done
+INFO: Initial uidx=0
+INFO: Starting epoch 0
