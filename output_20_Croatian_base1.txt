@@ -780,3 +780,3728 @@ INFO: [2018-06-11 15:18:44] Epoch: 50 Update: 17000 Loss/word: 0.124113630747 Wo
 INFO: Starting epoch 51
 INFO: Starting epoch 52
 INFO: Starting epoch 53
+INFO: [2018-06-11 15:23:17] Epoch: 53 Update: 18000 Loss/word: 0.116804936126 Words/sec: 1927.05650264 Sents/sec: 219.943282368
+INFO: Starting epoch 54
+INFO: Starting epoch 55
+INFO: Starting epoch 56
+INFO: [2018-06-11 15:27:47] Epoch: 56 Update: 19000 Loss/word: 0.108658735353 Words/sec: 1940.70963485 Sents/sec: 221.665928354
+INFO: Starting epoch 57
+INFO: Starting epoch 58
+INFO: Starting epoch 59
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.903931544301 7231.45235441 8000
+INFO:tensorflow:./models_20/Croatian-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_20/Croatian-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: [2018-06-11 15:32:28] Epoch: 59 Update: 20000 Loss/word: 0.103925473772 Words/sec: 1864.32316367 Sents/sec: 212.747570746
+INFO: SOURCE: <w> e ć e <s> k a s n i j e <s> v i d i m o <s> <lc> d a <rc> <s> j e <s> g o s p o d a r s t v o <s> u ž </w> 
+INFO: TARGET: <w> d a </w>         
+INFO: SAMPLE: <w> d a </w> 
+INFO: SOURCE: <w> i <s> R u s i j a <s> p o t p i s a l e <s> <lc> s u <rc> <s> u <s> p e t a k <s> k o l o v o z a <s> s </w> 
+INFO: TARGET: <w> b i t i </w>       
+INFO: SAMPLE: <w> b i t i </w> 
+INFO: SOURCE: <w> i n o v i ć <s> p o s t i g l i <s> s u <s> <lc> p o <rc> <s> j e d a n <s> z g o d i t a k <s> P e t </w> 
+INFO: TARGET: <w> p o </w>         
+INFO: SAMPLE: <w> p o </w> 
+INFO: SOURCE: <w> <s> j e <s> Č l a n a k <s> u <s> k o j e m <s> <lc> s u <rc> <s> i z l o ž e n a <s> n a č e l a <s> i <s> </w> 
+INFO: TARGET: <w> b i t i </w>       
+INFO: SAMPLE: <w> b i t i </w> 
+INFO: SOURCE: <w> p a r l a m e n t a <s> G o r d a n a <s> <lc> i z <rc> <s> S r p s k e <s> r a d i k a l n e <s> s </w> 
+INFO: TARGET: <w> i z </w>         
+INFO: SAMPLE: <w> i z </w> 
+INFO: SOURCE: <w> E T i m e s u <s> j e <s> i z j a v i o <s> <lc> d a <rc> <s> s e <s> d r ž a o <s> p o d a l j e <s> o </w> 
+INFO: TARGET: <w> d a </w>         
+INFO: SAMPLE: <w> d a </w> 
+INFO: SOURCE: <w> <s> I m e r <s> A l i u <s> i z j a v i o <s> <lc> j e <rc> <s> k a k o <s> D P A <s> n e <s> m o ž e <s> d </w> 
+INFO: TARGET: <w> b i t i </w>       
+INFO: SAMPLE: <w> b i t i </w> 
+INFO: SOURCE: <w> t k a <s> A K P <s> a <s> p o d u p r l e <s> <lc> s u <rc> <s> g a <s> o p o r b e n e <s> R e p u b l </w> 
+INFO: TARGET: <w> b i t i </w>       
+INFO: SAMPLE: <w> b i t i </w> 
+INFO: SOURCE: <w> b o r e <s> d a <s> n a đ u <s> i z l a z <s> <lc> i z <rc> <s> k r i z e <s> k u k a v i č k i <s> u b </w> 
+INFO: TARGET: <w> i z </w>         
+INFO: SAMPLE: <w> i z </w> 
+INFO: SOURCE: <w> p o s l o v a <s> u <s> n e d j e l j u <s> <lc> ć e <rc> <s> s e <s> s u o č i t i <s> u <s> d r u g o </w> 
+INFO: TARGET: <w> h t j e t i </w>     
+INFO: SAMPLE: <w> h t j e t i </w> 
+INFO: SOURCE: <w> e ć e <s> k a s n i j e <s> v i d i m o <s> <lc> d a <rc> <s> j e <s> g o s p o d a r s t v o <s> u ž </w> 
+INFO: TARGET: <w> d a </w>         
+INFO: SAMPLE 0: <w> N a </w>  Cost/Len/Avg 9.36213207245/5/1.87242641449
+INFO: SAMPLE 1: <w> D i t i </w>  Cost/Len/Avg 9.20764827728/7/1.31537832533
+INFO: SAMPLE 2: <w> š a </w>  Cost/Len/Avg 8.76108837128/5/1.75221767426
+INFO: SAMPLE 3: <w> d o </w>  Cost/Len/Avg 8.73382854462/5/1.74676570892
+INFO: SAMPLE 4: <w> d O </w>  Cost/Len/Avg 8.68703746796/5/1.73740749359
+INFO: SAMPLE 5: <w> d a t i </w>  Cost/Len/Avg 8.61478233337/7/1.23068319048
+INFO: SAMPLE 6: <w> d </w>  Cost/Len/Avg 8.20328330994/4/2.05082082748
+INFO: SAMPLE 7: <w> b i t i </w>  Cost/Len/Avg 8.00016975403/7/1.14288139343
+INFO: SAMPLE 8: <w> d e </w>  Cost/Len/Avg 7.999168396/5/1.5998336792
+INFO: SAMPLE 9: <w> h t j e t i </w>  Cost/Len/Avg 7.89331817627/9/0.877035352919
+INFO: SAMPLE 10: <w> d i </w>  Cost/Len/Avg 6.0945854187/5/1.21891708374
+INFO: SAMPLE 11: <w> d a </w>  Cost/Len/Avg 0.00553641375154/5/0.00110728275031
+INFO: SOURCE: <w> i <s> R u s i j a <s> p o t p i s a l e <s> <lc> s u <rc> <s> u <s> p e t a k <s> k o l o v o z a <s> s </w> 
+INFO: TARGET: <w> b i t i </w>       
+INFO: SAMPLE 0: <w> b i v </w>  Cost/Len/Avg 10.528134346/6/1.75468905767
+INFO: SAMPLE 1: <w> a </w>  Cost/Len/Avg 10.4575033188/4/2.6143758297
+INFO: SAMPLE 2: <w> b i k i </w>  Cost/Len/Avg 10.0917615891/7/1.44168022701
+INFO: SAMPLE 3: <w> b I t i </w>  Cost/Len/Avg 9.61661911011/7/1.37380273002
+INFO: SAMPLE 4: <w> b i t </w>  Cost/Len/Avg 9.40643787384/6/1.56773964564
+INFO: SAMPLE 5: <w> b i t i t i </w>  Cost/Len/Avg 9.39623355865/9/1.04402595096
+INFO: SAMPLE 6: <w> b </w>  Cost/Len/Avg 9.37386894226/4/2.34346723557
+INFO: SAMPLE 7: <w> d a </w>  Cost/Len/Avg 8.7430934906/5/1.74861869812
+INFO: SAMPLE 8: <w> s </w>  Cost/Len/Avg 7.49515342712/4/1.87378835678
+INFO: SAMPLE 9: <w> b a t i </w>  Cost/Len/Avg 7.39456510544/7/1.05636644363
+INFO: SAMPLE 10: <w> b e t i </w>  Cost/Len/Avg 7.24887180328/7/1.03555311475
+INFO: SAMPLE 11: <w> b i t i </w>  Cost/Len/Avg 0.00288085592911/7/0.000411550847015
+INFO: SOURCE: <w> i n o v i ć <s> p o s t i g l i <s> s u <s> <lc> p o <rc> <s> j e d a n <s> z g o d i t a k <s> P e t </w> 
+INFO: TARGET: <w> p o </w>         
+INFO: SAMPLE 0:  Cost/Len/Avg 24.4835147858/1/24.4835147858
+INFO: SAMPLE 1: <w> T o </w>  Cost/Len/Avg 8.33782577515/5/1.66756515503
+INFO: SAMPLE 2: <w> p j i </w>  Cost/Len/Avg 8.22160625458/6/1.3702677091
+INFO: SAMPLE 3: <w> p j i t i </w>  Cost/Len/Avg 8.18961334229/8/1.02370166779
+INFO: SAMPLE 4: <w> p o a </w>  Cost/Len/Avg 8.05125904083/6/1.34187650681
+INFO: SAMPLE 5: <w> K o </w>  Cost/Len/Avg 7.51845026016/5/1.50369005203
+INFO: SAMPLE 6: <w> t a j </w>  Cost/Len/Avg 5.91574954987/6/0.985958258311
+INFO: SAMPLE 7: <w> p i </w>  Cost/Len/Avg 5.63096237183/5/1.12619247437
+INFO: SAMPLE 8: <w> p a j </w>  Cost/Len/Avg 5.00556182861/6/0.834260304769
+INFO: SAMPLE 9: <w> p </w>  Cost/Len/Avg 5.00020933151/4/1.25005233288
+INFO: SAMPLE 10: <w> p a </w>  Cost/Len/Avg 4.32624959946/5/0.865249919891
+INFO: SAMPLE 11: <w> p o </w>  Cost/Len/Avg 0.037074867636/5/0.00741497352719
+INFO: SOURCE: <w> <s> j e <s> Č l a n a k <s> u <s> k o j e m <s> <lc> s u <rc> <s> i z l o ž e n a <s> n a č e l a <s> i <s> </w> 
+INFO: TARGET: <w> b i t i </w>       
+INFO: SAMPLE 0: <w> a </w>  Cost/Len/Avg 10.3683786392/4/2.59209465981
+INFO: SAMPLE 1: <w> b I t i </w>  Cost/Len/Avg 9.92840003967/7/1.41834286281
+INFO: SAMPLE 2: <w> b i t </w>  Cost/Len/Avg 9.86510372162/6/1.6441839536
+INFO: SAMPLE 3: <w> b i k i </w>  Cost/Len/Avg 9.68148136139/7/1.38306876591
+INFO: SAMPLE 4: <w> b </w>  Cost/Len/Avg 9.62784194946/4/2.40696048737
+INFO: SAMPLE 5: <w> b i v </w>  Cost/Len/Avg 9.45603942871/6/1.57600657145
+INFO: SAMPLE 6: <w> b i n </w>  Cost/Len/Avg 9.28704547882/6/1.54784091314
+INFO: SAMPLE 7: <w> d a </w>  Cost/Len/Avg 8.63510894775/5/1.72702178955
+INFO: SAMPLE 8: <w> b e t i </w>  Cost/Len/Avg 7.65032815933/7/1.09290402276
+INFO: SAMPLE 9: <w> s </w>  Cost/Len/Avg 7.63657093048/4/1.90914273262
+INFO: SAMPLE 10: <w> b a t i </w>  Cost/Len/Avg 7.49908828735/7/1.07129832676
+INFO: SAMPLE 11: <w> b i t i </w>  Cost/Len/Avg 0.00254513788968/7/0.000363591127098
+INFO: SOURCE: <w> p a r l a m e n t a <s> G o r d a n a <s> <lc> i z <rc> <s> S r p s k e <s> r a d i k a l n e <s> s </w> 
+INFO: TARGET: <w> i z </w>         
+INFO: SAMPLE 0:  Cost/Len/Avg 25.8669700623/1/25.8669700623
+INFO: SAMPLE 1: <w> u z </w>  Cost/Len/Avg 8.75218486786/5/1.75043697357
+INFO: SAMPLE 2: <w> i Z </w>  Cost/Len/Avg 8.67189216614/5/1.73437843323
+INFO: SAMPLE 3: <w> a z </w>  Cost/Len/Avg 7.99605607986/5/1.59921121597
+INFO: SAMPLE 4: <w> i z s </w>  Cost/Len/Avg 7.9330163002/6/1.32216938337
+INFO: SAMPLE 5: <w> i z a </w>  Cost/Len/Avg 7.89775562286/6/1.31629260381
+INFO: SAMPLE 6: <w> i S </w>  Cost/Len/Avg 7.82538175583/5/1.56507635117
+INFO: SAMPLE 7: <w> i s </w>  Cost/Len/Avg 7.71818065643/5/1.54363613129
+INFO: SAMPLE 8: <w> e z </w>  Cost/Len/Avg 6.91364431381/5/1.38272886276
+INFO: SAMPLE 9: <w> i N </w>  Cost/Len/Avg 6.89108133316/5/1.37821626663
+INFO: SAMPLE 10: <w> I z </w>  Cost/Len/Avg 6.45817804337/5/1.29163560867
+INFO: SAMPLE 11: <w> i z </w>  Cost/Len/Avg 0.00760443508625/5/0.00152088701725
+INFO: SOURCE: <w> E T i m e s u <s> j e <s> i z j a v i o <s> <lc> d a <rc> <s> s e <s> d r ž a o <s> p o d a l j e <s> o </w> 
+INFO: TARGET: <w> d a </w>         
+INFO: SAMPLE 0: <w> D i </w>  Cost/Len/Avg 9.46293258667/5/1.89258651733
+INFO: SAMPLE 1: <w> D i t i </w>  Cost/Len/Avg 9.08415126801/7/1.29773589543
+INFO: SAMPLE 2: <w> š a </w>  Cost/Len/Avg 8.90202903748/5/1.7804058075
+INFO: SAMPLE 3: <w> d O </w>  Cost/Len/Avg 8.68639564514/5/1.73727912903
+INFO: SAMPLE 4: <w> d o </w>  Cost/Len/Avg 8.58699512482/5/1.71739902496
+INFO: SAMPLE 5: <w> h t j e t i </w>  Cost/Len/Avg 8.32009506226/9/0.924455006917
+INFO: SAMPLE 6: <w> d </w>  Cost/Len/Avg 8.24297142029/4/2.06074285507
+INFO: SAMPLE 7: <w> b i t i </w>  Cost/Len/Avg 8.03756332397/7/1.148223332
+INFO: SAMPLE 8: <w> d e </w>  Cost/Len/Avg 8.03298473358/5/1.60659694672
+INFO: SAMPLE 9: <w> d a t i </w>  Cost/Len/Avg 7.87693834305/7/1.12527690615
+INFO: SAMPLE 10: <w> d i </w>  Cost/Len/Avg 6.19660568237/5/1.23932113647
+INFO: SAMPLE 11: <w> d a </w>  Cost/Len/Avg 0.00519357342273/5/0.00103871468455
+INFO: SOURCE: <w> <s> I m e r <s> A l i u <s> i z j a v i o <s> <lc> j e <rc> <s> k a k o <s> D P A <s> n e <s> m o ž e <s> d </w> 
+INFO: TARGET: <w> b i t i </w>       
+INFO: SAMPLE 0: <w> d e </w>  Cost/Len/Avg 10.8050460815/5/2.16100921631
+INFO: SAMPLE 1: <w> b i n i </w>  Cost/Len/Avg 10.6889028549/7/1.52698612213
+INFO: SAMPLE 2: <w> b i v i t i </w>  Cost/Len/Avg 10.5869493484/9/1.17632770538
+INFO: SAMPLE 3: <w> n e </w>  Cost/Len/Avg 10.4182338715/5/2.08364677429
+INFO: SAMPLE 4: <w> b i i t i </w>  Cost/Len/Avg 10.4117040634/8/1.30146300793
+INFO: SAMPLE 5: <w> b i t i t i </w>  Cost/Len/Avg 10.3094758987/9/1.14549732208
+INFO: SAMPLE 6: <w> j e </w>  Cost/Len/Avg 9.61362934113/5/1.92272586823
+INFO: SAMPLE 7: <w> b a t i </w>  Cost/Len/Avg 9.49542331696/7/1.35648904528
+INFO: SAMPLE 8: <w> b i k i </w>  Cost/Len/Avg 9.34134674072/7/1.33447810582
+INFO: SAMPLE 9: <w> b i v </w>  Cost/Len/Avg 9.19248962402/6/1.532081604
+INFO: SAMPLE 10: <w> b e t i </w>  Cost/Len/Avg 9.03323554993/7/1.29046222142
+INFO: SAMPLE 11: <w> b i t i </w>  Cost/Len/Avg 0.000939955585636/7/0.000134279369377
+INFO: SOURCE: <w> t k a <s> A K P <s> a <s> p o d u p r l e <s> <lc> s u <rc> <s> g a <s> o p o r b e n e <s> R e p u b l </w> 
+INFO: TARGET: <w> b i t i </w>       
+INFO: SAMPLE 0: <w> b e </w>  Cost/Len/Avg 10.7130384445/5/2.1426076889
+INFO: SAMPLE 1: <w> a </w>  Cost/Len/Avg 10.5489854813/4/2.63724637032
+INFO: SAMPLE 2: <w> b i p </w>  Cost/Len/Avg 10.0061321259/6/1.66768868764
+INFO: SAMPLE 3: <w> b I t i </w>  Cost/Len/Avg 9.61148071289/7/1.37306867327
+INFO: SAMPLE 4: <w> b </w>  Cost/Len/Avg 9.3807182312/4/2.3451795578
+INFO: SAMPLE 5: <w> b i t </w>  Cost/Len/Avg 9.34365367889/6/1.55727561315
+INFO: SAMPLE 6: <w> b i t i t i </w>  Cost/Len/Avg 8.92156219482/9/0.991284688314
+INFO: SAMPLE 7: <w> d a </w>  Cost/Len/Avg 8.66598796844/5/1.73319759369
+INFO: SAMPLE 8: <w> b a t i </w>  Cost/Len/Avg 7.54445695877/7/1.07777956554
+INFO: SAMPLE 9: <w> s </w>  Cost/Len/Avg 7.44782876968/4/1.86195719242
+INFO: SAMPLE 10: <w> b e t i </w>  Cost/Len/Avg 7.24048042297/7/1.03435434614
+INFO: SAMPLE 11: <w> b i t i </w>  Cost/Len/Avg 0.00291635468602/7/0.000416622098003
+INFO: SOURCE: <w> b o r e <s> d a <s> n a đ u <s> i z l a z <s> <lc> i z <rc> <s> k r i z e <s> k u k a v i č k i <s> u b </w> 
+INFO: TARGET: <w> i z </w>         
+INFO: SAMPLE 0:  Cost/Len/Avg 25.4100151062/1/25.4100151062
+INFO: SAMPLE 1: <w> i z s </w>  Cost/Len/Avg 8.99697780609/6/1.49949630102
+INFO: SAMPLE 2: <w> u z </w>  Cost/Len/Avg 8.98579502106/5/1.79715900421
+INFO: SAMPLE 3: <w> i Z </w>  Cost/Len/Avg 8.74793148041/5/1.74958629608
+INFO: SAMPLE 4: <w> a z </w>  Cost/Len/Avg 8.08638095856/5/1.61727619171
+INFO: SAMPLE 5: <w> i z a </w>  Cost/Len/Avg 8.06365203857/6/1.34394200643
+INFO: SAMPLE 6: <w> i S </w>  Cost/Len/Avg 8.02375125885/5/1.60475025177
+INFO: SAMPLE 7: <w> i s </w>  Cost/Len/Avg 7.67718219757/5/1.53543643951
+INFO: SAMPLE 8: <w> e z </w>  Cost/Len/Avg 7.05117797852/5/1.4102355957
+INFO: SAMPLE 9: <w> i N </w>  Cost/Len/Avg 6.80052137375/5/1.36010427475
+INFO: SAMPLE 10: <w> I z </w>  Cost/Len/Avg 6.73009252548/5/1.3460185051
+INFO: SAMPLE 11: <w> i z </w>  Cost/Len/Avg 0.00615632114932/5/0.00123126422986
+INFO: SOURCE: <w> p o s l o v a <s> u <s> n e d j e l j u <s> <lc> ć e <rc> <s> s e <s> s u o č i t i <s> u <s> d r u g o </w> 
+INFO: TARGET: <w> h t j e t i </w>     
+INFO: SAMPLE 0: <w> h t j </w>  Cost/Len/Avg 8.67675209045/6/1.44612534841
+INFO: SAMPLE 1: <w> V e </w>  Cost/Len/Avg 8.16032314301/5/1.6320646286
+INFO: SAMPLE 2: <w> h t j t i </w>  Cost/Len/Avg 7.98517036438/8/0.998146295547
+INFO: SAMPLE 3: <w> h t o </w>  Cost/Len/Avg 7.89257478714/6/1.31542913119
+INFO: SAMPLE 4: <w> h t j I t i </w>  Cost/Len/Avg 7.88548135757/9/0.876164595286
+INFO: SAMPLE 5: <w> h t v e t i </w>  Cost/Len/Avg 7.49720001221/9/0.833022223579
+INFO: SAMPLE 6: <w> ć i t i </w>  Cost/Len/Avg 7.35494995117/7/1.05070713588
+INFO: SAMPLE 7: <w> n e </w>  Cost/Len/Avg 7.25552749634/5/1.45110549927
+INFO: SAMPLE 8: <w> h t j i t i </w>  Cost/Len/Avg 7.16256332397/9/0.795840369331
+INFO: SAMPLE 9: <w> h t j e k i </w>  Cost/Len/Avg 6.98047113419/9/0.775607903798
+INFO: SAMPLE 10: <w> h t j e t i </w>  Cost/Len/Avg 0.00947425235063/9/0.00105269470563
+INFO: SAMPLE 11: <w> h O t j e t i </w>  Cost/Len/Avg 8.13862323761/10/0.813862323761
+INFO: Starting epoch 60
+INFO: Starting epoch 61
+INFO: Starting epoch 62
+INFO: [2018-06-11 15:37:11] Epoch: 62 Update: 21000 Loss/word: 0.0994029805358 Words/sec: 1855.15941248 Sents/sec: 211.781760263
+INFO: Starting epoch 63
+INFO: Starting epoch 64
+INFO: Starting epoch 65
+INFO: [2018-06-11 15:41:45] Epoch: 65 Update: 22000 Loss/word: 0.0942128522673 Words/sec: 1916.50606678 Sents/sec: 218.712018598
+INFO: Starting epoch 66
+INFO: Starting epoch 67
+INFO: Starting epoch 68
+INFO: [2018-06-11 15:46:22] Epoch: 68 Update: 23000 Loss/word: 0.0885920515433 Words/sec: 1890.96264581 Sents/sec: 215.801111552
+INFO: Starting epoch 69
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.827583815794 6620.67052635 8000
+INFO:tensorflow:./models_20/Croatian-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_20/Croatian-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 70
+INFO: Starting epoch 71
+INFO: [2018-06-11 15:51:14] Epoch: 71 Update: 24000 Loss/word: 0.0857400303492 Words/sec: 1796.75668829 Sents/sec: 205.144330624
+INFO: Starting epoch 72
+INFO: Starting epoch 73
+INFO: Starting epoch 74
+INFO: [2018-06-11 15:55:55] Epoch: 74 Update: 25000 Loss/word: 0.0818979027589 Words/sec: 1867.24530943 Sents/sec: 213.205363432
+INFO: Starting epoch 75
+INFO: Starting epoch 76
+INFO: Starting epoch 77
+INFO: [2018-06-11 16:00:28] Epoch: 77 Update: 26000 Loss/word: 0.0780736885341 Words/sec: 1920.25868672 Sents/sec: 219.310379992
+INFO: Starting epoch 78
+INFO: Starting epoch 79
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.766440819386 6131.52655509 8000
+INFO:tensorflow:./models_20/Croatian-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_20/Croatian-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 80
+INFO: [2018-06-11 16:05:14] Epoch: 80 Update: 27000 Loss/word: 0.0759350737356 Words/sec: 1831.81217637 Sents/sec: 209.509909504
+INFO: Starting epoch 81
+INFO: Starting epoch 82
+INFO: Starting epoch 83
+INFO: [2018-06-11 16:09:42] Epoch: 83 Update: 28000 Loss/word: 0.0729050915898 Words/sec: 1953.63909111 Sents/sec: 223.048266612
+INFO: Starting epoch 84
+INFO: Starting epoch 85
+INFO: Starting epoch 86
+INFO: [2018-06-11 16:14:13] Epoch: 86 Update: 29000 Loss/word: 0.0705240402781 Words/sec: 1940.99830449 Sents/sec: 221.598299452
+INFO: Starting epoch 87
+INFO: Starting epoch 88
+INFO: Starting epoch 89
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.724741876115 5797.93500892 8000
+INFO:tensorflow:./models_20/Croatian-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_20/Croatian-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: [2018-06-11 16:18:55] Epoch: 89 Update: 30000 Loss/word: 0.0661205813524 Words/sec: 1858.23049483 Sents/sec: 212.194243948
+INFO:tensorflow:./models_20/Croatian-20-char-context-base1/model.npz-30000 is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_20/Croatian-20-char-context-base1/model.npz-30000 is not in all_model_checkpoint_paths. Manually adding it.
+INFO: SOURCE: <w> b i <s> t r e b a o <s> m i j e š a t i <s> <lc> u <rc> <s> d e m o k r a t s k u <s> p o l i t i </w> 
+INFO: TARGET: <w> u </w>           
+INFO: SAMPLE: <w> u </w> 
+INFO: SOURCE: <w> č u j u ć i <s> C i p a r <s> B o s n u <s> <lc> i <rc> <s> H e r c e g o v i n u <s> I r a k <s> I </w> 
+INFO: TARGET: <w> i </w>           
+INFO: SAMPLE: <w> i </w> 
+INFO: SOURCE: <w> l e <s> s v o j u <s> s p r e m n o s t <s> <lc> i <rc> <s> o d l u č n o s t <s> d a <s> s e <s> b e </w> 
+INFO: TARGET: <w> i </w>           
+INFO: SAMPLE: <w> i </w> 
+INFO: SOURCE: <w> L j u d i <s> s a <s> s t r a n e <s> <lc> m o g u <rc> <s> p o m o ć i <s> a l i <s> z a i n t e r </w> 
+INFO: TARGET: <w> m o ć i </w>        
+INFO: SAMPLE: <w> m o ć i </w> 
+INFO: SOURCE: <w> i <s> m a k e d o n s k i h <s> A l f i <s> <lc> i <rc> <s> p o s e b n e <s> p o s t r o j b e <s> </w> 
+INFO: TARGET: <w> i </w>           
+INFO: SAMPLE: <w> i </w> 
+INFO: SOURCE: <w> e f o r m e <s> u <s> M o l d a v i j i <s> <lc> i <rc> <s> d o p r i n o s <s> n o v o g <s> p r e </w> 
+INFO: TARGET: <w> i </w>           
+INFO: SAMPLE: <w> i </w> 
+INFO: SOURCE: <w> <s> p o l i t i č k i h <s> b o d o v a <s> <lc> i <rc> <s> o d r a ž a v a <s> s t u p a n j <s> o </w> 
+INFO: TARGET: <w> i </w>           
+INFO: SAMPLE: <w> i </w> 
+INFO: SOURCE: <w> t i <s> o k o <s> n e k e <s> l i v a d e <s> <lc> u <rc> <s> b l i z i n i <s> r i j e k e <s> t o <s> </w> 
+INFO: TARGET: <w> u </w>           
+INFO: SAMPLE: <w> u </w> 
+INFO: SOURCE: <w> t i n a <s> p o l i c a j a c a <s> U N <s> <lc> i <rc> <s> p r i p a d n i k a <s> s u d j e l o </w> 
+INFO: TARGET: <w> i </w>           
+INFO: SAMPLE: <w> i </w> 
+INFO: SOURCE: <w> j e <s> K o m š i ć a <s> č l a n o v a <s> <lc> i <rc> <s> p r i s t a š a <s> s t r a n k e <s> n </w> 
+INFO: TARGET: <w> i </w>           
+INFO: SAMPLE: <w> i </w> 
+INFO: SOURCE: <w> b i <s> t r e b a o <s> m i j e š a t i <s> <lc> u <rc> <s> d e m o k r a t s k u <s> p o l i t i </w> 
+INFO: TARGET: <w> u </w>           
+INFO: SAMPLE 0:  Cost/Len/Avg 21.2327518463/1/21.2327518463
+INFO: SAMPLE 1: <w> o </w>  Cost/Len/Avg 13.4131708145/4/3.35329270363
+INFO: SAMPLE 2: <w> u e </w>  Cost/Len/Avg 12.8827886581/5/2.57655773163
+INFO: SAMPLE 3: <w> u u </w>  Cost/Len/Avg 12.0241451263/5/2.40482902527
+INFO: SAMPLE 4: <w> A </w>  Cost/Len/Avg 11.4337930679/4/2.85844826698
+INFO: SAMPLE 5: <w> u a </w>  Cost/Len/Avg 10.4303159714/5/2.08606319427
+INFO: SAMPLE 6: <w> </w>  Cost/Len/Avg 10.3084926605/3/3.43616422017
+INFO: SAMPLE 7: <w> i </w>  Cost/Len/Avg 9.9135055542/4/2.47837638855
+INFO: SAMPLE 8: <w> U </w>  Cost/Len/Avg 9.86966228485/4/2.46741557121
+INFO: SAMPLE 9: <w> e </w>  Cost/Len/Avg 9.58802986145/4/2.39700746536
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 8.93617725372/4/2.23404431343
+INFO: SAMPLE 11: <w> u </w>  Cost/Len/Avg 0.000396903255023/4/9.92258137558e-05
+INFO: SOURCE: <w> č u j u ć i <s> C i p a r <s> B o s n u <s> <lc> i <rc> <s> H e r c e g o v i n u <s> I r a k <s> I </w> 
+INFO: TARGET: <w> i </w>           
+INFO: SAMPLE 0:  Cost/Len/Avg 20.9661178589/1/20.9661178589
+INFO: SAMPLE 1: <w> j e </w>  Cost/Len/Avg 12.6970682144/5/2.53941364288
+INFO: SAMPLE 2: i i </w>  Cost/Len/Avg 12.235127449/4/3.05878186226
+INFO: SAMPLE 3: <w> i e </w>  Cost/Len/Avg 12.0286979675/5/2.40573959351
+INFO: SAMPLE 4: <w> I </w>  Cost/Len/Avg 10.9480619431/4/2.73701548576
+INFO: SAMPLE 5: <w> </w>  Cost/Len/Avg 10.391289711/3/3.463763237
+INFO: SAMPLE 6: <w> u </w>  Cost/Len/Avg 10.3787403107/4/2.59468507767
+INFO: SAMPLE 7: <w> o </w>  Cost/Len/Avg 10.2828178406/4/2.57070446014
+INFO: SAMPLE 8: <w> i a </w>  Cost/Len/Avg 10.1451435089/5/2.02902870178
+INFO: SAMPLE 9: <w> e </w>  Cost/Len/Avg 9.90355968475/4/2.47588992119
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 8.43018913269/4/2.10754728317
+INFO: SAMPLE 11: <w> i </w>  Cost/Len/Avg 0.000456610287074/4/0.000114152571768
+INFO: SOURCE: <w> l e <s> s v o j u <s> s p r e m n o s t <s> <lc> i <rc> <s> o d l u č n o s t <s> d a <s> s e <s> b e </w> 
+INFO: TARGET: <w> i </w>           
+INFO: SAMPLE 0:  Cost/Len/Avg 21.1658725739/1/21.1658725739
+INFO: SAMPLE 1: <w> i t i </w>  Cost/Len/Avg 13.2891559601/6/2.21485932668
+INFO: SAMPLE 2: <w> i e </w>  Cost/Len/Avg 12.7249298096/5/2.54498596191
+INFO: SAMPLE 3: <w> I </w>  Cost/Len/Avg 12.3005819321/4/3.07514548302
+INFO: SAMPLE 4: <w> u </w>  Cost/Len/Avg 11.6288671494/4/2.90721678734
+INFO: SAMPLE 5: i i </w>  Cost/Len/Avg 11.3372135162/4/2.83430337906
+INFO: SAMPLE 6: <w> </w>  Cost/Len/Avg 11.2516822815/3/3.7505607605
+INFO: SAMPLE 7: <w> e </w>  Cost/Len/Avg 11.1465110779/4/2.78662776947
+INFO: SAMPLE 8: <w> i a </w>  Cost/Len/Avg 10.6985874176/5/2.13971748352
+INFO: SAMPLE 9: <w> o </w>  Cost/Len/Avg 10.5382080078/4/2.63455200195
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 8.98869228363/4/2.24717307091
+INFO: SAMPLE 11: <w> i </w>  Cost/Len/Avg 0.000241259505856/4/6.0314876464e-05
+INFO: SOURCE: <w> L j u d i <s> s a <s> s t r a n e <s> <lc> m o g u <rc> <s> p o m o ć i <s> a l i <s> z a i n t e r </w> 
+INFO: TARGET: <w> m o ć i </w>        
+INFO: SAMPLE 0: <w> m a r </w>  Cost/Len/Avg 8.03823375702/6/1.33970562617
+INFO: SAMPLE 1: <w> m o j </w>  Cost/Len/Avg 7.50803899765/6/1.25133983294
+INFO: SAMPLE 2: <w> m o h </w>  Cost/Len/Avg 7.36860227585/6/1.22810037931
+INFO: SAMPLE 3: <w> m a j </w>  Cost/Len/Avg 7.12120676041/6/1.1868677934
+INFO: SAMPLE 4: <w> m o ć </w>  Cost/Len/Avg 5.41169500351/6/0.901949167252
+INFO: SAMPLE 5: <w> m o g </w>  Cost/Len/Avg 4.82925653458/6/0.804876089096
+INFO: SAMPLE 6: <w> m o ć i </w>  Cost/Len/Avg 0.0223709717393/7/0.00319585310561
+INFO: SAMPLE 7: <w> m a ć i </w>  Cost/Len/Avg 7.14830446243/7/1.02118635178
+INFO: SAMPLE 8: <w> m o g o </w>  Cost/Len/Avg 7.43670892715/7/1.06238698959
+INFO: SAMPLE 9: <w> j a ć i </w>  Cost/Len/Avg 7.71637010574/7/1.10233858653
+INFO: SAMPLE 10: <w> j e ć i </w>  Cost/Len/Avg 8.09776973724/7/1.15682424818
+INFO: SAMPLE 11: <w> m o ć e </w>  Cost/Len/Avg 8.1489648819/7/1.16413784027
+INFO: SOURCE: <w> i <s> m a k e d o n s k i h <s> A l f i <s> <lc> i <rc> <s> p o s e b n e <s> p o s t r o j b e <s> </w> 
+INFO: TARGET: <w> i </w>           
+INFO: SAMPLE 0:  Cost/Len/Avg 20.848526001/1/20.848526001
+INFO: SAMPLE 1: <w> i a i </w>  Cost/Len/Avg 12.9140129089/6/2.15233548482
+INFO: SAMPLE 2: <w> i e </w>  Cost/Len/Avg 12.3696861267/5/2.47393722534
+INFO: SAMPLE 3: <w> I </w>  Cost/Len/Avg 11.7600860596/4/2.94002151489
+INFO: SAMPLE 4: i i </w>  Cost/Len/Avg 11.5408258438/4/2.88520646095
+INFO: SAMPLE 5: <w> u </w>  Cost/Len/Avg 10.7409391403/4/2.68523478508
+INFO: SAMPLE 6: <w> </w>  Cost/Len/Avg 10.6070394516/3/3.5356798172
+INFO: SAMPLE 7: <w> o </w>  Cost/Len/Avg 10.3160486221/4/2.57901215553
+INFO: SAMPLE 8: <w> i a </w>  Cost/Len/Avg 10.2625083923/5/2.05250167847
+INFO: SAMPLE 9: <w> e </w>  Cost/Len/Avg 10.2503995895/4/2.56259989738
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 8.41217708588/4/2.10304427147
+INFO: SAMPLE 11: <w> i </w>  Cost/Len/Avg 0.000414306705352/4/0.000103576676338
+INFO: SOURCE: <w> e f o r m e <s> u <s> M o l d a v i j i <s> <lc> i <rc> <s> d o p r i n o s <s> n o v o g <s> p r e </w> 
+INFO: TARGET: <w> i </w>           
+INFO: SAMPLE 0:  Cost/Len/Avg 21.5368537903/1/21.5368537903
+INFO: SAMPLE 1: <w> i a i </w>  Cost/Len/Avg 13.2035455704/6/2.2005909284
+INFO: SAMPLE 2: <w> i e </w>  Cost/Len/Avg 12.7681751251/5/2.55363502502
+INFO: SAMPLE 3: <w> I </w>  Cost/Len/Avg 12.4607458115/4/3.11518645287
+INFO: SAMPLE 4: i i </w>  Cost/Len/Avg 11.8519697189/4/2.96299242973
+INFO: SAMPLE 5: <w> u </w>  Cost/Len/Avg 11.6653270721/4/2.91633176804
+INFO: SAMPLE 6: <w> </w>  Cost/Len/Avg 11.6135864258/3/3.87119547526
+INFO: SAMPLE 7: <w> e </w>  Cost/Len/Avg 11.1795454025/4/2.79488635063
+INFO: SAMPLE 8: <w> i a </w>  Cost/Len/Avg 10.7697401047/5/2.15394802094
+INFO: SAMPLE 9: <w> o </w>  Cost/Len/Avg 10.641087532/4/2.66027188301
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 9.11634063721/4/2.2790851593
+INFO: SAMPLE 11: <w> i </w>  Cost/Len/Avg 0.000211700040381/4/5.29250100954e-05
+INFO: SOURCE: <w> <s> p o l i t i č k i h <s> b o d o v a <s> <lc> i <rc> <s> o d r a ž a v a <s> s t u p a n j <s> o </w> 
+INFO: TARGET: <w> i </w>           
+INFO: SAMPLE 0:  Cost/Len/Avg 21.1772727966/1/21.1772727966
+INFO: SAMPLE 1: <w> i a i </w>  Cost/Len/Avg 13.0972318649/6/2.18287197749
+INFO: SAMPLE 2: <w> i e </w>  Cost/Len/Avg 12.7313394547/5/2.54626789093
+INFO: SAMPLE 3: <w> I </w>  Cost/Len/Avg 12.0162801743/4/3.00407004356
+INFO: SAMPLE 4: i i </w>  Cost/Len/Avg 11.7936153412/4/2.9484038353
+INFO: SAMPLE 5: <w> </w>  Cost/Len/Avg 11.0372848511/3/3.67909495036
+INFO: SAMPLE 6: <w> u </w>  Cost/Len/Avg 10.9304647446/4/2.73261618614
+INFO: SAMPLE 7: <w> i a </w>  Cost/Len/Avg 10.6387319565/5/2.1277463913
+INFO: SAMPLE 8: <w> o </w>  Cost/Len/Avg 10.5140342712/4/2.62850856781
+INFO: SAMPLE 9: <w> e </w>  Cost/Len/Avg 10.436999321/4/2.60924983025
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 8.64880847931/4/2.16220211983
+INFO: SAMPLE 11: <w> i </w>  Cost/Len/Avg 0.000320514169289/4/8.01285423222e-05
+INFO: SOURCE: <w> t i <s> o k o <s> n e k e <s> l i v a d e <s> <lc> u <rc> <s> b l i z i n i <s> r i j e k e <s> t o <s> </w> 
+INFO: TARGET: <w> u </w>           
+INFO: SAMPLE 0:  Cost/Len/Avg 20.9447193146/1/20.9447193146
+INFO: SAMPLE 1: <w> I </w>  Cost/Len/Avg 13.5291500092/4/3.38228750229
+INFO: SAMPLE 2: <w> u e </w>  Cost/Len/Avg 12.3587274551/5/2.47174549103
+INFO: SAMPLE 3: <w> A </w>  Cost/Len/Avg 11.6753292084/4/2.91883230209
+INFO: SAMPLE 4: <w> u u </w>  Cost/Len/Avg 11.6050376892/5/2.32100753784
+INFO: SAMPLE 5: <w> u a </w>  Cost/Len/Avg 10.7365131378/5/2.14730262756
+INFO: SAMPLE 6: <w> </w>  Cost/Len/Avg 10.5632266998/3/3.52107556661
+INFO: SAMPLE 7: <w> i </w>  Cost/Len/Avg 10.3721227646/4/2.59303069115
+INFO: SAMPLE 8: <w> U </w>  Cost/Len/Avg 9.80255126953/4/2.45063781738
+INFO: SAMPLE 9: <w> e </w>  Cost/Len/Avg 9.59111976624/4/2.39777994156
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 9.37914848328/4/2.34478712082
+INFO: SAMPLE 11: <w> u </w>  Cost/Len/Avg 0.000321586237988/4/8.03965594969e-05
+INFO: SOURCE: <w> t i n a <s> p o l i c a j a c a <s> U N <s> <lc> i <rc> <s> p r i p a d n i k a <s> s u d j e l o </w> 
+INFO: TARGET: <w> i </w>           
+INFO: SAMPLE 0:  Cost/Len/Avg 21.1173496246/1/21.1173496246
+INFO: SAMPLE 1: <w> i a i </w>  Cost/Len/Avg 13.1651325226/6/2.19418875376
+INFO: SAMPLE 2: <w> i e </w>  Cost/Len/Avg 12.8739967346/5/2.57479934692
+INFO: SAMPLE 3: <w> I </w>  Cost/Len/Avg 12.2176132202/4/3.05440330505
+INFO: SAMPLE 4: <w> u </w>  Cost/Len/Avg 11.4023752213/4/2.85059380531
+INFO: SAMPLE 5: <w> </w>  Cost/Len/Avg 11.1399860382/3/3.7133286794
+INFO: SAMPLE 6: i i </w>  Cost/Len/Avg 11.0254278183/4/2.75635695457
+INFO: SAMPLE 7: <w> e </w>  Cost/Len/Avg 10.8542261124/4/2.71355652809
+INFO: SAMPLE 8: <w> o </w>  Cost/Len/Avg 10.6596851349/4/2.66492128372
+INFO: SAMPLE 9: <w> i a </w>  Cost/Len/Avg 10.6203994751/5/2.12407989502
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 8.82628726959/4/2.2065718174
+INFO: SAMPLE 11: <w> i </w>  Cost/Len/Avg 0.000275108905043/4/6.87772262609e-05
+INFO: SOURCE: <w> j e <s> K o m š i ć a <s> č l a n o v a <s> <lc> i <rc> <s> p r i s t a š a <s> s t r a n k e <s> n </w> 
+INFO: TARGET: <w> i </w>           
+INFO: SAMPLE 0:  Cost/Len/Avg 21.0918273926/1/21.0918273926
+INFO: SAMPLE 1: <w> i a i </w>  Cost/Len/Avg 13.1999101639/6/2.19998502731
+INFO: SAMPLE 2: <w> i e </w>  Cost/Len/Avg 12.6505146027/5/2.53010292053
+INFO: SAMPLE 3: <w> I </w>  Cost/Len/Avg 12.080324173/4/3.02008104324
+INFO: SAMPLE 4: i i </w>  Cost/Len/Avg 11.5161190033/4/2.87902975082
+INFO: SAMPLE 5: <w> </w>  Cost/Len/Avg 11.1024389267/3/3.70081297557
+INFO: SAMPLE 6: <w> u </w>  Cost/Len/Avg 10.9608821869/4/2.74022054672
+INFO: SAMPLE 7: <w> i a </w>  Cost/Len/Avg 10.7072572708/5/2.14145145416
+INFO: SAMPLE 8: <w> o </w>  Cost/Len/Avg 10.5599384308/4/2.6399846077
+INFO: SAMPLE 9: <w> e </w>  Cost/Len/Avg 10.4716863632/4/2.61792159081
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 8.694647789/4/2.17366194725
+INFO: SAMPLE 11: <w> i </w>  Cost/Len/Avg 0.000308477436192/4/7.71193590481e-05
+INFO: Starting epoch 90
+INFO: Starting epoch 91
+INFO: Starting epoch 92
+INFO: [2018-06-11 16:23:25] Epoch: 92 Update: 31000 Loss/word: 0.0652546435148 Words/sec: 1944.6273881 Sents/sec: 221.763584042
+INFO: Starting epoch 93
+INFO: Starting epoch 94
+INFO: Starting epoch 95
+INFO: [2018-06-11 16:27:56] Epoch: 95 Update: 32000 Loss/word: 0.0608467297919 Words/sec: 1936.35360771 Sents/sec: 220.849912059
+INFO: Starting epoch 96
+INFO: Starting epoch 97
+INFO: Starting epoch 98
+INFO: [2018-06-11 16:32:29] Epoch: 98 Update: 33000 Loss/word: 0.0605965558187 Words/sec: 1920.05402545 Sents/sec: 219.438515107
+INFO: Starting epoch 99
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.693792243303 5550.33794642 8000
+INFO:tensorflow:./models_20/Croatian-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_20/Croatian-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 100
+INFO: Starting epoch 101
+INFO: [2018-06-11 16:37:14] Epoch: 101 Update: 34000 Loss/word: 0.0583728922658 Words/sec: 1838.98074072 Sents/sec: 209.81483086
+INFO: Starting epoch 102
+INFO: Starting epoch 103
+INFO: Starting epoch 104
+INFO: [2018-06-11 16:41:44] Epoch: 104 Update: 35000 Loss/word: 0.0554314986704 Words/sec: 1941.6775803 Sents/sec: 221.787062399
+INFO: Starting epoch 105
+INFO: Starting epoch 106
+INFO: Starting epoch 107
+INFO: [2018-06-11 16:46:13] Epoch: 107 Update: 36000 Loss/word: 0.0560823100928 Words/sec: 1950.64389157 Sents/sec: 222.772563858
+INFO: Starting epoch 108
+INFO: Starting epoch 109
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.669706520651 5357.65216521 8000
+INFO:tensorflow:./models_20/Croatian-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_20/Croatian-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 110
+INFO: [2018-06-11 16:50:55] Epoch: 110 Update: 37000 Loss/word: 0.0516901859594 Words/sec: 1859.70758161 Sents/sec: 212.604961935
+INFO: Starting epoch 111
+INFO: Starting epoch 112
+INFO: Starting epoch 113
+INFO: [2018-06-11 16:55:24] Epoch: 113 Update: 38000 Loss/word: 0.0516761586358 Words/sec: 1951.43497714 Sents/sec: 222.72697655
+INFO: Starting epoch 114
+INFO: Starting epoch 115
+INFO: Starting epoch 116
+INFO: [2018-06-11 16:59:51] Epoch: 116 Update: 39000 Loss/word: 0.0499342577037 Words/sec: 1957.29019387 Sents/sec: 223.587464891
+INFO: Starting epoch 117
+INFO: Starting epoch 118
+INFO: Starting epoch 119
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.674575088405 5396.60070724 8000
+INFO: [2018-06-11 17:04:33] Epoch: 119 Update: 40000 Loss/word: 0.0487023239838 Words/sec: 1864.21266898 Sents/sec: 212.779161111
+INFO: SOURCE: <w> v o l j s t v o <s> t e š k o ć a m a <s> <lc> s <rc> <s> k o j i m a <s> s e <s> s u s r e ć e <s> </w> 
+INFO: TARGET: <w> s </w>           
+INFO: SAMPLE: <w> s </w> 
+INFO: SOURCE: <w> <s> o s n a ž e n a <s> v o d s t v o m <s> <lc> u <rc> <s> n e d a v n i m <s> i s t r a ž i v a </w> 
+INFO: TARGET: <w> u </w>           
+INFO: SAMPLE: <w> u </w> 
+INFO: SOURCE: <w> i n i r a t i <s> s t r a t e g i j u <s> <lc> u <rc> <s> v e z i <s> s <s> t i m <s> p i t a n j e </w> 
+INFO: TARGET: <w> u </w>           
+INFO: SAMPLE: <w> u </w> 
+INFO: SOURCE: <w> a d u <s> n a <s> j u g u <s> S r b i j e <s> <lc> a <rc> <s> p r e n o s i <s> t i s k o v n a <s> a </w> 
+INFO: TARGET: <w> a </w>           
+INFO: SAMPLE: <w> a </w> 
+INFO: SOURCE: <w> i s t i <s> p o b i j e d i l i <s> s u <s> <lc> u <rc> <s> č e t v r t a k <s> S j e d i n j e n </w> 
+INFO: TARGET: <w> u </w>           
+INFO: SAMPLE: <w> u </w> 
+INFO: SOURCE: <w> a <s> d i l j e m <s> R u m u n j s k e <s> <lc> u <rc> <s> u s p o r e d b i <s> s <s> k o l i k o </w> 
+INFO: TARGET: <w> u </w>           
+INFO: SAMPLE: <w> u </w> 
+INFO: SOURCE: <w> M a k e d o n i j i <s> ž i v a <s> j e <s> <lc> i <rc> <s> z d r a v a <s> a <s> n o v i n a r i <s> </w> 
+INFO: TARGET: <w> i </w>           
+INFO: SAMPLE: <w> i </w> 
+INFO: SOURCE: <w> H u r u g l i c a <s> N e <s> <lc> p o s t o j i <rc> <s> p o t r e b a <s> z a <s> r e c i p r o </w> 
+INFO: TARGET: <w> p o s t o j a t i </w>   
+INFO: SAMPLE: <w> p o s t o j </w> 
+INFO: SOURCE: <w> <s> d o <s> s v o j e g <s> p r o f i t a <s> <lc> u <rc> <s> p r o r a č u n <s> z a <s> r a z l i k </w> 
+INFO: TARGET: <w> u </w>           
+INFO: SAMPLE: <w> u </w> 
+INFO: SOURCE: <w> h n <s> n a k o n <s> r a z g o v o r a <s> <lc> s <rc> <s> h r v a t s k i m <s> m i n i s t r o </w> 
+INFO: TARGET: <w> s </w>           
+INFO: SAMPLE: <w> s </w> 
+INFO: SOURCE: <w> v o l j s t v o <s> t e š k o ć a m a <s> <lc> s <rc> <s> k o j i m a <s> s e <s> s u s r e ć e <s> </w> 
+INFO: TARGET: <w> s </w>           
+INFO: SAMPLE 0:  Cost/Len/Avg 27.7713241577/1/27.7713241577
+INFO: SAMPLE 1: <w> s a j </w>  Cost/Len/Avg 12.3958129883/6/2.06596883138
+INFO: SAMPLE 2: <w> z </w>  Cost/Len/Avg 12.2753248215/4/3.06883120537
+INFO: SAMPLE 3: <w> a </w>  Cost/Len/Avg 12.023900032/4/3.00597500801
+INFO: SAMPLE 4: <w> S </w>  Cost/Len/Avg 11.5462427139/4/2.88656067848
+INFO: SAMPLE 5: <w> s t b e </w>  Cost/Len/Avg 11.4775981903/7/1.63965688433
+INFO: SAMPLE 6: <w> s a </w>  Cost/Len/Avg 10.9980239868/5/2.19960479736
+INFO: SAMPLE 7: <w> s a b </w>  Cost/Len/Avg 10.793920517/6/1.79898675283
+INFO: SAMPLE 8: <w> b i t i </w>  Cost/Len/Avg 10.7850780487/7/1.54072543553
+INFO: SAMPLE 9: <w> s a b e </w>  Cost/Len/Avg 10.4506692886/7/1.49295275552
+INFO: SAMPLE 10: <w> s e b e </w>  Cost/Len/Avg 9.65879154205/7/1.37982736315
+INFO: SAMPLE 11: <w> s </w>  Cost/Len/Avg 0.000215157750063/4/5.37894375157e-05
+INFO: SOURCE: <w> <s> o s n a ž e n a <s> v o d s t v o m <s> <lc> u <rc> <s> n e d a v n i m <s> i s t r a ž i v a </w> 
+INFO: TARGET: <w> u </w>           
+INFO: SAMPLE 0:  Cost/Len/Avg 21.8977603912/1/21.8977603912
+INFO: SAMPLE 1: <w> A </w>  Cost/Len/Avg 14.0135469437/4/3.50338673592
+INFO: SAMPLE 2: <w> u a u </w>  Cost/Len/Avg 13.6590652466/6/2.27651087443
+INFO: SAMPLE 3: <w> u e </w>  Cost/Len/Avg 13.5917806625/5/2.71835613251
+INFO: SAMPLE 4: <w> </w>  Cost/Len/Avg 12.6997203827/3/4.23324012756
+INFO: SAMPLE 5: <w> u u </w>  Cost/Len/Avg 12.3456497192/5/2.46912994385
+INFO: SAMPLE 6: <w> i </w>  Cost/Len/Avg 11.8247966766/4/2.95619916916
+INFO: SAMPLE 7: <w> e </w>  Cost/Len/Avg 11.5943393707/4/2.89858484268
+INFO: SAMPLE 8: <w> U </w>  Cost/Len/Avg 11.4294300079/4/2.85735750198
+INFO: SAMPLE 9: <w> u a </w>  Cost/Len/Avg 10.9080905914/5/2.18161811829
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 10.7996644974/4/2.69991612434
+INFO: SAMPLE 11: <w> u </w>  Cost/Len/Avg 8.15373350633e-05/4/2.03843337658e-05
+INFO: SOURCE: <w> i n i r a t i <s> s t r a t e g i j u <s> <lc> u <rc> <s> v e z i <s> s <s> t i m <s> p i t a n j e </w> 
+INFO: TARGET: <w> u </w>           
+INFO: SAMPLE 0:  Cost/Len/Avg 23.0665435791/1/23.0665435791
+INFO: SAMPLE 1: <w> u e </w>  Cost/Len/Avg 14.2011041641/5/2.84022083282
+INFO: SAMPLE 2: <w> A </w>  Cost/Len/Avg 14.0595550537/4/3.51488876343
+INFO: SAMPLE 3: <w> o </w>  Cost/Len/Avg 13.7209196091/4/3.43022990227
+INFO: SAMPLE 4: <w> u u </w>  Cost/Len/Avg 13.4424219131/5/2.68848438263
+INFO: SAMPLE 5: <w> U </w>  Cost/Len/Avg 12.5490198135/4/3.13725495338
+INFO: SAMPLE 6: <w> </w>  Cost/Len/Avg 12.4955224991/3/4.16517416636
+INFO: SAMPLE 7: <w> e </w>  Cost/Len/Avg 11.4093866348/4/2.85234665871
+INFO: SAMPLE 8: <w> u a </w>  Cost/Len/Avg 11.1373414993/5/2.22746829987
+INFO: SAMPLE 9: <w> i </w>  Cost/Len/Avg 11.0486679077/4/2.76216697693
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 10.0753631592/4/2.51884078979
+INFO: SAMPLE 11: <w> u </w>  Cost/Len/Avg 9.90595581243e-05/4/2.47648895311e-05
+INFO: SOURCE: <w> a d u <s> n a <s> j u g u <s> S r b i j e <s> <lc> a <rc> <s> p r e n o s i <s> t i s k o v n a <s> a </w> 
+INFO: TARGET: <w> a </w>           
+INFO: SAMPLE 0:  Cost/Len/Avg 27.8975276947/1/27.8975276947
+INFO: SAMPLE 1: <w> a t i </w>  Cost/Len/Avg 12.9165897369/6/2.15276495616
+INFO: SAMPLE 2: <w> m </w>  Cost/Len/Avg 12.8992738724/4/3.22481846809
+INFO: SAMPLE 3: <w> b i t i </w>  Cost/Len/Avg 12.1361656189/7/1.73373794556
+INFO: SAMPLE 4: <w> s </w>  Cost/Len/Avg 12.0316343307/4/3.00790858269
+INFO: SAMPLE 5: <w> a a </w>  Cost/Len/Avg 11.859708786/5/2.3719417572
+INFO: SAMPLE 6: <w> e </w>  Cost/Len/Avg 9.85003852844/4/2.46250963211
+INFO: SAMPLE 7: <w> i </w>  Cost/Len/Avg 9.51253128052/4/2.37813282013
+INFO: SAMPLE 8: <w> o </w>  Cost/Len/Avg 9.10303020477/4/2.27575755119
+INFO: SAMPLE 9: <w> </w>  Cost/Len/Avg 8.8986158371/3/2.96620527903
+INFO: SAMPLE 10: <w> u </w>  Cost/Len/Avg 7.74456787109/4/1.93614196777
+INFO: SAMPLE 11: <w> a </w>  Cost/Len/Avg 0.000843299145345/4/0.000210824786336
+INFO: SOURCE: <w> i s t i <s> p o b i j e d i l i <s> s u <s> <lc> u <rc> <s> č e t v r t a k <s> S j e d i n j e n </w> 
+INFO: TARGET: <w> u </w>           
+INFO: SAMPLE 0:  Cost/Len/Avg 21.9801330566/1/21.9801330566
+INFO: SAMPLE 1: <w> A </w>  Cost/Len/Avg 13.8593540192/4/3.46483850479
+INFO: SAMPLE 2: <w> u a u </w>  Cost/Len/Avg 13.8500366211/6/2.30833943685
+INFO: SAMPLE 3: <w> u e </w>  Cost/Len/Avg 13.3342447281/5/2.66684894562
+INFO: SAMPLE 4: <w> u u </w>  Cost/Len/Avg 12.3930273056/5/2.47860546112
+INFO: SAMPLE 5: <w> </w>  Cost/Len/Avg 12.2745046616/3/4.09150155385
+INFO: SAMPLE 6: <w> i </w>  Cost/Len/Avg 11.8774995804/4/2.9693748951
+INFO: SAMPLE 7: <w> U </w>  Cost/Len/Avg 11.4528551102/4/2.86321377754
+INFO: SAMPLE 8: <w> e </w>  Cost/Len/Avg 10.9022417068/4/2.72556042671
+INFO: SAMPLE 9: <w> u a </w>  Cost/Len/Avg 10.8890666962/5/2.17781333923
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 10.1719293594/4/2.54298233986
+INFO: SAMPLE 11: <w> u </w>  Cost/Len/Avg 0.000110026405309/4/2.75066013273e-05
+INFO: SOURCE: <w> a <s> d i l j e m <s> R u m u n j s k e <s> <lc> u <rc> <s> u s p o r e d b i <s> s <s> k o l i k o </w> 
+INFO: TARGET: <w> u </w>           
+INFO: SAMPLE 0:  Cost/Len/Avg 22.1736488342/1/22.1736488342
+INFO: SAMPLE 1: <w> u e </w>  Cost/Len/Avg 14.0927228928/5/2.81854457855
+INFO: SAMPLE 2: <w> o </w>  Cost/Len/Avg 13.9122304916/4/3.47805762291
+INFO: SAMPLE 3: <w> A </w>  Cost/Len/Avg 13.8581199646/4/3.46452999115
+INFO: SAMPLE 4: <w> u u </w>  Cost/Len/Avg 13.2408208847/5/2.64816417694
+INFO: SAMPLE 5: <w> </w>  Cost/Len/Avg 11.8639497757/3/3.95464992523
+INFO: SAMPLE 6: <w> U </w>  Cost/Len/Avg 11.831413269/4/2.95785331726
+INFO: SAMPLE 7: <w> i </w>  Cost/Len/Avg 11.1228990555/4/2.78072476387
+INFO: SAMPLE 8: <w> e </w>  Cost/Len/Avg 10.9529094696/4/2.7382273674
+INFO: SAMPLE 9: <w> u a </w>  Cost/Len/Avg 10.8960666656/5/2.17921333313
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 10.0217132568/4/2.50542831421
+INFO: SAMPLE 11: <w> u </w>  Cost/Len/Avg 0.000118370058772/4/2.95925146929e-05
+INFO: SOURCE: <w> M a k e d o n i j i <s> ž i v a <s> j e <s> <lc> i <rc> <s> z d r a v a <s> a <s> n o v i n a r i <s> </w> 
+INFO: TARGET: <w> i </w>           
+INFO: SAMPLE 0:  Cost/Len/Avg 23.0201187134/1/23.0201187134
+INFO: SAMPLE 1: <w> i m </w>  Cost/Len/Avg 14.1701431274/5/2.83402862549
+INFO: SAMPLE 2: <w> i t i </w>  Cost/Len/Avg 13.7287330627/6/2.28812217712
+INFO: SAMPLE 3: <w> </w>  Cost/Len/Avg 12.9870233536/3/4.32900778453
+INFO: SAMPLE 4: <w> I </w>  Cost/Len/Avg 12.7241926193/4/3.18104815483
+INFO: SAMPLE 5: <w> u </w>  Cost/Len/Avg 12.4511699677/4/3.11279249191
+INFO: SAMPLE 6: i i </w>  Cost/Len/Avg 12.450545311/4/3.11263632774
+INFO: SAMPLE 7: <w> e </w>  Cost/Len/Avg 12.3552761078/4/3.08881902695
+INFO: SAMPLE 8: <w> o </w>  Cost/Len/Avg 11.1945648193/4/2.79864120483
+INFO: SAMPLE 9: <w> i a </w>  Cost/Len/Avg 10.6960573196/5/2.13921146393
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 10.3156442642/4/2.57891106606
+INFO: SAMPLE 11: <w> i </w>  Cost/Len/Avg 9.34577401495e-05/4/2.33644350374e-05
+INFO: SOURCE: <w> H u r u g l i c a <s> N e <s> <lc> p o s t o j i <rc> <s> p o t r e b a <s> z a <s> r e c i p r o </w> 
+INFO: TARGET: <w> p o s t o j a t i </w>   
+INFO: SAMPLE 0: <w> p o s t </w>  Cost/Len/Avg 8.21428966522/7/1.17346995217
+INFO: SAMPLE 1: <w> p o s t i j a </w>  Cost/Len/Avg 8.11435985565/10/0.811435985565
+INFO: SAMPLE 2: <w> p o s t o j a i </w>  Cost/Len/Avg 8.04557991028/11/0.73141635548
+INFO: SAMPLE 3: <w> p o s t a j </w>  Cost/Len/Avg 7.54698181152/9/0.838553534614
+INFO: SAMPLE 4: <w> p o s t o j i t i </w>  Cost/Len/Avg 7.41910982132/12/0.618259151777
+INFO: SAMPLE 5: <w> p o s t j a t i </w>  Cost/Len/Avg 7.18913412094/11/0.653557647358
+INFO: SAMPLE 6: <w> p o s o o </w>  Cost/Len/Avg 7.06213521957/8/0.882766902447
+INFO: SAMPLE 7: <w> p o s l o j a t i </w>  Cost/Len/Avg 6.97754240036/12/0.581461866697
+INFO: SAMPLE 8: <w> p o s t o j </w>  Cost/Len/Avg 5.63542699814/9/0.626158555349
+INFO: SAMPLE 9: <w> p o s t a j a t i </w>  Cost/Len/Avg 5.39575433731/12/0.449646194776
+INFO: SAMPLE 10: <w> p o s t o j a t i </w>  Cost/Len/Avg 0.0156219182536/12/0.00130182652113
+INFO: SAMPLE 11: <w> p o s t o j i j a t i </w>  Cost/Len/Avg 8.11629676819/14/0.579735483442
+INFO: SOURCE: <w> <s> d o <s> s v o j e g <s> p r o f i t a <s> <lc> u <rc> <s> p r o r a č u n <s> z a <s> r a z l i k </w> 
+INFO: TARGET: <w> u </w>           
+INFO: SAMPLE 0:  Cost/Len/Avg 21.2205600739/1/21.2205600739
+INFO: SAMPLE 1: <w> A </w>  Cost/Len/Avg 13.8719348907/4/3.46798372269
+INFO: SAMPLE 2: <w> u e </w>  Cost/Len/Avg 13.5915355682/5/2.71830711365
+INFO: SAMPLE 3: <w> u a u </w>  Cost/Len/Avg 12.8643712997/6/2.14406188329
+INFO: SAMPLE 4: <w> u u </w>  Cost/Len/Avg 12.4634180069/5/2.49268360138
+INFO: SAMPLE 5: <w> </w>  Cost/Len/Avg 12.1624994278/3/4.05416647593
+INFO: SAMPLE 6: <w> U </w>  Cost/Len/Avg 12.1426334381/4/3.03565835953
+INFO: SAMPLE 7: <w> i </w>  Cost/Len/Avg 11.1742706299/4/2.79356765747
+INFO: SAMPLE 8: <w> e </w>  Cost/Len/Avg 10.6847314835/4/2.67118287086
+INFO: SAMPLE 9: <w> u a </w>  Cost/Len/Avg 10.4465475082/5/2.08930950165
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 9.97896003723/4/2.49474000931
+INFO: SAMPLE 11: <w> u </w>  Cost/Len/Avg 0.00013625077554/4/3.40626938851e-05
+INFO: SOURCE: <w> h n <s> n a k o n <s> r a z g o v o r a <s> <lc> s <rc> <s> h r v a t s k i m <s> m i n i s t r o </w> 
+INFO: TARGET: <w> s </w>           
+INFO: SAMPLE 0:  Cost/Len/Avg 27.3487911224/1/27.3487911224
+INFO: SAMPLE 1: <w> </w>  Cost/Len/Avg 12.7957248688/3/4.26524162292
+INFO: SAMPLE 2: <w> d </w>  Cost/Len/Avg 12.634519577/4/3.15862989426
+INFO: SAMPLE 3: <w> z </w>  Cost/Len/Avg 12.3067598343/4/3.07668995857
+INFO: SAMPLE 4: <w> a </w>  Cost/Len/Avg 11.9638853073/4/2.99097132683
+INFO: SAMPLE 5: <w> S </w>  Cost/Len/Avg 11.5405454636/4/2.88513636589
+INFO: SAMPLE 6: <w> s e b </w>  Cost/Len/Avg 11.1653051376/6/1.86088418961
+INFO: SAMPLE 7: <w> s a b </w>  Cost/Len/Avg 10.9762744904/6/1.82937908173
+INFO: SAMPLE 8: <w> b i t i </w>  Cost/Len/Avg 10.8257484436/7/1.54653549194
+INFO: SAMPLE 9: <w> s e b e </w>  Cost/Len/Avg 10.7617588043/7/1.5373941149
+INFO: SAMPLE 10: <w> s a </w>  Cost/Len/Avg 10.0982933044/5/2.01965866089
+INFO: SAMPLE 11: <w> s </w>  Cost/Len/Avg 0.000178447065991/4/4.46117664978e-05
+INFO: Starting epoch 120
+INFO: Starting epoch 121
+INFO: Starting epoch 122
+INFO: [2018-06-11 17:09:01] Epoch: 122 Update: 41000 Loss/word: 0.0471065439956 Words/sec: 1958.09289971 Sents/sec: 223.292375027
+INFO: Starting epoch 123
+INFO: Starting epoch 124
+INFO: Starting epoch 125
+INFO: [2018-06-11 17:13:29] Epoch: 125 Update: 42000 Loss/word: 0.0467554997772 Words/sec: 1960.12540982 Sents/sec: 223.700950553
+INFO: Starting epoch 126
+INFO: Starting epoch 127
+INFO: Starting epoch 128
+INFO: [2018-06-11 17:17:56] Epoch: 128 Update: 43000 Loss/word: 0.0451466901009 Words/sec: 1961.01067353 Sents/sec: 223.692413302
+INFO: Starting epoch 129
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.653493989196 5227.95191357 8000
+INFO:tensorflow:./models_20/Croatian-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_20/Croatian-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 130
+INFO: Starting epoch 131
+INFO: [2018-06-11 17:22:44] Epoch: 131 Update: 44000 Loss/word: 0.0435060553768 Words/sec: 1821.24750996 Sents/sec: 208.102060285
+INFO: Starting epoch 132
+INFO: Starting epoch 133
+INFO: Starting epoch 134
+INFO: [2018-06-11 17:27:12] Epoch: 134 Update: 45000 Loss/word: 0.0419742382108 Words/sec: 1955.59300167 Sents/sec: 223.27475154
+INFO: Starting epoch 135
+INFO: Starting epoch 136
+INFO: Starting epoch 137
+INFO: [2018-06-11 17:31:40] Epoch: 137 Update: 46000 Loss/word: 0.0409587767716 Words/sec: 1959.16127367 Sents/sec: 224.029853696
+INFO: Starting epoch 138
+INFO: Starting epoch 139
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.649307906784 5194.46325427 8000
+INFO:tensorflow:./models_20/Croatian-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_20/Croatian-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 140
+INFO: [2018-06-11 17:36:21] Epoch: 140 Update: 47000 Loss/word: 0.0395552923239 Words/sec: 1864.84672007 Sents/sec: 213.087923483
+INFO: Starting epoch 141
+INFO: Starting epoch 142
+INFO: Starting epoch 143
+INFO: [2018-06-11 17:40:48] Epoch: 143 Update: 48000 Loss/word: 0.0389906846119 Words/sec: 1958.81504961 Sents/sec: 223.676312467
+INFO: Starting epoch 144
+INFO: Starting epoch 145
+INFO: Starting epoch 146
+INFO: [2018-06-11 17:45:17] Epoch: 146 Update: 49000 Loss/word: 0.0388421239475 Words/sec: 1955.6223931 Sents/sec: 223.16279631
+INFO: Starting epoch 147
+INFO: Starting epoch 148
+INFO: Starting epoch 149
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.647537482388 5180.29985911 8000
+INFO:tensorflow:./models_20/Croatian-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_20/Croatian-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: [2018-06-11 17:49:58] Epoch: 149 Update: 50000 Loss/word: 0.0370906756832 Words/sec: 1866.13021245 Sents/sec: 212.96352287
+INFO: SOURCE: <w> č l a n i c a <s> p o z v a l o <s> j e <s> <lc> n a <rc> <s> z a m r z a v a n j e <s> o d n o s a </w> 
+INFO: TARGET: <w> n a </w>     
+INFO: SAMPLE: <w> n a </w> 
+INFO: SOURCE: <w> e n j e <s> C i p r a <s> p r o p a l i <s> <lc> s u <rc> <s> u <s> t r a v n j u <s> p r o š l e <s> g </w> 
+INFO: TARGET: <w> b i t i </w>   
+INFO: SAMPLE: <w> b i t i </w> 
+INFO: SOURCE: <w> <s> b l i z i n i <s> r i j e k e <s> t o <s> <lc> n e <rc> <s> b i <s> b i l a <s> P a r a d a <s> p o n </w> 
+INFO: TARGET: <w> n e </w>     
+INFO: SAMPLE: <w> n e </w> 
+INFO: SOURCE: <w> <s> d r u g a <s> t v r t k a <s> i <s> d a <s> <lc> j e <rc> <s> R a m k o v s k i <s> k r i v <s> z a <s> </w> 
+INFO: TARGET: <w> b i t i </w>   
+INFO: SAMPLE: <w> b i t i </w> 
+INFO: SOURCE: <w> j e <s> m o m č a d i <s> u <s> k o j o j <s> <lc> s u <rc> <s> n a j i s t a k n u t i j i <s> i g r </w> 
+INFO: TARGET: <w> b i t i </w>   
+INFO: SAMPLE: <w> b i t i </w> 
+INFO: SOURCE: <w> z a <s> S E T i m e s <s> k a k o <s> j e <s> <lc> t o <rc> <s> k o r a k <s> p r e m a <s> k o n a č n </w> 
+INFO: TARGET: <w> t a j </w>    
+INFO: SAMPLE: <w> t a j </w> 
+INFO: SOURCE: <w> <s> P D V <s> i l i <s> t r o š a r i n a <s> <lc> n a <rc> <s> o d r e đ e n e <s> p r o i z v o d e </w> 
+INFO: TARGET: <w> n a </w>     
+INFO: SAMPLE: <w> n a </w> 
+INFO: SOURCE: <w> b v e z a o <s> s e <s> u <s> u t o r a k <s> <lc> n a <rc> <s> o s t a n a k <s> i <s> z a v r š e t a </w> 
+INFO: TARGET: <w> n a </w>     
+INFO: SAMPLE: <w> n a </w> 
+INFO: SOURCE: <w> v s k i <s> j e <s> r e k a o <s> k a k o <s> <lc> j e <rc> <s> p o t r e b n o <s> d e f i n i r a t </w> 
+INFO: TARGET: <w> b i t i </w>   
+INFO: SAMPLE: <w> b i t i </w> 
+INFO: SOURCE: <w> š i r e n j e <s> E U <s> i <s> d o d a o <s> <lc> j e <rc> <s> P a s s y <s> p r e d s t a v l j a t </w> 
+INFO: TARGET: <w> b i t i </w>   
+INFO: SAMPLE: <w> b i t i </w> 
+INFO: SOURCE: <w> č l a n i c a <s> p o z v a l o <s> j e <s> <lc> n a <rc> <s> z a m r z a v a n j e <s> o d n o s a </w> 
+INFO: TARGET: <w> n a </w>     
+INFO: SAMPLE 0: <w> n O </w>  Cost/Len/Avg 10.4678182602/5/2.09356365204
+INFO: SAMPLE 1: <w> n m </w>  Cost/Len/Avg 10.4161911011/5/2.08323822021
+INFO: SAMPLE 2: <w> n u </w>  Cost/Len/Avg 9.90897846222/5/1.98179569244
+INFO: SAMPLE 3: <w> n a t i </w>  Cost/Len/Avg 9.84313392639/7/1.40616198948
+INFO: SAMPLE 4: <w> n o </w>  Cost/Len/Avg 9.82243347168/5/1.96448669434
+INFO: SAMPLE 5: <w> n A </w>  Cost/Len/Avg 9.70206165314/5/1.94041233063
+INFO: SAMPLE 6: <w> m i </w>  Cost/Len/Avg 9.33957290649/5/1.8679145813
+INFO: SAMPLE 7: <w> n i </w>  Cost/Len/Avg 9.12713718414/5/1.82542743683
+INFO: SAMPLE 8: <w> n e </w>  Cost/Len/Avg 9.00922775269/5/1.80184555054
+INFO: SAMPLE 9: <w> n </w>  Cost/Len/Avg 7.69139862061/4/1.92284965515
+INFO: SAMPLE 10: <w> n a </w>  Cost/Len/Avg 0.00118840846699/5/0.000237681693397
+INFO: SAMPLE 11: <w> h t j e t i </w>  Cost/Len/Avg 10.3414926529/9/1.14905473921
+INFO: SOURCE: <w> e n j e <s> C i p r a <s> p r o p a l i <s> <lc> s u <rc> <s> u <s> t r a v n j u <s> p r o š l e <s> g </w> 
+INFO: TARGET: <w> b i t i </w>   
+INFO: SAMPLE 0: <w> b a t i </w>  Cost/Len/Avg 12.8882484436/7/1.84117834909
+INFO: SAMPLE 1: <w> b I t i </w>  Cost/Len/Avg 12.7092313766/7/1.81560448238
+INFO: SAMPLE 2: <w> b i </w>  Cost/Len/Avg 12.4261131287/5/2.48522262573
+INFO: SAMPLE 3: <w> d a </w>  Cost/Len/Avg 12.3692512512/5/2.47385025024
+INFO: SAMPLE 4: <w> b i j </w>  Cost/Len/Avg 12.3664932251/6/2.06108220418
+INFO: SAMPLE 5: <w> b i v </w>  Cost/Len/Avg 12.2374000549/6/2.03956667582
+INFO: SAMPLE 6: <w> b </w>  Cost/Len/Avg 12.2146930695/4/3.05367326736
+INFO: SAMPLE 7: <w> b i t </w>  Cost/Len/Avg 12.0589389801/6/2.00982316335
+INFO: SAMPLE 8: <w> b e t i </w>  Cost/Len/Avg 11.678027153/7/1.66828959329
+INFO: SAMPLE 9: <w> s </w>  Cost/Len/Avg 11.0149364471/4/2.75373411179
+INFO: SAMPLE 10: <w> b i t i </w>  Cost/Len/Avg 8.20151108201e-05/7/1.17164444029e-05
+INFO: SAMPLE 11: <w> b i t i t i </w>  Cost/Len/Avg 12.7845573425/9/1.42050637139
+INFO: SOURCE: <w> <s> b l i z i n i <s> r i j e k e <s> t o <s> <lc> n e <rc> <s> b i <s> b i l a <s> P a r a d a <s> p o n </w> 
+INFO: TARGET: <w> n e </w>     
+INFO: SAMPLE 0: <w> n e t e </w>  Cost/Len/Avg 12.9809188843/7/1.85441698347
+INFO: SAMPLE 1: <w> b i t i </w>  Cost/Len/Avg 12.4698896408/7/1.78141280583
+INFO: SAMPLE 2: <w> o n </w>  Cost/Len/Avg 11.8569612503/5/2.37139225006
+INFO: SAMPLE 3: <w> j e </w>  Cost/Len/Avg 11.7745933533/5/2.35491867065
+INFO: SAMPLE 4: <w> m i </w>  Cost/Len/Avg 11.7714195251/5/2.35428390503
+INFO: SAMPLE 5: <w> n i </w>  Cost/Len/Avg 10.9250545502/5/2.18501091003
+INFO: SAMPLE 6: <w> N e </w>  Cost/Len/Avg 10.8005065918/5/2.16010131836
+INFO: SAMPLE 7: <w> z e </w>  Cost/Len/Avg 10.1824197769/5/2.03648395538
+INFO: SAMPLE 8: <w> n a </w>  Cost/Len/Avg 9.88468551636/5/1.97693710327
+INFO: SAMPLE 9: <w> m e </w>  Cost/Len/Avg 9.44780158997/5/1.88956031799
+INFO: SAMPLE 10: <w> n e </w>  Cost/Len/Avg 0.000431712804129/5/8.63425608259e-05
+INFO: SAMPLE 11: <w> h t j e t i </w>  Cost/Len/Avg 8.70409107208/9/0.967121230231
+INFO: SOURCE: <w> <s> d r u g a <s> t v r t k a <s> i <s> d a <s> <lc> j e <rc> <s> R a m k o v s k i <s> k r i v <s> z a <s> </w> 
+INFO: TARGET: <w> b i t i </w>   
+INFO: SAMPLE 0: <w> b i t </w>  Cost/Len/Avg 12.7206859589/6/2.12011432648
+INFO: SAMPLE 1: <w> b i v </w>  Cost/Len/Avg 12.6214761734/6/2.10357936223
+INFO: SAMPLE 2: <w> d e </w>  Cost/Len/Avg 12.6157836914/5/2.52315673828
+INFO: SAMPLE 3: <w> n e </w>  Cost/Len/Avg 12.5291662216/5/2.50583324432
+INFO: SAMPLE 4: <w> š e b e </w>  Cost/Len/Avg 12.4633665085/7/1.78048092978
+INFO: SAMPLE 5: <w> b a t i </w>  Cost/Len/Avg 12.4077787399/7/1.77253981999
+INFO: SAMPLE 6: <w> b e t i </w>  Cost/Len/Avg 11.6420736313/7/1.6631533759
+INFO: SAMPLE 7: <w> o n </w>  Cost/Len/Avg 10.5157546997/5/2.10315093994
+INFO: SAMPLE 8: <w> j e </w>  Cost/Len/Avg 10.0738306046/5/2.01476612091
+INFO: SAMPLE 9: <w> b i t i </w>  Cost/Len/Avg 0.00015043572057/7/2.14908172243e-05
+INFO: SAMPLE 10: <w> h t j e t i </w>  Cost/Len/Avg 11.11024189/9/1.23447132111
+INFO: SAMPLE 11: <w> b i j e t i </w>  Cost/Len/Avg 12.7741298676/9/1.41934776306
+INFO: SOURCE: <w> j e <s> m o m č a d i <s> u <s> k o j o j <s> <lc> s u <rc> <s> n a j i s t a k n u t i j i <s> i g r </w> 
+INFO: TARGET: <w> b i t i </w>   
+INFO: SAMPLE 0:  Cost/Len/Avg 32.567565918/1/32.567565918
+INFO: SAMPLE 1: <w> b i j e </w>  Cost/Len/Avg 12.768404007/7/1.82405771528
+INFO: SAMPLE 2: <w> b </w>  Cost/Len/Avg 12.5178527832/4/3.1294631958
+INFO: SAMPLE 3: <w> b i n </w>  Cost/Len/Avg 12.3416376114/6/2.0569396019
+INFO: SAMPLE 4: <w> b i t </w>  Cost/Len/Avg 12.3198671341/6/2.05331118902
+INFO: SAMPLE 5: <w> b i v </w>  Cost/Len/Avg 12.0402975082/6/2.00671625137
+INFO: SAMPLE 6: <w> b e t i </w>  Cost/Len/Avg 11.9513587952/7/1.70733697074
+INFO: SAMPLE 7: <w> b i </w>  Cost/Len/Avg 11.7874040604/5/2.35748081207
+INFO: SAMPLE 8: <w> b i j </w>  Cost/Len/Avg 10.9892301559/6/1.83153835932
+INFO: SAMPLE 9: <w> d a </w>  Cost/Len/Avg 10.954829216/5/2.1909658432
+INFO: SAMPLE 10: <w> s </w>  Cost/Len/Avg 10.5054416656/4/2.62636041641
+INFO: SAMPLE 11: <w> b i t i </w>  Cost/Len/Avg 0.000123855963466/7/1.76937090665e-05
+INFO: SOURCE: <w> z a <s> S E T i m e s <s> k a k o <s> j e <s> <lc> t o <rc> <s> k o r a k <s> p r e m a <s> k o n a č n </w> 
+INFO: TARGET: <w> t a j </w>    
+INFO: SAMPLE 0:  Cost/Len/Avg 25.8686676025/1/25.8686676025
+INFO: SAMPLE 1: <w> t j </w>  Cost/Len/Avg 10.675409317/5/2.1350818634
+INFO: SAMPLE 2: <w> t n </w>  Cost/Len/Avg 9.64117908478/5/1.92823581696
+INFO: SAMPLE 3: <w> t a o </w>  Cost/Len/Avg 9.37324047089/6/1.56220674515
+INFO: SAMPLE 4: <w> t a t i </w>  Cost/Len/Avg 9.25343894958/7/1.32191984994
+INFO: SAMPLE 5: <w> t e </w>  Cost/Len/Avg 7.98471593857/5/1.59694318771
+INFO: SAMPLE 6: <w> t i </w>  Cost/Len/Avg 7.97391605377/5/1.59478321075
+INFO: SAMPLE 7: <w> t a t </w>  Cost/Len/Avg 7.79618787766/6/1.29936464628
+INFO: SAMPLE 8: <w> t a </w>  Cost/Len/Avg 7.74611282349/5/1.5492225647
+INFO: SAMPLE 9: <w> t o </w>  Cost/Len/Avg 6.5982375145/5/1.3196475029
+INFO: SAMPLE 10: <w> t </w>  Cost/Len/Avg 5.6188788414/4/1.40471971035
+INFO: SAMPLE 11: <w> t a j </w>  Cost/Len/Avg 0.00703398650512/6/0.00117233108419
+INFO: SOURCE: <w> <s> P D V <s> i l i <s> t r o š a r i n a <s> <lc> n a <rc> <s> o d r e đ e n e <s> p r o i z v o d e </w> 
+INFO: TARGET: <w> n a </w>     
+INFO: SAMPLE 0: <w> n a t i </w>  Cost/Len/Avg 10.8090763092/7/1.54415375846
+INFO: SAMPLE 1: <w> n m </w>  Cost/Len/Avg 10.6289892197/5/2.12579784393
+INFO: SAMPLE 2: <w> n O </w>  Cost/Len/Avg 10.5686531067/5/2.11373062134
+INFO: SAMPLE 3: <w> n o </w>  Cost/Len/Avg 10.3364038467/5/2.06728076935
+INFO: SAMPLE 4: <w> n A </w>  Cost/Len/Avg 9.7548456192/5/1.95096912384
+INFO: SAMPLE 5: <w> n i </w>  Cost/Len/Avg 9.57924747467/5/1.91584949493
+INFO: SAMPLE 6: <w> m i </w>  Cost/Len/Avg 9.533411026/5/1.9066822052
+INFO: SAMPLE 7: <w> n u </w>  Cost/Len/Avg 9.45938682556/5/1.89187736511
+INFO: SAMPLE 8: <w> n e </w>  Cost/Len/Avg 8.91096019745/5/1.78219203949
+INFO: SAMPLE 9: <w> n </w>  Cost/Len/Avg 7.414894104/4/1.853723526
+INFO: SAMPLE 10: <w> n a </w>  Cost/Len/Avg 0.00124861637596/5/0.000249723275192
+INFO: SAMPLE 11: <w> h t j e t i </w>  Cost/Len/Avg 10.380563736/9/1.15339597066
+INFO: SOURCE: <w> b v e z a o <s> s e <s> u <s> u t o r a k <s> <lc> n a <rc> <s> o s t a n a k <s> i <s> z a v r š e t a </w> 
+INFO: TARGET: <w> n a </w>     
+INFO: SAMPLE 0: <w> n o </w>  Cost/Len/Avg 10.4774799347/5/2.09549598694
+INFO: SAMPLE 1: <w> n m </w>  Cost/Len/Avg 10.3545618057/5/2.07091236115
+INFO: SAMPLE 2: <w> n a t i </w>  Cost/Len/Avg 10.2328491211/7/1.46183558873
+INFO: SAMPLE 3: <w> m i </w>  Cost/Len/Avg 10.1565351486/5/2.03130702972
+INFO: SAMPLE 4: <w> n O </w>  Cost/Len/Avg 10.1194982529/5/2.02389965057
+INFO: SAMPLE 5: <w> n i </w>  Cost/Len/Avg 9.83904361725/5/1.96780872345
+INFO: SAMPLE 6: <w> n A </w>  Cost/Len/Avg 9.47210121155/5/1.89442024231
+INFO: SAMPLE 7: <w> n u </w>  Cost/Len/Avg 9.22047996521/5/1.84409599304
+INFO: SAMPLE 8: <w> n e </w>  Cost/Len/Avg 8.68703460693/5/1.73740692139
+INFO: SAMPLE 9: <w> n </w>  Cost/Len/Avg 7.10825157166/4/1.77706289291
+INFO: SAMPLE 10: <w> n a </w>  Cost/Len/Avg 0.0015432954533/5/0.000308659090661
+INFO: SAMPLE 11: <w> h t j e t i </w>  Cost/Len/Avg 10.1930503845/9/1.13256115384
+INFO: SOURCE: <w> v s k i <s> j e <s> r e k a o <s> k a k o <s> <lc> j e <rc> <s> p o t r e b n o <s> d e f i n i r a t </w> 
+INFO: TARGET: <w> b i t i </w>   
+INFO: SAMPLE 0:  Cost/Len/Avg 31.901096344/1/31.901096344
+INFO: SAMPLE 1: <w> n e </w>  Cost/Len/Avg 12.9010629654/5/2.58021259308
+INFO: SAMPLE 2: <w> b i </w>  Cost/Len/Avg 12.2946166992/5/2.45892333984
+INFO: SAMPLE 3: <w> b i v </w>  Cost/Len/Avg 12.2385311127/6/2.03975518545
+INFO: SAMPLE 4: <w> b a t i </w>  Cost/Len/Avg 12.1849193573/7/1.74070276533
+INFO: SAMPLE 5: <w> b e t i </w>  Cost/Len/Avg 11.5817155838/7/1.65453079769
+INFO: SAMPLE 6: <w> j e </w>  Cost/Len/Avg 11.5085439682/5/2.30170879364
+INFO: SAMPLE 7: <w> o n </w>  Cost/Len/Avg 10.331202507/5/2.0662405014
+INFO: SAMPLE 8: <w> b i t i </w>  Cost/Len/Avg 0.000114199923701/7/1.63142748144e-05
+INFO: SAMPLE 9: <w> h t j e t i </w>  Cost/Len/Avg 11.8172721863/9/1.31303024292
+INFO: SAMPLE 10: <w> b i j e t i </w>  Cost/Len/Avg 12.5223560333/9/1.39137289259
+INFO: SAMPLE 11: <w> b i t i t i </w>  Cost/Len/Avg 12.6596097946/9/1.40662331051
+INFO: SOURCE: <w> š i r e n j e <s> E U <s> i <s> d o d a o <s> <lc> j e <rc> <s> P a s s y <s> p r e d s t a v l j a t </w> 
+INFO: TARGET: <w> b i t i </w>   
+INFO: SAMPLE 0:  Cost/Len/Avg 31.1102199554/1/31.1102199554
+INFO: SAMPLE 1: <w> b i t </w>  Cost/Len/Avg 12.7972478867/6/2.13287464778
+INFO: SAMPLE 2: <w> b I t i </w>  Cost/Len/Avg 12.6519002914/7/1.80741432735
+INFO: SAMPLE 3: <w> b i </w>  Cost/Len/Avg 12.6212463379/5/2.52424926758
+INFO: SAMPLE 4: <w> b a t i </w>  Cost/Len/Avg 12.1752529144/7/1.73932184492
+INFO: SAMPLE 5: <w> b i v </w>  Cost/Len/Avg 11.9291992188/6/1.98819986979
+INFO: SAMPLE 6: <w> j e </w>  Cost/Len/Avg 11.5920505524/5/2.31841011047
+INFO: SAMPLE 7: <w> b e t i </w>  Cost/Len/Avg 11.4044704437/7/1.62921006339
+INFO: SAMPLE 8: <w> o n </w>  Cost/Len/Avg 10.9793615341/5/2.19587230682
+INFO: SAMPLE 9: <w> b i t i </w>  Cost/Len/Avg 9.7630872915e-05/7/1.39472675593e-05
+INFO: SAMPLE 10: <w> h t j e t i </w>  Cost/Len/Avg 12.1659650803/9/1.35177389781
+INFO: SAMPLE 11: <w> b i j e t i </w>  Cost/Len/Avg 12.2290630341/9/1.35878478156
+INFO: Starting epoch 150
+INFO: Starting epoch 151
+INFO: Starting epoch 152
+INFO: [2018-06-11 17:54:26] Epoch: 152 Update: 51000 Loss/word: 0.0369838337984 Words/sec: 1957.73038129 Sents/sec: 223.496196032
+INFO: Starting epoch 153
+INFO: Starting epoch 154
+INFO: Starting epoch 155
+INFO: [2018-06-11 17:58:55] Epoch: 155 Update: 52000 Loss/word: 0.0355574981227 Words/sec: 1950.25478782 Sents/sec: 222.474813628
+INFO: Starting epoch 156
+INFO: Starting epoch 157
+INFO: Starting epoch 158
+INFO: [2018-06-11 18:03:23] Epoch: 158 Update: 53000 Loss/word: 0.0348825779261 Words/sec: 1957.36146126 Sents/sec: 223.300394564
+INFO: Starting epoch 159
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.636072450445 5088.57960356 8000
+INFO:tensorflow:./models_20/Croatian-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_20/Croatian-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 160
+INFO: Starting epoch 161
+INFO: [2018-06-11 18:08:11] Epoch: 161 Update: 54000 Loss/word: 0.0335535192881 Words/sec: 1821.45183629 Sents/sec: 208.144869317
+INFO: Starting epoch 162
+INFO: Starting epoch 163
+INFO: Starting epoch 164
+INFO: [2018-06-11 18:12:47] Epoch: 164 Update: 55000 Loss/word: 0.0328215365809 Words/sec: 1894.79183859 Sents/sec: 216.43899578
+INFO: Starting epoch 165
+INFO: Starting epoch 166
+INFO: Starting epoch 167
+INFO: [2018-06-11 18:17:24] Epoch: 167 Update: 56000 Loss/word: 0.0315262801388 Words/sec: 1893.29914442 Sents/sec: 216.130368942
+INFO: Starting epoch 168
+INFO: Starting epoch 169
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.654735130339 5237.88104271 8000
+INFO: Starting epoch 170
+INFO: [2018-06-11 18:22:15] Epoch: 170 Update: 57000 Loss/word: 0.030444286471 Words/sec: 1802.69152583 Sents/sec: 206.212377818
+INFO: Starting epoch 171
+INFO: Starting epoch 172
+INFO: Starting epoch 173
+INFO: [2018-06-11 18:26:53] Epoch: 173 Update: 58000 Loss/word: 0.03107124961 Words/sec: 1888.11634396 Sents/sec: 215.360539364
+INFO: Starting epoch 174
+INFO: Starting epoch 175
+INFO: Starting epoch 176
+INFO: [2018-06-11 18:31:30] Epoch: 176 Update: 59000 Loss/word: 0.0300420816165 Words/sec: 1894.8739583 Sents/sec: 216.403791996
+INFO: Starting epoch 177
+INFO: Starting epoch 178
+INFO: Starting epoch 179
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.640750321494 5126.00257195 8000
+INFO: [2018-06-11 18:36:26] Epoch: 179 Update: 60000 Loss/word: 0.028988970003 Words/sec: 1764.86995187 Sents/sec: 201.665937172
+INFO:tensorflow:./models_20/Croatian-20-char-context-base1/model.npz-60000 is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_20/Croatian-20-char-context-base1/model.npz-60000 is not in all_model_checkpoint_paths. Manually adding it.
+INFO: SOURCE: <w> c e <s> g l e d e <s> p r a v o s u đ a <s> <lc> i <rc> <s> t e m e l j n i h <s> p r a v a <s> i <s> </w> 
+INFO: TARGET: <w> i </w>            
+INFO: SAMPLE: <w> i </w> 
+INFO: SOURCE: <w> I z <s> Č l a n k a <s> i z u z e t o <s> <lc> j e <rc> <s> p r a v o <s> U r e d a <s> n a č e l n </w> 
+INFO: TARGET: <w> b i t i </w>         
+INFO: SAMPLE: <w> b i t i </w> 
+INFO: SOURCE: <w> l j a v a j u ć u <s> s u r a d n j u <s> <lc> i <rc> <s> i m a m o <s> u s k l a đ e n e <s> s t </w> 
+INFO: TARGET: <w> i </w>            
+INFO: SAMPLE: <w> i </w> 
+INFO: SOURCE: <w> a n j s k i h <s> p o s l o v a <s> t e <s> <lc> z e m l j e <rc> <s> V u k <s> D r a š k o v i ć </w> 
+INFO: TARGET: <w> z e m l j a </w>       
+INFO: SAMPLE: <w> z e m l j a </w> 
+INFO: SOURCE: <w> i k o l a <s> G r u e v s k i <s> d a o <s> <lc> j e <rc> <s> s l i č n o <s> s t a j a l i š t e </w> 
+INFO: TARGET: <w> b i t i </w>         
+INFO: SAMPLE: <w> b i t i </w> 
+INFO: SOURCE: <w> k u l t u r n o g <s> e t n i č k o g <s> <lc> i <rc> <s> v j e r s k o g <s> r a z u m i j e v </w> 
+INFO: TARGET: <w> i </w>            
+INFO: SAMPLE: <w> i </w> 
+INFO: SOURCE: <w> o j i <s> v e l i k a <s> r a z l i k a <s> <lc> u <rc> <s> s t a j a l i š t i m a <s> d v i j u </w> 
+INFO: TARGET: <w> u </w>            
+INFO: SAMPLE: <w> u </w> 
+INFO: SOURCE: <w> o v i ć <s> j e <s> n o v i n a r i m a <s> <lc> u <rc> <s> B r u s s e l s u <s> i z j a v i o <s> </w> 
+INFO: TARGET: <w> u </w>            
+INFO: SAMPLE: <w> u </w> 
+INFO: SOURCE: <w> u <s> T e z d z h a n <s> N a i m o v a <s> <lc> i <rc> <s> T e o d o r a <s> K o l a r o v a <s> o </w> 
+INFO: TARGET: <w> i </w>            
+INFO: SAMPLE: <w> i </w> 
+INFO: SOURCE: <w> o n <s> e k s p l o d i r a l a <s> j e <s> <lc> u <rc> <s> č e t v r t a k <s> u v e č e r <s> l i </w> 
+INFO: TARGET: <w> u </w>            
+INFO: SAMPLE: <w> u </w> 
+INFO: SOURCE: <w> c e <s> g l e d e <s> p r a v o s u đ a <s> <lc> i <rc> <s> t e m e l j n i h <s> p r a v a <s> i <s> </w> 
+INFO: TARGET: <w> i </w>            
+INFO: SAMPLE 0:  Cost/Len/Avg 24.9730739594/1/24.9730739594
+INFO: SAMPLE 1: <w> i a i </w>  Cost/Len/Avg 14.3418836594/6/2.39031394323
+INFO: SAMPLE 2: <w> j a </w>  Cost/Len/Avg 14.2628173828/5/2.85256347656
+INFO: SAMPLE 3: i i </w>  Cost/Len/Avg 14.2507638931/4/3.56269097328
+INFO: SAMPLE 4: <w> </w>  Cost/Len/Avg 14.1013717651/3/4.70045725505
+INFO: SAMPLE 5: <w> i a </w>  Cost/Len/Avg 12.6408109665/5/2.5281621933
+INFO: SAMPLE 6: <w> I </w>  Cost/Len/Avg 12.4636678696/4/3.11591696739
+INFO: SAMPLE 7: <w> e </w>  Cost/Len/Avg 12.4271116257/4/3.10677790642
+INFO: SAMPLE 8: <w> o </w>  Cost/Len/Avg 12.0566987991/4/3.01417469978
+INFO: SAMPLE 9: <w> u </w>  Cost/Len/Avg 11.8587474823/4/2.96468687057
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 11.0468997955/4/2.76172494888
+INFO: SAMPLE 11: <w> i </w>  Cost/Len/Avg 4.50603183708e-05/4/1.12650795927e-05
+INFO: SOURCE: <w> I z <s> Č l a n k a <s> i z u z e t o <s> <lc> j e <rc> <s> p r a v o <s> U r e d a <s> n a č e l n </w> 
+INFO: TARGET: <w> b i t i </w>         
+INFO: SAMPLE 0:  Cost/Len/Avg 33.7638969421/1/33.7638969421
+INFO: SAMPLE 1: <w> a n </w>  Cost/Len/Avg 13.7228403091/5/2.74456806183
+INFO: SAMPLE 2: <w> n e </w>  Cost/Len/Avg 13.7171144485/5/2.74342288971
+INFO: SAMPLE 3: <w> b e t i </w>  Cost/Len/Avg 13.2996797562/7/1.89995425088
+INFO: SAMPLE 4: <w> b i v </w>  Cost/Len/Avg 13.0262765884/6/2.17104609807
+INFO: SAMPLE 5: <w> b i </w>  Cost/Len/Avg 12.9570102692/5/2.59140205383
+INFO: SAMPLE 6: <w> j e </w>  Cost/Len/Avg 11.9057979584/5/2.38115959167
+INFO: SAMPLE 7: <w> o n </w>  Cost/Len/Avg 10.3644781113/5/2.07289562225
+INFO: SAMPLE 8: <w> b i t i </w>  Cost/Len/Avg 6.81863821228e-05/7/9.74091173183e-06
+INFO: SAMPLE 9: <w> b i j e t i </w>  Cost/Len/Avg 12.7424936295/9/1.4158326255
+INFO: SAMPLE 10: <w> h t j e t i </w>  Cost/Len/Avg 13.0371227264/9/1.44856919183
+INFO: SAMPLE 11: <w> b i t i t i </w>  Cost/Len/Avg 13.9176425934/9/1.5464047326
+INFO: SOURCE: <w> l j a v a j u ć u <s> s u r a d n j u <s> <lc> i <rc> <s> i m a m o <s> u s k l a đ e n e <s> s t </w> 
+INFO: TARGET: <w> i </w>            
+INFO: SAMPLE 0:  Cost/Len/Avg 25.9099769592/1/25.9099769592
+INFO: SAMPLE 1: <w> </w>  Cost/Len/Avg 14.0942468643/3/4.69808228811
+INFO: SAMPLE 2: <w> j a </w>  Cost/Len/Avg 13.9385461807/5/2.78770923615
+INFO: SAMPLE 3: <w> j </w>  Cost/Len/Avg 13.6322031021/4/3.40805077553
+INFO: SAMPLE 4: <w> i a j </w>  Cost/Len/Avg 13.3760547638/6/2.22934246063
+INFO: SAMPLE 5: <w> e </w>  Cost/Len/Avg 12.5497932434/4/3.13744831085
+INFO: SAMPLE 6: <w> i a </w>  Cost/Len/Avg 12.1357002258/5/2.42714004517
+INFO: SAMPLE 7: <w> u </w>  Cost/Len/Avg 11.8457069397/4/2.96142673492
+INFO: SAMPLE 8: <w> I </w>  Cost/Len/Avg 11.5197134018/4/2.87992835045
+INFO: SAMPLE 9: <w> a </w>  Cost/Len/Avg 11.2204446793/4/2.80511116982
+INFO: SAMPLE 10: <w> o </w>  Cost/Len/Avg 11.2057952881/4/2.80144882202
+INFO: SAMPLE 11: <w> i </w>  Cost/Len/Avg 6.17490150034e-05/4/1.54372537509e-05
+INFO: SOURCE: <w> a n j s k i h <s> p o s l o v a <s> t e <s> <lc> z e m l j e <rc> <s> V u k <s> D r a š k o v i ć </w> 
+INFO: TARGET: <w> z e m l j a </w>       
+INFO: SAMPLE 0: <w> z e m l o </w>  Cost/Len/Avg 10.3716154099/8/1.29645192623
+INFO: SAMPLE 1: <w> z e m l j </w>  Cost/Len/Avg 7.64937782288/8/0.956172227859
+INFO: SAMPLE 2: <w> z e m l j a </w>  Cost/Len/Avg 0.00139234017115/9/0.000154704463461
+INFO: SAMPLE 3: <w> z e m l j e </w>  Cost/Len/Avg 8.61449146271/9/0.957165718079
+INFO: SAMPLE 4: <w> Z e m l j a </w>  Cost/Len/Avg 8.74989414215/9/0.972210460239
+INFO: SAMPLE 5: <w> z e m l j i </w>  Cost/Len/Avg 9.0469083786/9/1.00521204207
+INFO: SAMPLE 6: <w> S e m l j a </w>  Cost/Len/Avg 9.80589962006/9/1.08954440223
+INFO: SAMPLE 7: <w> z e m l a j </w>  Cost/Len/Avg 10.3178529739/9/1.14642810822
+INFO: SAMPLE 8: <w> B e m l j a </w>  Cost/Len/Avg 10.348151207/9/1.14979457855
+INFO: SAMPLE 9: <w> M e m l j a </w>  Cost/Len/Avg 10.3852243423/9/1.15391381582
+INFO: SAMPLE 10: <w> L e m l j a </w>  Cost/Len/Avg 10.56046772/9/1.17338530223
+INFO: SAMPLE 11: <w> N e m l j a </w>  Cost/Len/Avg 10.9020233154/9/1.21133592394
+INFO: SOURCE: <w> i k o l a <s> G r u e v s k i <s> d a o <s> <lc> j e <rc> <s> s l i č n o <s> s t a j a l i š t e </w> 
+INFO: TARGET: <w> b i t i </w>         
+INFO: SAMPLE 0:  Cost/Len/Avg 33.9373970032/1/33.9373970032
+INFO: SAMPLE 1: <w> n e </w>  Cost/Len/Avg 13.6265583038/5/2.72531166077
+INFO: SAMPLE 2: <w> b a t i </w>  Cost/Len/Avg 13.4746303558/7/1.92494719369
+INFO: SAMPLE 3: <w> b I t i </w>  Cost/Len/Avg 13.4659252167/7/1.92370360238
+INFO: SAMPLE 4: <w> b i </w>  Cost/Len/Avg 13.3300161362/5/2.66600322723
+INFO: SAMPLE 5: <w> b i v </w>  Cost/Len/Avg 13.2075738907/6/2.20126231511
+INFO: SAMPLE 6: <w> b e t i </w>  Cost/Len/Avg 12.7553367615/7/1.82219096592
+INFO: SAMPLE 7: <w> j e </w>  Cost/Len/Avg 11.7175979614/5/2.34351959229
+INFO: SAMPLE 8: <w> o n </w>  Cost/Len/Avg 10.7224063873/5/2.14448127747
+INFO: SAMPLE 9: <w> b i t i </w>  Cost/Len/Avg 6.13918527961e-05/7/8.77026468515e-06
+INFO: SAMPLE 10: <w> h t j e t i </w>  Cost/Len/Avg 12.7618980408/9/1.4179886712
+INFO: SAMPLE 11: <w> b i j e t i </w>  Cost/Len/Avg 12.8689785004/9/1.42988650004
+INFO: SOURCE: <w> k u l t u r n o g <s> e t n i č k o g <s> <lc> i <rc> <s> v j e r s k o g <s> r a z u m i j e v </w> 
+INFO: TARGET: <w> i </w>            
+INFO: SAMPLE 0:  Cost/Len/Avg 24.908914566/1/24.908914566
+INFO: SAMPLE 1: <w> j a </w>  Cost/Len/Avg 15.417924881/5/3.0835849762
+INFO: SAMPLE 2: <w> j </w>  Cost/Len/Avg 14.8015861511/4/3.70039653778
+INFO: SAMPLE 3: <w> </w>  Cost/Len/Avg 14.4055356979/3/4.80184523265
+INFO: SAMPLE 4: i i </w>  Cost/Len/Avg 13.9575471878/4/3.48938679695
+INFO: SAMPLE 5: <w> i a </w>  Cost/Len/Avg 13.6218957901/5/2.72437915802
+INFO: SAMPLE 6: <w> e </w>  Cost/Len/Avg 13.2015285492/4/3.3003821373
+INFO: SAMPLE 7: <w> u </w>  Cost/Len/Avg 12.4492940903/4/3.11232352257
+INFO: SAMPLE 8: <w> I </w>  Cost/Len/Avg 12.1964817047/4/3.04912042618
+INFO: SAMPLE 9: <w> o </w>  Cost/Len/Avg 11.9879827499/4/2.99699568748
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 11.7268629074/4/2.93171572685
+INFO: SAMPLE 11: <w> i </w>  Cost/Len/Avg 2.96827456623e-05/4/7.42068641557e-06
+INFO: SOURCE: <w> o j i <s> v e l i k a <s> r a z l i k a <s> <lc> u <rc> <s> s t a j a l i š t i m a <s> d v i j u </w> 
+INFO: TARGET: <w> u </w>            
+INFO: SAMPLE 0:  Cost/Len/Avg 22.6757545471/1/22.6757545471
+INFO: SAMPLE 1: <w> u m e </w>  Cost/Len/Avg 15.9028778076/6/2.6504796346
+INFO: SAMPLE 2: <w> u t u </w>  Cost/Len/Avg 15.9012546539/6/2.65020910899
+INFO: SAMPLE 3: <w> A </w>  Cost/Len/Avg 15.8043756485/4/3.95109391212
+INFO: SAMPLE 4: <w> o </w>  Cost/Len/Avg 15.3878107071/4/3.84695267677
+INFO: SAMPLE 5: <w> </w>  Cost/Len/Avg 14.4480247498/3/4.81600824992
+INFO: SAMPLE 6: <w> i </w>  Cost/Len/Avg 14.0674285889/4/3.51685714722
+INFO: SAMPLE 7: <w> u a </w>  Cost/Len/Avg 13.0924253464/5/2.61848506927
+INFO: SAMPLE 8: <w> e </w>  Cost/Len/Avg 13.0797166824/4/3.26992917061
+INFO: SAMPLE 9: <w> U </w>  Cost/Len/Avg 12.0325231552/4/3.0081307888
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 11.9499397278/4/2.98748493195
+INFO: SAMPLE 11: <w> u </w>  Cost/Len/Avg 1.95501779672e-05/4/4.88754449179e-06
+INFO: SOURCE: <w> o v i ć <s> j e <s> n o v i n a r i m a <s> <lc> u <rc> <s> B r u s s e l s u <s> i z j a v i o <s> </w> 
+INFO: TARGET: <w> u </w>            
+INFO: SAMPLE 0:  Cost/Len/Avg 23.0982208252/1/23.0982208252
+INFO: SAMPLE 1: <w> u m </w>  Cost/Len/Avg 15.8041658401/5/3.16083316803
+INFO: SAMPLE 2: <w> u m e </w>  Cost/Len/Avg 15.6232337952/6/2.60387229919
+INFO: SAMPLE 3: <w> u u </w>  Cost/Len/Avg 15.3534097672/5/3.07068195343
+INFO: SAMPLE 4: <w> o </w>  Cost/Len/Avg 15.3012800217/4/3.82532000542
+INFO: SAMPLE 5: <w> </w>  Cost/Len/Avg 14.3025989532/3/4.76753298442
+INFO: SAMPLE 6: <w> i </w>  Cost/Len/Avg 13.7818212509/4/3.44545531273
+INFO: SAMPLE 7: <w> e </w>  Cost/Len/Avg 13.0124397278/4/3.25310993195
+INFO: SAMPLE 8: <w> U </w>  Cost/Len/Avg 12.9186468124/4/3.22966170311
+INFO: SAMPLE 9: <w> u a </w>  Cost/Len/Avg 12.1816806793/5/2.43633613586
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 11.3340024948/4/2.8335006237
+INFO: SAMPLE 11: <w> u </w>  Cost/Len/Avg 2.52721674769e-05/4/6.31804186924e-06
+INFO: SOURCE: <w> u <s> T e z d z h a n <s> N a i m o v a <s> <lc> i <rc> <s> T e o d o r a <s> K o l a r o v a <s> o </w> 
+INFO: TARGET: <w> i </w>            
+INFO: SAMPLE 0:  Cost/Len/Avg 25.4626579285/1/25.4626579285
+INFO: SAMPLE 1: <w> i a i </w>  Cost/Len/Avg 14.8413686752/6/2.47356144587
+INFO: SAMPLE 2: <w> j a </w>  Cost/Len/Avg 14.6507167816/5/2.93014335632
+INFO: SAMPLE 3: <w> </w>  Cost/Len/Avg 14.2791452408/3/4.75971508026
+INFO: SAMPLE 4: i i </w>  Cost/Len/Avg 14.0197343826/4/3.50493359566
+INFO: SAMPLE 5: <w> I </w>  Cost/Len/Avg 12.8433189392/4/3.2108297348
+INFO: SAMPLE 6: <w> e </w>  Cost/Len/Avg 12.8229598999/4/3.20573997498
+INFO: SAMPLE 7: <w> i a </w>  Cost/Len/Avg 12.6269073486/5/2.52538146973
+INFO: SAMPLE 8: <w> o </w>  Cost/Len/Avg 12.1706762314/4/3.04266905785
+INFO: SAMPLE 9: <w> u </w>  Cost/Len/Avg 12.1547889709/4/3.03869724274
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 11.1599550247/4/2.78998875618
+INFO: SAMPLE 11: <w> i </w>  Cost/Len/Avg 3.743119305e-05/4/9.3577982625e-06
+INFO: SOURCE: <w> o n <s> e k s p l o d i r a l a <s> j e <s> <lc> u <rc> <s> č e t v r t a k <s> u v e č e r <s> l i </w> 
+INFO: TARGET: <w> u </w>            
+INFO: SAMPLE 0:  Cost/Len/Avg 23.3998966217/1/23.3998966217
+INFO: SAMPLE 1: <w> u m e </w>  Cost/Len/Avg 16.0340633392/6/2.67234388987
+INFO: SAMPLE 2: <w> u m </w>  Cost/Len/Avg 15.9560222626/5/3.19120445251
+INFO: SAMPLE 3: <w> u u </w>  Cost/Len/Avg 15.2579441071/5/3.05158882141
+INFO: SAMPLE 4: <w> o </w>  Cost/Len/Avg 14.5126399994/4/3.62815999985
+INFO: SAMPLE 5: <w> </w>  Cost/Len/Avg 14.1456985474/3/4.71523284912
+INFO: SAMPLE 6: <w> i </w>  Cost/Len/Avg 13.5876712799/4/3.39691781998
+INFO: SAMPLE 7: <w> e </w>  Cost/Len/Avg 13.4442615509/4/3.36106538773
+INFO: SAMPLE 8: <w> U </w>  Cost/Len/Avg 13.2527532578/4/3.31318831444
+INFO: SAMPLE 9: <w> u a </w>  Cost/Len/Avg 12.6959962845/5/2.5391992569
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 11.8008756638/4/2.95021891594
+INFO: SAMPLE 11: <w> u </w>  Cost/Len/Avg 1.76428729901e-05/4/4.41071824753e-06
+INFO: Starting epoch 180
+INFO: Starting epoch 181
+INFO: Starting epoch 182
+INFO: [2018-06-11 18:41:00] Epoch: 182 Update: 61000 Loss/word: 0.0293891247516 Words/sec: 1919.04917403 Sents/sec: 218.559047311
+INFO: Starting epoch 183
+INFO: Starting epoch 184
+INFO: Starting epoch 185
+INFO: [2018-06-11 18:45:27] Epoch: 185 Update: 62000 Loss/word: 0.0278747733651 Words/sec: 1965.86476991 Sents/sec: 224.612386201
+INFO: Starting epoch 186
+INFO: Starting epoch 187
+INFO: Starting epoch 188
+INFO: [2018-06-11 18:49:54] Epoch: 188 Update: 63000 Loss/word: 0.0282356251743 Words/sec: 1962.63016555 Sents/sec: 223.944979654
+INFO: Starting epoch 189
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.675866238227 5406.92990582 8000
+INFO: Starting epoch 190
+INFO: Starting epoch 191
+INFO: [2018-06-11 18:54:34] Epoch: 191 Update: 64000 Loss/word: 0.0262491500988 Words/sec: 1876.97280382 Sents/sec: 214.412554761
+INFO: Starting epoch 192
+INFO: Starting epoch 193
+INFO: Starting epoch 194
+INFO: [2018-06-11 18:59:00] Epoch: 194 Update: 65000 Loss/word: 0.0261928176048 Words/sec: 1969.49263437 Sents/sec: 224.807697631
+INFO: Starting epoch 195
+INFO: Starting epoch 196
+INFO: Starting epoch 197
+INFO: [2018-06-11 19:03:27] Epoch: 197 Update: 66000 Loss/word: 0.0256819629554 Words/sec: 1962.58401268 Sents/sec: 224.181930466
+INFO: Starting epoch 198
+INFO: Starting epoch 199
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.654075479395 5232.60383516 8000
+INFO: Starting epoch 200
+INFO: [2018-06-11 19:08:06] Epoch: 200 Update: 67000 Loss/word: 0.0250036300601 Words/sec: 1875.40621967 Sents/sec: 214.511461884
+INFO: Starting epoch 201
+INFO: Starting epoch 202
+INFO: Starting epoch 203
+INFO: [2018-06-11 19:12:33] Epoch: 203 Update: 68000 Loss/word: 0.0245640004049 Words/sec: 1966.92522614 Sents/sec: 224.443619281
+INFO: Starting epoch 204
+INFO: Starting epoch 205
+INFO: Starting epoch 206
+INFO: [2018-06-11 19:17:00] Epoch: 206 Update: 69000 Loss/word: 0.0236250664818 Words/sec: 1963.87346097 Sents/sec: 224.187664843
+INFO: Starting epoch 207
+INFO: Starting epoch 208
+INFO: Starting epoch 209
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.667747756282 5341.98205026 8000
+INFO: [2018-06-11 19:21:40] Epoch: 209 Update: 70000 Loss/word: 0.0234641222273 Words/sec: 1878.00847929 Sents/sec: 214.378726178
+INFO: SOURCE: <w> S t r u č n j a c i <s> k a ž u <s> <lc> k a k o <rc> <s> b i <s> u k o l i k o <s> s e <s> n a s t </w> 
+INFO: TARGET: <w> k a k o </w>         
+INFO: SAMPLE: <w> k a k o </w> 
+INFO: SOURCE: <w> e <s> n a <s> K a z n e n o m <s> s u d u <s> <lc> u <rc> <s> S k o p l j u <s> o ž u j k a <s> n a <s> </w> 
+INFO: TARGET: <w> u </w>            
+INFO: SAMPLE: <w> u </w> 
+INFO: SOURCE: <w> n a <s> o d l u k a <s> o <s> u l a s k u <s> <lc> u <rc> <s> k o a l i c i j u <s> s a <s> S t r a n </w> 
+INFO: TARGET: <w> u </w>            
+INFO: SAMPLE: <w> u </w> 
+INFO: SOURCE: <w> o h o i d e s a <s> u b i j e n <s> j e <s> <lc> u <rc> <s> č e t v r t a k <s> u v e č e r <s> p r </w> 
+INFO: TARGET: <w> u </w>            
+INFO: SAMPLE: <w> u </w> 
+INFO: SOURCE: <w> i c e <s> S v j e t s k o g <s> k u p a <s> <lc> i <rc> <s> č e t v e r o s t r u k a <s> O l i m </w> 
+INFO: TARGET: <w> i </w>            
+INFO: SAMPLE: <w> i </w> 
+INFO: SOURCE: <w> c i m a <s> i z <s> p o l i t i č k o g <s> <lc> i <rc> <s> d r u g i h <s> p o d r u č j a <s> j a </w> 
+INFO: TARGET: <w> i </w>            
+INFO: SAMPLE: <w> i </w> 
+INFO: SOURCE: <w> e <s> p o l i c i j s k e <s> s n a g e <s> <lc> u s p o s t a v l j e n e <rc> <s> g o d i n e </w> 
+INFO: TARGET: <w> u s p o s t a v i t i </w>  
+INFO: SAMPLE: <w> u s p o s t a v i t i </w> 
+INFO: SOURCE: <w> c i r a j u <s> d e m o k r a c i j u <s> <lc> s <rc> <s> n a j g o r i m <s> p o j a v a m a <s> </w> 
+INFO: TARGET: <w> s </w>            
+INFO: SAMPLE: <w> s </w> 
+INFO: SOURCE: <w> a o <s> k a k o <s> s e <s> i m a j u ć i <s> <lc> u <rc> <s> v i d u <s> s i t u a c i j u <s> k a n </w> 
+INFO: TARGET: <w> u </w>            
+INFO: SAMPLE: <w> u </w> 
+INFO: SOURCE: <w> u r a đ i v a t i <s> p o s e b i c e <s> <lc> u <rc> <s> g o s p o d a r s t v u <s> k a z a o </w> 
+INFO: TARGET: <w> u </w>            
+INFO: SAMPLE: <w> u </w> 
+INFO: SOURCE: <w> S t r u č n j a c i <s> k a ž u <s> <lc> k a k o <rc> <s> b i <s> u k o l i k o <s> s e <s> n a s t </w> 
+INFO: TARGET: <w> k a k o </w>         
+INFO: SAMPLE 0: <w> k t o </w>  Cost/Len/Avg 12.3821907043/6/2.06369845072
+INFO: SAMPLE 1: <w> k a k r o </w>  Cost/Len/Avg 12.0010604858/8/1.50013256073
+INFO: SAMPLE 2: <w> K a k o </w>  Cost/Len/Avg 11.9452409744/7/1.70646299635
+INFO: SAMPLE 3: <w> k a t i </w>  Cost/Len/Avg 11.6229906082/7/1.66042722975
+INFO: SAMPLE 4: <w> k a k k </w>  Cost/Len/Avg 11.4877786636/7/1.64111123766
+INFO: SAMPLE 5: <w> k i k o </w>  Cost/Len/Avg 11.3798522949/7/1.62569318499
+INFO: SAMPLE 6: <w> k n o </w>  Cost/Len/Avg 11.2142505646/6/1.86904176076
+INFO: SAMPLE 7: <w> k a k i </w>  Cost/Len/Avg 11.0275993347/7/1.57537133353
+INFO: SAMPLE 8: <w> k a k </w>  Cost/Len/Avg 9.77289962769/6/1.62881660461
+INFO: SAMPLE 9: <w> k </w>  Cost/Len/Avg 9.13392925262/4/2.28348231316
+INFO: SAMPLE 10: <w> k e k o </w>  Cost/Len/Avg 9.09136962891/7/1.29876708984
+INFO: SAMPLE 11: <w> k a k o </w>  Cost/Len/Avg 0.000387273204979/7/5.53247435684e-05
+INFO: SOURCE: <w> e <s> n a <s> K a z n e n o m <s> s u d u <s> <lc> u <rc> <s> S k o p l j u <s> o ž u j k a <s> n a <s> </w> 
+INFO: TARGET: <w> u </w>            
+INFO: SAMPLE 0:  Cost/Len/Avg 23.5676689148/1/23.5676689148
+INFO: SAMPLE 1: <w> u u </w>  Cost/Len/Avg 15.5791101456/5/3.11582202911
+INFO: SAMPLE 2: <w> I </w>  Cost/Len/Avg 15.5729856491/4/3.89324641228
+INFO: SAMPLE 3: <w> A </w>  Cost/Len/Avg 15.279463768/4/3.819865942
+INFO: SAMPLE 4: <w> o </w>  Cost/Len/Avg 14.2463207245/4/3.56158018112
+INFO: SAMPLE 5: <w> u a </w>  Cost/Len/Avg 13.6998281479/5/2.73996562958
+INFO: SAMPLE 6: <w> i </w>  Cost/Len/Avg 13.3565359116/4/3.33913397789
+INFO: SAMPLE 7: <w> </w>  Cost/Len/Avg 12.6345796585/3/4.21152655284
+INFO: SAMPLE 8: <w> U </w>  Cost/Len/Avg 12.5508451462/4/3.13771128654
+INFO: SAMPLE 9: <w> e </w>  Cost/Len/Avg 11.8578624725/4/2.96446561813
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 11.3420324326/4/2.83550810814
+INFO: SAMPLE 11: <w> u </w>  Cost/Len/Avg 3.03979504679e-05/4/7.59948761697e-06
+INFO: SOURCE: <w> n a <s> o d l u k a <s> o <s> u l a s k u <s> <lc> u <rc> <s> k o a l i c i j u <s> s a <s> S t r a n </w> 
+INFO: TARGET: <w> u </w>            
+INFO: SAMPLE 0:  Cost/Len/Avg 23.8106918335/1/23.8106918335
+INFO: SAMPLE 1: <w> u m </w>  Cost/Len/Avg 16.2126140594/5/3.24252281189
+INFO: SAMPLE 2: <w> I </w>  Cost/Len/Avg 16.0762844086/4/4.01907110214
+INFO: SAMPLE 3: <w> u u </w>  Cost/Len/Avg 15.6407632828/5/3.12815265656
+INFO: SAMPLE 4: <w> o </w>  Cost/Len/Avg 14.6961288452/4/3.6740322113
+INFO: SAMPLE 5: <w> i </w>  Cost/Len/Avg 14.5970830917/4/3.64927077293
+INFO: SAMPLE 6: <w> u a </w>  Cost/Len/Avg 13.7066516876/5/2.74133033752
+INFO: SAMPLE 7: <w> </w>  Cost/Len/Avg 13.6292324066/3/4.54307746887
+INFO: SAMPLE 8: <w> e </w>  Cost/Len/Avg 13.2179965973/4/3.30449914932
+INFO: SAMPLE 9: <w> U </w>  Cost/Len/Avg 12.8771476746/4/3.21928691864
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 12.360124588/4/3.090031147
+INFO: SAMPLE 11: <w> u </w>  Cost/Len/Avg 1.28745396069e-05/4/3.21863490171e-06
+INFO: SOURCE: <w> o h o i d e s a <s> u b i j e n <s> j e <s> <lc> u <rc> <s> č e t v r t a k <s> u v e č e r <s> p r </w> 
+INFO: TARGET: <w> u </w>            
+INFO: SAMPLE 0:  Cost/Len/Avg 23.9085235596/1/23.9085235596
+INFO: SAMPLE 1: <w> u t u </w>  Cost/Len/Avg 17.3152580261/6/2.88587633769
+INFO: SAMPLE 2: <w> m </w>  Cost/Len/Avg 16.600774765/4/4.15019369125
+INFO: SAMPLE 3: <w> u u </w>  Cost/Len/Avg 15.9797716141/5/3.19595432281
+INFO: SAMPLE 4: <w> U </w>  Cost/Len/Avg 14.6823711395/4/3.67059278488
+INFO: SAMPLE 5: <w> o </w>  Cost/Len/Avg 14.5441732407/4/3.63604331017
+INFO: SAMPLE 6: <w> </w>  Cost/Len/Avg 13.7316932678/3/4.57723108927
+INFO: SAMPLE 7: <w> u a </w>  Cost/Len/Avg 13.5550231934/5/2.71100463867
+INFO: SAMPLE 8: <w> i </w>  Cost/Len/Avg 13.3747091293/4/3.34367728233
+INFO: SAMPLE 9: <w> e </w>  Cost/Len/Avg 13.2481651306/4/3.31204128265
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 11.8328781128/4/2.9582195282
+INFO: SAMPLE 11: <w> u </w>  Cost/Len/Avg 1.46626580317e-05/4/3.66566450793e-06
+INFO: SOURCE: <w> i c e <s> S v j e t s k o g <s> k u p a <s> <lc> i <rc> <s> č e t v e r o s t r u k a <s> O l i m </w> 
+INFO: TARGET: <w> i </w>            
+INFO: SAMPLE 0:  Cost/Len/Avg 24.7847118378/1/24.7847118378
+INFO: SAMPLE 1: <w> i u </w>  Cost/Len/Avg 16.1748638153/5/3.23497276306
+INFO: SAMPLE 2: <w> m i </w>  Cost/Len/Avg 15.3425140381/5/3.06850280762
+INFO: SAMPLE 3: <w> </w>  Cost/Len/Avg 13.9485569/3/4.64951896667
+INFO: SAMPLE 4: <w> i a </w>  Cost/Len/Avg 13.8662290573/5/2.77324581146
+INFO: SAMPLE 5: <w> I </w>  Cost/Len/Avg 12.7544546127/4/3.18861365318
+INFO: SAMPLE 6: <w> u </w>  Cost/Len/Avg 12.2478246689/4/3.06195616722
+INFO: SAMPLE 7: <w> o </w>  Cost/Len/Avg 12.2216339111/4/3.05540847778
+INFO: SAMPLE 8: <w> e </w>  Cost/Len/Avg 11.9468021393/4/2.98670053482
+INFO: SAMPLE 9: i i </w>  Cost/Len/Avg 11.6610422134/4/2.91526055336
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 11.2855205536/4/2.8213801384
+INFO: SAMPLE 11: <w> i </w>  Cost/Len/Avg 4.31531734648e-05/4/1.07882933662e-05
+INFO: SOURCE: <w> c i m a <s> i z <s> p o l i t i č k o g <s> <lc> i <rc> <s> d r u g i h <s> p o d r u č j a <s> j a </w> 
+INFO: TARGET: <w> i </w>            
+INFO: SAMPLE 0:  Cost/Len/Avg 25.0116710663/1/25.0116710663
+INFO: SAMPLE 1: <w> i a i </w>  Cost/Len/Avg 16.5073070526/6/2.7512178421
+INFO: SAMPLE 2: <w> m i </w>  Cost/Len/Avg 15.7965545654/5/3.15931091309
+INFO: SAMPLE 3: <w> </w>  Cost/Len/Avg 15.0184822083/3/5.00616073608
+INFO: SAMPLE 4: <w> i a </w>  Cost/Len/Avg 14.8663883209/5/2.97327766418
+INFO: SAMPLE 5: <w> u </w>  Cost/Len/Avg 13.9507808685/4/3.48769521713
+INFO: SAMPLE 6: <w> e </w>  Cost/Len/Avg 13.3711042404/4/3.3427760601
+INFO: SAMPLE 7: <w> I </w>  Cost/Len/Avg 13.1520557404/4/3.28801393509
+INFO: SAMPLE 8: <w> o </w>  Cost/Len/Avg 12.4610919952/4/3.11527299881
+INFO: SAMPLE 9: <w> a </w>  Cost/Len/Avg 12.4579458237/4/3.11448645592
+INFO: SAMPLE 10: i i </w>  Cost/Len/Avg 12.0678501129/4/3.01696252823
+INFO: SAMPLE 11: <w> i </w>  Cost/Len/Avg 1.90733881027e-05/4/4.76834702567e-06
+INFO: SOURCE: <w> e <s> p o l i c i j s k e <s> s n a g e <s> <lc> u s p o s t a v l j e n e <rc> <s> g o d i n e </w> 
+INFO: TARGET: <w> u s p o s t a v i t i </w>  
+INFO: SAMPLE 0:  Cost/Len/Avg 29.2475681305/1/29.2475681305
+INFO: SAMPLE 1: <w> u s p o s t a v s j e n </w>  Cost/Len/Avg 9.18183422089/15/0.612122281392
+INFO: SAMPLE 2: <w> u s p o s t a v t j e n </w>  Cost/Len/Avg 8.4353427887/15/0.562356185913
+INFO: SAMPLE 3: <w> e s p o s t a v i t i </w>  Cost/Len/Avg 8.07517528534/14/0.576798234667
+INFO: SAMPLE 4: <w> u s p o s t a v </w>  Cost/Len/Avg 7.9551692009/11/0.723197200082
+INFO: SAMPLE 5: <w> u s p o s t a v i j e n </w>  Cost/Len/Avg 7.29161834717/15/0.486107889811
+INFO: SAMPLE 6: <w> u s p o s t a v n j e n </w>  Cost/Len/Avg 7.27666568756/15/0.485111045837
+INFO: SAMPLE 7: <w> u s p o s t a v t i t i </w>  Cost/Len/Avg 6.73608922958/15/0.449072615306
+INFO: SAMPLE 8: <w> u s p o s t a v l j e n </w>  Cost/Len/Avg 5.45862436295/15/0.363908290863
+INFO: SAMPLE 9: <w> u s p o s t a v j e n </w>  Cost/Len/Avg 4.62295198441/14/0.330210856029
+INFO: SAMPLE 10: <w> u s p o s t a v i t i </w>  Cost/Len/Avg 0.0194459706545/14/0.00138899790389
+INFO: SAMPLE 11: <w> u s p o s t a v e n j e n </w>  Cost/Len/Avg 7.70313167572/16/0.481445729733
+INFO: SOURCE: <w> c i r a j u <s> d e m o k r a c i j u <s> <lc> s <rc> <s> n a j g o r i m <s> p o j a v a m a <s> </w> 
+INFO: TARGET: <w> s </w>            
+INFO: SAMPLE 0:  Cost/Len/Avg 28.5203838348/1/28.5203838348
+INFO: SAMPLE 1: <w> s a s </w>  Cost/Len/Avg 14.0954027176/6/2.34923378627
+INFO: SAMPLE 2: <w> s e </w>  Cost/Len/Avg 13.9674978256/5/2.79349956512
+INFO: SAMPLE 3: <w> z </w>  Cost/Len/Avg 13.8366107941/4/3.45915269852
+INFO: SAMPLE 4: <w> S </w>  Cost/Len/Avg 13.1217308044/4/3.28043270111
+INFO: SAMPLE 5: <w> s t b e </w>  Cost/Len/Avg 12.9344825745/7/1.84778322492
+INFO: SAMPLE 6: <w> s a b </w>  Cost/Len/Avg 12.5289335251/6/2.08815558751
+INFO: SAMPLE 7: <w> b i t i </w>  Cost/Len/Avg 12.3958749771/7/1.77083928244
+INFO: SAMPLE 8: <w> s e b e </w>  Cost/Len/Avg 11.9113922119/7/1.70162745884
+INFO: SAMPLE 9: <w> s a </w>  Cost/Len/Avg 11.6863927841/5/2.33727855682
+INFO: SAMPLE 10: <w> s e b </w>  Cost/Len/Avg 11.3969020844/6/1.89948368073
+INFO: SAMPLE 11: <w> s </w>  Cost/Len/Avg 4.58948306914e-05/4/1.14737076728e-05
+INFO: SOURCE: <w> a o <s> k a k o <s> s e <s> i m a j u ć i <s> <lc> u <rc> <s> v i d u <s> s i t u a c i j u <s> k a n </w> 
+INFO: TARGET: <w> u </w>            
+INFO: SAMPLE 0:  Cost/Len/Avg 23.3605136871/1/23.3605136871
+INFO: SAMPLE 1: <w> u t u </w>  Cost/Len/Avg 16.9771461487/6/2.82952435811
+INFO: SAMPLE 2: <w> A </w>  Cost/Len/Avg 16.144109726/4/4.03602743149
+INFO: SAMPLE 3: <w> m </w>  Cost/Len/Avg 15.613161087/4/3.90329027176
+INFO: SAMPLE 4: <w> U </w>  Cost/Len/Avg 15.0934295654/4/3.77335739136
+INFO: SAMPLE 5: <w> o </w>  Cost/Len/Avg 13.8000183105/4/3.45000457764
+INFO: SAMPLE 6: <w> u a </w>  Cost/Len/Avg 13.7233781815/5/2.74467563629
+INFO: SAMPLE 7: <w> </w>  Cost/Len/Avg 12.8978414536/3/4.29928048452
+INFO: SAMPLE 8: <w> e </w>  Cost/Len/Avg 12.5663795471/4/3.14159488678
+INFO: SAMPLE 9: <w> i </w>  Cost/Len/Avg 12.5451450348/4/3.1362862587
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 10.4334821701/4/2.60837054253
+INFO: SAMPLE 11: <w> u </w>  Cost/Len/Avg 4.21992590418e-05/4/1.05498147605e-05
+INFO: SOURCE: <w> u r a đ i v a t i <s> p o s e b i c e <s> <lc> u <rc> <s> g o s p o d a r s t v u <s> k a z a o </w> 
+INFO: TARGET: <w> u </w>            
+INFO: SAMPLE 0:  Cost/Len/Avg 22.9811630249/1/22.9811630249
+INFO: SAMPLE 1: <w> A </w>  Cost/Len/Avg 16.4272708893/4/4.10681772232
+INFO: SAMPLE 2: <w> u u </w>  Cost/Len/Avg 16.1956882477/5/3.23913764954
+INFO: SAMPLE 3: <w> m </w>  Cost/Len/Avg 16.1789779663/4/4.04474449158
+INFO: SAMPLE 4: <w> o </w>  Cost/Len/Avg 14.4079532623/4/3.60198831558
+INFO: SAMPLE 5: <w> U </w>  Cost/Len/Avg 14.1766529083/4/3.54416322708
+INFO: SAMPLE 6: <w> u a </w>  Cost/Len/Avg 13.6883630753/5/2.73767261505
+INFO: SAMPLE 7: <w> </w>  Cost/Len/Avg 13.2749452591/3/4.42498175303
+INFO: SAMPLE 8: <w> i </w>  Cost/Len/Avg 12.9447288513/4/3.23618221283
+INFO: SAMPLE 9: <w> e </w>  Cost/Len/Avg 12.8831357956/4/3.2207839489
+INFO: SAMPLE 10: <w> a </w>  Cost/Len/Avg 11.7837848663/4/2.94594621658
+INFO: SAMPLE 11: <w> u </w>  Cost/Len/Avg 1.72852196556e-05/4/4.3213049139e-06
+INFO: Starting epoch 210
+INFO: Starting epoch 211
+INFO: Starting epoch 212
+INFO: [2018-06-11 19:26:07] Epoch: 212 Update: 71000 Loss/word: 0.0230091525802 Words/sec: 1965.16365558 Sents/sec: 224.290051284
+INFO: Starting epoch 213
+INFO: Starting epoch 214
+INFO: Starting epoch 215
+INFO: [2018-06-11 19:30:33] Epoch: 215 Update: 72000 Loss/word: 0.0227559364002 Words/sec: 1971.48726388 Sents/sec: 224.846786432
+INFO: Starting epoch 216
+INFO: Starting epoch 217
+INFO: Starting epoch 218
+INFO: [2018-06-11 19:34:59] Epoch: 218 Update: 73000 Loss/word: 0.0228804044966 Words/sec: 1969.93441487 Sents/sec: 224.977347263
+INFO: Starting epoch 219
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.675052611221 5400.42088977 8000
+INFO: Starting epoch 220
+INFO: Starting epoch 221
+INFO: [2018-06-11 19:39:38] Epoch: 221 Update: 74000 Loss/word: 0.0222109650231 Words/sec: 1878.89687226 Sents/sec: 214.415146898
+INFO: Starting epoch 222
+INFO: Starting epoch 223
+INFO: Starting epoch 224
+INFO: [2018-06-11 19:44:14] Epoch: 224 Update: 75000 Loss/word: 0.0209553128826 Words/sec: 1902.05666091 Sents/sec: 217.358406356
+INFO: Starting epoch 225
+INFO: Starting epoch 226
+INFO: Starting epoch 227
+INFO: [2018-06-11 19:48:46] Epoch: 227 Update: 76000 Loss/word: 0.0212456930307 Words/sec: 1926.93574909 Sents/sec: 220.255699252
+INFO: Starting epoch 228
+INFO: Starting epoch 229
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.688676070035 5509.40856028 8000
+INFO: Starting epoch 230
+INFO: [2018-06-11 19:53:39] Epoch: 230 Update: 77000 Loss/word: 0.0204579757275 Words/sec: 1785.60273752 Sents/sec: 203.963778419
+INFO: Starting epoch 231
+INFO: Starting epoch 232
+INFO: Starting epoch 233
+INFO: [2018-06-11 19:58:23] Epoch: 233 Update: 78000 Loss/word: 0.0206684053051 Words/sec: 1850.55495281 Sents/sec: 211.165945842
+INFO: Starting epoch 234
+INFO: Starting epoch 235
+INFO: Starting epoch 236
+INFO: [2018-06-11 20:02:50] Epoch: 236 Update: 79000 Loss/word: 0.0201175442965 Words/sec: 1964.68545147 Sents/sec: 224.399285926
+INFO: Starting epoch 237
+INFO: Starting epoch 238
+INFO: Starting epoch 239
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.690103014668 5520.82411735 8000
+INFO: [2018-06-11 20:07:25] Epoch: 239 Update: 80000 Loss/word: 0.0195720119331 Words/sec: 1903.72003359 Sents/sec: 217.205683451
+INFO: SOURCE: <w> C r v e n k o v s k i <s> <lc> S p o r a z u m i <rc> <s> s e <s> z a k l j u č u j u <s> k a k o </w> 
+INFO: TARGET: <w> s p o r a z u m </w>   
+INFO: SAMPLE: <w> s p o r a z u m </w> 
+INFO: SOURCE: <w> l j <s> i z j a v i o <s> j e <s> k a k o <s> <lc> j e <rc> <s> p r e d l o ž i o <s> u p u ć i v a n </w> 
+INFO: TARGET: <w> b i t i </w>       
+INFO: SAMPLE: <w> b i t i </w> 
+INFO: SOURCE: <w> o g <s> i n t e g r i t e t a <s> š t o <s> <lc> b i <rc> <s> d o v e l o <s> d o <s> s u k o b a <s> s </w> 
+INFO: TARGET: <w> b i t i </w>       
+INFO: SAMPLE: <w> b i t i </w> 
+INFO: SOURCE: <w> i n o v i ć <s> p o s t i g l i <s> s u <s> <lc> p o <rc> <s> j e d a n <s> z g o d i t a k <s> P e t </w> 
+INFO: TARGET: <w> p o </w>         
+INFO: SAMPLE: <w> p o </w> 
+INFO: SOURCE: <w> u f i n a l e <s> n a t j e c a n j a <s> <lc> z a <rc> <s> n a j b o l j u <s> f o t o g r a f i </w> 
+INFO: TARGET: <w> z a </w>         
+INFO: SAMPLE: <w> z a </w> 
+INFO: SOURCE: <w> v e r <s> I v a n o v i ć <s> r e k a o <s> <lc> j e <rc> <s> k a k o <s> j e <s> s v i j e t <s> d o b </w> 
+INFO: TARGET: <w> b i t i </w>       
+INFO: SAMPLE: <w> b i t i </w> 
+INFO: SOURCE: <w> a <s> s t i g l e <s> s u <s> l i p n j a <s> <lc> n a <rc> <s> k r a j u <s> s a m i t a <s> V i j e ć </w> 
+INFO: TARGET: <w> n a </w>         
+INFO: SAMPLE: <w> n a </w> 
+INFO: SOURCE: <w> v e z a <s> p r i z n a l e <s> k a k o <s> <lc> j e <rc> <s> M a k e d o n i j a <s> i s p u n i l </w> 
+INFO: TARGET: <w> b i t i </w>       
+INFO: SAMPLE: <w> b i t i </w> 
+INFO: SOURCE: <w> č k i m <s> s v e u č i l i š t i m a <s> <lc> o d <rc> <s> k a d a <s> s e <s> v r a t i o <s> i z <s> </w> 
+INFO: TARGET: <w> o d </w>         
+INFO: SAMPLE: <w> o d </w> 
+INFO: SOURCE: <w> k a t u r e <s> u k l j u č e n <s> j e <s> <lc> n a <rc> <s> p o p i s <s> n a j v e ć i h <s> s v j </w> 
+INFO: TARGET: <w> n a </w>         
+INFO: SAMPLE: <w> n a </w> 
+INFO: SOURCE: <w> C r v e n k o v s k i <s> <lc> S p o r a z u m i <rc> <s> s e <s> z a k l j u č u j u <s> k a k o </w> 
+INFO: TARGET: <w> s p o r a z u m </w>   
+INFO: SAMPLE 0: <w> s p </w>  Cost/Len/Avg 11.4519081116/5/2.29038162231
+INFO: SAMPLE 1: <w> s t o r a z u m </w>  Cost/Len/Avg 10.6920728683/11/0.972006624395
+INFO: SAMPLE 2: <w> s p o r a z u </w>  Cost/Len/Avg 10.1775283813/10/1.01775283813
+INFO: SAMPLE 3: <w> s p o r a z u g </w>  Cost/Len/Avg 10.02647686/11/0.911497896368
+INFO: SAMPLE 4: <w> s p o r a g u m </w>  Cost/Len/Avg 9.87892341614/11/0.898083946922
+INFO: SAMPLE 5: <w> s p a r a z u m </w>  Cost/Len/Avg 9.85276508331/11/0.895705916665
+INFO: SAMPLE 6: <w> s p o r a z a m </w>  Cost/Len/Avg 9.7066783905/11/0.882425308228
+INFO: SAMPLE 7: <w> s p o r a z </w>  Cost/Len/Avg 8.61797523499/9/0.957552803887
+INFO: SAMPLE 8: <w> s p o r a z u j </w>  Cost/Len/Avg 8.57452297211/11/0.779502088373
+INFO: SAMPLE 9: <w> S p o r a z u m </w>  Cost/Len/Avg 4.62249898911/11/0.420227180828
+INFO: SAMPLE 10: <w> s p o r a z u m </w>  Cost/Len/Avg 0.0108230449259/11/0.000983913175084
+INFO: SAMPLE 11: <w> s p o r a z u t i </w>  Cost/Len/Avg 9.98028087616/12/0.831690073013
+INFO: SOURCE: <w> l j <s> i z j a v i o <s> j e <s> k a k o <s> <lc> j e <rc> <s> p r e d l o ž i o <s> u p u ć i v a n </w> 
+INFO: TARGET: <w> b i t i </w>       
+INFO: SAMPLE 0: <w> l i </w>  Cost/Len/Avg 14.5460453033/5/2.90920906067
+INFO: SAMPLE 1: <w> š e </w>  Cost/Len/Avg 14.5447053909/5/2.90894107819
+INFO: SAMPLE 2: <w> b i v </w>  Cost/Len/Avg 14.3276815414/6/2.38794692357
+INFO: SAMPLE 3: <w> s e b e </w>  Cost/Len/Avg 14.2453956604/7/2.03505652291
+INFO: SAMPLE 4: <w> o b e </w>  Cost/Len/Avg 13.9761295319/6/2.32935492198
+INFO: SAMPLE 5: <w> a n </w>  Cost/Len/Avg 13.5440340042/5/2.70880680084
+INFO: SAMPLE 6: <w> n e </w>  Cost/Len/Avg 13.518450737/5/2.7036901474
+INFO: SAMPLE 7: <w> b e t i </w>  Cost/Len/Avg 13.1149129868/7/1.87355899811
+INFO: SAMPLE 8: <w> h t j e t i </w>  Cost/Len/Avg 13.0236368179/9/1.44707075755
+INFO: SAMPLE 9: <w> j e </w>  Cost/Len/Avg 12.4621667862/5/2.49243335724
+INFO: SAMPLE 10: <w> o n </w>  Cost/Len/Avg 9.06160354614/5/1.81232070923
+INFO: SAMPLE 11: <w> b i t i </w>  Cost/Len/Avg 0.00013684379519/7/1.95491135985e-05
+INFO: SOURCE: <w> o g <s> i n t e g r i t e t a <s> š t o <s> <lc> b i <rc> <s> d o v e l o <s> d o <s> s u k o b a <s> s </w> 
+INFO: TARGET: <w> b i t i </w>       
+INFO: SAMPLE 0:  Cost/Len/Avg 32.9036521912/1/32.9036521912
+INFO: SAMPLE 1: <w> b i </w>  Cost/Len/Avg 15.4417963028/5/3.08835926056
+INFO: SAMPLE 2: <w> b i v </w>  Cost/Len/Avg 15.3021364212/6/2.5503560702
+INFO: SAMPLE 3: <w> b I t i </w>  Cost/Len/Avg 14.9756784439/7/2.13938263484
+INFO: SAMPLE 4: <w> b i ć i </w>  Cost/Len/Avg 14.9491147995/7/2.1355878285
+INFO: SAMPLE 5: <w> b i p </w>  Cost/Len/Avg 14.7038230896/6/2.4506371816
+INFO: SAMPLE 6: <w> b i t </w>  Cost/Len/Avg 14.5599918365/6/2.42666530609
+INFO: SAMPLE 7: <w> b e t i </w>  Cost/Len/Avg 14.4660129547/7/2.06657327924
+INFO: SAMPLE 8: <w> d i </w>  Cost/Len/Avg 14.405962944/5/2.88119258881
+INFO: SAMPLE 9: <w> b a t i </w>  Cost/Len/Avg 14.3712301254/7/2.05303287506
+INFO: SAMPLE 10: <w> b i t i t i </w>  Cost/Len/Avg 13.6706399918/9/1.51895999908
+INFO: SAMPLE 11: <w> b i t i </w>  Cost/Len/Avg 6.19887850917e-06/7/8.85554072738e-07
+INFO: SOURCE: <w> i n o v i ć <s> p o s t i g l i <s> s u <s> <lc> p o <rc> <s> j e d a n <s> z g o d i t a k <s> P e t </w> 
+INFO: TARGET: <w> p o </w>         
+INFO: SAMPLE 0: <w> P o </w>  Cost/Len/Avg 11.6761388779/5/2.33522777557
+INFO: SAMPLE 1: <w> T o </w>  Cost/Len/Avg 11.6277227402/5/2.32554454803
+INFO: SAMPLE 2: <w> v o </w>  Cost/Len/Avg 11.3034887314/5/2.26069774628
+INFO: SAMPLE 3: <w> p o a </w>  Cost/Len/Avg 10.701628685/6/1.78360478083
+INFO: SAMPLE 4: <w> K o </w>  Cost/Len/Avg 10.1306657791/5/2.02613315582
+INFO: SAMPLE 5: <w> p n o </w>  Cost/Len/Avg 9.60585021973/6/1.60097503662
+INFO: SAMPLE 6: <w> t a j </w>  Cost/Len/Avg 9.33542919159/6/1.55590486526
+INFO: SAMPLE 7: <w> p j e </w>  Cost/Len/Avg 8.59783172607/6/1.43297195435
+INFO: SAMPLE 8: <w> p i </w>  Cost/Len/Avg 8.40878486633/5/1.68175697327
+INFO: SAMPLE 9: <w> p </w>  Cost/Len/Avg 7.6542391777/4/1.91355979443
+INFO: SAMPLE 10: <w> p a </w>  Cost/Len/Avg 6.70701599121/5/1.34140319824
+INFO: SAMPLE 11: <w> p o </w>  Cost/Len/Avg 0.00238581863232/5/0.000477163726464
+INFO: SOURCE: <w> u f i n a l e <s> n a t j e c a n j a <s> <lc> z a <rc> <s> n a j b o l j u <s> f o t o g r a f i </w> 
+INFO: TARGET: <w> z a </w>         
+INFO: SAMPLE 0: <w> M </w>  Cost/Len/Avg 13.2596206665/4/3.31490516663
+INFO: SAMPLE 1: <w> b i t i </w>  Cost/Len/Avg 12.9990510941/7/1.85700729915
+INFO: SAMPLE 2: <w> Z a </w>  Cost/Len/Avg 12.8265514374/5/2.56531028748
+INFO: SAMPLE 3: <w> Z </w>  Cost/Len/Avg 12.4157485962/4/3.10393714905
+INFO: SAMPLE 4: <w> Z e </w>  Cost/Len/Avg 12.3638734818/5/2.47277469635
+INFO: SAMPLE 5: <w> z n </w>  Cost/Len/Avg 12.1157674789/5/2.42315349579
+INFO: SAMPLE 6: <w> Z i </w>  Cost/Len/Avg 11.9527397156/5/2.39054794312
+INFO: SAMPLE 7: <w> S </w>  Cost/Len/Avg 11.3402662277/4/2.83506655693
+INFO: SAMPLE 8: <w> N a </w>  Cost/Len/Avg 11.1459140778/5/2.22918281555
+INFO: SAMPLE 9: <w> z </w>  Cost/Len/Avg 10.395075798/4/2.59876894951
+INFO: SAMPLE 10: <w> z e </w>  Cost/Len/Avg 10.049413681/5/2.00988273621
+INFO: SAMPLE 11: <w> z a </w>  Cost/Len/Avg 0.000141853975947/5/2.83707951894e-05
+INFO: SOURCE: <w> v e r <s> I v a n o v i ć <s> r e k a o <s> <lc> j e <rc> <s> k a k o <s> j e <s> s v i j e t <s> d o b </w> 
+INFO: TARGET: <w> b i t i </w>       
+INFO: SAMPLE 0: <w> b i </w>  Cost/Len/Avg 14.6392669678/5/2.92785339355
+INFO: SAMPLE 1: <w> b i v </w>  Cost/Len/Avg 14.6049823761/6/2.43416372935
+INFO: SAMPLE 2: <w> b i p </w>  Cost/Len/Avg 14.5475559235/6/2.42459265391
+INFO: SAMPLE 3: <w> b i t i t i </w>  Cost/Len/Avg 14.3935489655/9/1.59928321838
+INFO: SAMPLE 4: <w> a n </w>  Cost/Len/Avg 14.3310451508/5/2.86620903015
+INFO: SAMPLE 5: <w> n e </w>  Cost/Len/Avg 14.3163499832/5/2.86326999664
+INFO: SAMPLE 6: <w> h t j e t i </w>  Cost/Len/Avg 13.997718811/9/1.55530209012
+INFO: SAMPLE 7: <w> b I t i </w>  Cost/Len/Avg 13.4811878204/7/1.92588397435
+INFO: SAMPLE 8: <w> j e </w>  Cost/Len/Avg 13.0071582794/5/2.60143165588
+INFO: SAMPLE 9: <w> b e t i </w>  Cost/Len/Avg 12.3449869156/7/1.76356955937
+INFO: SAMPLE 10: <w> o n </w>  Cost/Len/Avg 11.2853841782/5/2.25707683563
+INFO: SAMPLE 11: <w> b i t i </w>  Cost/Len/Avg 3.01597392536e-05/7/4.30853417908e-06
+INFO: SOURCE: <w> a <s> s t i g l e <s> s u <s> l i p n j a <s> <lc> n a <rc> <s> k r a j u <s> s a m i t a <s> V i j e ć </w> 
+INFO: TARGET: <w> n a </w>         
+INFO: SAMPLE 0: <w> h t j e t i </w>  Cost/Len/Avg 13.4480619431/9/1.49422910478
+INFO: SAMPLE 1: <w> j a </w>  Cost/Len/Avg 12.8579483032/5/2.57158966064
+INFO: SAMPLE 2: <w> n a t i </w>  Cost/Len/Avg 12.7871303558/7/1.82673290798
+INFO: SAMPLE 3: <w> n A </w>  Cost/Len/Avg 12.6620759964/5/2.53241519928
+INFO: SAMPLE 4: <w> z a </w>  Cost/Len/Avg 12.5532598495/5/2.51065196991
+INFO: SAMPLE 5: <w> o n </w>  Cost/Len/Avg 12.0521154404/5/2.41042308807
+INFO: SAMPLE 6: <w> n i </w>  Cost/Len/Avg 12.0135688782/5/2.40271377563
+INFO: SAMPLE 7: <w> n e </w>  Cost/Len/Avg 11.3880271912/5/2.27760543823
+INFO: SAMPLE 8: <w> m i </w>  Cost/Len/Avg 11.2944488525/5/2.25888977051
+INFO: SAMPLE 9: <w> n u </w>  Cost/Len/Avg 11.0802230835/5/2.2160446167
+INFO: SAMPLE 10: <w> n </w>  Cost/Len/Avg 10.8721990585/4/2.71804976463
+INFO: SAMPLE 11: <w> n a </w>  Cost/Len/Avg 9.17890065466e-05/5/1.83578013093e-05
+INFO: SOURCE: <w> v e z a <s> p r i z n a l e <s> k a k o <s> <lc> j e <rc> <s> M a k e d o n i j a <s> i s p u n i l </w> 
+INFO: TARGET: <w> b i t i </w>       
+INFO: SAMPLE 0: <w> b I t i </w>  Cost/Len/Avg 14.5070238113/7/2.07243197305
+INFO: SAMPLE 1: <w> o b e </w>  Cost/Len/Avg 14.1561307907/6/2.35935513179
+INFO: SAMPLE 2: <w> s e b e </w>  Cost/Len/Avg 14.0424613953/7/2.00606591361
+INFO: SAMPLE 3: <w> š e </w>  Cost/Len/Avg 13.9784946442/5/2.79569892883
+INFO: SAMPLE 4: <w> j a </w>  Cost/Len/Avg 13.9579057693/5/2.79158115387
+INFO: SAMPLE 5: <w> a n </w>  Cost/Len/Avg 13.6430854797/5/2.72861709595
+INFO: SAMPLE 6: <w> n e </w>  Cost/Len/Avg 13.5303163528/5/2.70606327057
+INFO: SAMPLE 7: <w> b e t i </w>  Cost/Len/Avg 13.3422203064/7/1.90603147234
+INFO: SAMPLE 8: <w> h t j e t i </w>  Cost/Len/Avg 12.763715744/9/1.41819063822
+INFO: SAMPLE 9: <w> j e </w>  Cost/Len/Avg 12.3500671387/5/2.47001342773
+INFO: SAMPLE 10: <w> o n </w>  Cost/Len/Avg 8.9851770401/5/1.79703540802
+INFO: SAMPLE 11: <w> b i t i </w>  Cost/Len/Avg 0.000147213489981/7/2.10304985688e-05
+INFO: SOURCE: <w> č k i m <s> s v e u č i l i š t i m a <s> <lc> o d <rc> <s> k a d a <s> s e <s> v r a t i o <s> i z <s> </w> 
+INFO: TARGET: <w> o d </w>         
+INFO: SAMPLE 0:  Cost/Len/Avg 29.5494346619/1/29.5494346619
+INFO: SAMPLE 1: <w> o d a t i </w>  Cost/Len/Avg 13.4301900864/8/1.6787737608
+INFO: SAMPLE 2: <w> o ž </w>  Cost/Len/Avg 13.0825376511/5/2.61650753021
+INFO: SAMPLE 3: <w> o N </w>  Cost/Len/Avg 13.0369377136/5/2.60738754272
+INFO: SAMPLE 4: <w> i d </w>  Cost/Len/Avg 12.6017160416/5/2.52034320831
+INFO: SAMPLE 5: <w> o D </w>  Cost/Len/Avg 12.3558511734/5/2.47117023468
+INFO: SAMPLE 6: <w> O D </w>  Cost/Len/Avg 12.2026805878/5/2.44053611755
+INFO: SAMPLE 7: <w> o z </w>  Cost/Len/Avg 11.9076700211/5/2.38153400421
+INFO: SAMPLE 8: <w> o b </w>  Cost/Len/Avg 11.9031152725/5/2.3806230545
+INFO: SAMPLE 9: <w> o s </w>  Cost/Len/Avg 11.6250696182/5/2.32501392365
+INFO: SAMPLE 10: <w> o d a </w>  Cost/Len/Avg 11.553606987/6/1.9256011645
+INFO: SAMPLE 11: <w> o d </w>  Cost/Len/Avg 5.69812727917e-05/5/1.13962545583e-05
+INFO: SOURCE: <w> k a t u r e <s> u k l j u č e n <s> j e <s> <lc> n a <rc> <s> p o p i s <s> n a j v e ć i h <s> s v j </w> 
+INFO: TARGET: <w> n a </w>         
+INFO: SAMPLE 0: <w> j a </w>  Cost/Len/Avg 13.3731679916/5/2.67463359833
+INFO: SAMPLE 1: <w> n a t </w>  Cost/Len/Avg 13.3523769379/6/2.22539615631
+INFO: SAMPLE 2: <w> n A </w>  Cost/Len/Avg 12.9533433914/5/2.59066867828
+INFO: SAMPLE 3: <w> z a </w>  Cost/Len/Avg 12.9087142944/5/2.58174285889
+INFO: SAMPLE 4: <w> o n </w>  Cost/Len/Avg 12.7113399506/5/2.54226799011
+INFO: SAMPLE 5: <w> n a t i </w>  Cost/Len/Avg 12.2901525497/7/1.75573607853
+INFO: SAMPLE 6: <w> n e </w>  Cost/Len/Avg 11.8223552704/5/2.36447105408
+INFO: SAMPLE 7: <w> m i </w>  Cost/Len/Avg 11.7924098969/5/2.35848197937
+INFO: SAMPLE 8: <w> n i </w>  Cost/Len/Avg 11.7619352341/5/2.35238704681
+INFO: SAMPLE 9: <w> n </w>  Cost/Len/Avg 11.6956272125/4/2.92390680313
+INFO: SAMPLE 10: <w> n u </w>  Cost/Len/Avg 11.2947311401/5/2.25894622803
+INFO: SAMPLE 11: <w> n a </w>  Cost/Len/Avg 6.61601443426e-05/5/1.32320288685e-05
+INFO: Starting epoch 240
+INFO: Starting epoch 241
+INFO: Starting epoch 242
+INFO: [2018-06-11 20:11:47] Epoch: 242 Update: 81000 Loss/word: 0.019599608885 Words/sec: 2003.8743336 Sents/sec: 228.814632711
+INFO: Starting epoch 243
+INFO: Starting epoch 244
+INFO: Starting epoch 245
+INFO: [2018-06-11 20:16:12] Epoch: 245 Update: 82000 Loss/word: 0.0185128069616 Words/sec: 1983.15217235 Sents/sec: 226.149594515
+INFO: Starting epoch 246
+INFO: Starting epoch 247
+INFO: Starting epoch 248
+INFO: [2018-06-11 20:20:34] Epoch: 248 Update: 83000 Loss/word: 0.0184912046858 Words/sec: 2000.80574205 Sents/sec: 228.49169216
+INFO: Starting epoch 249
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.692539613597 5540.31690877 8000
+INFO: Starting epoch 250
+INFO: Starting epoch 251
+INFO: [2018-06-11 20:25:07] Epoch: 251 Update: 84000 Loss/word: 0.0180151736097 Words/sec: 1923.52078978 Sents/sec: 219.515886907
+INFO: Starting epoch 252
+INFO: Starting epoch 253
+INFO: Starting epoch 254
+INFO: [2018-06-11 20:29:31] Epoch: 254 Update: 85000 Loss/word: 0.017196060579 Words/sec: 1980.99069325 Sents/sec: 226.310822223
+INFO: Starting epoch 255
+INFO: Starting epoch 256
+INFO: Starting epoch 257
+INFO: [2018-06-11 20:34:13] Epoch: 257 Update: 86000 Loss/word: 0.0176514169991 Words/sec: 1858.78822209 Sents/sec: 212.497019311
+INFO: Starting epoch 258
+INFO: Starting epoch 259
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.69577027815 5566.1622252 8000
+INFO: Starting epoch 260
+INFO: [2018-06-11 20:39:07] Epoch: 260 Update: 87000 Loss/word: 0.0164024403194 Words/sec: 1782.91974518 Sents/sec: 203.718709507
+INFO: Starting epoch 261
+INFO: Starting epoch 262
+INFO: Starting epoch 263
+INFO: [2018-06-11 20:44:05] Epoch: 263 Update: 88000 Loss/word: 0.0164313922274 Words/sec: 1758.84284353 Sents/sec: 200.807867371
+INFO: Starting epoch 264
+INFO: Starting epoch 265
+INFO: Starting epoch 266
+INFO: [2018-06-11 20:49:10] Epoch: 266 Update: 89000 Loss/word: 0.0160672058501 Words/sec: 1720.98012128 Sents/sec: 196.343181703
+INFO: Starting epoch 267
+INFO: Starting epoch 268
+INFO: Starting epoch 269
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.716941413186 5735.53130548 8000
+INFO: Early Stop!
