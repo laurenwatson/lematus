@@ -6,3 +6,12 @@ Processing ./models/Hungarian-20-char-context-base1/data/train-targets
 Done
 Starting training
 End of training
+nohup: ./run_experiment_schedule: No such file or directory
+nohup: run_experiment_schedule_20.sh: No such file or directory
+Copying data sets
+Building Dictionaries
+Processing ./models_20/Croatian-20-char-context-base1/data/train-sources
+Done
+Processing ./models_20/Croatian-20-char-context-base1/data/train-targets
+Done
+Starting training

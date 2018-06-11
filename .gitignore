@@ -1,5 +1,6 @@
 #Project specific
 models/
+models_20/
 venv/
 theano/
 tf/

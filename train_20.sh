@@ -56,7 +56,7 @@ validBurnIn=$((validBurnIn *${burn_in_for_n_epochs} / batch_size))
 
 max_epochs=1000
 
-touch output_${lang}_${experiment_id}.txt
+touch output_20_${lang}_${experiment_id}.txt
 ##had to delete weight_normalization, valid_burnin and --reload, --reload \
 #--no_reload_training_progress \
 echo "Starting training"
@@ -78,7 +78,7 @@ python ${basedir}/nematus_tf/nmt.py \
   --enc_depth 2 \
   --dec_depth 2 \
   --patience 10 \
-  --validFreq ${valid_freq} &> output_${lang}_${experiment_id}.txt
+  --validFreq ${valid_freq} &> output_20_${lang}_${experiment_id}.txt
 echo "End of training"
 
 #echo "Lemmatizing test set"
