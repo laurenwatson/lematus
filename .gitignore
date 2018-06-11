@@ -2,12 +2,14 @@
 models/
 models_20/
 models_10/
+models_1/
 venv/
 theano/
 tf/
 data/languages/
 data/languages_20/
 data/languages_10/
+data/languages_1/
 data/ud-treebanks-v2.1/
 
 # Byte-compiled / optimized / DLL files
