@@ -15,3 +15,11 @@ Done
 Processing ./models_20/Croatian-20-char-context-base1/data/train-targets
 Done
 Starting training
+End of training
+Copying data sets
+Building Dictionaries
+Processing ./models_10/English-20-char-context-base1/data/train-sources
+Done
+Processing ./models_10/English-20-char-context-base1/data/train-targets
+Done
+Starting training
