@@ -4,6 +4,7 @@ venv/
 theano/
 tf/
 data/languages/
+data/languages_20/
 data/ud-treebanks-v2.1/
 
 # Byte-compiled / optimized / DLL files
