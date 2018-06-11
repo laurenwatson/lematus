@@ -1,0 +1,8 @@
+Copying data sets
+Building Dictionaries
+Processing ./models/Hungarian-20-char-context-base1/data/train-sources
+Done
+Processing ./models/Hungarian-20-char-context-base1/data/train-targets
+Done
+Starting training
+End of training
