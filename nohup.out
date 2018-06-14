@@ -23,3 +23,88 @@ Done
 Processing ./models_10/English-20-char-context-base1/data/train-targets
 Done
 Starting training
+End of training
+Copying data sets
+Building Dictionaries
+Processing ./models_20/French-20-char-context-base1/data/train-sources
+Done
+Processing ./models_20/French-20-char-context-base1/data/train-targets
+Done
+Starting training
+End of training
+Copying data sets
+cp: ./data/languages_10English-20-char-context/train-*: No such file or directory
+cp: ./data/languages_10English-20-char-context/test-*: No such file or directory
+cp: ./data/languages_10English-20-char-context/dev-*: No such file or directory
+Building Dictionaries
+Processing ./models_1/English-20-char-context-base1/data/train-sources
+Traceback (most recent call last):
+  File "./data/build_dictionary.py", line 40, in <module>
+    main()
+  File "./data/build_dictionary.py", line 15, in main
+    with open(filename, 'r') as f:
+IOError: [Errno 2] No such file or directory: './models_1/English-20-char-context-base1/data/train-sources'
+wc: ./models_1/English-20-char-context-base1/data/train-sources.json: open: No such file or directory
+wc: ./models_1/English-20-char-context-base1/data/train-targets.json: open: No such file or directory
+wc: ./models_1/English-20-char-context-base1/data/train-sources: open: No such file or directory
+wc: ./models_1/English-20-char-context-base1/data/train-sources: open: No such file or directory
+Starting training
+End of training
+Copying data sets
+cp: ./data/languages_10English-20-char-context/train-*: No such file or directory
+cp: ./data/languages_10English-20-char-context/test-*: No such file or directory
+cp: ./data/languages_10English-20-char-context/dev-*: No such file or directory
+Building Dictionaries
+Processing ./models_1/English-20-char-context-base1/data/train-sources
+Traceback (most recent call last):
+  File "./data/build_dictionary.py", line 40, in <module>
+    main()
+  File "./data/build_dictionary.py", line 15, in main
+    with open(filename, 'r') as f:
+IOError: [Errno 2] No such file or directory: './models_1/English-20-char-context-base1/data/train-sources'
+wc: ./models_1/English-20-char-context-base1/data/train-sources.json: open: No such file or directory
+wc: ./models_1/English-20-char-context-base1/data/train-targets.json: open: No such file or directory
+wc: ./models_1/English-20-char-context-base1/data/train-sources: open: No such file or directory
+wc: ./models_1/English-20-char-context-base1/data/train-sources: open: No such file or directory
+Starting training
+End of training
+Copying data sets
+Building Dictionaries
+Processing ./models_1/English-20-char-context-base1/data/train-sources
+Done
+Processing ./models_1/English-20-char-context-base1/data/train-targets
+Done
+Starting training
+End of training
+Copying data sets
+Building Dictionaries
+Processing ./models_10/French-20-char-context-base1/data/train-sources
+Done
+Processing ./models_10/French-20-char-context-base1/data/train-targets
+Done
+Starting training
+End of training
+Copying data sets
+Building Dictionaries
+Processing ./models_1/French-20-char-context-base1/data/train-sources
+Done
+Processing ./models_1/French-20-char-context-base1/data/train-targets
+Done
+Starting training
+End of training
+Copying data sets
+Building Dictionaries
+Processing ./models_1/Hungarian-20-char-context-base1/data/train-sources
+Done
+Processing ./models_1/Hungarian-20-char-context-base1/data/train-targets
+Done
+Starting training
+End of training
+Copying data sets
+Building Dictionaries
+Processing ./models_10/Hungarian-20-char-context-base1/data/train-sources
+Done
+Processing ./models_10/Hungarian-20-char-context-base1/data/train-targets
+Done
+Starting training
+End of training

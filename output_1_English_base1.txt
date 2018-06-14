@@ -1,0 +1,2302 @@
+INFO: Namespace(batch_size=60, beamFreq=10000, beam_size=12, clip_c=1, datasets=['./models_1/English-20-char-context-base1/data/train-sources', './models_1/English-20-char-context-base1/data/train-targets'], dec_base_recurrence_transition_depth=2, dec_deep_context=False, dec_depth=2, dec_high_recurrence_transition_depth=1, decay_c=0, dictionaries=['./models_1/English-20-char-context-base1/data/train-sources.json', './models_1/English-20-char-context-base1/data/train-targets.json'], dim_per_factor=[300], dispFreq=1000, dropout_embedding=0.2, dropout_hidden=0.2, dropout_source=0, dropout_target=0, embedding_size=300, enc_depth=2, enc_recurrence_transition_depth=1, factors=1, finish_after=10000000, keep_train_set_in_memory=False, learning_rate=0.0001, map_decay_c=0, max_epochs=1000, maxibatch_size=20, maxlen=75, model_version=0.2, n_best=False, n_threads=5, normalize=True, optimizer='adam', output_hidden_activation='tanh', patience=10, prior_model=None, reload=None, reload_training_progress=True, run_validation=False, sampleFreq=10000, saveFreq=30000, saveto='./models_1/English-20-char-context-base1/model.npz', shuffle_each_epoch=True, sort_by_length=True, source_dataset='./models_1/English-20-char-context-base1/data/train-sources', source_dicts=['./models_1/English-20-char-context-base1/data/train-sources.json'], source_vocab_sizes=[59], state_size=100, summaryFreq=0, summary_dir=None, target_dataset='./models_1/English-20-char-context-base1/data/train-targets', target_dict='./models_1/English-20-char-context-base1/data/train-targets.json', target_vocab_size=53, tie_decoder_embeddings=False, token_batch_size=0, translate_valid=False, translation_maxlen=200, use_dropout=True, use_layer_norm=False, validFreq=160, valid_batch_size=80, valid_datasets=['./models_1/English-20-char-context-base1/data/dev-sources', './models_1/English-20-char-context-base1/data/dev-targets'], valid_source_dataset='./models_1/English-20-char-context-base1/data/dev-sources', valid_target_dataset='./models_1/English-20-char-context-base1/data/dev-targets', valid_token_batch_size=0)
+2018-06-12 13:41:39.779383: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+INFO: Building model...
+WARNING:tensorflow:From /Users/laurenwatson/lematus_copy/nematus_tf/layers.py:518: calling reduce_max (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+WARNING: From /Users/laurenwatson/lematus_copy/nematus_tf/layers.py:518: calling reduce_max (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+WARNING:tensorflow:From /Users/laurenwatson/lematus_copy/nematus_tf/layers.py:521: calling reduce_sum (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+WARNING: From /Users/laurenwatson/lematus_copy/nematus_tf/layers.py:521: calling reduce_sum (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+WARNING:tensorflow:From /Users/laurenwatson/lematus_copy/nematus_tf/model.py:405: calling reduce_mean (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+WARNING: From /Users/laurenwatson/lematus_copy/nematus_tf/model.py:405: calling reduce_mean (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+INFO: Initializing model parameters from scratch...
+INFO: Done
+INFO: Reading data...
+INFO: Done
+INFO: Initial uidx=0
+INFO: Starting epoch 0
+INFO: Starting epoch 1
+INFO: Starting epoch 2
+INFO: Starting epoch 3
+INFO: Starting epoch 4
+INFO: Starting epoch 5
+INFO: Starting epoch 6
+INFO: Starting epoch 7
+INFO: Starting epoch 8
+INFO: Starting epoch 9
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 20.9920688629 16793.6550903 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 10
+INFO: Starting epoch 11
+INFO: Starting epoch 12
+INFO: Starting epoch 13
+INFO: Starting epoch 14
+INFO: Starting epoch 15
+INFO: Starting epoch 16
+INFO: Starting epoch 17
+INFO: Starting epoch 18
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 18.6193926239 14895.5140991 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 19
+INFO: Starting epoch 20
+INFO: Starting epoch 21
+INFO: Starting epoch 22
+INFO: Starting epoch 23
+INFO: Starting epoch 24
+INFO: Starting epoch 25
+INFO: Starting epoch 26
+INFO: Starting epoch 27
+INFO: Starting epoch 28
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 16.6704886627 13336.3909302 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 29
+INFO: Starting epoch 30
+INFO: Starting epoch 31
+INFO: Starting epoch 32
+INFO: Starting epoch 33
+INFO: Starting epoch 34
+INFO: Starting epoch 35
+INFO: Starting epoch 36
+INFO: Starting epoch 37
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 15.8779749298 12702.3799438 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 38
+INFO: Starting epoch 39
+INFO: Starting epoch 40
+INFO: Starting epoch 41
+INFO: Starting epoch 42
+INFO: Starting epoch 43
+INFO: Starting epoch 44
+INFO: Starting epoch 45
+INFO: Starting epoch 46
+INFO: Starting epoch 47
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 15.3615393066 12289.2314453 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 48
+INFO: Starting epoch 49
+INFO: Starting epoch 50
+INFO: Starting epoch 51
+INFO: Starting epoch 52
+INFO: Starting epoch 53
+INFO: Starting epoch 54
+INFO: Starting epoch 55
+INFO: Starting epoch 56
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 14.760580368 11808.4642944 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 57
+INFO: Starting epoch 58
+INFO: [2018-06-12 13:46:17] Epoch: 58 Update: 1000 Loss/word: 2.3300306302 Words/sec: 1610.66899284 Sents/sec: 216.065576605
+INFO: Starting epoch 59
+INFO: Starting epoch 60
+INFO: Starting epoch 61
+INFO: Starting epoch 62
+INFO: Starting epoch 63
+INFO: Starting epoch 64
+INFO: Starting epoch 65
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 14.5164346313 11613.1477051 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 66
+INFO: Starting epoch 67
+INFO: Starting epoch 68
+INFO: Starting epoch 69
+INFO: Starting epoch 70
+INFO: Starting epoch 71
+INFO: Starting epoch 72
+INFO: Starting epoch 73
+INFO: Starting epoch 74
+INFO: Starting epoch 75
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 14.3242418671 11459.3934937 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 76
+INFO: Starting epoch 77
+INFO: Starting epoch 78
+INFO: Starting epoch 79
+INFO: Starting epoch 80
+INFO: Starting epoch 81
+INFO: Starting epoch 82
+INFO: Starting epoch 83
+INFO: Starting epoch 84
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 14.2579262543 11406.3410034 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 85
+INFO: Starting epoch 86
+INFO: Starting epoch 87
+INFO: Starting epoch 88
+INFO: Starting epoch 89
+INFO: Starting epoch 90
+INFO: Starting epoch 91
+INFO: Starting epoch 92
+INFO: Starting epoch 93
+INFO: Starting epoch 94
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 14.1952488708 11356.1990967 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 95
+INFO: Starting epoch 96
+INFO: Starting epoch 97
+INFO: Starting epoch 98
+INFO: Starting epoch 99
+INFO: Starting epoch 100
+INFO: Starting epoch 101
+INFO: Starting epoch 102
+INFO: Starting epoch 103
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 14.1033733368 11282.6986694 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 104
+INFO: Starting epoch 105
+INFO: Starting epoch 106
+INFO: Starting epoch 107
+INFO: Starting epoch 108
+INFO: Starting epoch 109
+INFO: Starting epoch 110
+INFO: Starting epoch 111
+INFO: Starting epoch 112
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 14.073839035 11259.071228 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 113
+INFO: Starting epoch 114
+INFO: Starting epoch 115
+INFO: Starting epoch 116
+INFO: Starting epoch 117
+INFO: [2018-06-12 13:51:07] Epoch: 117 Update: 2000 Loss/word: 1.78876243834 Words/sec: 1516.74596226 Sents/sec: 203.436396909
+INFO: Starting epoch 118
+INFO: Starting epoch 119
+INFO: Starting epoch 120
+INFO: Starting epoch 121
+INFO: Starting epoch 122
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 13.9796569061 11183.7255249 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 123
+INFO: Starting epoch 124
+INFO: Starting epoch 125
+INFO: Starting epoch 126
+INFO: Starting epoch 127
+INFO: Starting epoch 128
+INFO: Starting epoch 129
+INFO: Starting epoch 130
+INFO: Starting epoch 131
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 13.9647808838 11171.824707 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 132
+INFO: Starting epoch 133
+INFO: Starting epoch 134
+INFO: Starting epoch 135
+INFO: Starting epoch 136
+INFO: Starting epoch 137
+INFO: Starting epoch 138
+INFO: Starting epoch 139
+INFO: Starting epoch 140
+INFO: Starting epoch 141
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 13.9017284012 11121.3827209 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 142
+INFO: Starting epoch 143
+INFO: Starting epoch 144
+INFO: Starting epoch 145
+INFO: Starting epoch 146
+INFO: Starting epoch 147
+INFO: Starting epoch 148
+INFO: Starting epoch 149
+INFO: Starting epoch 150
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 13.8572901154 11085.8320923 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 151
+INFO: Starting epoch 152
+INFO: Starting epoch 153
+INFO: Starting epoch 154
+INFO: Starting epoch 155
+INFO: Starting epoch 156
+INFO: Starting epoch 157
+INFO: Starting epoch 158
+INFO: Starting epoch 159
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 13.820509491 11056.4075928 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 160
+INFO: Starting epoch 161
+INFO: Starting epoch 162
+INFO: Starting epoch 163
+INFO: Starting epoch 164
+INFO: Starting epoch 165
+INFO: Starting epoch 166
+INFO: Starting epoch 167
+INFO: Starting epoch 168
+INFO: Starting epoch 169
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 13.7180302811 10974.4242249 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 170
+INFO: Starting epoch 171
+INFO: Starting epoch 172
+INFO: Starting epoch 173
+INFO: Starting epoch 174
+INFO: Starting epoch 175
+INFO: Starting epoch 176
+INFO: [2018-06-12 13:55:30] Epoch: 176 Update: 3000 Loss/word: 1.70423361351 Words/sec: 1667.72017591 Sents/sec: 223.563746632
+INFO: Starting epoch 177
+INFO: Starting epoch 178
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 13.664729805 10931.783844 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 179
+INFO: Starting epoch 180
+INFO: Starting epoch 181
+INFO: Starting epoch 182
+INFO: Starting epoch 183
+INFO: Starting epoch 184
+INFO: Starting epoch 185
+INFO: Starting epoch 186
+INFO: Starting epoch 187
+INFO: Starting epoch 188
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 13.5702610397 10856.2088318 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 189
+INFO: Starting epoch 190
+INFO: Starting epoch 191
+INFO: Starting epoch 192
+INFO: Starting epoch 193
+INFO: Starting epoch 194
+INFO: Starting epoch 195
+INFO: Starting epoch 196
+INFO: Starting epoch 197
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 13.4833998871 10786.7199097 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 198
+INFO: Starting epoch 199
+INFO: Starting epoch 200
+INFO: Starting epoch 201
+INFO: Starting epoch 202
+INFO: Starting epoch 203
+INFO: Starting epoch 204
+INFO: Starting epoch 205
+INFO: Starting epoch 206
+INFO: Starting epoch 207
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 13.3424271393 10673.9417114 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 208
+INFO: Starting epoch 209
+INFO: Starting epoch 210
+INFO: Starting epoch 211
+INFO: Starting epoch 212
+INFO: Starting epoch 213
+INFO: Starting epoch 214
+INFO: Starting epoch 215
+INFO: Starting epoch 216
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 13.0803025055 10464.2420044 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 217
+INFO: Starting epoch 218
+INFO: Starting epoch 219
+INFO: Starting epoch 220
+INFO: Starting epoch 221
+INFO: Starting epoch 222
+INFO: Starting epoch 223
+INFO: Starting epoch 224
+INFO: Starting epoch 225
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 12.8188777924 10255.1022339 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 226
+INFO: Starting epoch 227
+INFO: Starting epoch 228
+INFO: Starting epoch 229
+INFO: Starting epoch 230
+INFO: Starting epoch 231
+INFO: Starting epoch 232
+INFO: Starting epoch 233
+INFO: Starting epoch 234
+INFO: Starting epoch 235
+INFO: [2018-06-12 13:59:58] Epoch: 235 Update: 4000 Loss/word: 1.57836949168 Words/sec: 1634.5570839 Sents/sec: 219.21204143
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 12.5042032242 10003.3625793 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 236
+INFO: Starting epoch 237
+INFO: Starting epoch 238
+INFO: Starting epoch 239
+INFO: Starting epoch 240
+INFO: Starting epoch 241
+INFO: Starting epoch 242
+INFO: Starting epoch 243
+INFO: Starting epoch 244
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 12.3437361908 9874.98895264 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 245
+INFO: Starting epoch 246
+INFO: Starting epoch 247
+INFO: Starting epoch 248
+INFO: Starting epoch 249
+INFO: Starting epoch 250
+INFO: Starting epoch 251
+INFO: Starting epoch 252
+INFO: Starting epoch 253
+INFO: Starting epoch 254
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 12.0169733047 9613.5786438 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 255
+INFO: Starting epoch 256
+INFO: Starting epoch 257
+INFO: Starting epoch 258
+INFO: Starting epoch 259
+INFO: Starting epoch 260
+INFO: Starting epoch 261
+INFO: Starting epoch 262
+INFO: Starting epoch 263
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 11.8707633591 9496.61068726 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 264
+INFO: Starting epoch 265
+INFO: Starting epoch 266
+INFO: Starting epoch 267
+INFO: Starting epoch 268
+INFO: Starting epoch 269
+INFO: Starting epoch 270
+INFO: Starting epoch 271
+INFO: Starting epoch 272
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 11.6455259323 9316.42074585 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 273
+INFO: Starting epoch 274
+INFO: Starting epoch 275
+INFO: Starting epoch 276
+INFO: Starting epoch 277
+INFO: Starting epoch 278
+INFO: Starting epoch 279
+INFO: Starting epoch 280
+INFO: Starting epoch 281
+INFO: Starting epoch 282
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 11.4512848282 9161.02786255 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 283
+INFO: Starting epoch 284
+INFO: Starting epoch 285
+INFO: Starting epoch 286
+INFO: Starting epoch 287
+INFO: Starting epoch 288
+INFO: Starting epoch 289
+INFO: Starting epoch 290
+INFO: Starting epoch 291
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 11.3622525787 9089.80206299 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 292
+INFO: Starting epoch 293
+INFO: Starting epoch 294
+INFO: [2018-06-12 14:04:25] Epoch: 294 Update: 5000 Loss/word: 1.36425423462 Words/sec: 1642.63779576 Sents/sec: 220.437990428
+INFO: Starting epoch 295
+INFO: Starting epoch 296
+INFO: Starting epoch 297
+INFO: Starting epoch 298
+INFO: Starting epoch 299
+INFO: Starting epoch 300
+INFO: Starting epoch 301
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 11.0880791855 8870.46334839 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 302
+INFO: Starting epoch 303
+INFO: Starting epoch 304
+INFO: Starting epoch 305
+INFO: Starting epoch 306
+INFO: Starting epoch 307
+INFO: Starting epoch 308
+INFO: Starting epoch 309
+INFO: Starting epoch 310
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 10.861651001 8689.32080078 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 311
+INFO: Starting epoch 312
+INFO: Starting epoch 313
+INFO: Starting epoch 314
+INFO: Starting epoch 315
+INFO: Starting epoch 316
+INFO: Starting epoch 317
+INFO: Starting epoch 318
+INFO: Starting epoch 319
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 10.6613621902 8529.0897522 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 320
+INFO: Starting epoch 321
+INFO: Starting epoch 322
+INFO: Starting epoch 323
+INFO: Starting epoch 324
+INFO: Starting epoch 325
+INFO: Starting epoch 326
+INFO: Starting epoch 327
+INFO: Starting epoch 328
+INFO: Starting epoch 329
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 10.4571585846 8365.72686768 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 330
+INFO: Starting epoch 331
+INFO: Starting epoch 332
+INFO: Starting epoch 333
+INFO: Starting epoch 334
+INFO: Starting epoch 335
+INFO: Starting epoch 336
+INFO: Starting epoch 337
+INFO: Starting epoch 338
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 10.2308991241 8184.71929932 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 339
+INFO: Starting epoch 340
+INFO: Starting epoch 341
+INFO: Starting epoch 342
+INFO: Starting epoch 343
+INFO: Starting epoch 344
+INFO: Starting epoch 345
+INFO: Starting epoch 346
+INFO: Starting epoch 347
+INFO: Starting epoch 348
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 10.0399126053 8031.93008423 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 349
+INFO: Starting epoch 350
+INFO: Starting epoch 351
+INFO: Starting epoch 352
+INFO: [2018-06-12 14:08:47] Epoch: 352 Update: 6000 Loss/word: 1.17252983807 Words/sec: 1674.18452771 Sents/sec: 224.810452182
+INFO: Starting epoch 353
+INFO: Starting epoch 354
+INFO: Starting epoch 355
+INFO: Starting epoch 356
+INFO: Starting epoch 357
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 9.83129211426 7865.03369141 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 358
+INFO: Starting epoch 359
+INFO: Starting epoch 360
+INFO: Starting epoch 361
+INFO: Starting epoch 362
+INFO: Starting epoch 363
+INFO: Starting epoch 364
+INFO: Starting epoch 365
+INFO: Starting epoch 366
+INFO: Starting epoch 367
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 9.61382347107 7691.05877686 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 368
+INFO: Starting epoch 369
+INFO: Starting epoch 370
+INFO: Starting epoch 371
+INFO: Starting epoch 372
+INFO: Starting epoch 373
+INFO: Starting epoch 374
+INFO: Starting epoch 375
+INFO: Starting epoch 376
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 9.33592014313 7468.7361145 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 377
+INFO: Starting epoch 378
+INFO: Starting epoch 379
+INFO: Starting epoch 380
+INFO: Starting epoch 381
+INFO: Starting epoch 382
+INFO: Starting epoch 383
+INFO: Starting epoch 384
+INFO: Starting epoch 385
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 9.1456347847 7316.50782776 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 386
+INFO: Starting epoch 387
+INFO: Starting epoch 388
+INFO: Starting epoch 389
+INFO: Starting epoch 390
+INFO: Starting epoch 391
+INFO: Starting epoch 392
+INFO: Starting epoch 393
+INFO: Starting epoch 394
+INFO: Starting epoch 395
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 8.82330654144 7058.64523315 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 396
+INFO: Starting epoch 397
+INFO: Starting epoch 398
+INFO: Starting epoch 399
+INFO: Starting epoch 400
+INFO: Starting epoch 401
+INFO: Starting epoch 402
+INFO: Starting epoch 403
+INFO: Starting epoch 404
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 8.54998535156 6839.98828125 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 405
+INFO: Starting epoch 406
+INFO: Starting epoch 407
+INFO: Starting epoch 408
+INFO: Starting epoch 409
+INFO: Starting epoch 410
+INFO: Starting epoch 411
+INFO: [2018-06-12 14:13:09] Epoch: 411 Update: 7000 Loss/word: 0.975641279637 Words/sec: 1672.68819179 Sents/sec: 224.405147013
+INFO: Starting epoch 412
+INFO: Starting epoch 413
+INFO: Starting epoch 414
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 8.14642755508 6517.14204407 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 415
+INFO: Starting epoch 416
+INFO: Starting epoch 417
+INFO: Starting epoch 418
+INFO: Starting epoch 419
+INFO: Starting epoch 420
+INFO: Starting epoch 421
+INFO: Starting epoch 422
+INFO: Starting epoch 423
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 7.7986463356 6238.91706848 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 424
+INFO: Starting epoch 425
+INFO: Starting epoch 426
+INFO: Starting epoch 427
+INFO: Starting epoch 428
+INFO: Starting epoch 429
+INFO: Starting epoch 430
+INFO: Starting epoch 431
+INFO: Starting epoch 432
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 7.48601036072 5988.80828857 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 433
+INFO: Starting epoch 434
+INFO: Starting epoch 435
+INFO: Starting epoch 436
+INFO: Starting epoch 437
+INFO: Starting epoch 438
+INFO: Starting epoch 439
+INFO: Starting epoch 440
+INFO: Starting epoch 441
+INFO: Starting epoch 442
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 7.0234679985 5618.7743988 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 443
+INFO: Starting epoch 444
+INFO: Starting epoch 445
+INFO: Starting epoch 446
+INFO: Starting epoch 447
+INFO: Starting epoch 448
+INFO: Starting epoch 449
+INFO: Starting epoch 450
+INFO: Starting epoch 451
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 6.52293498993 5218.34799194 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 452
+INFO: Starting epoch 453
+INFO: Starting epoch 454
+INFO: Starting epoch 455
+INFO: Starting epoch 456
+INFO: Starting epoch 457
+INFO: Starting epoch 458
+INFO: Starting epoch 459
+INFO: Starting epoch 460
+INFO: Starting epoch 461
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 6.0481864357 4838.54914856 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 462
+INFO: Starting epoch 463
+INFO: Starting epoch 464
+INFO: Starting epoch 465
+INFO: Starting epoch 466
+INFO: Starting epoch 467
+INFO: Starting epoch 468
+INFO: Starting epoch 469
+INFO: Starting epoch 470
+INFO: [2018-06-12 14:17:30] Epoch: 470 Update: 8000 Loss/word: 0.715569221503 Words/sec: 1680.46490796 Sents/sec: 225.351828752
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 5.51271047592 4410.16838074 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 471
+INFO: Starting epoch 472
+INFO: Starting epoch 473
+INFO: Starting epoch 474
+INFO: Starting epoch 475
+INFO: Starting epoch 476
+INFO: Starting epoch 477
+INFO: Starting epoch 478
+INFO: Starting epoch 479
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 4.90728259087 3925.82607269 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 480
+INFO: Starting epoch 481
+INFO: Starting epoch 482
+INFO: Starting epoch 483
+INFO: Starting epoch 484
+INFO: Starting epoch 485
+INFO: Starting epoch 486
+INFO: Starting epoch 487
+INFO: Starting epoch 488
+INFO: Starting epoch 489
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 4.34365019798 3474.92015839 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 490
+INFO: Starting epoch 491
+INFO: Starting epoch 492
+INFO: Starting epoch 493
+INFO: Starting epoch 494
+INFO: Starting epoch 495
+INFO: Starting epoch 496
+INFO: Starting epoch 497
+INFO: Starting epoch 498
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 3.87569013596 3100.55210876 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 499
+INFO: Starting epoch 500
+INFO: Starting epoch 501
+INFO: Starting epoch 502
+INFO: Starting epoch 503
+INFO: Starting epoch 504
+INFO: Starting epoch 505
+INFO: Starting epoch 506
+INFO: Starting epoch 507
+INFO: Starting epoch 508
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 3.37124798775 2696.9983902 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 509
+INFO: Starting epoch 510
+INFO: Starting epoch 511
+INFO: Starting epoch 512
+INFO: Starting epoch 513
+INFO: Starting epoch 514
+INFO: Starting epoch 515
+INFO: Starting epoch 516
+INFO: Starting epoch 517
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 3.12249685287 2497.9974823 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 518
+INFO: Starting epoch 519
+INFO: Starting epoch 520
+INFO: Starting epoch 521
+INFO: Starting epoch 522
+INFO: Starting epoch 523
+INFO: Starting epoch 524
+INFO: Starting epoch 525
+INFO: Starting epoch 526
+INFO: Starting epoch 527
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 2.73677002907 2189.41602325 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 528
+INFO: Starting epoch 529
+INFO: [2018-06-12 14:21:57] Epoch: 529 Update: 9000 Loss/word: 0.392848306466 Words/sec: 1640.22808344 Sents/sec: 219.896376629
+INFO: Starting epoch 530
+INFO: Starting epoch 531
+INFO: Starting epoch 532
+INFO: Starting epoch 533
+INFO: Starting epoch 534
+INFO: Starting epoch 535
+INFO: Starting epoch 536
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 2.48371214867 1986.96971893 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 537
+INFO: Starting epoch 538
+INFO: Starting epoch 539
+INFO: Starting epoch 540
+INFO: Starting epoch 541
+INFO: Starting epoch 542
+INFO: Starting epoch 543
+INFO: Starting epoch 544
+INFO: Starting epoch 545
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 2.31596021652 1852.76817322 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 546
+INFO: Starting epoch 547
+INFO: Starting epoch 548
+INFO: Starting epoch 549
+INFO: Starting epoch 550
+INFO: Starting epoch 551
+INFO: Starting epoch 552
+INFO: Starting epoch 553
+INFO: Starting epoch 554
+INFO: Starting epoch 555
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 2.06686901093 1653.49520874 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 556
+INFO: Starting epoch 557
+INFO: Starting epoch 558
+INFO: Starting epoch 559
+INFO: Starting epoch 560
+INFO: Starting epoch 561
+INFO: Starting epoch 562
+INFO: Starting epoch 563
+INFO: Starting epoch 564
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.91824445724 1534.5955658 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 565
+INFO: Starting epoch 566
+INFO: Starting epoch 567
+INFO: Starting epoch 568
+INFO: Starting epoch 569
+INFO: Starting epoch 570
+INFO: Starting epoch 571
+INFO: Starting epoch 572
+INFO: Starting epoch 573
+INFO: Starting epoch 574
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.90116280079 1520.93024063 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 575
+INFO: Starting epoch 576
+INFO: Starting epoch 577
+INFO: Starting epoch 578
+INFO: Starting epoch 579
+INFO: Starting epoch 580
+INFO: Starting epoch 581
+INFO: Starting epoch 582
+INFO: Starting epoch 583
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.84973175049 1479.78540039 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 584
+INFO: Starting epoch 585
+INFO: Starting epoch 586
+INFO: Starting epoch 587
+INFO: Starting epoch 588
+INFO: [2018-06-12 14:26:25] Epoch: 588 Update: 10000 Loss/word: 0.186175865295 Words/sec: 1635.92503687 Sents/sec: 219.434023167
+INFO: SOURCE: <w> u e r r i l l a s <s> k i l l e d <s> a <s> <lc> m e m b e r <rc> <s> o f <s> t h e <s> K u r d i s t a n <s> D </w> 
+INFO: TARGET: <w> m e m b e r </w>       
+INFO: SAMPLE: <w> m e m b e r </w> 
+INFO: SOURCE: <w> w e <s> c a n <s> d o <s> a b o u t <s> i t <s> <lc> r e a l l y <rc> <s> p e o p l e <s> w h o <s> a r e <s> s u g </w> 
+INFO: TARGET: <w> r e a l l y </w>       
+INFO: SAMPLE: <w> r e a l l y </w> 
+INFO: SOURCE: <w> o u n d e d <s> b y <s> A m e r i c a n <s> <lc> t r o o p s <rc> <s> f o r <s> t h r e e <s> d a y s <s> n o w </w> 
+INFO: TARGET: <w> t r o o p s </w>       
+INFO: SAMPLE: <w> t r o o p </w> 
+INFO: SOURCE: <w> o v e r n m e n t <s> o f <s> b e i n g <s> <lc> b e h i n d <rc> <s> t h e <s> a s s a s s i n a t i o n <s> </w> 
+INFO: TARGET: <w> b e h i n d </w>       
+INFO: SAMPLE: <w> b e h i n d </w> 
+INFO: SOURCE: <w> b s <s> w e r e <s> d i s c o v e r e d <s> <lc> b e f o r e <rc> <s> t h e y <s> c o u l d <s> b e <s> d e t o </w> 
+INFO: TARGET: <w> b e f o r e </w>       
+INFO: SAMPLE: <w> b e f o r e </w> 
+INFO: SOURCE: <w> e c a l l e d <s> t o <s> d u t y <s> i n <s> <lc> r e c e n t <rc> <s> m o n t h s <s> s o m e t h i n g <s> C </w> 
+INFO: TARGET: <w> r e c e n t </w>       
+INFO: SAMPLE: <w> r e c e n t </w> 
+INFO: SOURCE: <w> r v e r s <s> h a v e <s> a c c u s e d <s> <lc> S h i i t e <rc> <s> e l e m e n t s <s> i n <s> t h e <s> g o </w> 
+INFO: TARGET: <w> s h i i t e </w>       
+INFO: SAMPLE: <w> s h i i t e </w> 
+INFO: SOURCE: <w> a s s i n a t e d <s> w i t h <s> h i s <s> <lc> d r i v e r <rc> <s> i n <s> t h e <s> S a l i k h <s> d i s t </w> 
+INFO: TARGET: <w> d r i v e r </w>       
+INFO: SAMPLE: <w> y r i a s e r </w> 
+INFO: SOURCE: <w> e r <s> i n <s> t h e <s> d o m i n a n t <s> <lc> S h i i t e <rc> <s> l i s t <s> t h e <s> U n i t e d <s> I r </w> 
+INFO: TARGET: <w> s h i i t e </w>       
+INFO: SAMPLE: <w> s h i i t e </w> 
+INFO: SOURCE: <w> <s> t h e m <s> p u t t i n g <s> r o a d <s> <lc> b l o c k s <rc> <s> o n <s> o u r <s> s t r e e t <s> a n d <s> </w> 
+INFO: TARGET: <w> b l o c k </w>        
+INFO: SAMPLE: <w> b l o c k </w> 
+INFO: SOURCE: <w> u e r r i l l a s <s> k i l l e d <s> a <s> <lc> m e m b e r <rc> <s> o f <s> t h e <s> K u r d i s t a n <s> D </w> 
+INFO: TARGET: <w> m e m b e r </w>       
+INFO: SAMPLE 0: <w> l e m b e r </w>  Cost/Len/Avg 6.09218502045/9/0.676909446716
+INFO: SAMPLE 1: <w> m e u b e r </w>  Cost/Len/Avg 5.90211772919/9/0.655790858799
+INFO: SAMPLE 2: <w> y e m b e r </w>  Cost/Len/Avg 5.82384634018/9/0.647094037798
+INFO: SAMPLE 3: <w> m e m i s e r </w>  Cost/Len/Avg 5.76555156708/10/0.576555156708
+INFO: SAMPLE 4: <w> m e m a s e r </w>  Cost/Len/Avg 5.6641163826/10/0.56641163826
+INFO: SAMPLE 5: <w> m e w b e r </w>  Cost/Len/Avg 5.62696075439/9/0.625217861599
+INFO: SAMPLE 6: <w> K e m b e r </w>  Cost/Len/Avg 5.54708528519/9/0.616342809465
+INFO: SAMPLE 7: <w> w e m b e r </w>  Cost/Len/Avg 5.29133892059/9/0.587926546733
+INFO: SAMPLE 8: <w> m e m k e r </w>  Cost/Len/Avg 5.12606048584/9/0.569562276204
+INFO: SAMPLE 9: <w> b e m b e r </w>  Cost/Len/Avg 4.46305608749/9/0.495895120833
+INFO: SAMPLE 10: <w> k e m b e r </w>  Cost/Len/Avg 2.27614331245/9/0.252904812495
+INFO: SAMPLE 11: <w> m e m b e r </w>  Cost/Len/Avg 0.214241445065/9/0.0238046050072
+INFO: SOURCE: <w> w e <s> c a n <s> d o <s> a b o u t <s> i t <s> <lc> r e a l l y <rc> <s> p e o p l e <s> w h o <s> a r e <s> s u g </w> 
+INFO: TARGET: <w> r e a l l y </w>       
+INFO: SAMPLE 0: <w> r e a l l i y </w>  Cost/Len/Avg 7.22145843506/10/0.722145843506
+INFO: SAMPLE 1: <w> r e i l l y </w>  Cost/Len/Avg 7.09900665283/9/0.788778516981
+INFO: SAMPLE 2: <w> n e a l l y </w>  Cost/Len/Avg 7.08888578415/9/0.787653976017
+INFO: SAMPLE 3: <w> r e a l l </w>  Cost/Len/Avg 7.00025987625/8/0.875032484531
+INFO: SAMPLE 4: <w> r e a p l y </w>  Cost/Len/Avg 6.80109405518/9/0.755677117242
+INFO: SAMPLE 5: <w> r e a l d y </w>  Cost/Len/Avg 6.73219490051/9/0.748021655613
+INFO: SAMPLE 6: <w> r e a m l y </w>  Cost/Len/Avg 6.5107178688/9/0.723413096534
+INFO: SAMPLE 7: <w> r e a l l e </w>  Cost/Len/Avg 6.48849964142/9/0.720944404602
+INFO: SAMPLE 8: <w> r e a l l i n </w>  Cost/Len/Avg 6.0211520195/10/0.60211520195
+INFO: SAMPLE 9: <w> w e a l l y </w>  Cost/Len/Avg 4.72715520859/9/0.525239467621
+INFO: SAMPLE 10: <w> r e a l l y </w>  Cost/Len/Avg 0.0368094816804/9/0.00408994240893
+INFO: SAMPLE 11: <w> r e a l l i n y </w>  Cost/Len/Avg 5.45600795746/11/0.496000723405
+INFO: SOURCE: <w> o u n d e d <s> b y <s> A m e r i c a n <s> <lc> t r o o p s <rc> <s> f o r <s> t h r e e <s> d a y s <s> n o w </w> 
+INFO: TARGET: <w> t r o o p s </w>       
+INFO: SAMPLE 0: <w> t w o o p </w>  Cost/Len/Avg 5.119389534/8/0.63992369175
+INFO: SAMPLE 1: <w> t u o o p </w>  Cost/Len/Avg 5.06419563293/8/0.633024454117
+INFO: SAMPLE 2: <w> t r o o p m </w>  Cost/Len/Avg 5.02442359924/9/0.558269288805
+INFO: SAMPLE 3: <w> t r o o u s </w>  Cost/Len/Avg 4.91410779953/9/0.546011977726
+INFO: SAMPLE 4: <w> t r o o u c </w>  Cost/Len/Avg 4.8854765892/9/0.542830732134
+INFO: SAMPLE 5: <w> t r o o c s </w>  Cost/Len/Avg 4.50030088425/9/0.500033431583
+INFO: SAMPLE 6: <w> t r o o p s s </w>  Cost/Len/Avg 4.25606012344/10/0.425606012344
+INFO: SAMPLE 7: <w> t r o o p c </w>  Cost/Len/Avg 4.159263134/9/0.462140348223
+INFO: SAMPLE 8: <w> t r o o p k </w>  Cost/Len/Avg 3.80285358429/9/0.422539287143
+INFO: SAMPLE 9: <w> t r o o p e </w>  Cost/Len/Avg 3.17238998413/9/0.352487776015
+INFO: SAMPLE 10: <w> t r o o p s </w>  Cost/Len/Avg 1.15668666363/9/0.128520740403
+INFO: SAMPLE 11: <w> t r o o p </w>  Cost/Len/Avg 0.714700102806/8/0.0893375128508
+INFO: SOURCE: <w> o v e r n m e n t <s> o f <s> b e i n g <s> <lc> b e h i n d <rc> <s> t h e <s> a s s a s s i n a t i o n <s> </w> 
+INFO: TARGET: <w> b e h i n d </w>       
+INFO: SAMPLE 0: <w> b e t i n d </w>  Cost/Len/Avg 6.45126152039/9/0.716806835598
+INFO: SAMPLE 1: <w> i t h i n d </w>  Cost/Len/Avg 6.20510435104/9/0.689456039005
+INFO: SAMPLE 2: <w> h e h i n d </w>  Cost/Len/Avg 6.18228292465/9/0.686920324961
+INFO: SAMPLE 3: <w> k e h i n d </w>  Cost/Len/Avg 6.10402965546/9/0.678225517273
+INFO: SAMPLE 4: <w> b o h i n d </w>  Cost/Len/Avg 5.92950868607/9/0.658834298452
+INFO: SAMPLE 5: <w> b e s i n d </w>  Cost/Len/Avg 5.77204322815/9/0.641338136461
+INFO: SAMPLE 6: <w> b e b i n d </w>  Cost/Len/Avg 5.24202251434/9/0.582446946038
+INFO: SAMPLE 7: <w> b e h i n </w>  Cost/Len/Avg 4.70348262787/8/0.587935328484
+INFO: SAMPLE 8: <w> b e h i n g </w>  Cost/Len/Avg 4.65072584152/9/0.516747315725
+INFO: SAMPLE 9: <w> b e h y </w>  Cost/Len/Avg 4.57680082321/7/0.65382868903
+INFO: SAMPLE 10: <w> b e w i n d </w>  Cost/Len/Avg 3.52537107468/9/0.391707897186
+INFO: SAMPLE 11: <w> b e h i n d </w>  Cost/Len/Avg 0.103416420519/9/0.011490713391
+INFO: SOURCE: <w> b s <s> w e r e <s> d i s c o v e r e d <s> <lc> b e f o r e <rc> <s> t h e y <s> c o u l d <s> b e <s> d e t o </w> 
+INFO: TARGET: <w> b e f o r e </w>       
+INFO: SAMPLE 0: <w> b e f o r e e </w>  Cost/Len/Avg 6.82028198242/10/0.682028198242
+INFO: SAMPLE 1: <w> b e f o o </w>  Cost/Len/Avg 6.27129459381/8/0.783911824226
+INFO: SAMPLE 2: <w> b e o f r e </w>  Cost/Len/Avg 6.06103610992/9/0.673448456658
+INFO: SAMPLE 3: <w> b e f o w e </w>  Cost/Len/Avg 6.04138708115/9/0.671265231238
+INFO: SAMPLE 4: <w> k e f o r e </w>  Cost/Len/Avg 5.96471834183/9/0.662746482425
+INFO: SAMPLE 5: <w> b e s o r e </w>  Cost/Len/Avg 5.74769115448/9/0.638632350498
+INFO: SAMPLE 6: <w> b e r o r e </w>  Cost/Len/Avg 5.07345294952/9/0.563716994392
+INFO: SAMPLE 7: <w> b e p o r e </w>  Cost/Len/Avg 4.97213506699/9/0.552459451887
+INFO: SAMPLE 8: <w> b e c o r e </w>  Cost/Len/Avg 4.77395820618/9/0.530439800686
+INFO: SAMPLE 9: <w> b e f e r e </w>  Cost/Len/Avg 4.69648361206/9/0.521831512451
+INFO: SAMPLE 10: <w> b e o o r e </w>  Cost/Len/Avg 3.0918879509/9/0.343543105655
+INFO: SAMPLE 11: <w> b e f o r e </w>  Cost/Len/Avg 0.127346396446/9/0.0141495996051
+INFO: SOURCE: <w> e c a l l e d <s> t o <s> d u t y <s> i n <s> <lc> r e c e n t <rc> <s> m o n t h s <s> s o m e t h i n g <s> C </w> 
+INFO: TARGET: <w> r e c e n t </w>       
+INFO: SAMPLE 0: <w> w e c e n </w>  Cost/Len/Avg 5.75625324249/8/0.719531655312
+INFO: SAMPLE 1: <w> r e m e n t </w>  Cost/Len/Avg 5.61789178848/9/0.62421019872
+INFO: SAMPLE 2: <w> y e c e n t </w>  Cost/Len/Avg 5.58400678635/9/0.620445198483
+INFO: SAMPLE 3: <w> r e v e n </w>  Cost/Len/Avg 5.49286699295/8/0.686608374119
+INFO: SAMPLE 4: <w> r e c e n e </w>  Cost/Len/Avg 5.40307378769/9/0.600341531965
+INFO: SAMPLE 5: <w> r e c e n g </w>  Cost/Len/Avg 5.24942731857/9/0.583269702064
+INFO: SAMPLE 6: <w> r e c e g t </w>  Cost/Len/Avg 5.08518457413/9/0.565020508236
+INFO: SAMPLE 7: <w> r e s e n t </w>  Cost/Len/Avg 4.42526388168/9/0.491695986854
+INFO: SAMPLE 8: <w> r e v e n t </w>  Cost/Len/Avg 4.40165138245/9/0.489072375827
+INFO: SAMPLE 9: <w> w e c e n t </w>  Cost/Len/Avg 4.09588670731/9/0.455098523034
+INFO: SAMPLE 10: <w> r e c e n </w>  Cost/Len/Avg 2.52621507645/8/0.315776884556
+INFO: SAMPLE 11: <w> r e c e n t </w>  Cost/Len/Avg 0.209824964404/9/0.0233138849338
+INFO: SOURCE: <w> r v e r s <s> h a v e <s> a c c u s e d <s> <lc> S h i i t e <rc> <s> e l e m e n t s <s> i n <s> t h e <s> g o </w> 
+INFO: TARGET: <w> s h i i t e </w>       
+INFO: SAMPLE 0: <w> b e i i t e </w>  Cost/Len/Avg 5.53289318085/9/0.614765908983
+INFO: SAMPLE 1: <w> s h i i t o </w>  Cost/Len/Avg 5.46335744858/9/0.607039716509
+INFO: SAMPLE 2: <w> s h i i s e </w>  Cost/Len/Avg 5.38469362259/9/0.598299291399
+INFO: SAMPLE 3: <w> s h i y e e </w>  Cost/Len/Avg 5.27547264099/9/0.586163626777
+INFO: SAMPLE 4: <w> b h i i t e </w>  Cost/Len/Avg 4.90561532974/9/0.545068369971
+INFO: SAMPLE 5: <w> s h i i e </w>  Cost/Len/Avg 4.51902294159/8/0.564877867699
+INFO: SAMPLE 6: <w> k h i i t e </w>  Cost/Len/Avg 4.4918551445/9/0.499095016056
+INFO: SAMPLE 7: <w> h h i i t e </w>  Cost/Len/Avg 4.27299261093/9/0.47477695677
+INFO: SAMPLE 8: <w> s h i i t </w>  Cost/Len/Avg 4.13634538651/8/0.517043173313
+INFO: SAMPLE 9: <w> T h i i t e </w>  Cost/Len/Avg 3.0664896965/9/0.340721077389
+INFO: SAMPLE 10: <w> w h i i t e </w>  Cost/Len/Avg 2.57089710236/9/0.285655233595
+INFO: SAMPLE 11: <w> s h i i t e </w>  Cost/Len/Avg 0.311417877674/9/0.0346019864082
+INFO: SOURCE: <w> a s s i n a t e d <s> w i t h <s> h i s <s> <lc> d r i v e r <rc> <s> i n <s> t h e <s> S a l i k h <s> d i s t </w> 
+INFO: TARGET: <w> d r i v e r </w>       
+INFO: SAMPLE 0: <w> d r i c e r </w>  Cost/Len/Avg 5.36893510818/9/0.596548345354
+INFO: SAMPLE 1: <w> l r i v e r </w>  Cost/Len/Avg 5.30458164215/9/0.589397960239
+INFO: SAMPLE 2: <w> d r i a s e r </w>  Cost/Len/Avg 5.29050350189/10/0.529050350189
+INFO: SAMPLE 3: <w> d r i s e r </w>  Cost/Len/Avg 5.10344457626/9/0.567049397363
+INFO: SAMPLE 4: <w> d u i v e r </w>  Cost/Len/Avg 4.9087100029/9/0.545412222544
+INFO: SAMPLE 5: <w> i r i v e r </w>  Cost/Len/Avg 4.67263031006/9/0.519181145562
+INFO: SAMPLE 6: <w> d r i g e r </w>  Cost/Len/Avg 3.81100726128/9/0.423445251253
+INFO: SAMPLE 7: <w> k r i v e r </w>  Cost/Len/Avg 3.79100227356/9/0.42122247484
+INFO: SAMPLE 8: <w> d r i k e r </w>  Cost/Len/Avg 3.75553297997/9/0.417281442218
+INFO: SAMPLE 9: <w> d r i d e r </w>  Cost/Len/Avg 3.45280718803/9/0.383645243115
+INFO: SAMPLE 10: <w> d r i b e r </w>  Cost/Len/Avg 3.05633306503/9/0.339592562781
+INFO: SAMPLE 11: <w> d r i v e r </w>  Cost/Len/Avg 0.284261316061/9/0.0315845906734
+INFO: SOURCE: <w> e r <s> i n <s> t h e <s> d o m i n a n t <s> <lc> S h i i t e <rc> <s> l i s t <s> t h e <s> U n i t e d <s> I r </w> 
+INFO: TARGET: <w> s h i i t e </w>       
+INFO: SAMPLE 0: <w> t h i i t e </w>  Cost/Len/Avg 5.30389881134/9/0.589322090149
+INFO: SAMPLE 1: <w> b h i i t e </w>  Cost/Len/Avg 5.29780626297/9/0.58864514033
+INFO: SAMPLE 2: <w> s h i i t t </w>  Cost/Len/Avg 5.14888048172/9/0.572097831302
+INFO: SAMPLE 3: <w> S h i i t e </w>  Cost/Len/Avg 5.13275194168/9/0.570305771298
+INFO: SAMPLE 4: <w> s h i y e e </w>  Cost/Len/Avg 5.06610393524/9/0.562900437249
+INFO: SAMPLE 5: <w> s h i i t o </w>  Cost/Len/Avg 5.04538345337/9/0.560598161485
+INFO: SAMPLE 6: <w> k h i i t e </w>  Cost/Len/Avg 5.04536724091/9/0.560596360101
+INFO: SAMPLE 7: <w> h h i i t e </w>  Cost/Len/Avg 4.12972545624/9/0.458858384026
+INFO: SAMPLE 8: <w> s h i i t </w>  Cost/Len/Avg 3.88886594772/8/0.486108243465
+INFO: SAMPLE 9: <w> T h i i t e </w>  Cost/Len/Avg 3.01795005798/9/0.33532778422
+INFO: SAMPLE 10: <w> w h i i t e </w>  Cost/Len/Avg 2.30233550072/9/0.255815055635
+INFO: SAMPLE 11: <w> s h i i t e </w>  Cost/Len/Avg 0.356595307589/9/0.0396217008432
+INFO: SOURCE: <w> <s> t h e m <s> p u t t i n g <s> r o a d <s> <lc> b l o c k s <rc> <s> o n <s> o u r <s> s t r e e t <s> a n d <s> </w> 
+INFO: TARGET: <w> b l o c k </w>        
+INFO: SAMPLE 0: <w> b l e c k </w>  Cost/Len/Avg 5.0429148674/8/0.630364358425
+INFO: SAMPLE 1: <w> a l o c k </w>  Cost/Len/Avg 5.02190065384/8/0.62773758173
+INFO: SAMPLE 2: <w> b l o c s s </w>  Cost/Len/Avg 4.76854372025/9/0.529838191138
+INFO: SAMPLE 3: <w> b l o c b e </w>  Cost/Len/Avg 4.70905590057/9/0.523228433397
+INFO: SAMPLE 4: <w> i l o c k </w>  Cost/Len/Avg 4.44281864166/8/0.555352330208
+INFO: SAMPLE 5: <w> b l o c m </w>  Cost/Len/Avg 4.27997541428/8/0.534996926785
+INFO: SAMPLE 6: <w> b l o c s </w>  Cost/Len/Avg 4.22840023041/8/0.528550028801
+INFO: SAMPLE 7: <w> b u o c k </w>  Cost/Len/Avg 4.02535867691/8/0.503169834614
+INFO: SAMPLE 8: <w> b l o c b s </w>  Cost/Len/Avg 3.96131396294/9/0.440145995882
+INFO: SAMPLE 9: <w> b l o c v e </w>  Cost/Len/Avg 3.88479065895/9/0.43164340655
+INFO: SAMPLE 10: <w> b l o c b </w>  Cost/Len/Avg 3.38990497589/8/0.423738121986
+INFO: SAMPLE 11: <w> b l o c k </w>  Cost/Len/Avg 0.281345278025/8/0.0351681597531
+INFO: Starting epoch 589
+INFO: Starting epoch 590
+INFO: Starting epoch 591
+INFO: Starting epoch 592
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.72984160423 1383.87328339 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 593
+INFO: Starting epoch 594
+INFO: Starting epoch 595
+INFO: Starting epoch 596
+INFO: Starting epoch 597
+INFO: Starting epoch 598
+INFO: Starting epoch 599
+INFO: Starting epoch 600
+INFO: Starting epoch 601
+INFO: Starting epoch 602
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.65702029228 1325.61623383 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 603
+INFO: Starting epoch 604
+INFO: Starting epoch 605
+INFO: Starting epoch 606
+INFO: Starting epoch 607
+INFO: Starting epoch 608
+INFO: Starting epoch 609
+INFO: Starting epoch 610
+INFO: Starting epoch 611
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.59838437557 1278.70750046 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 612
+INFO: Starting epoch 613
+INFO: Starting epoch 614
+INFO: Starting epoch 615
+INFO: Starting epoch 616
+INFO: Starting epoch 617
+INFO: Starting epoch 618
+INFO: Starting epoch 619
+INFO: Starting epoch 620
+INFO: Starting epoch 621
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.56973203659 1255.78562927 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 622
+INFO: Starting epoch 623
+INFO: Starting epoch 624
+INFO: Starting epoch 625
+INFO: Starting epoch 626
+INFO: Starting epoch 627
+INFO: Starting epoch 628
+INFO: Starting epoch 629
+INFO: Starting epoch 630
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.46949091434 1175.59273148 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 631
+INFO: Starting epoch 632
+INFO: Starting epoch 633
+INFO: Starting epoch 634
+INFO: Starting epoch 635
+INFO: Starting epoch 636
+INFO: Starting epoch 637
+INFO: Starting epoch 638
+INFO: Starting epoch 639
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.46115581989 1168.92465591 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 640
+INFO: Starting epoch 641
+INFO: Starting epoch 642
+INFO: Starting epoch 643
+INFO: Starting epoch 644
+INFO: Starting epoch 645
+INFO: Starting epoch 646
+INFO: Starting epoch 647
+INFO: [2018-06-12 14:31:00] Epoch: 647 Update: 11000 Loss/word: 0.100032043598 Words/sec: 1592.04609384 Sents/sec: 213.726238137
+INFO: Starting epoch 648
+INFO: Starting epoch 649
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.4316013813 1145.28110504 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 650
+INFO: Starting epoch 651
+INFO: Starting epoch 652
+INFO: Starting epoch 653
+INFO: Starting epoch 654
+INFO: Starting epoch 655
+INFO: Starting epoch 656
+INFO: Starting epoch 657
+INFO: Starting epoch 658
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.43055619717 1144.44495773 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 659
+INFO: Starting epoch 660
+INFO: Starting epoch 661
+INFO: Starting epoch 662
+INFO: Starting epoch 663
+INFO: Starting epoch 664
+INFO: Starting epoch 665
+INFO: Starting epoch 666
+INFO: Starting epoch 667
+INFO: Starting epoch 668
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.44769309044 1158.15447235 800
+INFO: Starting epoch 669
+INFO: Starting epoch 670
+INFO: Starting epoch 671
+INFO: Starting epoch 672
+INFO: Starting epoch 673
+INFO: Starting epoch 674
+INFO: Starting epoch 675
+INFO: Starting epoch 676
+INFO: Starting epoch 677
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.42746968269 1141.97574615 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 678
+INFO: Starting epoch 679
+INFO: Starting epoch 680
+INFO: Starting epoch 681
+INFO: Starting epoch 682
+INFO: Starting epoch 683
+INFO: Starting epoch 684
+INFO: Starting epoch 685
+INFO: Starting epoch 686
+INFO: Starting epoch 687
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.41884944439 1135.07955551 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 688
+INFO: Starting epoch 689
+INFO: Starting epoch 690
+INFO: Starting epoch 691
+INFO: Starting epoch 692
+INFO: Starting epoch 693
+INFO: Starting epoch 694
+INFO: Starting epoch 695
+INFO: Starting epoch 696
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.35725054264 1085.80043411 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 697
+INFO: Starting epoch 698
+INFO: Starting epoch 699
+INFO: Starting epoch 700
+INFO: Starting epoch 701
+INFO: Starting epoch 702
+INFO: Starting epoch 703
+INFO: Starting epoch 704
+INFO: Starting epoch 705
+INFO: [2018-06-12 14:35:29] Epoch: 705 Update: 12000 Loss/word: 0.0607789708097 Words/sec: 1632.09557226 Sents/sec: 219.076729543
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.41874999046 1134.99999237 800
+INFO: Starting epoch 706
+INFO: Starting epoch 707
+INFO: Starting epoch 708
+INFO: Starting epoch 709
+INFO: Starting epoch 710
+INFO: Starting epoch 711
+INFO: Starting epoch 712
+INFO: Starting epoch 713
+INFO: Starting epoch 714
+INFO: Starting epoch 715
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.38337546825 1106.7003746 800
+INFO: Starting epoch 716
+INFO: Starting epoch 717
+INFO: Starting epoch 718
+INFO: Starting epoch 719
+INFO: Starting epoch 720
+INFO: Starting epoch 721
+INFO: Starting epoch 722
+INFO: Starting epoch 723
+INFO: Starting epoch 724
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.4375174427 1150.01395416 800
+INFO: Starting epoch 725
+INFO: Starting epoch 726
+INFO: Starting epoch 727
+INFO: Starting epoch 728
+INFO: Starting epoch 729
+INFO: Starting epoch 730
+INFO: Starting epoch 731
+INFO: Starting epoch 732
+INFO: Starting epoch 733
+INFO: Starting epoch 734
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.34674266338 1077.39413071 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 735
+INFO: Starting epoch 736
+INFO: Starting epoch 737
+INFO: Starting epoch 738
+INFO: Starting epoch 739
+INFO: Starting epoch 740
+INFO: Starting epoch 741
+INFO: Starting epoch 742
+INFO: Starting epoch 743
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.34883213997 1079.06571198 800
+INFO: Starting epoch 744
+INFO: Starting epoch 745
+INFO: Starting epoch 746
+INFO: Starting epoch 747
+INFO: Starting epoch 748
+INFO: Starting epoch 749
+INFO: Starting epoch 750
+INFO: Starting epoch 751
+INFO: Starting epoch 752
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.39345807552 1114.76646042 800
+INFO: Starting epoch 753
+INFO: Starting epoch 754
+INFO: Starting epoch 755
+INFO: Starting epoch 756
+INFO: Starting epoch 757
+INFO: Starting epoch 758
+INFO: Starting epoch 759
+INFO: Starting epoch 760
+INFO: Starting epoch 761
+INFO: Starting epoch 762
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.40047162056 1120.37729645 800
+INFO: Starting epoch 763
+INFO: Starting epoch 764
+INFO: [2018-06-12 14:39:55] Epoch: 764 Update: 13000 Loss/word: 0.0406651773338 Words/sec: 1650.221809 Sents/sec: 221.386548869
+INFO: Starting epoch 765
+INFO: Starting epoch 766
+INFO: Starting epoch 767
+INFO: Starting epoch 768
+INFO: Starting epoch 769
+INFO: Starting epoch 770
+INFO: Starting epoch 771
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.38127785206 1105.02228165 800
+INFO: Starting epoch 772
+INFO: Starting epoch 773
+INFO: Starting epoch 774
+INFO: Starting epoch 775
+INFO: Starting epoch 776
+INFO: Starting epoch 777
+INFO: Starting epoch 778
+INFO: Starting epoch 779
+INFO: Starting epoch 780
+INFO: Starting epoch 781
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.37613574028 1100.90859222 800
+INFO: Starting epoch 782
+INFO: Starting epoch 783
+INFO: Starting epoch 784
+INFO: Starting epoch 785
+INFO: Starting epoch 786
+INFO: Starting epoch 787
+INFO: Starting epoch 788
+INFO: Starting epoch 789
+INFO: Starting epoch 790
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.34410084724 1075.2806778 800
+INFO:tensorflow:./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_1/English-20-char-context-base1/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 791
+INFO: Starting epoch 792
+INFO: Starting epoch 793
+INFO: Starting epoch 794
+INFO: Starting epoch 795
+INFO: Starting epoch 796
+INFO: Starting epoch 797
+INFO: Starting epoch 798
+INFO: Starting epoch 799
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.46241406918 1169.93125534 800
+INFO: Starting epoch 800
+INFO: Starting epoch 801
+INFO: Starting epoch 802
+INFO: Starting epoch 803
+INFO: Starting epoch 804
+INFO: Starting epoch 805
+INFO: Starting epoch 806
+INFO: Starting epoch 807
+INFO: Starting epoch 808
+INFO: Starting epoch 809
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.38306375027 1106.45100021 800
+INFO: Starting epoch 810
+INFO: Starting epoch 811
+INFO: Starting epoch 812
+INFO: Starting epoch 813
+INFO: Starting epoch 814
+INFO: Starting epoch 815
+INFO: Starting epoch 816
+INFO: Starting epoch 817
+INFO: Starting epoch 818
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.51101832867 1208.81466293 800
+INFO: Starting epoch 819
+INFO: Starting epoch 820
+INFO: Starting epoch 821
+INFO: Starting epoch 822
+INFO: Starting epoch 823
+INFO: [2018-06-12 14:44:25] Epoch: 823 Update: 14000 Loss/word: 0.0275223373017 Words/sec: 1621.39592118 Sents/sec: 217.373138329
+INFO: Starting epoch 824
+INFO: Starting epoch 825
+INFO: Starting epoch 826
+INFO: Starting epoch 827
+INFO: Starting epoch 828
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.37810433865 1102.48347092 800
+INFO: Starting epoch 829
+INFO: Starting epoch 830
+INFO: Starting epoch 831
+INFO: Starting epoch 832
+INFO: Starting epoch 833
+INFO: Starting epoch 834
+INFO: Starting epoch 835
+INFO: Starting epoch 836
+INFO: Starting epoch 837
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.38577581406 1108.62065125 800
+INFO: Starting epoch 838
+INFO: Starting epoch 839
+INFO: Starting epoch 840
+INFO: Starting epoch 841
+INFO: Starting epoch 842
+INFO: Starting epoch 843
+INFO: Starting epoch 844
+INFO: Starting epoch 845
+INFO: Starting epoch 846
+INFO: Starting epoch 847
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.39849143505 1118.79314804 800
+INFO: Starting epoch 848
+INFO: Starting epoch 849
+INFO: Starting epoch 850
+INFO: Starting epoch 851
+INFO: Starting epoch 852
+INFO: Starting epoch 853
+INFO: Starting epoch 854
+INFO: Starting epoch 855
+INFO: Starting epoch 856
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.39508550644 1116.06840515 800
+INFO: Starting epoch 857
+INFO: Starting epoch 858
+INFO: Starting epoch 859
+INFO: Starting epoch 860
+INFO: Starting epoch 861
+INFO: Starting epoch 862
+INFO: Starting epoch 863
+INFO: Starting epoch 864
+INFO: Starting epoch 865
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.43161664009 1145.29331207 800
+INFO: Starting epoch 866
+INFO: Starting epoch 867
+INFO: Starting epoch 868
+INFO: Starting epoch 869
+INFO: Starting epoch 870
+INFO: Starting epoch 871
+INFO: Starting epoch 872
+INFO: Starting epoch 873
+INFO: Starting epoch 874
+INFO: Starting epoch 875
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.40395670414 1123.16536331 800
+INFO: Starting epoch 876
+INFO: Starting epoch 877
+INFO: Starting epoch 878
+INFO: Starting epoch 879
+INFO: Starting epoch 880
+INFO: Starting epoch 881
+INFO: Starting epoch 882
+INFO: [2018-06-12 14:48:55] Epoch: 882 Update: 15000 Loss/word: 0.0207076728698 Words/sec: 1626.71719995 Sents/sec: 218.127305495
+INFO: Starting epoch 883
+INFO: Starting epoch 884
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.40334862232 1122.67889786 800
+INFO: Starting epoch 885
+INFO: Starting epoch 886
+INFO: Starting epoch 887
+INFO: Starting epoch 888
+INFO: Starting epoch 889
+INFO: Starting epoch 890
+INFO: Starting epoch 891
+INFO: Starting epoch 892
+INFO: Starting epoch 893
+INFO: Starting epoch 894
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Validation loss (AVG/SUM/N_SENT): 1.44220540524 1153.76432419 800
+INFO: Early Stop!

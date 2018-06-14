@@ -357,6 +357,7 @@ if __name__ == "__main__":
     translation_settings = TranslationSettings(from_console_arguments=True)
     input_file = translation_settings.input
     output_file = translation_settings.output
+    print('INPUT FILE:', input_file)
     # start logging
     level = logging.DEBUG if translation_settings.verbose else logging.WARNING
     logging.basicConfig(level=level, format='%(levelname)s: %(message)s')

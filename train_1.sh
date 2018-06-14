@@ -10,7 +10,7 @@ device=cpu
 basedir=.
 datadir=${basedir}/data/languages_1
 modeldir=${basedir}/models_1/${lang}-${type}-${experiment_id}
-datadir=${basedir}/data/languages_10${lang}-${type}
+datadir=${basedir}/data/languages_1/${lang}-${type}
 
 mkdir -p ${modeldir}
 mkdir -p ${modeldir}/data
