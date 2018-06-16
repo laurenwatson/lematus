@@ -74,7 +74,7 @@ python nmt.py \
   --enc_depth 2 \
   --dec_depth 2 \
   --patience 10 \
-  --validFreq ${valid_freq} &> output_test_${lang}_${experiment_id}.txt
+  --validFreq ${valid_freq} 
 echo "End of training"
 
 #
