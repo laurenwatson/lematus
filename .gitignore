@@ -3,6 +3,7 @@ models/
 models_20/
 models_10/
 models_1/
+models_test/
 venv/
 theano/
 tf/
