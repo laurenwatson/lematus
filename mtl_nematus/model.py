@@ -497,3 +497,171 @@ class StandardModel(object):
                                                     [beam_ys, parents, cost],
                                                     feed_dict=feeds)
         return inference.reconstruct_hypotheses(beam_ys_out, parents_out, cost_out, beam_size)
+
+class AEModel(object):
+    def __init__(self, config):
+
+        #variable dimensions
+        seqLen = None
+        batch_size = None
+
+        self.x = tf.placeholder(
+                    dtype=tf.int32,
+                    name='x',
+                    shape=(config.factors, seqLen, batch_size))
+        self.x_mask = tf.placeholder(
+                        dtype=tf.float32,
+                        name='x_mask',
+                        shape=(seqLen, batch_size))
+        self.y = tf.placeholder(
+                    dtype=tf.int32,
+                    name='y',
+                    shape=(seqLen, batch_size))
+        self.y_mask = tf.placeholder(
+                        dtype=tf.float32,
+                        name='y_mask',
+                        shape=(seqLen, batch_size))
+        self.training = tf.placeholder_with_default(
+            False, name='training', shape=())
+
+        # Dropout functions for words.
+        # These probabilistically zero-out all embedding values for individual
+        # words.
+        dropout_source, dropout_target = None, None
+        if config.use_dropout and config.dropout_source > 0.0:
+            def dropout_source(x):
+                return tf.layers.dropout(
+                    x, noise_shape=(tf.shape(x)[0], tf.shape(x)[1], 1),
+                    rate=config.dropout_source, training=self.training)
+        if config.use_dropout and config.dropout_target > 0.0:
+            def dropout_target(y):
+                return tf.layers.dropout(
+                    y, noise_shape=(tf.shape(y)[0], tf.shape(y)[1], 1),
+                    rate=config.dropout_target, training=self.training)
+
+        # Dropout functions for use within FF, GRU, and attention layers.
+        # We use Gal and Ghahramani (2016)-style dropout, so these functions
+        # will be used to create 2D dropout masks that are reused at every
+        # timestep.
+        dropout_embedding, dropout_hidden = None, None
+        if config.use_dropout and config.dropout_embedding > 0.0:
+            #aka the dropout function to use with the feedforward embedding layer
+            def dropout_embedding(e):
+                return tf.layers.dropout(e, noise_shape=tf.shape(e),
+                                         rate=config.dropout_embedding,
+                                         training=self.training)
+        if config.use_dropout and config.dropout_hidden > 0.0:
+            #the dropout to use with the GRU layers
+            def dropout_hidden(h):
+                return tf.layers.dropout(h, noise_shape=tf.shape(h),
+                                         rate=config.dropout_hidden,
+                                         training=self.training)
+
+        batch_size = tf.shape(self.x)[-1]  # dynamic value
+
+        with tf.name_scope("encoder"):
+            self.encoder = Encoder(config, batch_size, dropout_source,
+                                   dropout_embedding, dropout_hidden)
+            ctx = self.encoder.get_context(self.x, self.x_mask)
+
+        with tf.name_scope("decoder"):
+            self.decoder = Decoder(config, ctx, self.x_mask, dropout_target,
+                                   dropout_embedding, dropout_hidden)
+            self.logits = self.decoder.score(self.y)
+
+        with tf.name_scope("loss"):
+            self.loss_layer = Masked_cross_entropy_loss(self.y, self.y_mask)
+            self.loss_per_sentence = self.loss_layer.forward(self.logits)
+            self.mean_loss = tf.reduce_mean(self.loss_per_sentence, keep_dims=False)
+            self.objective = self.mean_loss
+
+            self.l2_loss = tf.constant(0.0, dtype=tf.float32)
+            if config.decay_c > 0.0:
+                self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in tf.trainable_variables()]) * tf.constant(config.decay_c, dtype=tf.float32)
+                self.objective += self.l2_loss
+
+            self.map_l2_loss = tf.constant(0.0, dtype=tf.float32)
+            if config.map_decay_c > 0.0:
+                map_l2_acc = []
+                for v in tf.trainable_variables():
+                    prior_name = 'prior/'+v.name.split(':')[0]
+                    prior_v = tf.Variable(initial_value=v.initialized_value(), trainable=False, collections=['prior_variables'], name=prior_name, dtype=v.initialized_value().dtype)
+                    map_l2_acc.append(tf.nn.l2_loss(v - prior_v))
+                self.map_l2_loss = tf.add_n(map_l2_acc) * tf.constant(config.map_decay_c, dtype=tf.float32)
+                self.objective += self.l2_loss
+
+        if config.optimizer == 'adam':
+            self.optimizer = tf.train.AdamOptimizer(learning_rate=config.learning_rate)
+        else:
+            logging.error('No valid optimizer defined: {0}'.format(config.optimizer))
+            sys.exit(1)
+
+        self.t = tf.Variable(0, name='time', trainable=False, dtype=tf.int32)
+        grad_vars = self.optimizer.compute_gradients(self.mean_loss)
+        grads, varss = zip(*grad_vars)
+        clipped_grads, global_norm = tf.clip_by_global_norm(grads, clip_norm=config.clip_c)
+        # Might be interesting to see how the global norm changes over time, attach a summary?
+        grad_vars = zip(clipped_grads, varss)
+        self.apply_grads = self.optimizer.apply_gradients(grad_vars, global_step=self.t)
+
+        self.sampled_ys = None
+        self.beam_size, self.beam_ys, self.parents, self.cost = None, None, None, None
+
+    def get_score_inputs(self):
+        return self.x, self.x_mask, self.y, self.y_mask, self.training
+
+    def get_loss(self):
+        return self.loss_per_sentence
+
+    def get_mean_loss(self):
+        return self.mean_loss
+
+    def get_objective(self):
+        return self.objective
+
+    def get_global_step(self):
+        return self.t
+
+    def reset_global_step(self, value, session):
+        self.t.load(value, session)
+
+    def get_apply_grads(self):
+        return self.apply_grads
+
+    def _get_samples(self):
+        if self.sampled_ys == None:
+            self.sampled_ys = self.decoder.sample()
+        return self.sampled_ys
+
+    def sample(self, session, x_in, x_mask_in):
+        sampled_ys = self._get_samples()
+        feeds = {self.x : x_in, self.x_mask : x_mask_in}
+        sampled_ys_out = session.run(sampled_ys, feed_dict=feeds)
+        sampled_ys_out = sampled_ys_out.T
+        samples = []
+        for sample in sampled_ys_out:
+            sample = numpy.trim_zeros(list(sample), trim='b')
+            sample.append(0)
+            samples.append(sample)
+        return samples
+
+
+
+    def _get_beam_search_outputs(self, beam_size):
+        if beam_size != self.beam_size:
+            self.beam_size = beam_size
+            self.beam_ys, self.parents, self.cost = inference.construct_beam_search_functions([self], beam_size)
+        return self.beam_ys, self.parents, self.cost
+
+
+    def beam_search(self, session, x_in, x_mask_in, beam_size):
+        # x_in is a numpy array with shape (factors, seqLen, batch)
+        # x_mask is a numpy array with shape (seqLen, batch)
+        x_in = numpy.repeat(x_in, repeats=beam_size, axis=-1)
+        x_mask_in = numpy.repeat(x_mask_in, repeats=beam_size, axis=-1)
+        feeds = {self.x : x_in, self.x_mask : x_mask_in}
+        beam_ys, parents, cost = self._get_beam_search_outputs(beam_size)
+        beam_ys_out, parents_out, cost_out = session.run(
+                                                    [beam_ys, parents, cost],
+                                                    feed_dict=feeds)
+        return inference.reconstruct_hypotheses(beam_ys_out, parents_out, cost_out, beam_size)
