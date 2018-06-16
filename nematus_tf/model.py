@@ -177,7 +177,7 @@ class Decoder(object):
                         prev_state,
                         gates_x=gates_x2d,
                         proposal_x=proposal_x2d)
-            att_ctx = self.attstep.forward(state) 
+            att_ctx = self.attstep.forward(state)
             state = self.grustep2.forward(state, att_ctx)
             #TODO: write att_ctx to tensorArray instead of having it as output of scan?
             return (state, att_ctx)
@@ -260,8 +260,8 @@ class Predictor(object):
 
         with tf.name_scope("hidden_to_logits"):
             logits = self.hidden_to_logits.forward(hidden, input_is_3d=multi_step)
-        
-        return logits 
+
+        return logits
 
 
 class Encoder(object):
@@ -377,11 +377,13 @@ class StandardModel(object):
         # timestep.
         dropout_embedding, dropout_hidden = None, None
         if config.use_dropout and config.dropout_embedding > 0.0:
+            #aka the dropout function to use with the feedforward embedding layer
             def dropout_embedding(e):
                 return tf.layers.dropout(e, noise_shape=tf.shape(e),
                                          rate=config.dropout_embedding,
                                          training=self.training)
         if config.use_dropout and config.dropout_hidden > 0.0:
+            #the dropout to use with the GRU layers
             def dropout_hidden(h):
                 return tf.layers.dropout(h, noise_shape=tf.shape(h),
                                          rate=config.dropout_hidden,
@@ -404,7 +406,7 @@ class StandardModel(object):
             self.loss_per_sentence = self.loss_layer.forward(self.logits)
             self.mean_loss = tf.reduce_mean(self.loss_per_sentence, keep_dims=False)
             self.objective = self.mean_loss
-            
+
             self.l2_loss = tf.constant(0.0, dtype=tf.float32)
             if config.decay_c > 0.0:
                 self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in tf.trainable_variables()]) * tf.constant(config.decay_c, dtype=tf.float32)
@@ -439,7 +441,7 @@ class StandardModel(object):
 
     def get_score_inputs(self):
         return self.x, self.x_mask, self.y, self.y_mask, self.training
-    
+
     def get_loss(self):
         return self.loss_per_sentence
 

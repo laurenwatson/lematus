@@ -87,8 +87,8 @@ for lang in langs:
                                     blah += 1
                         if prediction != lemma and inflection == lemma:
                             unseen_should_have_been_copied += 1
-                            #if lang=='English':
-                                #print(inflection, lemma, prediction)
+                            if lang=='English':
+                                print(inflection, lemma, prediction)
                         total_unseen_tokens+= 1
                         if prediction != lemma:
                             total_incorrect_unseen +=1

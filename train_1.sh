@@ -9,7 +9,7 @@ device=cpu
 
 basedir=.
 datadir=${basedir}/data/languages_1
-modeldir=${basedir}/models_1/${lang}-${type}-${experiment_id}
+modeldir=${basedir}/models_test/${lang}-${type}-${experiment_id}
 datadir=${basedir}/data/languages_1/${lang}-${type}
 
 mkdir -p ${modeldir}
@@ -54,9 +54,9 @@ burn_in_for_n_epochs=10 #increase to make training faster
 validBurnIn=($(wc -l ${modeldir}/data/train-sources))
 validBurnIn=$((validBurnIn *${burn_in_for_n_epochs} / batch_size))
 
-max_epochs=1000
+max_epochs=1
 
-touch output_1_${lang}_${experiment_id}.txt
+touch output_test_${lang}_${experiment_id}.txt
 ##had to delete weight_normalization, valid_burnin and --reload, --reload \
 #--no_reload_training_progress \
 echo "Starting training"
@@ -78,7 +78,7 @@ python ${basedir}/nematus_tf/nmt.py \
   --enc_depth 2 \
   --dec_depth 2 \
   --patience 10 \
-  --validFreq ${valid_freq} &> output_1_${lang}_${experiment_id}.txt
+  --validFreq ${valid_freq} &> output_test_${lang}_${experiment_id}.txt
 echo "End of training"
 
 #echo "Lemmatizing test set"

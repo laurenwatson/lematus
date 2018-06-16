@@ -27,6 +27,7 @@ import compat
 
 def create_model(config, sess, ensemble_scope=None, train=False):
     logging.info('Building model...')
+    # StandardModel is a class in model.py
     model = StandardModel(config)
 
     # Construct a mapping between saved variable names and names in the current
@@ -38,6 +39,12 @@ def create_model(config, sess, ensemble_scope=None, train=False):
     #   2. The saved model is from an old version of Nematus (before deep model
     #        support was added) and uses a different variable naming scheme
     #        for the GRUs.
+
+    # slim is just another TF library that can integrate with native TF append
+    # is supposed to make defining, training and evaluating complex models easier
+
+    # the variables obtained here are those initialized above for Standard models
+    #
     variables = slim.get_variables_to_restore()
     var_map = {}
     for v in variables:
@@ -96,6 +103,7 @@ def create_model(config, sess, ensemble_scope=None, train=False):
 
     # initialize or restore model
     if reload_filename == None:
+        #so if training for first time, do this
         logging.info('Initializing model parameters from scratch...')
         init_op = tf.global_variables_initializer()
         sess.run(init_op)
@@ -219,11 +227,30 @@ def train(config, sess):
     assert (config.prior_model != None and (tf.train.checkpoint_exists(os.path.abspath(config.prior_model))) or (config.map_decay_c==0.0)), \
     "MAP training requires a prior model file: Use command-line option --prior_model"
 
+    # literally just initializes the model, reloads from previous if necessary
+    # initializes everything
+    # starts sessions
+    # model is from models.py StandardModel
+    # saver is from tf.train.Saver
+    # progress is from training_progress.TrainingProgress()
     model, saver, progress = create_model(config, sess, train=True)
 
+    # returns these from StandardModel
+    # x is the source data, y is the target data
+    # all initialized to be of size seqlen x batch size
     x,x_mask,y,y_mask,training = model.get_score_inputs()
+    # self.optimizer.apply_gradients(grad_vars) where grad_vars come from self.optimizer.compute_gradients(self.mean_loss)
+    # grads are clipped by global norm
     apply_grads = model.get_apply_grads()
+
+    # self.t = tf.Variable(0, name='time', trainable=False, dtype=tf.int32)
     t = model.get_global_step()
+
+    #self.logits = self.decoder.score(self.y)
+    #self.loss_layer = Masked_cross_entropy_loss(self.y, self.y_mask)
+    #self.loss_per_sentence = self.loss_layer.forward(self.logits)
+    #self.mean_loss = tf.reduce_mean(self.loss_per_sentence, keep_dims=False)
+    #self.objective = self.mean_loss
     loss_per_sentence = model.get_loss()
     objective = model.get_objective()
 
