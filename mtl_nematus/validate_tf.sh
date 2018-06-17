@@ -1,10 +1,9 @@
 #!/bin/sh
 
-model_type=models_full
-lang=Hungarian
+lang='English'
 
 python translate.py \
-     -m ${model_type}/${lang}-20-char-context-base1/model.npz \
-     -i ${model_type}/${lang}-20-char-context-base1/data/dev-sources \
-     -o ${model_type}/${lang}-20-char-context-base1/data/dev-hypothesis \
+     -m models_1/${lang}-20-char-context-base1/model.npz \
+     -i tiny_data/languages_1/${lang}-20-char-context/dev-sources \
+     -o tiny_data/languages_1/${lang}-20-char-context/dev-hypothesis \
      -k 12 -n -p 1

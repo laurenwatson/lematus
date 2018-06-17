@@ -148,12 +148,15 @@ def load_data(config):
     text_iterator = TextIterator(
                         source=config.source_dataset,
                         target=config.target_dataset,
+                        ae_target = config.ae_target_dataset,
                         source_dicts=config.source_dicts,
                         target_dict=config.target_dict,
+                        ae_target_dict = config.ae_target_dict,
                         batch_size=config.batch_size,
                         maxlen=config.maxlen,
                         source_vocab_sizes=config.source_vocab_sizes,
                         target_vocab_size=config.target_vocab_size,
+                        ae_target_vocab_size=config.ae_target_vocab_size,
                         skip_empty=True,
                         shuffle_each_epoch=config.shuffle_each_epoch,
                         sort_by_length=config.sort_by_length,
@@ -166,12 +169,15 @@ def load_data(config):
         valid_text_iterator = TextIterator(
                             source=config.valid_source_dataset,
                             target=config.valid_target_dataset,
+                            ae_target = config.valid_ae_target_dataset,
                             source_dicts=config.source_dicts,
                             target_dict=config.target_dict,
+                            ae_target_dict=config.ae_target_dict,
                             batch_size=config.valid_batch_size,
                             maxlen=config.maxlen,
                             source_vocab_sizes=config.source_vocab_sizes,
                             target_vocab_size=config.target_vocab_size,
+                            ae_target_vocab_size=config.ae_target_vocab_size,
                             shuffle_each_epoch=False,
                             sort_by_length=True,
                             use_factor=(config.factors > 1),
@@ -187,12 +193,15 @@ def load_dictionaries(config):
     print('SOURCE DICTIONARIES: ', config.source_dicts)
     source_to_num = [load_dict(d) for d in config.source_dicts]
     target_to_num = load_dict(config.target_dict)
+
+    ae_target_to_num = load_dict(config.ae_target_dict)
     num_to_source = [reverse_dict(d) for d in source_to_num]
     num_to_target = reverse_dict(target_to_num)
-    return source_to_num, target_to_num, num_to_source, num_to_target
+    num_to_ae_target = reverse_dict(ae_target_to_num)
+    return source_to_num, target_to_num, ae_target_to_num, num_to_source, num_to_target, num_to_ae_target
 
 def read_all_lines(config, sentences):
-    source_to_num, _, _, _ = load_dictionaries(config)
+    source_to_num, _ , _ , _ , _ , _ = load_dictionaries(config)
     lines = []
     for sent in sentences:
         line = []
@@ -238,7 +247,7 @@ def train(config, sess):
     # returns these from StandardModel
     # x is the source data, y is the target data
     # all initialized to be of size seqlen x batch size
-    x,x_mask,y,y_mask,training = model.get_score_inputs()
+    x,x_mask,y,y_mask,ae_y,ae_y_mask,training = model.get_score_inputs()
     # self.optimizer.apply_gradients(grad_vars) where grad_vars come from self.optimizer.compute_gradients(self.mean_loss)
     # grads are clipped by global norm
     apply_grads = model.get_apply_grads()
@@ -266,24 +275,26 @@ def train(config, sess):
     json.dump(config_as_dict, open('%s.json' % config.saveto, 'wb'), indent=2)
 
     text_iterator, valid_text_iterator = load_data(config)
-    _, _, num_to_source, num_to_target = load_dictionaries(config)
+    _, _,_,  num_to_source, num_to_target, num_to_ae_target = load_dictionaries(config)
     total_loss = 0.
     n_sents, n_words = 0, 0
     last_time = time.time()
     logging.info("Initial uidx={}".format(progress.uidx))
     for progress.eidx in xrange(progress.eidx, config.max_epochs):
         logging.info('Starting epoch {0}'.format(progress.eidx))
-        for source_sents, target_sents in text_iterator:
+        for source_sents, target_sents, ae_target_sents in text_iterator:
             if len(source_sents[0][0]) != config.factors:
                 logging.error('Mismatch between number of factors in settings ({0}), and number in training corpus ({1})\n'.format(config.factors, len(source_sents[0][0])))
                 sys.exit(1)
             x_in, x_mask_in, y_in, y_mask_in = prepare_data(source_sents, target_sents, maxlen=None)
+            x_in, x_mask_in, ae_y_in, ae_y_mask_in = prepare_data(source_sents, ae_target_sents, maxlen=None)
+
             if x_in is None:
                 logging.info('Minibatch with zero sample under length {0}'.format(config.maxlen))
                 continue
             write_summary_for_this_batch = config.summaryFreq and ((progress.uidx % config.summaryFreq == 0) or (config.finish_after and progress.uidx % config.finish_after == 0))
             (factors, seqLen, batch_size) = x_in.shape
-            inn = {x:x_in, y:y_in, x_mask:x_mask_in, y_mask:y_mask_in, training:True}
+            inn = {x:x_in, y:y_in, x_mask:x_mask_in, y_mask:y_mask_in, ae_y:ae_y_in, ae_y_mask:ae_y_mask_in, training:True}
             out = [t, apply_grads, objective]
             if write_summary_for_this_batch:
                 out += [merged]
@@ -362,7 +373,7 @@ def train(config, sess):
 def translate(config, sess):
     model, saver = create_model(config, sess)
     start_time = time.time()
-    _, _, _, num_to_target = load_dictionaries(config)
+    _, _, _, _, num_to_target, num_to_ae_target = load_dictionaries(config)
     logging.info("NOTE: Length of translations is capped to {}".format(config.translation_maxlen))
 
     n_sent = 0
@@ -428,9 +439,9 @@ def validate(config, sess, valid_text_iterator, model, normalization_alpha=0):
     costs = []
     total_loss = 0.
     total_seen = 0
-    x,x_mask,y,y_mask,training = model.get_score_inputs()
+    x,x_mask,y,y_mask,ae_y,ae_y_mask,training = model.get_score_inputs()
     loss_per_sentence = model.get_loss()
-    for x_v, y_v in valid_text_iterator:
+    for x_v, y_v, ae_y_v in valid_text_iterator:
         if len(x_v[0][0]) != config.factors:
             logging.error('Mismatch between number of factors in settings ({0}), and number in validation corpus ({1})\n'.format(config.factors, len(x_v[0][0])))
             sys.exit(1)
@@ -455,12 +466,15 @@ def validate_helper(config, sess):
     valid_text_iterator = TextIterator(
                         source=config.valid_source_dataset,
                         target=config.valid_target_dataset,
+                        ae_target=config.valid_ae_target_dataset,
                         source_dicts=config.source_dicts,
                         target_dict=config.target_dict,
+                        target_ae_dict=config.target_ae_dict,
                         batch_size=config.valid_batch_size,
                         maxlen=config.maxlen,
                         source_vocab_sizes=config.source_vocab_sizes,
                         target_vocab_size=config.target_vocab_size,
+                        ae_target_vocab_size=config.ae_target_vocab_size,
                         shuffle_each_epoch=False,
                         sort_by_length=False, #TODO
                         use_factor=(config.factors > 1),
@@ -481,8 +495,10 @@ def parse_args():
                          help="parallel training corpus (source)")
     data.add_argument('--target_dataset', type=str, metavar='PATH',
                          help="parallel training corpus (target)")
+    data.add_argument('--ae_target_dataset', type=str, metavar='PATH',
+                         help="parallel training corpus (target)")
     # parallel training corpus (source and target). Hidden option for backward compatibility
-    data.add_argument('--datasets', type=str, metavar='PATH', nargs=2,
+    data.add_argument('--datasets', type=str, metavar='PATH', nargs=3,
                          help=argparse.SUPPRESS)
     data.add_argument('--dictionaries', type=str, required=True, metavar='PATH', nargs="+",
                          help="network vocabularies (one per source factor, plus target vocabulary)")
@@ -510,6 +526,8 @@ def parse_args():
 
     network.add_argument('--target_vocab_size', '--n_words', type=int, default=-1, metavar='INT',
                          help="target vocabulary size (default: %(default)s)")
+    network.add_argument('--ae_target_vocab_size', '--n_words_ae', type=int, default=-1, metavar='INT',
+                         help="target ae vocabulary size (default: %(default)s)")
     network.add_argument('--factors', type=int, default=1, metavar='INT',
                          help="number of input factors (default: %(default)s)")
 
@@ -537,6 +555,8 @@ def parse_args():
                          help="dropout source words (0: no dropout) (default: %(default)s)")
     network.add_argument('--dropout_target', type=float, default=0, metavar="FLOAT",
                          help="dropout target words (0: no dropout) (default: %(default)s)")
+    network.add_argument('--dropout_ae_target', type=float, default=0, metavar="FLOAT",
+                         help="dropout ae target words (0: no dropout) (default: %(default)s)")
     network.add_argument('--use_layer_norm', '--layer_normalisation', action="store_true", dest="use_layer_norm",
                          help="Set to use layer normalization in encoder and decoder")
     network.add_argument('--tie_decoder_embeddings', action="store_true", dest="tie_decoder_embeddings",
@@ -583,8 +603,10 @@ def parse_args():
                          help="source validation corpus (default: %(default)s)")
     validation.add_argument('--valid_target_dataset', type=str, default=None, metavar='PATH',
                          help="target validation corpus (default: %(default)s)")
+    validation.add_argument('--valid_ae_target_dataset', type=str, default=None, metavar='PATH',
+                         help="target validation corpus (default: %(default)s)")
     # parallel validation corpus (source and target). Hidden option for backward compatibility
-    validation.add_argument('--valid_datasets', type=str, default=None, metavar='PATH', nargs=2,
+    validation.add_argument('--valid_datasets', type=str, default=None, metavar='PATH', nargs=3,
                          help=argparse.SUPPRESS)
     validation.add_argument('--valid_batch_size', type=int, default=80, metavar='INT',
                          help="validation minibatch size (default: %(default)s)")
@@ -622,27 +644,32 @@ def parse_args():
 
     # allow "--datasets" for backward compatibility
     if config.datasets:
-        if config.source_dataset or config.target_dataset:
+        if config.source_dataset or config.target_dataset or config.ae_target_dataset:
             logging.error('argument clash: --datasets is mutually exclusive with --source_dataset and --target_dataset')
             sys.exit(1)
         else:
             config.source_dataset = config.datasets[0]
             config.target_dataset = config.datasets[1]
+            config.ae_target_dataset = config.datasets[2]
     elif not config.source_dataset:
         logging.error('--source_dataset is required')
         sys.exit(1)
     elif not config.target_dataset:
         logging.error('--target_dataset is required')
         sys.exit(1)
+    elif not config.ae_target_dataset:
+        logging.error('--ae_target_dataset is required')
+        sys.exit(1)
 
     # allow "--valid_datasets" for backward compatibility
     if config.valid_datasets:
-        if config.valid_source_dataset or config.valid_target_dataset:
+        if config.valid_source_dataset or config.valid_target_dataset or config.valid_ae_target_dataset:
             logging.error('argument clash: --valid_datasets is mutually exclusive with --valid_source_dataset and --valid_target_dataset')
             sys.exit(1)
         else:
             config.valid_source_dataset = config.valid_datasets[0]
             config.valid_target_dataset = config.valid_datasets[1]
+            config.valid_ae_target_dataset = config.valid_datasets[2]
 
     # check factor-related options are consistent
 
@@ -661,7 +688,7 @@ def parse_args():
         logging.error('mismatch between \'--embedding_size\' ({0}) and \'--dim_per_factor\' (sums to {1})\n'.format(config.embedding_size, sum(config.dim_per_factor)))
         sys.exit(1)
 
-    if len(config.dictionaries) != config.factors + 1:
+    if len(config.dictionaries) != config.factors + 2:
         logging.error('\'--dictionaries\' must specify one dictionary per source factor and one target dictionary\n')
         sys.exit(1)
 
@@ -681,6 +708,10 @@ def parse_args():
         vocab_sizes.append(-1)
     else:
         vocab_sizes.append(config.target_vocab_size)
+    if config.ae_target_vocab_size == -1:
+        vocab_sizes.append(-1)
+    else:
+        vocab_sizes.append(config.ae_target_vocab_size)
 
     # for unspecified vocabulary sizes, determine sizes from vocabulary dictionaries
     for i, vocab_size in enumerate(vocab_sizes):
@@ -692,10 +723,12 @@ def parse_args():
             logging.error('failed to determine vocabulary size from file: {0}'.format(config.dictionaries[i]))
         vocab_sizes[i] = max(d.values()) + 1
 
-    config.source_dicts = config.dictionaries[:-1]
-    config.source_vocab_sizes = vocab_sizes[:-1]
+    config.source_dicts = config.dictionaries[:-2]
+    config.source_vocab_sizes = vocab_sizes[:-2]
     config.target_dict = config.dictionaries[-1]
     config.target_vocab_size = vocab_sizes[-1]
+    config.ae_target_dict = config.dictionaries[-2]
+    config.ae_target_vocab_size = vocab_sizes[-2]
 
 
     # set the model version

@@ -75,7 +75,8 @@ class Translator(object):
             config['reload'] = model
             self._options.append(argparse.Namespace(**config))
 
-        _, _, _, self._num_to_target = load_dictionaries(self._options[0])
+        #_, _, _,_, self._num_to_target = load_dictionaries(self._options[0])
+        _, _,_,  _, self._num_to_target, self._num_to_ae_target = load_dictionaries(self._options[0])
 
     def _init_queues(self):
         """

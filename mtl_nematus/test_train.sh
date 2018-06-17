@@ -5,7 +5,7 @@ experiment_id='base1'
 
 basedir=.
 datadir=tiny_data/languages_1
-modeldir=${basedir}/models_20/${lang}-${type}-${experiment_id}
+modeldir=${basedir}/models_1/${lang}-${type}-${experiment_id}
 datadir=${basedir}/tiny_data/languages_1/${lang}-${type}
 
 mkdir -p ${modeldir}
@@ -24,6 +24,9 @@ cp ${datadir}/dev-* ${modeldir}/data/.
 
 echo "Building Dictionaries"
 python ../data/build_dictionary.py ${modeldir}/data/train-sources ${modeldir}/data/train-targets
+python ../data/build_dictionary.py ${modeldir}/data/train-sources ${modeldir}/data/train-ae-targets
+python ../data/build_dictionary.py ${modeldir}/data/dev-sources ${modeldir}/data/dev-ae-targets
+python ../data/build_dictionary.py ${modeldir}/data/test-sources ${modeldir}/data/test-ae-targets
 
 
 dim_word=50
@@ -36,11 +39,14 @@ n_words_src=$((n_words_src-1))
 n_words_trg=($(wc -l ${modeldir}/data/train-targets.json))
 n_words_trg=$((n_words_trg-1))
 
+n_words_ae_trg=($(wc -l ${modeldir}/data/train-ae-targets.json))
+n_words_ae_trg=$((n_words_ae_trg-1))
+
 maxlen=75
 
 optimizer="adam"
 
-dispFreq=10
+dispFreq=1000
 
 validate_every_n_epochs=100 #increase to make training faster
 valid_freq=($(wc -l ${modeldir}/data/train-sources))
@@ -50,7 +56,7 @@ burn_in_for_n_epochs=10 #increase to make training faster
 validBurnIn=($(wc -l ${modeldir}/data/train-sources))
 validBurnIn=$((validBurnIn *${burn_in_for_n_epochs} / batch_size))
 
-max_epochs=1
+max_epochs=1000
 
 touch output_test_${lang}_${experiment_id}.txt
 ##had to delete weight_normalization, valid_burnin and --reload, --reload \
@@ -58,17 +64,19 @@ touch output_test_${lang}_${experiment_id}.txt
 echo "Starting training"
 python nmt.py \
   --model ${modeldir}/model.npz \
-  --datasets ${modeldir}/data/train-sources ${modeldir}/data/train-targets \
-  --valid_datasets ${modeldir}/data/dev-sources ${modeldir}/data/dev-targets \
-  --dictionaries ${modeldir}/data/train-sources.json ${modeldir}/data/train-targets.json \
+  --datasets ${modeldir}/data/train-sources ${modeldir}/data/train-targets ${modeldir}/data/train-ae-targets \
+  --valid_datasets ${modeldir}/data/dev-sources ${modeldir}/data/dev-targets ${modeldir}/data/dev-ae-targets \
+  --dictionaries ${modeldir}/data/train-sources.json ${modeldir}/data/train-targets.json ${modeldir}/data/train-ae-targets.json \
   --dim_word ${dim_word} \
   --dim ${dim} \
   --n_words_src ${n_words_src} \
   --n_words ${n_words_trg} \
+  --n_words_ae ${n_words_ae_trg} \
   --maxlen ${maxlen} \
   --optimizer ${optimizer} \
   --batch_size ${batch_size} \
   --dispFreq ${dispFreq} \
+  --saveFreq 10000 \
   --max_epochs ${max_epochs} \
   --use_dropout \
   --enc_depth 2 \
