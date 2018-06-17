@@ -40,7 +40,7 @@ maxlen=75
 
 optimizer="adam"
 
-dispFreq=1000
+dispFreq=10
 
 validate_every_n_epochs=100 #increase to make training faster
 valid_freq=($(wc -l ${modeldir}/data/train-sources))
@@ -74,7 +74,5 @@ python nmt.py \
   --enc_depth 2 \
   --dec_depth 2 \
   --patience 10 \
-  --validFreq ${valid_freq} 
+  --validFreq ${valid_freq}
 echo "End of training"
-
-#

@@ -28,7 +28,7 @@ import compat
 def create_model(config, sess, ensemble_scope=None, train=False):
     logging.info('Building model...')
     # StandardModel is a class in model.py
-    model = StandardModel(config)
+    model = AEModel(config)
 
     # Construct a mapping between saved variable names and names in the current
     # scope. There are two reasons why names might be different:

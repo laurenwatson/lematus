@@ -371,6 +371,8 @@ class StandardModel(object):
                     y, noise_shape=(tf.shape(y)[0], tf.shape(y)[1], 1),
                     rate=config.dropout_target, training=self.training)
 
+
+
         # Dropout functions for use within FF, GRU, and attention layers.
         # We use Gal and Ghahramani (2016)-style dropout, so these functions
         # will be used to create 2D dropout masks that are reused at every
@@ -396,22 +398,41 @@ class StandardModel(object):
                                    dropout_embedding, dropout_hidden)
             ctx = self.encoder.get_context(self.x, self.x_mask)
 
+        #here add in another decoder, add it to loss but all still while in
+        #'decoder' time
+
+        #FIRST WORK OUT 'SCOPING'? to tell if this is correct
         with tf.name_scope("decoder"):
             self.decoder = Decoder(config, ctx, self.x_mask, dropout_target,
                                    dropout_embedding, dropout_hidden)
             self.logits = self.decoder.score(self.y)
 
         with tf.name_scope("loss"):
+            #defined line 528 of layers.py
+            #y_mask is maybe just a tensor of 0/1s,,, cost is multiplied by it
+            #aka masking out some values
+            #y is true y
+            #a logit layer are the final layer in our neural network is the logits layer
+            # which will return the raw values for our predictions.
+            # for example create a dense layer with linear activation
+            #so assuming logits are the final output aka the prediction
             self.loss_layer = Masked_cross_entropy_loss(self.y, self.y_mask)
+            #calculate loss from this prediction given true value and mask above
+            #the forward step does cost = sparse_softmax_cross_entropy_with_logits on
+            #y and logits, multiplies by y_mask
+            #returns summed cost for dimensions loss_per_sentence
             self.loss_per_sentence = self.loss_layer.forward(self.logits)
+            #gets mean loss over all sentences
             self.mean_loss = tf.reduce_mean(self.loss_per_sentence, keep_dims=False)
             self.objective = self.mean_loss
 
+            #ignore for now
             self.l2_loss = tf.constant(0.0, dtype=tf.float32)
             if config.decay_c > 0.0:
                 self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in tf.trainable_variables()]) * tf.constant(config.decay_c, dtype=tf.float32)
                 self.objective += self.l2_loss
 
+            #ignore for now
             self.map_l2_loss = tf.constant(0.0, dtype=tf.float32)
             if config.map_decay_c > 0.0:
                 map_l2_acc = []
@@ -505,6 +526,8 @@ class AEModel(object):
         seqLen = None
         batch_size = None
 
+        #for autoencoding still only need 2 prior_variables
+        #autoencoding maps x to x as opposed to x to y
         self.x = tf.placeholder(
                     dtype=tf.int32,
                     name='x',
@@ -564,22 +587,47 @@ class AEModel(object):
                                    dropout_embedding, dropout_hidden)
             ctx = self.encoder.get_context(self.x, self.x_mask)
 
+        #question: do I need to have two decoders and logits where
+        #or do I need two decoder scopes?
+        #start with 50:50 case
+        #therefore every single time decoder is called
+        #needs to feed x through both, with different targets
+        #FIRST WORK OUT 'SCOPING'? to tell if this is correct
         with tf.name_scope("decoder"):
             self.decoder = Decoder(config, ctx, self.x_mask, dropout_target,
+                                   dropout_embedding, dropout_hidden)
+            #unsure but possibly need to change dropout_target to dropout_source
+            #currently dont think so this is probably just the mask for output
+            self.ae_decoder = Decoder(config, ctx, self.x_mask, dropout_target,
                                    dropout_embedding, dropout_hidden)
             self.logits = self.decoder.score(self.y)
 
         with tf.name_scope("loss"):
+            #defined line 528 of layers.py
+            #y_mask is maybe just a tensor of 0/1s,,, cost is multiplied by it
+            #aka masking out some values
+            #y is true y
+            #a logit layer are the final layer in our neural network is the logits layer
+            # which will return the raw values for our predictions.
+            # for example create a dense layer with linear activation
+            #so assuming logits are the final output aka the prediction
             self.loss_layer = Masked_cross_entropy_loss(self.y, self.y_mask)
+            #calculate loss from this prediction given true value and mask above
+            #the forward step does cost = sparse_softmax_cross_entropy_with_logits on
+            #y and logits, multiplies by y_mask
+            #returns summed cost for dimensions loss_per_sentence
             self.loss_per_sentence = self.loss_layer.forward(self.logits)
+            #gets mean loss over all sentences
             self.mean_loss = tf.reduce_mean(self.loss_per_sentence, keep_dims=False)
             self.objective = self.mean_loss
 
+            #ignore for now
             self.l2_loss = tf.constant(0.0, dtype=tf.float32)
             if config.decay_c > 0.0:
                 self.l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in tf.trainable_variables()]) * tf.constant(config.decay_c, dtype=tf.float32)
                 self.objective += self.l2_loss
 
+            #ignore for now
             self.map_l2_loss = tf.constant(0.0, dtype=tf.float32)
             if config.map_decay_c > 0.0:
                 map_l2_acc = []
