@@ -1,4 +1,5 @@
-ource venv/bin/activate
+#!/bin/bash
+
 lang='English'
 type='20-char-context'
 experiment_id='base1'

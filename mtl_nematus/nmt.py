@@ -607,7 +607,7 @@ def train_alternate(config, sess):
                         logging.info('SAMPLE {0}: {1} Cost/Len/Avg {2}/{3}/{4}'.format(i, seq2words(sample, num_to_target), cost, len(sample), cost/len(sample)))
 
             if config.validFreq and progress.uidx % config.validFreq == 0:
-                costs = validate(config, sess, valid_text_iterator, model)
+                costs = validate_ae(config, sess, valid_text_iterator, model)
                 # validation loss is mean of normalized sentence log probs
                 valid_loss = sum(costs) / len(costs)
                 if (len(progress.history_errs) == 0 or
@@ -698,6 +698,70 @@ def translate(config, sess):
     duration = time.time() - start_time
     logging.info('Translated {} sents in {} sec. Speed {} sents/sec'.format(n_sent, duration, n_sent/duration))
 
+def translate_ae(config, sess):
+    model, saver = create_model_alternate(config, sess)
+    start_time = time.time()
+    _, _, _, _, num_to_target, num_to_ae_target = load_dictionaries(config)
+    logging.info("NOTE: Length of translations is capped to {}".format(config.translation_maxlen))
+
+    n_sent = 0
+    try:
+        batches, idxs = read_all_lines(config, open(config.valid_source_dataset, 'r').readlines())
+    except exception.Error as x:
+        logging.error(x.msg)
+        sys.exit(1)
+    in_queue, out_queue = Queue(), Queue()
+    model._get_beam_search_outputs(config.beam_size)
+
+    def translate_worker(in_queue, out_queue, model, sess, config):
+        while True:
+            job = in_queue.get()
+            if job is None:
+                break
+            idx, x = job
+            y_dummy = numpy.zeros(shape=(len(x),1))
+            x, x_mask, _, _ = prepare_data(x, y_dummy, maxlen=None)
+            try:
+                samples = model.beam_search(sess, x, x_mask, config.beam_size)
+                out_queue.put((idx, samples))
+            except:
+                in_queue.put(job)
+
+    threads = [None] * config.n_threads
+    for i in xrange(config.n_threads):
+        threads[i] = Thread(
+                        target=translate_worker,
+                        args=(in_queue, out_queue, model, sess, config))
+        threads[i].deamon = True
+        threads[i].start()
+
+    for i, batch in enumerate(batches):
+        in_queue.put((i,batch))
+    outputs = [None]*len(batches)
+    for _ in range(len(batches)):
+        i, samples = out_queue.get()
+        outputs[i] = list(samples)
+        n_sent += len(samples)
+        logging.info('Translated {} sents'.format(n_sent))
+    for _ in range(config.n_threads):
+        in_queue.put(None)
+    outputs = [beam for batch in outputs for beam in batch]
+    outputs = numpy.array(outputs, dtype=numpy.object)
+    outputs = outputs[idxs.argsort()]
+
+    for beam in outputs:
+        if config.normalize:
+            beam = map(lambda (sent, cost): (sent, cost/len(sent)), beam)
+        beam = sorted(beam, key=lambda (sent, cost): cost)
+        if config.n_best:
+            for sent, cost in beam:
+                print seq2words(sent, num_to_target), '[%f]' % cost
+        else:
+            best_hypo, cost = beam[0]
+            print seq2words(best_hypo, num_to_target)
+    duration = time.time() - start_time
+    logging.info('Translated {} sents in {} sec. Speed {} sents/sec'.format(n_sent, duration, n_sent/duration))
+
 
 def validate(config, sess, valid_text_iterator, model, normalization_alpha=0):
     costs = []
@@ -722,7 +786,44 @@ def validate(config, sess, valid_text_iterator, model, normalization_alpha=0):
         total_seen += x_v_in.shape[2]
         costs += list(loss_per_sentence_out)
         logging.info( "Seen {0}".format(total_seen))
-    logging.info('Validation loss (AVG/SUM/N_SENT): {0} {1} {2}'.format(total_loss/total_seen, total_loss, total_seen))
+    logging.info('Validation loss from lemma (AVG/SUM/N_SENT): {0} {1} {2}'.format(total_loss/total_seen, total_loss, total_seen))
+    return costs
+
+def validate_ae(config, sess, valid_text_iterator, model, normalization_alpha=0):
+    costs = []
+    total_loss = 0.
+    total_ae_loss = 0.
+    total_lem_loss = 0.
+    total_seen = 0
+    x,x_mask,y,y_mask,ae_y,ae_y_mask,training = model.get_score_inputs()
+    loss_per_sentence = model.get_loss()
+    loss_per_sentence_ae = model.get_ae_loss()
+    for x_v, y_v, ae_y_v in valid_text_iterator:
+        if len(x_v[0][0]) != config.factors:
+            logging.error('Mismatch between number of factors in settings ({0}), and number in validation corpus ({1})\n'.format(config.factors, len(x_v[0][0])))
+            sys.exit(1)
+        x_v_in, x_v_mask_in, y_v_in, y_v_mask_in = prepare_data(x_v, y_v, maxlen=None)
+        x_v_in, x_v_mask_in, ae_y_v_in, ae_y_v_mask_in = prepare_data(x_v, ae_y_v, maxlen=None)
+
+        feeds = {x:x_v_in, x_mask:x_v_mask_in, y:y_v_in, y_mask:y_v_mask_in, ae_y:ae_y_v_in, ae_y_mask:ae_y_v_mask_in, training:False}
+        loss_per_sentence_out = sess.run(loss_per_sentence, feed_dict=feeds)
+        loss_per_sentence_out_ae = sess.run(loss_per_sentence_ae, feed_dict=feeds)
+        loss_per_sentence_out_total = loss_per_sentence_out_ae + loss_per_sentence_out
+        # normalize scores according to output length
+        if normalization_alpha:
+            adjusted_lengths = numpy.array([numpy.count_nonzero(s) ** normalization_alpha for s in y_v_mask_in.T])
+            loss_per_sentence_out_total /= adjusted_lengths
+            loss_per_sentence_out_ae /= adjusted_lengths
+            loss_per_sentence_out /= adjusted_lengths
+        total_loss += loss_per_sentence_out_total.sum()
+        total_ae_loss += loss_per_sentence_out_ae.sum()
+        total_lem_loss += loss_per_sentence_out.sum()
+        total_seen += x_v_in.shape[2]
+        costs += list(loss_per_sentence_out_total)
+        logging.info( "Seen {0}".format(total_seen))
+    logging.info('Validation loss from total (AVG/SUM/N_SENT): {0} {1} {2}'.format(total_loss/total_seen, total_loss, total_seen))
+    logging.info('Validation loss from ae (AVG/SUM/N_SENT): {0} {1} {2}'.format(total_ae_loss/total_seen, total_ae_loss, total_seen))
+    logging.info('Validation loss from lemmatization (AVG/SUM/N_SENT): {0} {1} {2}'.format(total_lem_loss/total_seen, total_lem_loss, total_seen))
     return costs
 
 def validate_helper(config, sess):
@@ -744,6 +845,30 @@ def validate_helper(config, sess):
                         use_factor=(config.factors > 1),
                         maxibatch_size=config.maxibatch_size)
     costs = validate(config, sess, valid_text_iterator, model)
+    lines = open(config.valid_target_dataset).readlines()
+    for cost, line in zip(costs, lines):
+        logging.info("{0} {1}".format(cost,line.strip()))
+
+def validate_helper_ae(config, sess):
+    logging.info('Validation based on added lemma loss and autoencoding loss')
+    model, saver = create_model_alternate(config, sess)
+    valid_text_iterator = TextIterator(
+                        source=config.valid_source_dataset,
+                        target=config.valid_target_dataset,
+                        ae_target=config.valid_ae_target_dataset,
+                        source_dicts=config.source_dicts,
+                        target_dict=config.target_dict,
+                        target_ae_dict=config.target_ae_dict,
+                        batch_size=config.valid_batch_size,
+                        maxlen=config.maxlen,
+                        source_vocab_sizes=config.source_vocab_sizes,
+                        target_vocab_size=config.target_vocab_size,
+                        ae_target_vocab_size=config.ae_target_vocab_size,
+                        shuffle_each_epoch=False,
+                        sort_by_length=False, #TODO
+                        use_factor=(config.factors > 1),
+                        maxibatch_size=config.maxibatch_size)
+    costs = validate_ae(config, sess, valid_text_iterator, model)
     lines = open(config.valid_target_dataset).readlines()
     for cost, line in zip(costs, lines):
         logging.info("{0} {1}".format(cost,line.strip()))
@@ -831,7 +956,7 @@ def parse_args():
 
     training = parser.add_argument_group('training parameters')
     training.add_argument('--run_alternate', type=int, default=0, metavar='INT',
-                         help="maximum sequence length for training and validation (default: %(default)s)")
+                         help="run model alternating between multiple tasks")
     training.add_argument('--maxlen', type=int, default=100, metavar='INT',
                          help="maximum sequence length for training and validation (default: %(default)s)")
     training.add_argument('--batch_size', type=int, default=80, metavar='INT',
@@ -1010,12 +1135,21 @@ if __name__ == "__main__":
     config = parse_args()
     logging.info(config)
     with tf.Session() as sess:
-        if config.translate_valid:
+        if config.translate_valid and config.run_alternate==0:
+            logging.info("NORMAL TRANSLATE")
             translate(config, sess)
-        elif config.run_validation:
+        elif config.translate_valid and config.run_alternate==1:
+            logging.info("AE TRANSLATE")
+            translate_ae(config, sess)
+        elif config.run_validation and config.run_alternate==0:
+            logging.info("NORMAL VALIDATE")
             validate_helper(config, sess)
+        elif config.run_validation and config.run_alternate==1:
+            logging.info("AE VALIDATE")
+            validate_helper_ae(config, sess)
         elif config.run_alternate==1:
-            print('TRAINING ALTERNATING')
+            logging.info('AE TRAINING')
             train_alternate(config, sess)
         else:
+            logging.info('NORMAL TRAINING')
             train(config, sess)

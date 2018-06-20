@@ -950,6 +950,9 @@ class AEModel(object):
     def get_loss(self):
         return self.loss_per_sentence
 
+    def get_ae_loss(self):
+        return self.ae_loss_per_sentence
+
     def get_mean_loss(self):
         return self.mean_loss
 
@@ -1180,6 +1183,9 @@ class AEModel_Alternate(object):
 
     def get_loss(self):
         return self.loss_per_sentence
+
+    def get_ae_loss(self):
+        return self.ae_loss_per_sentence
 
     def get_mean_loss(self):
         return self.mean_loss

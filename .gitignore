@@ -12,7 +12,7 @@ data/languages_20/
 data/languages_10/
 data/languages_1/
 data/ud-treebanks-v2.1/
-
+mtl_nematus/tiny_data
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
