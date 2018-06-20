@@ -127,6 +127,107 @@ def create_model(config, sess, ensemble_scope=None, train=False):
     else:
         return model, saver
 
+def create_model_alternate(config, sess, ensemble_scope=None, train=False):
+    logging.info('Building model...')
+    # StandardModel is a class in model.py
+    model = AEModel_Alternate(config)
+
+    # Construct a mapping between saved variable names and names in the current
+    # scope. There are two reasons why names might be different:
+    #
+    #   1. This model is part of an ensemble, in which case a model-specific
+    #       name scope will be active.
+    #
+    #   2. The saved model is from an old version of Nematus (before deep model
+    #        support was added) and uses a different variable naming scheme
+    #        for the GRUs.
+
+    # slim is just another TF library that can integrate with native TF append
+    # is supposed to make defining, training and evaluating complex models easier
+
+    # the variables obtained here are those initialized above for Standard models
+    #
+    variables = slim.get_variables_to_restore()
+    var_map = {}
+    for v in variables:
+        name = v.name.split(':')[0]
+        if ensemble_scope == None:
+            saved_name = name
+        elif v.name.startswith(ensemble_scope):
+            saved_name = name[len(ensemble_scope):]
+        else: # v belongs to a different model in the ensemble.
+            continue
+        if config.model_version == 0.1:
+            # Backwards compatibility with the old variable naming scheme.
+            saved_name = compat.revert_variable_name(saved_name, 0.1)
+        var_map[saved_name] = v
+    saver = tf.train.Saver(var_map, max_to_keep=None)
+
+    # compute reload model filename
+    reload_filename = None
+    if config.reload == 'latest_checkpoint':
+        checkpoint_dir = os.path.dirname(config.saveto)
+        reload_filename = tf.train.latest_checkpoint(checkpoint_dir)
+        if reload_filename != None:
+            if (os.path.basename(reload_filename).rsplit('-', 1)[0] !=
+                os.path.basename(config.saveto)):
+                logging.error("Mismatching model filename found in the same directory while reloading from the latest checkpoint")
+                sys.exit(1)
+            logging.info('Latest checkpoint found in directory ' + os.path.abspath(checkpoint_dir))
+    elif config.reload != None:
+        reload_filename = config.reload
+    if (reload_filename == None) and (config.prior_model != None):
+        logging.info('Initializing model parameters from prior')
+        reload_filename = config.prior_model
+
+    # initialize or reload training progress
+    if train:
+        progress = training_progress.TrainingProgress()
+        progress.bad_counter = 0
+        progress.uidx = 0
+        progress.eidx = 0
+        progress.estop = False
+        progress.history_errs = []
+        if reload_filename and config.reload_training_progress:
+            path = reload_filename + '.progress.json'
+            if os.path.exists(path):
+                logging.info('Reloading training progress')
+                progress.load_from_json(path)
+                if (progress.estop == True or
+                    progress.eidx > config.max_epochs or
+                    progress.uidx >= config.finish_after):
+                    logging.warning('Training is already complete. Disable reloading of training progress (--no_reload_training_progress) or remove or modify progress file (%s) to train anyway.' % reload_path)
+                    sys.exit(0)
+
+    # load prior model
+    if train and config.prior_model != None:
+        load_prior(config, sess, saver)
+
+    # initialize or restore model
+    if reload_filename == None:
+        #so if training for first time, do this
+        logging.info('Initializing model parameters from scratch...')
+        init_op = tf.global_variables_initializer()
+        sess.run(init_op)
+    else:
+        logging.info('Loading model parameters from file ' + os.path.abspath(reload_filename))
+        saver.restore(sess, os.path.abspath(reload_filename))
+        if train:
+            # The global step is currently recorded in two places:
+            #   1. model.t, a tf.Variable read and updated by the optimizer
+            #   2. progress.uidx, a Python integer updated by train()
+            # We reset model.t to the value recorded in progress to allow the
+            # value to be controlled by the user (either explicitly by
+            # configuring the value in the progress file or implicitly by using
+            # --no_reload_training_progress).
+            model.reset_global_step(progress.uidx, sess)
+
+    logging.info('Done')
+
+    if train:
+        return model, saver, progress
+    else:
+        return model, saver
 def load_prior(config, sess, saver):
      logging.info('Loading prior model parameters from file ' + os.path.abspath(config.prior_model))
      saver.restore(sess, os.path.abspath(config.prior_model))
@@ -262,6 +363,8 @@ def train(config, sess):
     #self.objective = self.mean_loss
     loss_per_sentence = model.get_loss()
     objective = model.get_objective()
+    lemma_loss = model.get_mean_loss()
+    ae_loss = model.get_mean_ae_loss()
 
     if config.summaryFreq:
         summary_dir = config.summary_dir if (config.summary_dir != None) else (os.path.abspath(os.path.dirname(config.saveto)))
@@ -277,6 +380,8 @@ def train(config, sess):
     text_iterator, valid_text_iterator = load_data(config)
     _, _,_,  num_to_source, num_to_target, num_to_ae_target = load_dictionaries(config)
     total_loss = 0.
+    total_lemma_loss = 0.
+    total_ae_loss = 0.
     n_sents, n_words = 0, 0
     last_time = time.time()
     logging.info("Initial uidx={}".format(progress.uidx))
@@ -295,25 +400,184 @@ def train(config, sess):
             write_summary_for_this_batch = config.summaryFreq and ((progress.uidx % config.summaryFreq == 0) or (config.finish_after and progress.uidx % config.finish_after == 0))
             (factors, seqLen, batch_size) = x_in.shape
             inn = {x:x_in, y:y_in, x_mask:x_mask_in, y_mask:y_mask_in, ae_y:ae_y_in, ae_y_mask:ae_y_mask_in, training:True}
-            out = [t, apply_grads, objective]
+            out = [t, apply_grads, objective, lemma_loss, ae_loss]
             if write_summary_for_this_batch:
                 out += [merged]
             out_values = sess.run(out, feed_dict=inn)
             objective_value = out_values[2]
+            loss_value = out_values[3]
+            ae_loss_value = out_values[4]
+
             total_loss += objective_value*batch_size
+            total_lemma_loss += loss_value*batch_size
+            total_ae_loss += ae_loss_value*batch_size
             n_sents += batch_size
             n_words += int(numpy.sum(y_mask_in))
             progress.uidx += 1
 
             if write_summary_for_this_batch:
                 writer.add_summary(out_values[3], out_values[0])
-
             if config.dispFreq and progress.uidx % config.dispFreq == 0:
                 duration = time.time() - last_time
                 disp_time = datetime.now().strftime('[%Y-%m-%d %H:%M:%S]')
-                logging.info('{0} Epoch: {1} Update: {2} Loss/word: {3} Words/sec: {4} Sents/sec: {5}'.format(disp_time, progress.eidx, progress.uidx, total_loss/n_words, n_words/duration, n_sents/duration))
+                logging.info('{0} Epoch: {1} Update: {2} Loss/word: {3} Loss/Word Lemma: {4} Loss/word AE: {5} Words/sec: {6} Sents/sec: {7}'.format(disp_time, progress.eidx, progress.uidx, total_loss/n_words, total_lemma_loss/n_words, total_ae_loss/n_words, n_words/duration, n_sents/duration))
                 last_time = time.time()
                 total_loss = 0.
+                total_lemma_loss = 0
+                total_ae_loss = 0.
+                n_sents = 0
+                n_words = 0
+
+            if config.saveFreq and progress.uidx % config.saveFreq == 0:
+                saver.save(sess, save_path=config.saveto, global_step=progress.uidx)
+                progress_path = '{0}-{1}.progress.json'.format(config.saveto, progress.uidx)
+                progress.save_to_json(progress_path)
+
+            if config.sampleFreq and progress.uidx % config.sampleFreq == 0:
+                x_small, x_mask_small, y_small = x_in[:, :, :10], x_mask_in[:, :10], y_in[:, :10]
+                samples = model.sample(sess, x_small, x_mask_small)
+                assert len(samples) == len(x_small.T) == len(y_small.T), (len(samples), x_small.shape, y_small.shape)
+                for xx, yy, ss in zip(x_small.T, y_small.T, samples):
+                    logging.info('SOURCE: {0}'.format(factoredseq2words(xx, num_to_source)))
+                    logging.info('TARGET: {0}'.format(seq2words(yy, num_to_target)))
+                    logging.info('SAMPLE: {0}'.format(seq2words(ss, num_to_target)))
+
+            if config.beamFreq and progress.uidx % config.beamFreq == 0:
+                x_small, x_mask_small, y_small = x_in[:, :, :10], x_mask_in[:, :10], y_in[:,:10]
+                samples = model.beam_search(sess, x_small, x_mask_small, config.beam_size)
+                # samples is a list with shape batch x beam x len
+                assert len(samples) == len(x_small.T) == len(y_small.T), (len(samples), x_small.shape, y_small.shape)
+                for xx, yy, ss in zip(x_small.T, y_small.T, samples):
+                    logging.info('SOURCE: {0}'.format(factoredseq2words(xx, num_to_source)))
+                    logging.info('TARGET: {0}'.format(seq2words(yy, num_to_target)))
+                    for i, (sample, cost) in enumerate(ss):
+                        logging.info('SAMPLE {0}: {1} Cost/Len/Avg {2}/{3}/{4}'.format(i, seq2words(sample, num_to_target), cost, len(sample), cost/len(sample)))
+
+            if config.validFreq and progress.uidx % config.validFreq == 0:
+                costs = validate(config, sess, valid_text_iterator, model)
+                # validation loss is mean of normalized sentence log probs
+                valid_loss = sum(costs) / len(costs)
+                if (len(progress.history_errs) == 0 or
+                    valid_loss < min(progress.history_errs)):
+                    progress.bad_counter = 0
+                    saver.save(sess, save_path=config.saveto)
+                    progress_path = '{0}.progress.json'.format(config.saveto)
+                    progress.save_to_json(progress_path)
+                else:
+                    progress.bad_counter += 1
+                    if progress.bad_counter > config.patience:
+                        logging.info('Early Stop!')
+                        progress.estop = True
+                        break
+                progress.history_errs.append(valid_loss)
+
+            if config.finish_after and progress.uidx % config.finish_after == 0:
+                logging.info("Maximum number of updates reached")
+                saver.save(sess, save_path=config.saveto, global_step=progress.uidx)
+                progress.estop=True
+                progress_path = '{0}-{1}.progress.json'.format(config.saveto, progress.uidx)
+                progress.save_to_json(progress_path)
+                break
+        if progress.estop:
+            break
+
+def train_alternate(config, sess):
+    assert (config.prior_model != None and (tf.train.checkpoint_exists(os.path.abspath(config.prior_model))) or (config.map_decay_c==0.0)), \
+    "MAP training requires a prior model file: Use command-line option --prior_model"
+
+    # literally just initializes the model, reloads from previous if necessary
+    # initializes everything
+    # starts sessions
+    # model is from models.py StandardModel
+    # saver is from tf.train.Saver
+    # progress is from training_progress.TrainingProgress()
+    model, saver, progress = create_model_alternate(config, sess, train=True)
+
+    # returns these from StandardModel
+    # x is the source data, y is the target data
+    # all initialized to be of size seqlen x batch size
+    x,x_mask,y,y_mask,ae_y,ae_y_mask,training = model.get_score_inputs()
+    # self.optimizer.apply_gradients(grad_vars) where grad_vars come from self.optimizer.compute_gradients(self.mean_loss)
+    # grads are clipped by global norm
+    apply_grads = model.get_apply_grads()
+    apply_ae_grads = model.get_apply_ae_grads()
+
+    # self.t = tf.Variable(0, name='time', trainable=False, dtype=tf.int32)
+    t = model.get_global_step()
+
+    #self.logits = self.decoder.score(self.y)
+    #self.loss_layer = Masked_cross_entropy_loss(self.y, self.y_mask)
+    #self.loss_per_sentence = self.loss_layer.forward(self.logits)
+    #self.mean_loss = tf.reduce_mean(self.loss_per_sentence, keep_dims=False)
+    #self.objective = self.mean_loss
+    loss_per_sentence = model.get_loss()
+    objective = model.get_objective()
+    ae_objective = model.get_ae_objective()
+    lemma_loss = model.get_mean_loss()
+    ae_loss = model.get_mean_ae_loss()
+
+    if config.summaryFreq:
+        summary_dir = config.summary_dir if (config.summary_dir != None) else (os.path.abspath(os.path.dirname(config.saveto)))
+        writer = tf.summary.FileWriter(summary_dir, sess.graph)
+    tf.summary.scalar(name='mean_cost', tensor=objective)
+    tf.summary.scalar(name='t', tensor=t)
+    merged = tf.summary.merge_all()
+
+    #save model options
+    config_as_dict = OrderedDict(sorted(vars(config).items()))
+    json.dump(config_as_dict, open('%s.json' % config.saveto, 'wb'), indent=2)
+
+    text_iterator, valid_text_iterator = load_data(config)
+    _, _,_,  num_to_source, num_to_target, num_to_ae_target = load_dictionaries(config)
+    total_loss = 0.
+    total_lemma_loss = 0.
+    total_ae_loss = 0.
+    n_sents, n_words = 0, 0
+    last_time = time.time()
+    logging.info("Initial uidx={}".format(progress.uidx))
+    for progress.eidx in xrange(progress.eidx, config.max_epochs):
+        logging.info('Starting epoch {0}'.format(progress.eidx))
+        for source_sents, target_sents, ae_target_sents in text_iterator:
+            if len(source_sents[0][0]) != config.factors:
+                logging.error('Mismatch between number of factors in settings ({0}), and number in training corpus ({1})\n'.format(config.factors, len(source_sents[0][0])))
+                sys.exit(1)
+            x_in, x_mask_in, y_in, y_mask_in = prepare_data(source_sents, target_sents, maxlen=None)
+            x_in, x_mask_in, ae_y_in, ae_y_mask_in = prepare_data(source_sents, ae_target_sents, maxlen=None)
+
+            if x_in is None:
+                logging.info('Minibatch with zero sample under length {0}'.format(config.maxlen))
+                continue
+            write_summary_for_this_batch = config.summaryFreq and ((progress.uidx % config.summaryFreq == 0) or (config.finish_after and progress.uidx % config.finish_after == 0))
+            (factors, seqLen, batch_size) = x_in.shape
+            inn = {x:x_in, y:y_in, x_mask:x_mask_in, y_mask:y_mask_in, ae_y:ae_y_in, ae_y_mask:ae_y_mask_in, training:True}
+            if progress.eidx%2==1:
+                out = [t, apply_grads, objective, lemma_loss, ae_loss]
+            else:
+                out = [t, apply_ae_grads, ae_objective, lemma_loss, ae_loss]
+            if write_summary_for_this_batch:
+                out += [merged]
+            out_values = sess.run(out, feed_dict=inn)
+            objective_value = out_values[2]
+            loss_value = out_values[3]
+            ae_loss_value = out_values[4]
+
+            total_loss += objective_value*batch_size
+            total_lemma_loss += loss_value*batch_size
+            total_ae_loss += ae_loss_value*batch_size
+            n_sents += batch_size
+            n_words += int(numpy.sum(y_mask_in))
+            progress.uidx += 1
+
+            if write_summary_for_this_batch:
+                writer.add_summary(out_values[3], out_values[0])
+            if config.dispFreq and progress.uidx % config.dispFreq == 0:
+                duration = time.time() - last_time
+                disp_time = datetime.now().strftime('[%Y-%m-%d %H:%M:%S]')
+                logging.info('{0} Epoch: {1} Update: {2} Loss/word: {3} Loss/Word Lemma: {4} Loss/word AE: {5} Words/sec: {6} Sents/sec: {7}'.format(disp_time, progress.eidx, progress.uidx, total_loss/n_words, total_lemma_loss/n_words, total_ae_loss/n_words, n_words/duration, n_sents/duration))
+                last_time = time.time()
+                total_loss = 0.
+                total_lemma_loss = 0
+                total_ae_loss = 0.
                 n_sents = 0
                 n_words = 0
 
@@ -566,6 +830,8 @@ def parse_args():
                          help='activation function in hidden layer of the output network (default: %(default)s)')
 
     training = parser.add_argument_group('training parameters')
+    training.add_argument('--run_alternate', type=int, default=0, metavar='INT',
+                         help="maximum sequence length for training and validation (default: %(default)s)")
     training.add_argument('--maxlen', type=int, default=100, metavar='INT',
                          help="maximum sequence length for training and validation (default: %(default)s)")
     training.add_argument('--batch_size', type=int, default=80, metavar='INT',
@@ -730,7 +996,6 @@ def parse_args():
     config.ae_target_dict = config.dictionaries[-2]
     config.ae_target_vocab_size = vocab_sizes[-2]
 
-
     # set the model version
     config.model_version = 0.2
 
@@ -749,5 +1014,8 @@ if __name__ == "__main__":
             translate(config, sess)
         elif config.run_validation:
             validate_helper(config, sess)
+        elif config.run_alternate==1:
+            print('TRAINING ALTERNATING')
+            train_alternate(config, sess)
         else:
             train(config, sess)

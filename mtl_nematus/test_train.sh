@@ -46,7 +46,7 @@ maxlen=75
 
 optimizer="adam"
 
-dispFreq=1000
+dispFreq=100
 
 validate_every_n_epochs=100 #increase to make training faster
 valid_freq=($(wc -l ${modeldir}/data/train-sources))
@@ -77,6 +77,7 @@ python nmt.py \
   --batch_size ${batch_size} \
   --dispFreq ${dispFreq} \
   --saveFreq 10000 \
+  --run_alternate 1 \
   --max_epochs ${max_epochs} \
   --use_dropout \
   --enc_depth 2 \
