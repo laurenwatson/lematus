@@ -713,11 +713,11 @@ def train_alternate_batch(config, sess):
             inn = {x:x_in, y:y_in, x_mask:x_mask_in, y_mask:y_mask_in, ae_y:ae_y_in, ae_y_mask:ae_y_mask_in, training:True}
             if ae:
                 out = [t, apply_grads, objective, lemma_loss, ae_loss]
-                logging.info('Doing normal training')
+                #logging.info('Doing normal training')
                 ae=False
             else:
                 out = [t, apply_ae_grads, ae_objective, lemma_loss, ae_loss]
-                logging.info('Doing ae training')
+                #logging.info('Doing ae training')
                 ae=True
             if write_summary_for_this_batch:
                 out += [merged]
