@@ -5,7 +5,7 @@ from collections import defaultdict
 
 model_name = '20-char-context-base1'
 data_set = 'dev' # either dev or test
-langs=['Hungarian', 'Croatian', 'French', 'English', 'Turkish']
+langs=[ 'English']
 
 for lang in langs:
     model= lang + "-" + model_name
@@ -14,8 +14,8 @@ for lang in langs:
     train_inflections2lemmas = defaultdict(list)
     dev_inflections = []
 
-    with open("models_20/"+lang+"-20-char-context-base1/data/train-targets".format(model), "r") as t:
-        with open("models_20/"+lang+"-20-char-context-base1/data/train-sources".format(model), "r") as s:
+    with open("models_10/"+lang+"-20-char-context-base1/data/train-targets".format(model), "r") as t:
+        with open("models_10/"+lang+"-20-char-context-base1/data/train-sources".format(model), "r") as s:
             for line in s:
                 line_content = line.split("<lc>")[1].split("<rc>")
 
@@ -48,9 +48,9 @@ for lang in langs:
     unambiguous_should_have_been_copied = 0.0
     total_incorrect_unseen = 0.0
     blah = 0.0
-    with open("models_20/"+lang+"-20-char-context-base1/data/dev-sources".format(model,data_set), "r") as i:
-        with open("models_20/"+lang+"-20-char-context-base1/data/dev-targets".format(model,data_set), "r") as o:
-            with open("models_20/"+lang+"-20-char-context-base1/data/dev-hypothesis".format(model,data_set), "r") as p:
+    with open("models_10/"+lang+"-20-char-context-base1/data/dev-sources".format(model,data_set), "r") as i:
+        with open("models_10/"+lang+"-20-char-context-base1/data/dev-targets".format(model,data_set), "r") as o:
+            with open("models_10/"+lang+"-20-char-context-base1/data/dev-hypothesis".format(model,data_set), "r") as p:
                 for line in i:
                     try:
                         inflection = "".join(line.split("<lc>")[1].split("<rc>")[0].strip().split()).lower()

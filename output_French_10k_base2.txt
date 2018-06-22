@@ -1,0 +1,8 @@
+Copying data sets
+Building Dictionaries
+Processing ./models_10/French-20-char-context-base2/data/train-sources
+Done
+Processing ./models_10/French-20-char-context-base2/data/train-targets
+Done
+Starting training
+End of training

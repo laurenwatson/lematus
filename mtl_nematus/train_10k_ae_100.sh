@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 lang='English'
 type='20-char-context'
@@ -49,7 +49,7 @@ optimizer="adam"
 
 dispFreq=100
 
-validate_every_n_epochs=100 #increase to make training faster
+validate_every_n_epochs=20 #increase to make training faster
 valid_freq=($(wc -l ${modeldir}/data/train-sources))
 valid_freq=$((valid_freq / batch_size * ${validate_every_n_epochs}))
 
@@ -84,5 +84,5 @@ python nmt.py \
   --enc_depth 2 \
   --dec_depth 2 \
   --patience 10 \
-  --validFreq ${valid_freq} &> modeldir/output_${lang}-${type}-${experiment_id}.txt
+  --validFreq ${valid_freq} &> ${modeldir}/output_${lang}-${type}-${experiment_id}.txt
 echo "End of training"

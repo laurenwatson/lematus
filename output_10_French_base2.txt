@@ -1,0 +1,4981 @@
+INFO: Namespace(batch_size=60, beamFreq=10000, beam_size=12, clip_c=1, datasets=['./models_10/French-20-char-context-base2/data/train-sources', './models_10/French-20-char-context-base2/data/train-targets'], dec_base_recurrence_transition_depth=2, dec_deep_context=False, dec_depth=2, dec_high_recurrence_transition_depth=1, decay_c=0, dictionaries=['./models_10/French-20-char-context-base2/data/train-sources.json', './models_10/French-20-char-context-base2/data/train-targets.json'], dim_per_factor=[300], dispFreq=1000, dropout_embedding=0.2, dropout_hidden=0.2, dropout_source=0, dropout_target=0, embedding_size=300, enc_depth=2, enc_recurrence_transition_depth=1, factors=1, finish_after=10000000, keep_train_set_in_memory=False, learning_rate=0.0001, map_decay_c=0, max_epochs=1000, maxibatch_size=20, maxlen=75, model_version=0.2, n_best=False, n_threads=5, normalize=True, optimizer='adam', output_hidden_activation='tanh', patience=10, prior_model=None, reload=None, reload_training_progress=True, run_validation=False, sampleFreq=10000, saveFreq=30000, saveto='./models_10/French-20-char-context-base2/model.npz', shuffle_each_epoch=True, sort_by_length=True, source_dataset='./models_10/French-20-char-context-base2/data/train-sources', source_dicts=['./models_10/French-20-char-context-base2/data/train-sources.json'], source_vocab_sizes=[107], state_size=100, summaryFreq=0, summary_dir=None, target_dataset='./models_10/French-20-char-context-base2/data/train-targets', target_dict='./models_10/French-20-char-context-base2/data/train-targets.json', target_vocab_size=102, tie_decoder_embeddings=False, token_batch_size=0, translate_valid=False, translation_maxlen=200, use_dropout=True, use_layer_norm=False, validFreq=1660, valid_batch_size=80, valid_datasets=['./models_10/French-20-char-context-base2/data/dev-sources', './models_10/French-20-char-context-base2/data/dev-targets'], valid_source_dataset='./models_10/French-20-char-context-base2/data/dev-sources', valid_target_dataset='./models_10/French-20-char-context-base2/data/dev-targets', valid_token_batch_size=0)
+2018-06-20 16:14:53.221745: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+INFO: Building model...
+WARNING:tensorflow:From /Users/laurenwatson/lematus_copy/nematus_tf/layers.py:518: calling reduce_max (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+WARNING: From /Users/laurenwatson/lematus_copy/nematus_tf/layers.py:518: calling reduce_max (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+WARNING:tensorflow:From /Users/laurenwatson/lematus_copy/nematus_tf/layers.py:521: calling reduce_sum (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+WARNING: From /Users/laurenwatson/lematus_copy/nematus_tf/layers.py:521: calling reduce_sum (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+WARNING:tensorflow:From /Users/laurenwatson/lematus_copy/nematus_tf/model.py:407: calling reduce_mean (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+WARNING: From /Users/laurenwatson/lematus_copy/nematus_tf/model.py:407: calling reduce_mean (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+INFO: Initializing model parameters from scratch...
+INFO: Done
+INFO: Reading data...
+INFO: Done
+INFO: Initial uidx=0
+INFO: Starting epoch 0
+INFO: Starting epoch 1
+INFO: Starting epoch 2
+INFO: Starting epoch 3
+INFO: Starting epoch 4
+INFO: Starting epoch 5
+INFO: [2018-06-20 16:19:31] Epoch: 5 Update: 1000 Loss/word: 2.48364302156 Words/sec: 1689.45244762 Sents/sec: 220.47490444
+INFO: Starting epoch 6
+INFO: Starting epoch 7
+INFO: Starting epoch 8
+INFO: Starting epoch 9
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 13.7674424858 110139.539886 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 10
+INFO: Starting epoch 11
+INFO: [2018-06-20 16:24:12] Epoch: 11 Update: 2000 Loss/word: 1.85094369221 Words/sec: 1632.02978108 Sents/sec: 212.91472663
+INFO: Starting epoch 12
+INFO: Starting epoch 13
+INFO: Starting epoch 14
+INFO: Starting epoch 15
+INFO: Starting epoch 16
+INFO: Starting epoch 17
+INFO: [2018-06-20 16:28:44] Epoch: 17 Update: 3000 Loss/word: 1.70231250054 Words/sec: 1682.58330555 Sents/sec: 219.638666417
+INFO: Starting epoch 18
+INFO: Starting epoch 19
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 12.3039301434 98431.4411469 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 20
+INFO: Starting epoch 21
+INFO: Starting epoch 22
+INFO: Starting epoch 23
+INFO: [2018-06-20 16:33:30] Epoch: 23 Update: 4000 Loss/word: 1.59216113061 Words/sec: 1608.68897381 Sents/sec: 210.002367014
+INFO: Starting epoch 24
+INFO: Starting epoch 25
+INFO: Starting epoch 26
+INFO: Starting epoch 27
+INFO: Starting epoch 28
+INFO: Starting epoch 29
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 10.8552829256 86842.2634048 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: [2018-06-20 16:38:14] Epoch: 29 Update: 5000 Loss/word: 1.47216693272 Words/sec: 1611.26257845 Sents/sec: 210.336956289
+INFO: Starting epoch 30
+INFO: Starting epoch 31
+INFO: Starting epoch 32
+INFO: Starting epoch 33
+INFO: Starting epoch 34
+INFO: Starting epoch 35
+INFO: [2018-06-20 16:42:42] Epoch: 35 Update: 6000 Loss/word: 1.3920754176 Words/sec: 1711.35763413 Sents/sec: 223.366526727
+INFO: Starting epoch 36
+INFO: Starting epoch 37
+INFO: Starting epoch 38
+INFO: Starting epoch 39
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 9.7113519156 77690.8153248 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 40
+INFO: Starting epoch 41
+INFO: [2018-06-20 16:47:20] Epoch: 41 Update: 7000 Loss/word: 1.31003185192 Words/sec: 1654.86102807 Sents/sec: 215.903170928
+INFO: Starting epoch 42
+INFO: Starting epoch 43
+INFO: Starting epoch 44
+INFO: Starting epoch 45
+INFO: Starting epoch 46
+INFO: Starting epoch 47
+INFO: [2018-06-20 16:51:34] Epoch: 47 Update: 8000 Loss/word: 1.21613437383 Words/sec: 1806.70013805 Sents/sec: 235.727399686
+INFO: Starting epoch 48
+INFO: Starting epoch 49
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 8.16078496704 65286.2797363 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 50
+INFO: Starting epoch 51
+INFO: Starting epoch 52
+INFO: Starting epoch 53
+INFO: [2018-06-20 16:56:04] Epoch: 53 Update: 9000 Loss/word: 1.0627024102 Words/sec: 1695.80266645 Sents/sec: 221.151668726
+INFO: Starting epoch 54
+INFO: Starting epoch 55
+INFO: Starting epoch 56
+INFO: Starting epoch 57
+INFO: Starting epoch 58
+INFO: Starting epoch 59
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 3.80804506817 30464.3605454 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: [2018-06-20 17:45:54] Epoch: 59 Update: 10000 Loss/word: 0.775647217354 Words/sec: 153.550697048 Sents/sec: 20.0314061551
+INFO: SOURCE: <w> e <s> M i s n i e <s> p u i s <s> e n <s> à <s> <lc> c e l l e <rc> <s> d e <s> C h a r l e s <s> G o n t h i e </w> 
+INFO: TARGET: <w> c e l u i </w>     
+INFO: SAMPLE: <w> E a l l e </w> 
+INFO: SOURCE: <w> e t <s> s e <s> r é f r é n a n t <s> d e <s> <lc> t o u t e <rc> <s> a c t i v i t é <s> j o y e u s e <s> o </w> 
+INFO: TARGET: <w> t o u t </w>      
+INFO: SAMPLE: <w> t o u t </w> 
+INFO: SOURCE: <w> <s> k i l o m è t r e s <s> d e <s> s o n <s> <lc> c o n f l u e n t <rc> <s> a v e c <s> l ' <s> A n g l i n </w> 
+INFO: TARGET: <w> c o n f l u e n t </w> 
+INFO: SAMPLE: <w> c o n g l e u r </w> 
+INFO: SOURCE: <w> p o p u l a t i o n <s> d a n s <s> l e <s> <lc> m o n d e <rc> <s> é t a i t <s> d ' <s> u n <s> p e u <s> p l </w> 
+INFO: TARGET: <w> m o n d e </w>     
+INFO: SAMPLE: <w> f o n d u e </w> 
+INFO: SOURCE: <w> b i e n <s> d ' <s> a u t r e s <s> u n e <s> <lc> d i z a i n e <rc> <s> d a n s <s> l a <s> m ê m e <s> r u e </w> 
+INFO: TARGET: <w> d i z a i n e </w>   
+INFO: SAMPLE: <w> d é m a i r e </w> 
+INFO: SOURCE: <w> s <s> l ' <s> â g e <s> d e <s> a n s <s> l a <s> <lc> b a s s e <rc> <s> à <s> l e <s> I <s> à <s> N a n c y <s> c u r </w> 
+INFO: TARGET: <w> b a s s e </w>     
+INFO: SAMPLE: <w> b a i n </w> 
+INFO: SOURCE: <w> <s> é t a b l i s s e m e n t s <s> d e <s> <lc> p l e i n <rc> <s> a i r <s> d e <s> l e <s> Q u é b e c <s> S </w> 
+INFO: TARGET: <w> p l e i n </w>     
+INFO: SAMPLE: <w> p l e i n </w> 
+INFO: SOURCE: <w> n <s> é c h a u f f e m e n t <s> p a r <s> <lc> e f f e t <rc> <s> J o u l e <s> s ' <s> i l <s> e s t <s> p a </w> 
+INFO: TARGET: <w> e f f e t </w>     
+INFO: SAMPLE: <w> e m m e t </w> 
+INFO: SOURCE: <w> <s> d e <s> l ' <s> i n t e r a c t i o n <s> <lc> e n t r e <rc> <s> l e <s> c o d o n <s> e t <s> l ' <s> a n t </w> 
+INFO: TARGET: <w> e n t r e </w>     
+INFO: SAMPLE: <w> e n t r e </w> 
+INFO: SOURCE: <w> l t e s <s> t r a d i t i o n n e l s <s> <lc> a i n s i <rc> <s> q u e <s> d e <s> c e r t a i n e s <s> p </w> 
+INFO: TARGET: <w> a i n s i </w>     
+INFO: SAMPLE: <w> a i n v i e r </w> 
+INFO: SOURCE: <w> e <s> M i s n i e <s> p u i s <s> e n <s> à <s> <lc> c e l l e <rc> <s> d e <s> C h a r l e s <s> G o n t h i e </w> 
+INFO: TARGET: <w> c e l u i </w>     
+INFO: SAMPLE 0: <w> c e l e s </w>  Cost/Len/Avg 5.2979016304/8/0.6622377038
+INFO: SAMPLE 1: <w> c e l e r </w>  Cost/Len/Avg 5.13448476791/8/0.641810595989
+INFO: SAMPLE 2: <w> c e l a l </w>  Cost/Len/Avg 4.89710617065/8/0.612138271332
+INFO: SAMPLE 3: <w> c e l e t </w>  Cost/Len/Avg 4.81191253662/8/0.601489067078
+INFO: SAMPLE 4: <w> c a l l e </w>  Cost/Len/Avg 4.7046790123/8/0.588084876537
+INFO: SAMPLE 5: <w> c e l e n </w>  Cost/Len/Avg 4.18223142624/8/0.52277892828
+INFO: SAMPLE 6: <w> d e l l e </w>  Cost/Len/Avg 4.08120393753/8/0.510150492191
+INFO: SAMPLE 7: <w> c e l d e </w>  Cost/Len/Avg 3.6380007267/8/0.454750090837
+INFO: SAMPLE 8: <w> g e l l e </w>  Cost/Len/Avg 3.48287963867/8/0.435359954834
+INFO: SAMPLE 9: <w> c e l e l </w>  Cost/Len/Avg 2.89966034889/8/0.362457543612
+INFO: SAMPLE 10: <w> c e l e </w>  Cost/Len/Avg 2.42772388458/7/0.346817697798
+INFO: SAMPLE 11: <w> c e l l e </w>  Cost/Len/Avg 0.747855901718/8/0.0934819877148
+INFO: SOURCE: <w> e t <s> s e <s> r é f r é n a n t <s> d e <s> <lc> t o u t e <rc> <s> a c t i v i t é <s> j o y e u s e <s> o </w> 
+INFO: TARGET: <w> t o u t </w>      
+INFO: SAMPLE 0: <w> t o u r e </w>  Cost/Len/Avg 4.68695735931/8/0.585869669914
+INFO: SAMPLE 1: <w> t o u x </w>  Cost/Len/Avg 4.5051612854/7/0.643594469343
+INFO: SAMPLE 2: <w> t o u x e </w>  Cost/Len/Avg 4.34231138229/8/0.542788922787
+INFO: SAMPLE 3: <w> t o i t e </w>  Cost/Len/Avg 4.31651973724/8/0.539564967155
+INFO: SAMPLE 4: <w> t o u t t e </w>  Cost/Len/Avg 4.25900411606/9/0.473222679562
+INFO: SAMPLE 5: <w> t o u v e r </w>  Cost/Len/Avg 4.25266265869/9/0.472518073188
+INFO: SAMPLE 6: <w> t o r t e </w>  Cost/Len/Avg 3.80534601212/8/0.475668251514
+INFO: SAMPLE 7: <w> t o u s t e </w>  Cost/Len/Avg 3.68594145775/9/0.409549050861
+INFO: SAMPLE 8: <w> t o u t e r </w>  Cost/Len/Avg 3.16847968102/9/0.352053297891
+INFO: SAMPLE 9: <w> t o u t r e </w>  Cost/Len/Avg 2.38047575951/9/0.264497306612
+INFO: SAMPLE 10: <w> t o u t </w>  Cost/Len/Avg 1.77920615673/7/0.254172308104
+INFO: SAMPLE 11: <w> t o u t e </w>  Cost/Len/Avg 1.77200818062/8/0.221501022577
+INFO: SOURCE: <w> <s> k i l o m è t r e s <s> d e <s> s o n <s> <lc> c o n f l u e n t <rc> <s> a v e c <s> l ' <s> A n g l i n </w> 
+INFO: TARGET: <w> c o n f l u e n t </w> 
+INFO: SAMPLE 0: <w> c o n c e u n t </w>  Cost/Len/Avg 5.76584529877/11/0.524167754433
+INFO: SAMPLE 1: <w> c o n m e u n t </w>  Cost/Len/Avg 5.74339675903/11/0.522126978094
+INFO: SAMPLE 2: <w> c o n t a n e r </w>  Cost/Len/Avg 5.53750991821/11/0.503409992565
+INFO: SAMPLE 3: <w> c o n f l u e n </w>  Cost/Len/Avg 5.35606765747/11/0.486915241588
+INFO: SAMPLE 4: <w> c o n m l u e n </w>  Cost/Len/Avg 5.34894514084/11/0.486267740076
+INFO: SAMPLE 5: <w> c o n f l i e n </w>  Cost/Len/Avg 5.14345884323/11/0.467587167566
+INFO: SAMPLE 6: <w> c o n m l i e n </w>  Cost/Len/Avg 5.08701562881/11/0.462455966256
+INFO: SAMPLE 7: <w> c o n g l u e n </w>  Cost/Len/Avg 4.77333831787/11/0.433939847079
+INFO: SAMPLE 8: <w> c o n g l i e n </w>  Cost/Len/Avg 4.65300273895/11/0.423000248996
+INFO: SAMPLE 9: <w> c o n g l u e n t </w>  Cost/Len/Avg 5.62663555145/12/0.468886295954
+INFO: SAMPLE 10: <w> c o n m l u e n t </w>  Cost/Len/Avg 5.64502286911/12/0.470418572426
+INFO: SAMPLE 11: <w> c o n m l i e n t </w>  Cost/Len/Avg 5.95318508148/12/0.49609875679
+INFO: SOURCE: <w> p o p u l a t i o n <s> d a n s <s> l e <s> <lc> m o n d e <rc> <s> é t a i t <s> d ' <s> u n <s> p e u <s> p l </w> 
+INFO: TARGET: <w> m o n d e </w>     
+INFO: SAMPLE 0: <w> j o n d e </w>  Cost/Len/Avg 4.70454835892/8/0.588068544865
+INFO: SAMPLE 1: <w> m o n d e r </w>  Cost/Len/Avg 4.61816740036/9/0.513129711151
+INFO: SAMPLE 2: <w> p o n d </w>  Cost/Len/Avg 4.40872430801/7/0.629817758288
+INFO: SAMPLE 3: <w> m o n d </w>  Cost/Len/Avg 4.22105503082/7/0.603007861546
+INFO: SAMPLE 4: <w> m o n t e </w>  Cost/Len/Avg 4.21430206299/8/0.526787757874
+INFO: SAMPLE 5: <w> m o n c e </w>  Cost/Len/Avg 4.12878274918/8/0.516097843647
+INFO: SAMPLE 6: <w> f o n d </w>  Cost/Len/Avg 3.99725675583/7/0.571036679404
+INFO: SAMPLE 7: <w> p o n d e </w>  Cost/Len/Avg 3.91582107544/8/0.48947763443
+INFO: SAMPLE 8: <w> m a n d e </w>  Cost/Len/Avg 3.80987691879/8/0.476234614849
+INFO: SAMPLE 9: <w> b o n d e </w>  Cost/Len/Avg 3.48017930984/8/0.435022413731
+INFO: SAMPLE 10: <w> f o n d e </w>  Cost/Len/Avg 2.35044550896/8/0.29380568862
+INFO: SAMPLE 11: <w> m o n d e </w>  Cost/Len/Avg 1.77550017834/8/0.221937522292
+INFO: SOURCE: <w> b i e n <s> d ' <s> a u t r e s <s> u n e <s> <lc> d i z a i n e <rc> <s> d a n s <s> l a <s> m ê m e <s> r u e </w> 
+INFO: TARGET: <w> d i z a i n e </w>   
+INFO: SAMPLE 0: <w> d i m a i n e r </w>  Cost/Len/Avg 5.83005619049/11/0.530005108226
+INFO: SAMPLE 1: <w> d i m a i e n </w>  Cost/Len/Avg 5.3147854805/10/0.53147854805
+INFO: SAMPLE 2: <w> d i j a i n e </w>  Cost/Len/Avg 4.86149406433/10/0.486149406433
+INFO: SAMPLE 3: <w> d i g a i r e </w>  Cost/Len/Avg 4.75396299362/10/0.475396299362
+INFO: SAMPLE 4: <w> d i m a i r e </w>  Cost/Len/Avg 4.56092500687/10/0.456092500687
+INFO: SAMPLE 5: <w> d o m a i n e </w>  Cost/Len/Avg 4.53113698959/10/0.453113698959
+INFO: SAMPLE 6: <w> d i f a i r e </w>  Cost/Len/Avg 4.36215496063/10/0.436215496063
+INFO: SAMPLE 7: <w> d i c a i n e </w>  Cost/Len/Avg 3.89091229439/10/0.389091229439
+INFO: SAMPLE 8: <w> d i b a i n e </w>  Cost/Len/Avg 3.18542313576/10/0.318542313576
+INFO: SAMPLE 9: <w> d i g a i n e </w>  Cost/Len/Avg 3.055975914/10/0.3055975914
+INFO: SAMPLE 10: <w> d i f a i n e </w>  Cost/Len/Avg 2.85207509995/10/0.285207509995
+INFO: SAMPLE 11: <w> d i m a i n e </w>  Cost/Len/Avg 2.5043656826/10/0.25043656826
+INFO: SOURCE: <w> s <s> l ' <s> â g e <s> d e <s> a n s <s> l a <s> <lc> b a s s e <rc> <s> à <s> l e <s> I <s> à <s> N a n c y <s> c u r </w> 
+INFO: TARGET: <w> b a s s e </w>     
+INFO: SAMPLE 0: <w> b a s s e r </w>  Cost/Len/Avg 5.15927410126/9/0.573252677917
+INFO: SAMPLE 1: <w> f a u s </w>  Cost/Len/Avg 5.15828227997/7/0.736897468567
+INFO: SAMPLE 2: <w> m a s t e </w>  Cost/Len/Avg 5.04469013214/8/0.630586266518
+INFO: SAMPLE 3: <w> j a s s e </w>  Cost/Len/Avg 4.96399211884/8/0.620499014854
+INFO: SAMPLE 4: <w> f a s s e r </w>  Cost/Len/Avg 4.65530395508/9/0.517255995009
+INFO: SAMPLE 5: <w> g a s s e </w>  Cost/Len/Avg 4.60810041428/8/0.576012551785
+INFO: SAMPLE 6: <w> f a s o n </w>  Cost/Len/Avg 4.57494115829/8/0.571867644787
+INFO: SAMPLE 7: <w> m a s s e r </w>  Cost/Len/Avg 4.13010835648/9/0.458900928497
+INFO: SAMPLE 8: <w> m a s o n </w>  Cost/Len/Avg 4.08194684982/8/0.510243356228
+INFO: SAMPLE 9: <w> b a s s e </w>  Cost/Len/Avg 3.43487167358/8/0.429358959198
+INFO: SAMPLE 10: <w> f a s s e </w>  Cost/Len/Avg 2.95589470863/8/0.369486838579
+INFO: SAMPLE 11: <w> m a s s e </w>  Cost/Len/Avg 2.43629312515/8/0.304536640644
+INFO: SOURCE: <w> <s> é t a b l i s s e m e n t s <s> d e <s> <lc> p l e i n <rc> <s> a i r <s> d e <s> l e <s> Q u é b e c <s> S </w> 
+INFO: TARGET: <w> p l e i n </w>     
+INFO: SAMPLE 0: <w> p l e i v e </w>  Cost/Len/Avg 5.54081106186/9/0.61564567354
+INFO: SAMPLE 1: <w> p l e s i r </w>  Cost/Len/Avg 5.06243467331/9/0.562492741479
+INFO: SAMPLE 2: <w> p l e s i e </w>  Cost/Len/Avg 4.99947500229/9/0.555497222477
+INFO: SAMPLE 3: <w> p l e p e r </w>  Cost/Len/Avg 4.99382209778/9/0.554869121975
+INFO: SAMPLE 4: <w> p e l i e </w>  Cost/Len/Avg 4.75362253189/8/0.594202816486
+INFO: SAMPLE 5: <w> p l e i s </w>  Cost/Len/Avg 4.38083219528/8/0.54760402441
+INFO: SAMPLE 6: <w> p l a i n </w>  Cost/Len/Avg 3.92898774147/8/0.491123467684
+INFO: SAMPLE 7: <w> p l e u n </w>  Cost/Len/Avg 3.54473590851/8/0.443091988564
+INFO: SAMPLE 8: <w> p l a i r </w>  Cost/Len/Avg 3.02829861641/8/0.378537327051
+INFO: SAMPLE 9: <w> p l e u r </w>  Cost/Len/Avg 2.41344714165/8/0.301680892706
+INFO: SAMPLE 10: <w> p l e i n </w>  Cost/Len/Avg 2.00070142746/8/0.250087678432
+INFO: SAMPLE 11: <w> p l e i r </w>  Cost/Len/Avg 1.95455229282/8/0.244319036603
+INFO: SOURCE: <w> n <s> é c h a u f f e m e n t <s> p a r <s> <lc> e f f e t <rc> <s> J o u l e <s> s ' <s> i l <s> e s t <s> p a </w> 
+INFO: TARGET: <w> e f f e t </w>     
+INFO: SAMPLE 0: <w> e m b e r </w>  Cost/Len/Avg 5.00593948364/8/0.625742435455
+INFO: SAMPLE 1: <w> e m b l e </w>  Cost/Len/Avg 4.91625404358/8/0.614531755447
+INFO: SAMPLE 2: <w> v o m e t </w>  Cost/Len/Avg 4.68410921097/8/0.585513651371
+INFO: SAMPLE 3: <w> e f m e t </w>  Cost/Len/Avg 4.65636348724/8/0.582045435905
+INFO: SAMPLE 4: <w> e m o n t </w>  Cost/Len/Avg 4.49696874619/8/0.562121093273
+INFO: SAMPLE 5: <w> e f f e t </w>  Cost/Len/Avg 4.14857721329/8/0.518572151661
+INFO: SAMPLE 6: <w> e m p e t </w>  Cost/Len/Avg 4.04447078705/8/0.505558848381
+INFO: SAMPLE 7: <w> t o m e t </w>  Cost/Len/Avg 3.94305825233/8/0.492882281542
+INFO: SAMPLE 8: <w> n o m e t </w>  Cost/Len/Avg 3.8006966114/8/0.475087076426
+INFO: SAMPLE 9: <w> e m f e t </w>  Cost/Len/Avg 3.53536391258/8/0.441920489073
+INFO: SAMPLE 10: <w> e m m e t </w>  Cost/Len/Avg 2.77236580849/8/0.346545726061
+INFO: SAMPLE 11: <w> e m b e t </w>  Cost/Len/Avg 2.6700220108/8/0.33375275135
+INFO: SOURCE: <w> <s> d e <s> l ' <s> i n t e r a c t i o n <s> <lc> e n t r e <rc> <s> l e <s> c o d o n <s> e t <s> l ' <s> a n t </w> 
+INFO: TARGET: <w> e n t r e </w>     
+INFO: SAMPLE 0: <w> n e t r e r </w>  Cost/Len/Avg 5.93103456497/9/0.659003840552
+INFO: SAMPLE 1: <w> e n t r é </w>  Cost/Len/Avg 5.63376235962/8/0.704220294952
+INFO: SAMPLE 2: <w> l e t r e </w>  Cost/Len/Avg 5.55983734131/8/0.694979667664
+INFO: SAMPLE 3: <w> v e t r e </w>  Cost/Len/Avg 5.47559833527/8/0.684449791908
+INFO: SAMPLE 4: <w> n e v r e </w>  Cost/Len/Avg 5.39301729202/8/0.674127161503
+INFO: SAMPLE 5: <w> e n s r e </w>  Cost/Len/Avg 5.37771606445/8/0.672214508057
+INFO: SAMPLE 6: <w> n e x r e </w>  Cost/Len/Avg 5.35937023163/8/0.669921278954
+INFO: SAMPLE 7: <w> n n t r e </w>  Cost/Len/Avg 5.10368394852/8/0.637960493565
+INFO: SAMPLE 8: <w> e n t r e r </w>  Cost/Len/Avg 4.19608736038/9/0.466231928931
+INFO: SAMPLE 9: <w> ê t r e </w>  Cost/Len/Avg 3.63677597046/7/0.519539424351
+INFO: SAMPLE 10: <w> n e t r e </w>  Cost/Len/Avg 2.45718502998/8/0.307148128748
+INFO: SAMPLE 11: <w> e n t r e </w>  Cost/Len/Avg 0.428383499384/8/0.053547937423
+INFO: SOURCE: <w> l t e s <s> t r a d i t i o n n e l s <s> <lc> a i n s i <rc> <s> q u e <s> d e <s> c e r t a i n e s <s> p </w> 
+INFO: TARGET: <w> a i n s i </w>     
+INFO: SAMPLE 0: <w> a u n o i </w>  Cost/Len/Avg 4.59991598129/8/0.574989497662
+INFO: SAMPLE 1: <w> a i n a i </w>  Cost/Len/Avg 4.48737430573/8/0.560921788216
+INFO: SAMPLE 2: <w> s i n s i </w>  Cost/Len/Avg 4.43415355682/8/0.554269194603
+INFO: SAMPLE 3: <w> a i n u i </w>  Cost/Len/Avg 4.22306013107/8/0.527882516384
+INFO: SAMPLE 4: <w> a i n o i r </w>  Cost/Len/Avg 4.09658670425/9/0.455176300473
+INFO: SAMPLE 5: <w> c i n s i </w>  Cost/Len/Avg 4.03239011765/8/0.504048764706
+INFO: SAMPLE 6: <w> a i n i r </w>  Cost/Len/Avg 3.75872802734/8/0.469841003418
+INFO: SAMPLE 7: <w> a u n s i </w>  Cost/Len/Avg 3.60099625587/8/0.450124531984
+INFO: SAMPLE 8: <w> a i n o i </w>  Cost/Len/Avg 3.50304293633/8/0.437880367041
+INFO: SAMPLE 9: <w> a i n i </w>  Cost/Len/Avg 3.44241023064/7/0.491772890091
+INFO: SAMPLE 10: <w> a i n i s </w>  Cost/Len/Avg 3.34017467499/8/0.417521834373
+INFO: SAMPLE 11: <w> a i n s i </w>  Cost/Len/Avg 2.341173172/8/0.2926466465
+INFO: Starting epoch 60
+INFO: Starting epoch 61
+INFO: Starting epoch 62
+INFO: Starting epoch 63
+INFO: Starting epoch 64
+INFO: Starting epoch 65
+INFO: [2018-06-20 18:14:01] Epoch: 65 Update: 11000 Loss/word: 0.497411721105 Words/sec: 271.881443812 Sents/sec: 35.4832021016
+INFO: Starting epoch 66
+INFO: Starting epoch 67
+INFO: Starting epoch 68
+INFO: Starting epoch 69
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 1.83729004842 14698.3203874 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 70
+INFO: Starting epoch 71
+INFO: [2018-06-20 18:18:26] Epoch: 71 Update: 12000 Loss/word: 0.354166219477 Words/sec: 1729.44152311 Sents/sec: 225.875031144
+INFO: Starting epoch 72
+INFO: Starting epoch 73
+INFO: Starting epoch 74
+INFO: Starting epoch 75
+INFO: Starting epoch 76
+INFO: Starting epoch 77
+INFO: [2018-06-20 18:22:44] Epoch: 77 Update: 13000 Loss/word: 0.27001262461 Words/sec: 1779.43923822 Sents/sec: 232.389814779
+INFO: Starting epoch 78
+INFO: Starting epoch 79
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 1.23260299857 9860.82398856 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 80
+INFO: Starting epoch 81
+INFO: Starting epoch 82
+INFO: Starting epoch 83
+INFO: [2018-06-20 18:36:13] Epoch: 83 Update: 14000 Loss/word: 0.215353736105 Words/sec: 566.686259416 Sents/sec: 74.0244395542
+INFO: Starting epoch 84
+INFO: Starting epoch 85
+INFO: Starting epoch 86
+INFO: Starting epoch 87
+INFO: Starting epoch 88
+INFO: Starting epoch 89
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.957421317771 7659.37054217 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: [2018-06-20 19:04:48] Epoch: 89 Update: 15000 Loss/word: 0.177911077047 Words/sec: 267.49558647 Sents/sec: 34.9146094476
+INFO: Starting epoch 90
+INFO: Starting epoch 91
+INFO: Starting epoch 92
+INFO: Starting epoch 93
+INFO: Starting epoch 94
+INFO: Starting epoch 95
+INFO: [2018-06-20 19:09:24] Epoch: 95 Update: 16000 Loss/word: 0.153709624716 Words/sec: 1663.68541303 Sents/sec: 217.179375313
+INFO: Starting epoch 96
+INFO: Starting epoch 97
+INFO: Starting epoch 98
+INFO: Starting epoch 99
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.787439279865 6299.51423892 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 100
+INFO: Starting epoch 101
+INFO: [2018-06-20 19:14:07] Epoch: 101 Update: 17000 Loss/word: 0.13287676698 Words/sec: 1620.70822722 Sents/sec: 211.383832663
+INFO: Starting epoch 102
+INFO: Starting epoch 103
+INFO: Starting epoch 104
+INFO: Starting epoch 105
+INFO: Starting epoch 106
+INFO: Starting epoch 107
+INFO: [2018-06-20 19:18:38] Epoch: 107 Update: 18000 Loss/word: 0.119820282841 Words/sec: 1694.49919971 Sents/sec: 221.125675753
+INFO: Starting epoch 108
+INFO: Starting epoch 109
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.699026083386 5592.20866708 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 110
+INFO: Starting epoch 111
+INFO: Starting epoch 112
+INFO: Starting epoch 113
+INFO: [2018-06-20 19:23:21] Epoch: 113 Update: 19000 Loss/word: 0.108314955867 Words/sec: 1624.21010572 Sents/sec: 211.815196631
+INFO: Starting epoch 114
+INFO: Starting epoch 115
+INFO: Starting epoch 116
+INFO: Starting epoch 117
+INFO: Starting epoch 118
+INFO: Starting epoch 119
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.634256046854 5074.04837483 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: [2018-06-20 19:28:07] Epoch: 119 Update: 20000 Loss/word: 0.0997890524717 Words/sec: 1603.4397947 Sents/sec: 209.183963386
+INFO: SOURCE: <w> a p i d e <s> e t <s> à <s> m o i n d r e <s> <lc> c o û t <rc> <s> e n <s> a t t e n d a n t <s> q u e <s> l </w> 
+INFO: TARGET: <w> c o û t </w>     
+INFO: SAMPLE: <w> c o û t </w> 
+INFO: SOURCE: <w> l l i r <s> u n e <s> c a f é t é r i a <s> <lc> a i n s i <rc> <s> q u ' <s> u n e <s> l i b r a i r i e </w> 
+INFO: TARGET: <w> a i n s i </w>    
+INFO: SAMPLE: <w> a i n s i </w> 
+INFO: SOURCE: <w> à <s> L e c t o u r e <s> G e r s <s> e t <s> <lc> m o r t <rc> <s> l e <s> j u i n <s> à <s> e s t <s> u n <s> e </w> 
+INFO: TARGET: <w> m o u r i r </w>   
+INFO: SAMPLE: <w> m o r t </w> 
+INFO: SOURCE: <w> e <s> l e <s> F r e e d o m <s> G r o u p <s> <lc> d o n t <rc> <s> C e r b e r u s <s> C a p i t a l <s> M </w> 
+INFO: TARGET: <w> d o n t </w>     
+INFO: SAMPLE: <w> d o n t </w> 
+INFO: SOURCE: <w> <s> i n t i t u l é <s> A <s> N o r d i c <s> <lc> P o e m <rc> <s> r e g r o u p a i t <s> u n e <s> q u i </w> 
+INFO: TARGET: <w> P o e m </w>     
+INFO: SAMPLE: <w> P o e m </w> 
+INFO: SOURCE: <w> I s m e n e <s> e n t r e <s> e t <s> <lc> a n n o n c e <rc> <s> q u e <s> c ' <s> e s t <s> F a r n a c e </w> 
+INFO: TARGET: <w> a n n o n c e r </w> 
+INFO: SAMPLE: <w> a n n o n c e r </w> 
+INFO: SOURCE: <w> a <s> c o n d i t i o n <s> q u e <s> l e <s> <lc> l o g o <rc> <s> d e <s> F a m i l y <s> P r o d u c t i </w> 
+INFO: TARGET: <w> l o g o </w>     
+INFO: SAMPLE: <w> l o g o </w> 
+INFO: SOURCE: <w> n c e <s> d e <s> l ' <s> i n d i v i d u <s> <lc> a f i n <rc> <s> q u ' <s> i l <s> p u i s s e <s> a n t i </w> 
+INFO: TARGET: <w> a f i n </w>     
+INFO: SAMPLE: <w> a f i n </w> 
+INFO: SOURCE: <w> L e <s> j u i l l e t <s> l e s <s> <lc> a r b i t r e s <rc> <s> t r a n c h è r e n t <s> e n <s> f a v </w> 
+INFO: TARGET: <w> a r b i t r e </w>  
+INFO: SAMPLE: <w> a r b i t r e </w> 
+INFO: SOURCE: <w> p r o u v e <s> d e <s> l e <s> d é s i r <s> <lc> p o u r <rc> <s> A n a <s> e n <s> p r o f i t e <s> p o u </w> 
+INFO: TARGET: <w> p o u r </w>     
+INFO: SAMPLE: <w> p o u r </w> 
+INFO: SOURCE: <w> a p i d e <s> e t <s> à <s> m o i n d r e <s> <lc> c o û t <rc> <s> e n <s> a t t e n d a n t <s> q u e <s> l </w> 
+INFO: TARGET: <w> c o û t </w>     
+INFO: SAMPLE 0: <w> c o î t </w>  Cost/Len/Avg 5.66842603683/7/0.809775148119
+INFO: SAMPLE 1: <w> c o s t </w>  Cost/Len/Avg 5.62173557281/7/0.803105081831
+INFO: SAMPLE 2: <w> c o û t r e </w>  Cost/Len/Avg 5.58608388901/9/0.620675987668
+INFO: SAMPLE 3: <w> c o v o i r </w>  Cost/Len/Avg 5.4764008522/9/0.608488983578
+INFO: SAMPLE 4: <w> c o ù t </w>  Cost/Len/Avg 5.39803123474/7/0.771147319249
+INFO: SAMPLE 5: <w> c o ë t </w>  Cost/Len/Avg 5.33392715454/7/0.761989593506
+INFO: SAMPLE 6: <w> c o u t </w>  Cost/Len/Avg 4.71694850922/7/0.673849787031
+INFO: SAMPLE 7: <w> c o U t </w>  Cost/Len/Avg 4.57953691483/7/0.654219559261
+INFO: SAMPLE 8: <w> c o j t </w>  Cost/Len/Avg 4.44545841217/7/0.635065487453
+INFO: SAMPLE 9: <w> c o î t r e </w>  Cost/Len/Avg 4.32859992981/9/0.480955547757
+INFO: SAMPLE 10: <w> c o x t </w>  Cost/Len/Avg 3.36662745476/7/0.480946779251
+INFO: SAMPLE 11: <w> c o û t </w>  Cost/Len/Avg 0.142337456346/7/0.0203339223351
+INFO: SOURCE: <w> l l i r <s> u n e <s> c a f é t é r i a <s> <lc> a i n s i <rc> <s> q u ' <s> u n e <s> l i b r a i r i e </w> 
+INFO: TARGET: <w> a i n s i </w>    
+INFO: SAMPLE 0: <w> a i n </w>  Cost/Len/Avg 8.34571075439/6/1.3909517924
+INFO: SAMPLE 1: <w> a y n s i </w>  Cost/Len/Avg 8.0314207077/8/1.00392758846
+INFO: SAMPLE 2: <w> a i n t i </w>  Cost/Len/Avg 7.69626951218/8/0.962033689022
+INFO: SAMPLE 3: <w> a i r s i </w>  Cost/Len/Avg 7.66060447693/8/0.957575559616
+INFO: SAMPLE 4: <w> o i n s i </w>  Cost/Len/Avg 7.63543224335/8/0.954429030418
+INFO: SAMPLE 5: <w> a i n s i r e </w>  Cost/Len/Avg 7.60959815979/10/0.760959815979
+INFO: SAMPLE 6: <w> a i n s i s </w>  Cost/Len/Avg 7.3759560585/9/0.819550673167
+INFO: SAMPLE 7: <w> a i n s y </w>  Cost/Len/Avg 6.6577091217/8/0.832213640213
+INFO: SAMPLE 8: <w> a i n s e r </w>  Cost/Len/Avg 6.38958454132/9/0.709953837925
+INFO: SAMPLE 9: <w> a i n s e </w>  Cost/Len/Avg 6.16874980927/8/0.771093726158
+INFO: SAMPLE 10: <w> a i n s i r </w>  Cost/Len/Avg 3.23209309578/9/0.359121455087
+INFO: SAMPLE 11: <w> a i n s i </w>  Cost/Len/Avg 0.0530550256371/8/0.00663187820464
+INFO: SOURCE: <w> à <s> L e c t o u r e <s> G e r s <s> e t <s> <lc> m o r t <rc> <s> l e <s> j u i n <s> à <s> e s t <s> u n <s> e </w> 
+INFO: TARGET: <w> m o u r i r </w>   
+INFO: SAMPLE 0: <w> p o r t </w>  Cost/Len/Avg 7.00604295731/7/1.00086327962
+INFO: SAMPLE 1: <w> m ê t r e </w>  Cost/Len/Avg 6.94251060486/8/0.867813825607
+INFO: SAMPLE 2: <w> m o s t </w>  Cost/Len/Avg 6.60516309738/7/0.943594728197
+INFO: SAMPLE 3: <w> m o u t </w>  Cost/Len/Avg 6.54984998703/7/0.93569285529
+INFO: SAMPLE 4: <w> m o n t </w>  Cost/Len/Avg 6.48547935486/7/0.926497050694
+INFO: SAMPLE 5: <w> m o î t r e </w>  Cost/Len/Avg 6.44044780731/9/0.715605311924
+INFO: SAMPLE 6: <w> m o i r e </w>  Cost/Len/Avg 6.35824012756/8/0.794780015945
+INFO: SAMPLE 7: <w> m e r t </w>  Cost/Len/Avg 6.29122877121/7/0.898746967316
+INFO: SAMPLE 8: <w> m o r t r e </w>  Cost/Len/Avg 5.90516138077/9/0.656129042308
+INFO: SAMPLE 9: <w> m o ê t r e </w>  Cost/Len/Avg 5.87758731842/9/0.653065257602
+INFO: SAMPLE 10: <w> m a r t </w>  Cost/Len/Avg 5.27473592758/7/0.75353370394
+INFO: SAMPLE 11: <w> m o r t </w>  Cost/Len/Avg 0.0354118272662/7/0.0050588324666
+INFO: SOURCE: <w> e <s> l e <s> F r e e d o m <s> G r o u p <s> <lc> d o n t <rc> <s> C e r b e r u s <s> C a p i t a l <s> M </w> 
+INFO: TARGET: <w> d o n t </w>     
+INFO: SAMPLE 0: <w> d o n t e r </w>  Cost/Len/Avg 6.79964494705/9/0.755516105228
+INFO: SAMPLE 1: <w> l o n t </w>  Cost/Len/Avg 6.71342325211/7/0.959060464587
+INFO: SAMPLE 2: <w> L o n t </w>  Cost/Len/Avg 6.61025381088/7/0.944321972983
+INFO: SAMPLE 3: <w> d e v o i r </w>  Cost/Len/Avg 6.52415943146/9/0.724906603495
+INFO: SAMPLE 4: <w> d o n d r e </w>  Cost/Len/Avg 6.52369260788/9/0.724854734209
+INFO: SAMPLE 5: <w> d e n t r e </w>  Cost/Len/Avg 6.45699596405/9/0.717443996006
+INFO: SAMPLE 6: <w> d e r t </w>  Cost/Len/Avg 6.37164402008/7/0.910234860012
+INFO: SAMPLE 7: <w> d o i r e </w>  Cost/Len/Avg 6.20300722122/8/0.775375902653
+INFO: SAMPLE 8: <w> d o n t r e </w>  Cost/Len/Avg 5.74677753448/9/0.638530837165
+INFO: SAMPLE 9: <w> d e n t </w>  Cost/Len/Avg 4.22548246384/7/0.603640351977
+INFO: SAMPLE 10: <w> d a n t </w>  Cost/Len/Avg 4.16483306885/7/0.594976152693
+INFO: SAMPLE 11: <w> d o n t </w>  Cost/Len/Avg 0.0624524839222/7/0.00892178341746
+INFO: SOURCE: <w> <s> i n t i t u l é <s> A <s> N o r d i c <s> <lc> P o e m <rc> <s> r e g r o u p a i t <s> u n e <s> q u i </w> 
+INFO: TARGET: <w> P o e m </w>     
+INFO: SAMPLE 0: <w> P o è m </w>  Cost/Len/Avg 6.71055364609/7/0.95865052087
+INFO: SAMPLE 1: <w> b o e m </w>  Cost/Len/Avg 6.68408679962/7/0.954869542803
+INFO: SAMPLE 2: <w> B o e m </w>  Cost/Len/Avg 6.56974983215/7/0.938535690308
+INFO: SAMPLE 3: <w> R o e m </w>  Cost/Len/Avg 5.95933866501/7/0.851334095001
+INFO: SAMPLE 4: <w> P o e m s </w>  Cost/Len/Avg 5.90794324875/8/0.738492906094
+INFO: SAMPLE 5: <w> P o n m </w>  Cost/Len/Avg 5.47497081757/7/0.782138688224
+INFO: SAMPLE 6: <w> P o e z </w>  Cost/Len/Avg 5.3452911377/7/0.763613019671
+INFO: SAMPLE 7: <w> P o a m </w>  Cost/Len/Avg 5.28584766388/7/0.75512109484
+INFO: SAMPLE 8: <w> F o e m </w>  Cost/Len/Avg 4.70137834549/7/0.671625477927
+INFO: SAMPLE 9: <w> P o i m </w>  Cost/Len/Avg 4.08698940277/7/0.583855628967
+INFO: SAMPLE 10: <w> p o e m </w>  Cost/Len/Avg 2.91037893295/7/0.415768418993
+INFO: SAMPLE 11: <w> P o e m </w>  Cost/Len/Avg 0.131932273507/7/0.0188474676439
+INFO: SOURCE: <w> I s m e n e <s> e n t r e <s> e t <s> <lc> a n n o n c e <rc> <s> q u e <s> c ' <s> e s t <s> F a r n a c e </w> 
+INFO: TARGET: <w> a n n o n c e r </w> 
+INFO: SAMPLE 0: <w> a n </w>  Cost/Len/Avg 8.98407936096/5/1.79681587219
+INFO: SAMPLE 1: <w> a n n o n c ' </w>  Cost/Len/Avg 8.08072280884/10/0.808072280884
+INFO: SAMPLE 2: <w> a n n o i c e </w>  Cost/Len/Avg 8.05118274689/10/0.805118274689
+INFO: SAMPLE 3: <w> a n n o n d </w>  Cost/Len/Avg 7.954185009/9/0.883798334334
+INFO: SAMPLE 4: <w> a n n a n c e </w>  Cost/Len/Avg 7.91263532639/10/0.791263532639
+INFO: SAMPLE 5: <w> a n n é n c e </w>  Cost/Len/Avg 7.90317153931/10/0.790317153931
+INFO: SAMPLE 6: <w> a n n o n ç e r </w>  Cost/Len/Avg 7.75004243851/11/0.704549312592
+INFO: SAMPLE 7: <w> a n n o n c e t </w>  Cost/Len/Avg 7.45357370377/11/0.677597609433
+INFO: SAMPLE 8: <w> a n n o n ç e </w>  Cost/Len/Avg 7.21894216537/10/0.721894216537
+INFO: SAMPLE 9: <w> a n n o n c </w>  Cost/Len/Avg 5.76676225662/9/0.640751361847
+INFO: SAMPLE 10: <w> a n n o n c e r </w>  Cost/Len/Avg 1.87288844585/11/0.170262585987
+INFO: SAMPLE 11: <w> a n n o n c e </w>  Cost/Len/Avg 0.183056741953/10/0.0183056741953
+INFO: SOURCE: <w> a <s> c o n d i t i o n <s> q u e <s> l e <s> <lc> l o g o <rc> <s> d e <s> F a m i l y <s> P r o d u c t i </w> 
+INFO: TARGET: <w> l o g o </w>     
+INFO: SAMPLE 0: <w> L o g o </w>  Cost/Len/Avg 7.21837806702/7/1.03119686672
+INFO: SAMPLE 1: <w> l o g ² </w>  Cost/Len/Avg 7.04654979706/7/1.00664997101
+INFO: SAMPLE 2: <w> l o g X </w>  Cost/Len/Avg 7.0096616745/7/1.00138023921
+INFO: SAMPLE 3: <w> l o g é </w>  Cost/Len/Avg 6.71885347366/7/0.959836210523
+INFO: SAMPLE 4: <w> l o g E </w>  Cost/Len/Avg 5.96689510345/7/0.852413586208
+INFO: SAMPLE 5: <w> l o g o r </w>  Cost/Len/Avg 5.77627658844/8/0.722034573555
+INFO: SAMPLE 6: <w> l o g e r </w>  Cost/Len/Avg 5.52448129654/8/0.690560162067
+INFO: SAMPLE 7: <w> l e g o </w>  Cost/Len/Avg 5.45860910416/7/0.779801300594
+INFO: SAMPLE 8: <w> l é g o </w>  Cost/Len/Avg 5.40417289734/7/0.77202469962
+INFO: SAMPLE 9: <w> l o g </w>  Cost/Len/Avg 4.72823238373/6/0.788038730621
+INFO: SAMPLE 10: <w> l o g e </w>  Cost/Len/Avg 2.63726091385/7/0.376751559121
+INFO: SAMPLE 11: <w> l o g o </w>  Cost/Len/Avg 0.122812278569/7/0.0175446112241
+INFO: SOURCE: <w> n c e <s> d e <s> l ' <s> i n d i v i d u <s> <lc> a f i n <rc> <s> q u ' <s> i l <s> p u i s s e <s> a n t i </w> 
+INFO: TARGET: <w> a f i n </w>     
+INFO: SAMPLE 0: <w> a g i n </w>  Cost/Len/Avg 7.15130186081/7/1.02161455154
+INFO: SAMPLE 1: <w> a f </w>  Cost/Len/Avg 7.04423093796/5/1.40884618759
+INFO: SAMPLE 2: <w> a f r e </w>  Cost/Len/Avg 6.97379493713/7/0.996256419591
+INFO: SAMPLE 3: <w> a f u n </w>  Cost/Len/Avg 6.96779298782/7/0.99539899826
+INFO: SAMPLE 4: <w> a f i </w>  Cost/Len/Avg 6.8719830513/6/1.14533050855
+INFO: SAMPLE 5: <w> a f i e r </w>  Cost/Len/Avg 6.74486112595/8/0.843107640743
+INFO: SAMPLE 6: <w> a f y n </w>  Cost/Len/Avg 6.58330869675/7/0.940472670964
+INFO: SAMPLE 7: <w> a f a n </w>  Cost/Len/Avg 6.55481767654/7/0.936402525221
+INFO: SAMPLE 8: <w> a t i n </w>  Cost/Len/Avg 5.31397485733/7/0.759139265333
+INFO: SAMPLE 9: <w> a f i r </w>  Cost/Len/Avg 5.07665348053/7/0.725236211504
+INFO: SAMPLE 10: <w> a f e n </w>  Cost/Len/Avg 4.96013784409/7/0.708591120584
+INFO: SAMPLE 11: <w> a f i n </w>  Cost/Len/Avg 0.0348779968917/7/0.00498257098453
+INFO: SOURCE: <w> L e <s> j u i l l e t <s> l e s <s> <lc> a r b i t r e s <rc> <s> t r a n c h è r e n t <s> e n <s> f a v </w> 
+INFO: TARGET: <w> a r b i t r e </w>  
+INFO: SAMPLE 0: <w> a r m i t r e </w>  Cost/Len/Avg 7.50658559799/10/0.750658559799
+INFO: SAMPLE 1: <w> a r b i t r e u </w>  Cost/Len/Avg 7.29615020752/11/0.663286382502
+INFO: SAMPLE 2: <w> a r b e t r e </w>  Cost/Len/Avg 7.26523923874/10/0.726523923874
+INFO: SAMPLE 3: <w> a r z i t r e </w>  Cost/Len/Avg 7.168364048/10/0.7168364048
+INFO: SAMPLE 4: <w> a n b i t r e </w>  Cost/Len/Avg 6.75412845612/10/0.675412845612
+INFO: SAMPLE 5: <w> a r b i r r e </w>  Cost/Len/Avg 6.62099456787/10/0.662099456787
+INFO: SAMPLE 6: <w> a r b i t r e t </w>  Cost/Len/Avg 6.4502248764/11/0.586384079673
+INFO: SAMPLE 7: <w> a r b i f r e </w>  Cost/Len/Avg 6.2358212471/10/0.62358212471
+INFO: SAMPLE 8: <w> a r b i t r e r </w>  Cost/Len/Avg 4.91372823715/11/0.446702567014
+INFO: SAMPLE 9: <w> a r b i t r e s </w>  Cost/Len/Avg 4.29409170151/11/0.390371972864
+INFO: SAMPLE 10: <w> a r b i t r e </w>  Cost/Len/Avg 0.0421726703644/10/0.00421726703644
+INFO: SAMPLE 11: <w> a r b i t r e v o i r </w>  Cost/Len/Avg 7.31172609329/14/0.522266149521
+INFO: SOURCE: <w> p r o u v e <s> d e <s> l e <s> d é s i r <s> <lc> p o u r <rc> <s> A n a <s> e n <s> p r o f i t e <s> p o u </w> 
+INFO: TARGET: <w> p o u r </w>     
+INFO: SAMPLE 0: <w> j o u r </w>  Cost/Len/Avg 9.5399312973/7/1.36284732819
+INFO: SAMPLE 1: <w> p o l r i r </w>  Cost/Len/Avg 9.51551437378/9/1.05727937486
+INFO: SAMPLE 2: <w> p o i r </w>  Cost/Len/Avg 9.26570415497/7/1.32367202214
+INFO: SAMPLE 3: <w> p o l r e </w>  Cost/Len/Avg 9.23596668243/8/1.1544958353
+INFO: SAMPLE 4: <w> m o u r </w>  Cost/Len/Avg 9.232670784/7/1.31895296914
+INFO: SAMPLE 5: <w> p o l r e r </w>  Cost/Len/Avg 9.22266101837/9/1.02474011315
+INFO: SAMPLE 6: <w> P o u r </w>  Cost/Len/Avg 9.09411621094/7/1.29915945871
+INFO: SAMPLE 7: <w> p o u f </w>  Cost/Len/Avg 9.02552318573/7/1.2893604551
+INFO: SAMPLE 8: <w> r o u r </w>  Cost/Len/Avg 9.00464344025/7/1.28637763432
+INFO: SAMPLE 9: <w> p o u </w>  Cost/Len/Avg 8.97897529602/6/1.49649588267
+INFO: SAMPLE 10: <w> p o u n </w>  Cost/Len/Avg 7.95842981339/7/1.13691854477
+INFO: SAMPLE 11: <w> p o u r </w>  Cost/Len/Avg 0.0025537731126/7/0.000364824730371
+INFO: Starting epoch 120
+INFO: Starting epoch 121
+INFO: Starting epoch 122
+INFO: Starting epoch 123
+INFO: Starting epoch 124
+INFO: Starting epoch 125
+INFO: [2018-06-20 19:32:40] Epoch: 125 Update: 21000 Loss/word: 0.0929410684578 Words/sec: 1677.42831254 Sents/sec: 218.989143365
+INFO: Starting epoch 126
+INFO: Starting epoch 127
+INFO: Starting epoch 128
+INFO: Starting epoch 129
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.58229955292 4658.39642336 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 130
+INFO: Starting epoch 131
+INFO: [2018-06-20 19:37:26] Epoch: 131 Update: 22000 Loss/word: 0.0861808276165 Words/sec: 1606.69703903 Sents/sec: 209.767486683
+INFO: Starting epoch 132
+INFO: Starting epoch 133
+INFO: Starting epoch 134
+INFO: Starting epoch 135
+INFO: Starting epoch 136
+INFO: Starting epoch 137
+INFO: [2018-06-20 19:42:00] Epoch: 137 Update: 23000 Loss/word: 0.0799899810081 Words/sec: 1670.46883818 Sents/sec: 218.125282733
+INFO: Starting epoch 138
+INFO: Starting epoch 139
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.562827336407 4502.61869125 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 140
+INFO: Starting epoch 141
+INFO: Starting epoch 142
+INFO: Starting epoch 143
+INFO: [2018-06-20 19:46:42] Epoch: 143 Update: 24000 Loss/word: 0.0739193557063 Words/sec: 1625.72994029 Sents/sec: 212.334331928
+INFO: Starting epoch 144
+INFO: Starting epoch 145
+INFO: Starting epoch 146
+INFO: Starting epoch 147
+INFO: Starting epoch 148
+INFO: Starting epoch 149
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.527341536961 4218.73229568 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: [2018-06-20 19:51:37] Epoch: 149 Update: 25000 Loss/word: 0.0701719053891 Words/sec: 1555.11625405 Sents/sec: 202.941156212
+INFO: Starting epoch 150
+INFO: Starting epoch 151
+INFO: Starting epoch 152
+INFO: Starting epoch 153
+INFO: Starting epoch 154
+INFO: Starting epoch 155
+INFO: [2018-06-20 19:56:17] Epoch: 155 Update: 26000 Loss/word: 0.0678314402355 Words/sec: 1641.36256222 Sents/sec: 214.263923807
+INFO: Starting epoch 156
+INFO: Starting epoch 157
+INFO: Starting epoch 158
+INFO: Starting epoch 159
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.513450480698 4107.60384559 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 160
+INFO: Starting epoch 161
+INFO: [2018-06-20 20:01:01] Epoch: 161 Update: 27000 Loss/word: 0.0627684236079 Words/sec: 1614.86685672 Sents/sec: 210.802409732
+INFO: Starting epoch 162
+INFO: Starting epoch 163
+INFO: Starting epoch 164
+INFO: Starting epoch 165
+INFO: Starting epoch 166
+INFO: Starting epoch 167
+INFO: [2018-06-20 20:05:37] Epoch: 167 Update: 28000 Loss/word: 0.0600343136186 Words/sec: 1664.46326225 Sents/sec: 217.138431753
+INFO: Starting epoch 168
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.495938677344 3967.50941875 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 169
+INFO: Starting epoch 170
+INFO: Starting epoch 171
+INFO: Starting epoch 172
+INFO: Starting epoch 173
+INFO: [2018-06-20 20:10:26] Epoch: 173 Update: 29000 Loss/word: 0.0578754679816 Words/sec: 1587.87539304 Sents/sec: 206.99289328
+INFO: Starting epoch 174
+INFO: Starting epoch 175
+INFO: Starting epoch 176
+INFO: Starting epoch 177
+INFO: Starting epoch 178
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.477654534884 3821.23627908 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 179
+INFO: [2018-06-20 20:15:01] Epoch: 179 Update: 30000 Loss/word: 0.0532463195021 Words/sec: 1670.17867471 Sents/sec: 217.901603681
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz-30000 is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz-30000 is not in all_model_checkpoint_paths. Manually adding it.
+INFO: SOURCE: <w> l <s> f i n i t <s> p a r <s> p a r t i r <s> <lc> d a n s <rc> <s> u n <s> p r e m i e r <s> t e m p s <s> à </w> 
+INFO: TARGET: <w> d a n s </w>        
+INFO: SAMPLE: <w> d a n s </w> 
+INFO: SOURCE: <w> L a <s> p r e m i è r e <s> <lc> r é a l i s a t i o n <rc> <s> s e r a <s> l e <s> b o m b a r d i e r </w> 
+INFO: TARGET: <w> r é a l i s a t i o n </w> 
+INFO: SAMPLE: <w> r é a l i s a t i o n </w> 
+INFO: SOURCE: <w> P a r <s> a i l l e u r s <s> i l <s> <lc> c h o i s i t <rc> <s> d e <s> s e <s> s u r n o m m e r <s> A l </w> 
+INFO: TARGET: <w> c h o i s i r </w>     
+INFO: SAMPLE: <w> c h o i s i r </w> 
+INFO: SOURCE: <w> v e r s a i r e <s> t o u c h e <s> s a <s> <lc> l a m e <rc> <s> i l <s> y <s> a u r a <s> u n e <s> t o u c </w> 
+INFO: TARGET: <w> l a m e </w>        
+INFO: SAMPLE: <w> l a m e </w> 
+INFO: SOURCE: <w> ù <s> l e s <s> e x p o r t a t i o n s <s> <lc> v e r s <rc> <s> l ' <s> E u r o p e <s> p o u r r a i e </w> 
+INFO: TARGET: <w> v e r s </w>        
+INFO: SAMPLE: <w> v e r s </w> 
+INFO: SOURCE: <w> s <s> d e <s> s o n <s> c o n f l u e n t <s> <lc> a v e c <rc> <s> l ' <s> I r t y c h <s> à <s> S e m e ï <s> </w> 
+INFO: TARGET: <w> a v e c </w>        
+INFO: SAMPLE: <w> a v e c </w> 
+INFO: SOURCE: <w> n t e <s> o f f i c i e l l e m e n t <s> <lc> ê t r e <rc> <s> c e l u i <s> q u i <s> a <s> d i v u l g </w> 
+INFO: TARGET: <w> ê t r e </w>        
+INFO: SAMPLE: <w> ê t r e </w> 
+INFO: SOURCE: <w> m <s> s t u d i o <s> d ' <s> E m i n e m <s> <lc> s o r t i <rc> <s> e n <s> F r a n c e <s> l e <s> j u i n </w> 
+INFO: TARGET: <w> s o r t i r </w>      
+INFO: SAMPLE: <w> s o r t i r </w> 
+INFO: SOURCE: <w> <s> l e <s> C o n g r è s <s> e t <s> s o n <s> <lc> m o d e <rc> <s> d e <s> f o n c t i o n n e m e n t <s> </w> 
+INFO: TARGET: <w> m o d e </w>        
+INFO: SAMPLE: <w> m o d e </w> 
+INFO: SOURCE: <w> t <s> p e u <s> à <s> p e u <s> e n t r e r <s> <lc> d a n s <rc> <s> s o n <s> u n i v e r s <s> c o m i q u </w> 
+INFO: TARGET: <w> d a n s </w>        
+INFO: SAMPLE: <w> d a n s </w> 
+INFO: SOURCE: <w> l <s> f i n i t <s> p a r <s> p a r t i r <s> <lc> d a n s <rc> <s> u n <s> p r e m i e r <s> t e m p s <s> à </w> 
+INFO: TARGET: <w> d a n s </w>        
+INFO: SAMPLE 0: <w> l a n s </w>  Cost/Len/Avg 9.77683162689/7/1.39669023241
+INFO: SAMPLE 1: <w> d a n s s </w>  Cost/Len/Avg 9.74091148376/8/1.21761393547
+INFO: SAMPLE 2: <w> d a n i r </w>  Cost/Len/Avg 9.40268230438/8/1.17533528805
+INFO: SAMPLE 3: <w> d a l s </w>  Cost/Len/Avg 9.20484828949/7/1.31497832707
+INFO: SAMPLE 4: <w> c a n s </w>  Cost/Len/Avg 9.14619731903/7/1.306599617
+INFO: SAMPLE 5: <w> d o n s </w>  Cost/Len/Avg 9.08941268921/7/1.29848752703
+INFO: SAMPLE 6: <w> d a i s </w>  Cost/Len/Avg 8.86808109283/7/1.26686872755
+INFO: SAMPLE 7: <w> d a î t r e </w>  Cost/Len/Avg 8.64505577087/9/0.960561752319
+INFO: SAMPLE 8: <w> d a i r </w>  Cost/Len/Avg 8.40495014191/7/1.20070716313
+INFO: SAMPLE 9: <w> d a n t </w>  Cost/Len/Avg 7.36878585815/7/1.05268369402
+INFO: SAMPLE 10: <w> d e n s </w>  Cost/Len/Avg 6.960293293/7/0.994327613286
+INFO: SAMPLE 11: <w> d a n s </w>  Cost/Len/Avg 0.00348285399377/7/0.000497550570539
+INFO: SOURCE: <w> L a <s> p r e m i è r e <s> <lc> r é a l i s a t i o n <rc> <s> s e r a <s> l e <s> b o m b a r d i e r </w> 
+INFO: TARGET: <w> r é a l i s a t i o n </w> 
+INFO: SAMPLE 0: <w> </w>  Cost/Len/Avg 9.07674598694/3/3.02558199565
+INFO: SAMPLE 1: <w> r é </w>  Cost/Len/Avg 8.81151390076/5/1.76230278015
+INFO: SAMPLE 2: <w> r é a n i s a t i o n </w>  Cost/Len/Avg 8.58565044403/14/0.613260746002
+INFO: SAMPLE 3: <w> r é e l i s a t i o n </w>  Cost/Len/Avg 7.72602081299/14/0.551858629499
+INFO: SAMPLE 4: <w> n é a l i s a t i o n </w>  Cost/Len/Avg 7.36041116714/14/0.525743654796
+INFO: SAMPLE 5: <w> r é a l i s e t i o n </w>  Cost/Len/Avg 7.34104537964/14/0.52436038426
+INFO: SAMPLE 6: <w> r é c l i s a t i o n </w>  Cost/Len/Avg 7.26654005051/14/0.519038575036
+INFO: SAMPLE 7: <w> r é a l i r a t i o n </w>  Cost/Len/Avg 7.24957704544/14/0.517826931817
+INFO: SAMPLE 8: <w> r e a l i s a t i o n </w>  Cost/Len/Avg 5.6747379303/14/0.405338423593
+INFO: SAMPLE 9: <w> r é a l i s a t i o n </w>  Cost/Len/Avg 0.0113726714626/14/0.0008123336759
+INFO: SAMPLE 10: <w> r é a l i s a t e m e n </w>  Cost/Len/Avg 7.97545051575/15/0.53169670105
+INFO: SAMPLE 11: <w> r é a l i s c a t i o n </w>  Cost/Len/Avg 8.56926250458/15/0.571284166972
+INFO: SOURCE: <w> P a r <s> a i l l e u r s <s> i l <s> <lc> c h o i s i t <rc> <s> d e <s> s e <s> s u r n o m m e r <s> A l </w> 
+INFO: TARGET: <w> c h o i s i r </w>     
+INFO: SAMPLE 0: <w> c h o i v r e </w>  Cost/Len/Avg 6.40357398987/10/0.640357398987
+INFO: SAMPLE 1: <w> c h o i s i </w>  Cost/Len/Avg 6.3329410553/9/0.703660117255
+INFO: SAMPLE 2: <w> c h o i s i f </w>  Cost/Len/Avg 6.30786895752/10/0.630786895752
+INFO: SAMPLE 3: <w> c h o i s e t </w>  Cost/Len/Avg 5.86902809143/10/0.586902809143
+INFO: SAMPLE 4: <w> c h o i r i t </w>  Cost/Len/Avg 5.39906930923/10/0.539906930923
+INFO: SAMPLE 5: <w> c h o i t i r </w>  Cost/Len/Avg 5.04690504074/10/0.504690504074
+INFO: SAMPLE 6: <w> c h o i r i r e </w>  Cost/Len/Avg 4.43876552582/11/0.403524138711
+INFO: SAMPLE 7: <w> c h o i v i r </w>  Cost/Len/Avg 4.10884141922/10/0.410884141922
+INFO: SAMPLE 8: <w> c h o i s i r e </w>  Cost/Len/Avg 4.09443235397/11/0.372221123088
+INFO: SAMPLE 9: <w> c h o i r i r </w>  Cost/Len/Avg 3.04074788094/10/0.304074788094
+INFO: SAMPLE 10: <w> c h o i s i t </w>  Cost/Len/Avg 2.29195809364/10/0.229195809364
+INFO: SAMPLE 11: <w> c h o i s i r </w>  Cost/Len/Avg 0.258151829243/10/0.0258151829243
+INFO: SOURCE: <w> v e r s a i r e <s> t o u c h e <s> s a <s> <lc> l a m e <rc> <s> i l <s> y <s> a u r a <s> u n e <s> t o u c </w> 
+INFO: TARGET: <w> l a m e </w>        
+INFO: SAMPLE 0: <w> l a m e î t r e </w>  Cost/Len/Avg 9.18919754028/11/0.835381594571
+INFO: SAMPLE 1: <w> l a m e n </w>  Cost/Len/Avg 9.05694103241/8/1.13211762905
+INFO: SAMPLE 2: <w> l o m e r </w>  Cost/Len/Avg 8.98882961273/8/1.12360370159
+INFO: SAMPLE 3: <w> l é m e </w>  Cost/Len/Avg 8.90935134888/7/1.27276447841
+INFO: SAMPLE 4: <w> l a m </w>  Cost/Len/Avg 8.11953735352/6/1.35325622559
+INFO: SAMPLE 5: <w> l a m e v o i r </w>  Cost/Len/Avg 7.74626922607/11/0.704206293279
+INFO: SAMPLE 6: <w> l a m e t </w>  Cost/Len/Avg 7.40871715546/8/0.926089644432
+INFO: SAMPLE 7: <w> l e m e r </w>  Cost/Len/Avg 7.17878246307/8/0.897347807884
+INFO: SAMPLE 8: <w> l o m e </w>  Cost/Len/Avg 6.54383182526/7/0.934833117894
+INFO: SAMPLE 9: <w> l e m e </w>  Cost/Len/Avg 5.5106086731/7/0.787229810442
+INFO: SAMPLE 10: <w> l a m e r </w>  Cost/Len/Avg 2.94246006012/8/0.367807507515
+INFO: SAMPLE 11: <w> l a m e </w>  Cost/Len/Avg 0.0637107938528/7/0.00910154197897
+INFO: SOURCE: <w> ù <s> l e s <s> e x p o r t a t i o n s <s> <lc> v e r s <rc> <s> l ' <s> E u r o p e <s> p o u r r a i e </w> 
+INFO: TARGET: <w> v e r s </w>        
+INFO: SAMPLE 0: <w> n e r s </w>  Cost/Len/Avg 8.20840167999/7/1.17262881143
+INFO: SAMPLE 1: <w> v e r </w>  Cost/Len/Avg 8.07357597351/6/1.34559599559
+INFO: SAMPLE 2: <w> v ' r s </w>  Cost/Len/Avg 7.91497421265/7/1.13071060181
+INFO: SAMPLE 3: <w> v e r t </w>  Cost/Len/Avg 7.81365060806/7/1.11623580115
+INFO: SAMPLE 4: <w> v o i r </w>  Cost/Len/Avg 7.79674434662/7/1.11382062095
+INFO: SAMPLE 5: <w> ê t r e </w>  Cost/Len/Avg 7.29537963867/7/1.04219709124
+INFO: SAMPLE 6: <w> v a r s </w>  Cost/Len/Avg 7.27869796753/7/1.03981399536
+INFO: SAMPLE 7: <w> v i r </w>  Cost/Len/Avg 6.89851093292/6/1.14975182215
+INFO: SAMPLE 8: <w> l e r s </w>  Cost/Len/Avg 6.38995218277/7/0.912850311824
+INFO: SAMPLE 9: <w> s e r s </w>  Cost/Len/Avg 6.24626731873/7/0.892323902675
+INFO: SAMPLE 10: <w> v o r s </w>  Cost/Len/Avg 5.77989721298/7/0.825699601855
+INFO: SAMPLE 11: <w> v e r s </w>  Cost/Len/Avg 0.014624924399/7/0.00208927491414
+INFO: SOURCE: <w> s <s> d e <s> s o n <s> c o n f l u e n t <s> <lc> a v e c <rc> <s> l ' <s> I r t y c h <s> à <s> S e m e ï <s> </w> 
+INFO: TARGET: <w> a v e c </w>        
+INFO: SAMPLE 0: à </w>  Cost/Len/Avg 9.98092269897/3/3.32697423299
+INFO: SAMPLE 1: <w> a v e C </w>  Cost/Len/Avg 8.89513874054/7/1.27073410579
+INFO: SAMPLE 2: <w> a v ' c </w>  Cost/Len/Avg 8.86909294128/7/1.26701327733
+INFO: SAMPLE 3: <w> a v é </w>  Cost/Len/Avg 8.78101158142/6/1.46350193024
+INFO: SAMPLE 4: a a v e c </w>  Cost/Len/Avg 8.70274066925/7/1.24324866704
+INFO: SAMPLE 5: à a v e c </w>  Cost/Len/Avg 8.60235977173/7/1.22890853882
+INFO: SAMPLE 6: <w> a v o i r </w>  Cost/Len/Avg 8.49632358551/8/1.06204044819
+INFO: SAMPLE 7: <w> a v o c </w>  Cost/Len/Avg 8.16912937164/7/1.16701848166
+INFO: SAMPLE 8: <w> a v é c </w>  Cost/Len/Avg 8.09870243073/7/1.1569574901
+INFO: SAMPLE 9: <w> a v r e </w>  Cost/Len/Avg 7.62571907043/7/1.08938843863
+INFO: SAMPLE 10: <w> a v i c </w>  Cost/Len/Avg 7.42190074921/7/1.0602715356
+INFO: SAMPLE 11: <w> a v e c </w>  Cost/Len/Avg 0.00394136598334/7/0.000563052283334
+INFO: SOURCE: <w> n t e <s> o f f i c i e l l e m e n t <s> <lc> ê t r e <rc> <s> c e l u i <s> q u i <s> a <s> d i v u l g </w> 
+INFO: TARGET: <w> ê t r e </w>        
+INFO: SAMPLE 0: <w> ê t r i </w>  Cost/Len/Avg 9.81501102448/7/1.40214443207
+INFO: SAMPLE 1: <w> t t r e </w>  Cost/Len/Avg 9.54628562927/7/1.3637550899
+INFO: SAMPLE 2: <w> É t r e </w>  Cost/Len/Avg 9.38543319702/7/1.340776171
+INFO: SAMPLE 3: <w> ê t r ' </w>  Cost/Len/Avg 9.19958877563/7/1.31422696795
+INFO: SAMPLE 4: <w> v o r e r </w>  Cost/Len/Avg 8.94365406036/8/1.11795675755
+INFO: SAMPLE 5: <w> ê t r e r </w>  Cost/Len/Avg 8.06071090698/8/1.00758886337
+INFO: SAMPLE 6: <w> ê t </w>  Cost/Len/Avg 7.97003984451/5/1.5940079689
+INFO: SAMPLE 7: <w> v o r e </w>  Cost/Len/Avg 7.49472236633/7/1.07067462376
+INFO: SAMPLE 8: <w> ê t e </w>  Cost/Len/Avg 6.97969388962/6/1.16328231494
+INFO: SAMPLE 9: <w> s t r e </w>  Cost/Len/Avg 6.85779190063/7/0.979684557234
+INFO: SAMPLE 10: <w> ê t e r </w>  Cost/Len/Avg 6.29344797134/7/0.899063995906
+INFO: SAMPLE 11: <w> ê t r e </w>  Cost/Len/Avg 0.0060269087553/7/0.000860986965043
+INFO: SOURCE: <w> m <s> s t u d i o <s> d ' <s> E m i n e m <s> <lc> s o r t i <rc> <s> e n <s> F r a n c e <s> l e <s> j u i n </w> 
+INFO: TARGET: <w> s o r t i r </w>      
+INFO: SAMPLE 0: <w> </w>  Cost/Len/Avg 10.7452163696/3/3.58173878988
+INFO: SAMPLE 1: <w> ê t t i r </w>  Cost/Len/Avg 7.90119361877/8/0.987649202347
+INFO: SAMPLE 2: <w> ê t t i </w>  Cost/Len/Avg 7.85224914551/7/1.12174987793
+INFO: SAMPLE 3: <w> v o r t i r </w>  Cost/Len/Avg 7.74725818634/9/0.860806465149
+INFO: SAMPLE 4: <w> s o r t i i </w>  Cost/Len/Avg 7.7326669693/9/0.859185218811
+INFO: SAMPLE 5: <w> s o r t r i </w>  Cost/Len/Avg 7.64496517181/9/0.849440574646
+INFO: SAMPLE 6: <w> ê t r i </w>  Cost/Len/Avg 7.08897447586/7/1.01271063941
+INFO: SAMPLE 7: <w> s o r t </w>  Cost/Len/Avg 6.39331436157/7/0.913330623082
+INFO: SAMPLE 8: <w> s o r t e r </w>  Cost/Len/Avg 5.02502250671/9/0.558335834079
+INFO: SAMPLE 9: <w> s o r t r e </w>  Cost/Len/Avg 4.74237442017/9/0.52693049113
+INFO: SAMPLE 10: <w> s o r t i </w>  Cost/Len/Avg 2.01933503151/8/0.252416878939
+INFO: SAMPLE 11: <w> s o r t i r </w>  Cost/Len/Avg 0.17049755156/9/0.0189441723956
+INFO: SOURCE: <w> <s> l e <s> C o n g r è s <s> e t <s> s o n <s> <lc> m o d e <rc> <s> d e <s> f o n c t i o n n e m e n t <s> </w> 
+INFO: TARGET: <w> m o d e </w>        
+INFO: SAMPLE 0: <w> m o d e v e </w>  Cost/Len/Avg 9.4419965744/9/1.04911073049
+INFO: SAMPLE 1: <w> m o ï e </w>  Cost/Len/Avg 9.25582504272/7/1.32226072039
+INFO: SAMPLE 2: <w> m o k e </w>  Cost/Len/Avg 9.16337966919/7/1.30905423846
+INFO: SAMPLE 3: <w> m o c e </w>  Cost/Len/Avg 9.04539871216/7/1.29219981602
+INFO: SAMPLE 4: <w> m o d e î t r e </w>  Cost/Len/Avg 9.04096126556/11/0.821905569597
+INFO: SAMPLE 5: <w> m o d e v </w>  Cost/Len/Avg 8.4319562912/8/1.0539945364
+INFO: SAMPLE 6: <w> m o d e t </w>  Cost/Len/Avg 8.08415317535/8/1.01051914692
+INFO: SAMPLE 7: <w> s o d e </w>  Cost/Len/Avg 7.86662960052/7/1.12380422865
+INFO: SAMPLE 8: <w> m e d e </w>  Cost/Len/Avg 7.79942703247/7/1.11420386178
+INFO: SAMPLE 9: <w> m o d e v o i r </w>  Cost/Len/Avg 7.0727519989/11/0.642977454446
+INFO: SAMPLE 10: <w> m o d e r </w>  Cost/Len/Avg 3.94215369225/8/0.492769211531
+INFO: SAMPLE 11: <w> m o d e </w>  Cost/Len/Avg 0.0237714555115/7/0.00339592221592
+INFO: SOURCE: <w> t <s> p e u <s> à <s> p e u <s> e n t r e r <s> <lc> d a n s <rc> <s> s o n <s> u n i v e r s <s> c o m i q u </w> 
+INFO: TARGET: <w> d a n s </w>        
+INFO: SAMPLE 0: <w> d a n s i r </w>  Cost/Len/Avg 9.6690864563/9/1.07434293959
+INFO: SAMPLE 1: <w> d a n i r </w>  Cost/Len/Avg 9.44852256775/8/1.18106532097
+INFO: SAMPLE 2: <w> d a n s s </w>  Cost/Len/Avg 9.39412975311/8/1.17426621914
+INFO: SAMPLE 3: <w> d a l s </w>  Cost/Len/Avg 9.15197372437/7/1.30742481777
+INFO: SAMPLE 4: <w> d o n s </w>  Cost/Len/Avg 9.13819217682/7/1.30545602526
+INFO: SAMPLE 5: <w> c a n s </w>  Cost/Len/Avg 9.08447360992/7/1.29778194427
+INFO: SAMPLE 6: <w> d a i s </w>  Cost/Len/Avg 8.67797851562/7/1.23971121652
+INFO: SAMPLE 7: <w> d a î t r e </w>  Cost/Len/Avg 8.60078811646/9/0.955643124051
+INFO: SAMPLE 8: <w> d a i r </w>  Cost/Len/Avg 8.42530727386/7/1.20361532484
+INFO: SAMPLE 9: <w> d a n t </w>  Cost/Len/Avg 7.26430082321/7/1.03775726046
+INFO: SAMPLE 10: <w> d e n s </w>  Cost/Len/Avg 6.9571762085/7/0.993882315499
+INFO: SAMPLE 11: <w> d a n s </w>  Cost/Len/Avg 0.0036216203589/7/0.000517374336986
+INFO: Starting epoch 180
+INFO: Starting epoch 181
+INFO: Starting epoch 182
+INFO: Starting epoch 183
+INFO: Starting epoch 184
+INFO: Starting epoch 185
+INFO: [2018-06-20 20:19:13] Epoch: 185 Update: 31000 Loss/word: 0.0518175473105 Words/sec: 1816.1825441 Sents/sec: 237.136669233
+INFO: Starting epoch 186
+INFO: Starting epoch 187
+INFO: Starting epoch 188
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.461923071345 3695.38457076 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 189
+INFO: Starting epoch 190
+INFO: Starting epoch 191
+INFO: [2018-06-20 20:23:38] Epoch: 191 Update: 32000 Loss/word: 0.0499080550396 Words/sec: 1731.48109562 Sents/sec: 226.086181382
+INFO: Starting epoch 192
+INFO: Starting epoch 193
+INFO: Starting epoch 194
+INFO: Starting epoch 195
+INFO: Starting epoch 196
+INFO: Starting epoch 197
+INFO: [2018-06-20 20:35:30] Epoch: 197 Update: 33000 Loss/word: 0.0465688797695 Words/sec: 643.518963636 Sents/sec: 84.0815801771
+INFO: Starting epoch 198
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.460093905646 3680.75124517 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 199
+INFO: Starting epoch 200
+INFO: Starting epoch 201
+INFO: Starting epoch 202
+INFO: Starting epoch 203
+INFO: [2018-06-20 20:41:26] Epoch: 203 Update: 34000 Loss/word: 0.0438506725836 Words/sec: 1290.23590164 Sents/sec: 168.517023706
+INFO: Starting epoch 204
+INFO: Starting epoch 205
+INFO: Starting epoch 206
+INFO: Starting epoch 207
+INFO: Starting epoch 208
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.445591304388 3564.73043511 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 209
+INFO: [2018-06-20 20:45:57] Epoch: 209 Update: 35000 Loss/word: 0.0426559746362 Words/sec: 1691.81854204 Sents/sec: 220.703232569
+INFO: Starting epoch 210
+INFO: Starting epoch 211
+INFO: Starting epoch 212
+INFO: Starting epoch 213
+INFO: Starting epoch 214
+INFO: Starting epoch 215
+INFO: [2018-06-20 20:50:27] Epoch: 215 Update: 36000 Loss/word: 0.0421093838066 Words/sec: 1696.91035753 Sents/sec: 221.4557664
+INFO: Starting epoch 216
+INFO: Starting epoch 217
+INFO: Starting epoch 218
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.439339279117 3514.71423294 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 219
+INFO: Starting epoch 220
+INFO: Starting epoch 221
+INFO: [2018-06-20 20:55:18] Epoch: 221 Update: 37000 Loss/word: 0.0397687146842 Words/sec: 1579.40195179 Sents/sec: 206.178265399
+INFO: Starting epoch 222
+INFO: Starting epoch 223
+INFO: Starting epoch 224
+INFO: Starting epoch 225
+INFO: Starting epoch 226
+INFO: Starting epoch 227
+INFO: [2018-06-20 20:59:44] Epoch: 227 Update: 38000 Loss/word: 0.0374450669073 Words/sec: 1726.36316339 Sents/sec: 225.106704173
+INFO: Starting epoch 228
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.434965658955 3479.72527164 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 229
+INFO: Starting epoch 230
+INFO: Starting epoch 231
+INFO: Starting epoch 232
+INFO: Starting epoch 233
+INFO: [2018-06-20 21:04:25] Epoch: 233 Update: 39000 Loss/word: 0.0358530940434 Words/sec: 1630.76470518 Sents/sec: 212.695003902
+INFO: Starting epoch 234
+INFO: Starting epoch 235
+INFO: Starting epoch 236
+INFO: Starting epoch 237
+INFO: Starting epoch 238
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.437593869039 3500.75095231 8000
+INFO: Starting epoch 239
+INFO: [2018-06-20 21:09:16] Epoch: 239 Update: 40000 Loss/word: 0.0340323471418 Words/sec: 1580.71150134 Sents/sec: 206.24220695
+INFO: SOURCE: <w> r <s> r é g i o n a l <s> e t <s> à <s> l e <s> <lc> b o u t <rc> <s> d e <s> l e <s> c o m p t e <s> l a <s> d é </w> 
+INFO: TARGET: <w> b o u t </w>       
+INFO: SAMPLE: <w> b o u t </w> 
+INFO: SOURCE: <w> n t <s> a s s e z <s> a b o n d a n t s <s> <lc> l e u r <rc> <s> p r i x <s> d o u b l e <s> r a p i d e </w> 
+INFO: TARGET: <w> s o n </w>        
+INFO: SAMPLE: <w> l u i </w> 
+INFO: SOURCE: <w> o r s <s> d e <s> s o n <s> p a s s a g e <s> <lc> c h e z <rc> <s> F l e t c h e r <s> H e n d e r s o n </w> 
+INFO: TARGET: <w> c h e z </w>       
+INFO: SAMPLE: <w> c h e z </w> 
+INFO: SOURCE: <w> i o n <s> n e <s> s e <s> f e r a <s> q u e <s> <lc> p l u s <rc> <s> t a r d <s> e n <s> u n <s> g r o u p e <s> </w> 
+INFO: TARGET: <w> p l u s </w>       
+INFO: SAMPLE: <w> p l u s </w> 
+INFO: SOURCE: <w> S o p h i a <s> p e r e n n i s <s> e t <s> <lc> a v e c <rc> <s> u n <s> i n d é n i a b l e <s> s e n s </w> 
+INFO: TARGET: <w> a v e c </w>       
+INFO: SAMPLE: <w> a v e c </w> 
+INFO: SOURCE: <w> v e c <s> u n i t é s <s> v e n d u e s <s> <lc> d a n s <rc> <s> l e <s> m o n d e <s> p a r <s> l e <s> s i </w> 
+INFO: TARGET: <w> d a n s </w>       
+INFO: SAMPLE: <w> d a n s </w> 
+INFO: SOURCE: <w> u e s <s> d e <s> l a <s> v i l l e <s> d e <s> <lc> H o m s <rc> <s> d a n s <s> l e <s> c e n t r e <s> d e <s> </w> 
+INFO: TARGET: <w> H o m s </w>       
+INFO: SAMPLE: <w> H o m s </w> 
+INFO: SOURCE: <w> n t <s> d e <s> l e <s> L o i r e t <s> l a <s> <lc> m ê m e <rc> <s> a n n é e <s> s o n t <s> r e p r é s e </w> 
+INFO: TARGET: <w> m ê m e </w>       
+INFO: SAMPLE: <w> m ê m e </w> 
+INFO: SOURCE: <w> d u i t <s> l e s <s> d e u x <s> J e d i <s> <lc> d a n s <rc> <s> l a <s> c i t é <s> d ' <s> O t o h <s> G u </w> 
+INFO: TARGET: <w> d a n s </w>       
+INFO: SAMPLE: <w> d a n s </w> 
+INFO: SOURCE: <w> <s> o u <s> n a r r o w <s> c h a n n e l <s> <lc> p u i s <rc> <s> e n <s> f o n c t i o n <s> d e <s> s a <s> </w> 
+INFO: TARGET: <w> p u i s </w>       
+INFO: SAMPLE: <w> p o u r </w> 
+INFO: SOURCE: <w> r <s> r é g i o n a l <s> e t <s> à <s> l e <s> <lc> b o u t <rc> <s> d e <s> l e <s> c o m p t e <s> l a <s> d é </w> 
+INFO: TARGET: <w> b o u t </w>       
+INFO: SAMPLE 0: <w> S o u t </w>  Cost/Len/Avg 10.3662195206/7/1.48088850294
+INFO: SAMPLE 1: <w> b e u t </w>  Cost/Len/Avg 10.2635717392/7/1.46622453417
+INFO: SAMPLE 2: <w> z o u t </w>  Cost/Len/Avg 9.99740886688/7/1.4282012667
+INFO: SAMPLE 3: <w> m o u t </w>  Cost/Len/Avg 9.92897415161/7/1.4184248788
+INFO: SAMPLE 4: <w> b o l l o i r </w>  Cost/Len/Avg 9.85445308685/10/0.985445308685
+INFO: SAMPLE 5: <w> g o u t </w>  Cost/Len/Avg 9.83558082581/7/1.40508297512
+INFO: SAMPLE 6: <w> p o u t </w>  Cost/Len/Avg 9.36214065552/7/1.33744866507
+INFO: SAMPLE 7: <w> f o u t </w>  Cost/Len/Avg 9.08825492859/7/1.29832213266
+INFO: SAMPLE 8: <w> b o u r </w>  Cost/Len/Avg 8.9930524826/7/1.28472178323
+INFO: SAMPLE 9: <w> b o u v o i r </w>  Cost/Len/Avg 8.74203014374/10/0.874203014374
+INFO: SAMPLE 10: <w> b o u d </w>  Cost/Len/Avg 7.81673002243/7/1.11667571749
+INFO: SAMPLE 11: <w> b o u t </w>  Cost/Len/Avg 0.00150888506323/7/0.000215555009033
+INFO: SOURCE: <w> n t <s> a s s e z <s> a b o n d a n t s <s> <lc> l e u r <rc> <s> p r i x <s> d o u b l e <s> r a p i d e </w> 
+INFO: TARGET: <w> s o n </w>        
+INFO: SAMPLE 0: <w> l a î t r e </w>  Cost/Len/Avg 6.99175024033/9/0.776861137814
+INFO: SAMPLE 1: <w> l u e r </w>  Cost/Len/Avg 6.78847026825/7/0.969781466893
+INFO: SAMPLE 2: <w> l o n </w>  Cost/Len/Avg 6.76258182526/6/1.12709697088
+INFO: SAMPLE 3: <w> v o i r </w>  Cost/Len/Avg 6.75366067886/7/0.964808668409
+INFO: SAMPLE 4: <w> l a i r </w>  Cost/Len/Avg 6.2459602356/7/0.892280033657
+INFO: SAMPLE 5: <w> l u </w>  Cost/Len/Avg 5.50073623657/5/1.10014724731
+INFO: SAMPLE 6: <w> a v o i r </w>  Cost/Len/Avg 5.00070667267/8/0.625088334084
+INFO: SAMPLE 7: <w> l u i r e </w>  Cost/Len/Avg 4.89696931839/8/0.612121164799
+INFO: SAMPLE 8: <w> l e u r </w>  Cost/Len/Avg 4.77741909027/7/0.682488441467
+INFO: SAMPLE 9: <w> l u i r </w>  Cost/Len/Avg 4.57051229477/7/0.652930327824
+INFO: SAMPLE 10: <w> s o n </w>  Cost/Len/Avg 1.4737803936/6/0.2456300656
+INFO: SAMPLE 11: <w> l u i </w>  Cost/Len/Avg 0.333513796329/6/0.0555856327216
+INFO: SOURCE: <w> o r s <s> d e <s> s o n <s> p a s s a g e <s> <lc> c h e z <rc> <s> F l e t c h e r <s> H e n d e r s o n </w> 
+INFO: TARGET: <w> c h e z </w>       
+INFO: SAMPLE 0: <w> c h e S </w>  Cost/Len/Avg 9.89774131775/7/1.41396304539
+INFO: SAMPLE 1: <w> c h e j </w>  Cost/Len/Avg 9.75628471375/7/1.39375495911
+INFO: SAMPLE 2: <w> d h e z </w>  Cost/Len/Avg 9.61923789978/7/1.37417684283
+INFO: SAMPLE 3: <w> c h e h </w>  Cost/Len/Avg 9.42128658295/7/1.34589808328
+INFO: SAMPLE 4: <w> c ô e z </w>  Cost/Len/Avg 9.2790517807/7/1.32557882581
+INFO: SAMPLE 5: <w> c h e H </w>  Cost/Len/Avg 9.15360736847/7/1.3076581955
+INFO: SAMPLE 6: <w> c h e </w>  Cost/Len/Avg 9.14241790771/6/1.52373631795
+INFO: SAMPLE 7: à c h e z </w>  Cost/Len/Avg 9.12889385223/7/1.30412769318
+INFO: SAMPLE 8: <w> c h e s </w>  Cost/Len/Avg 9.0384349823/7/1.29120499747
+INFO: SAMPLE 9: <w> C h e z </w>  Cost/Len/Avg 8.61125278473/7/1.23017896925
+INFO: SAMPLE 10: <w> c h e m </w>  Cost/Len/Avg 7.91329479218/7/1.1304706846
+INFO: SAMPLE 11: <w> c h e z </w>  Cost/Len/Avg 0.00177397776861/7/0.000253425395515
+INFO: SOURCE: <w> i o n <s> n e <s> s e <s> f e r a <s> q u e <s> <lc> p l u s <rc> <s> t a r d <s> e n <s> u n <s> g r o u p e <s> </w> 
+INFO: TARGET: <w> p l u s </w>       
+INFO: SAMPLE 0: <w> p a u s </w>  Cost/Len/Avg 10.2991695404/7/1.47130993434
+INFO: SAMPLE 1: <w> p l u x </w>  Cost/Len/Avg 10.2563743591/7/1.46519633702
+INFO: SAMPLE 2: <w> p L u s </w>  Cost/Len/Avg 10.2504749298/7/1.4643535614
+INFO: SAMPLE 3: <w> p a l u s </w>  Cost/Len/Avg 10.2225723267/8/1.27782154083
+INFO: SAMPLE 4: <w> p l o s </w>  Cost/Len/Avg 10.1133499146/7/1.44476427351
+INFO: SAMPLE 5: <w> p l u s i r </w>  Cost/Len/Avg 10.1066417694/9/1.1229601966
+INFO: SAMPLE 6: <w> p l s s </w>  Cost/Len/Avg 10.1004247665/7/1.44291782379
+INFO: SAMPLE 7: <w> p a u t </w>  Cost/Len/Avg 9.87962436676/7/1.41137490954
+INFO: SAMPLE 8: <w> p l a s </w>  Cost/Len/Avg 9.45372676849/7/1.3505323955
+INFO: SAMPLE 9: <w> p l u t </w>  Cost/Len/Avg 8.72952651978/7/1.24707521711
+INFO: SAMPLE 10: <w> p l o s s </w>  Cost/Len/Avg 7.90839672089/8/0.988549590111
+INFO: SAMPLE 11: <w> p l u s </w>  Cost/Len/Avg 0.00139550317544/7/0.000199357596492
+INFO: SOURCE: <w> S o p h i a <s> p e r e n n i s <s> e t <s> <lc> a v e c <rc> <s> u n <s> i n d é n i a b l e <s> s e n s </w> 
+INFO: TARGET: <w> a v e c </w>       
+INFO: SAMPLE 0: <w> a v è c </w>  Cost/Len/Avg 9.97530555725/7/1.42504365104
+INFO: SAMPLE 1: <w> a v E c </w>  Cost/Len/Avg 9.90536499023/7/1.41505214146
+INFO: SAMPLE 2: <w> a v e d </w>  Cost/Len/Avg 9.81734848022/7/1.40247835432
+INFO: SAMPLE 3: <w> a v e C </w>  Cost/Len/Avg 9.4198141098/7/1.34568772997
+INFO: SAMPLE 4: a a v e c </w>  Cost/Len/Avg 9.22505283356/7/1.31786469051
+INFO: SAMPLE 5: <w> a v a c </w>  Cost/Len/Avg 9.22264957428/7/1.31752136775
+INFO: SAMPLE 6: <w> a v ' c </w>  Cost/Len/Avg 9.13101959229/7/1.30443137033
+INFO: SAMPLE 7: <w> a v o c </w>  Cost/Len/Avg 8.61091995239/7/1.23013142177
+INFO: SAMPLE 8: <w> a v é c </w>  Cost/Len/Avg 8.44637393951/7/1.2066248485
+INFO: SAMPLE 9: <w> a v r e </w>  Cost/Len/Avg 7.48947000504/7/1.06992428643
+INFO: SAMPLE 10: <w> a v i c </w>  Cost/Len/Avg 7.05181121826/7/1.00740160261
+INFO: SAMPLE 11: <w> a v e c </w>  Cost/Len/Avg 0.00276278005913/7/0.00039468286559
+INFO: SOURCE: <w> v e c <s> u n i t é s <s> v e n d u e s <s> <lc> d a n s <rc> <s> l e <s> m o n d e <s> p a r <s> l e <s> s i </w> 
+INFO: TARGET: <w> d a n s </w>       
+INFO: SAMPLE 0: <w> d a n s e r </w>  Cost/Len/Avg 11.2315864563/9/1.2479540507
+INFO: SAMPLE 1: <w> S a n s </w>  Cost/Len/Avg 11.0487203598/7/1.57838862283
+INFO: SAMPLE 2: <w> d a i s </w>  Cost/Len/Avg 10.7567977905/7/1.53668539865
+INFO: SAMPLE 3: <w> d a î t r e </w>  Cost/Len/Avg 10.6958885193/9/1.1884320577
+INFO: SAMPLE 4: <w> l a n s </w>  Cost/Len/Avg 10.669298172/7/1.52418545314
+INFO: SAMPLE 5: <w> d a n s i r </w>  Cost/Len/Avg 10.5997934341/9/1.17775482602
+INFO: SAMPLE 6: <w> d a n i r </w>  Cost/Len/Avg 10.1090450287/8/1.26363062859
+INFO: SAMPLE 7: <w> c a n s </w>  Cost/Len/Avg 9.8002243042/7/1.40003204346
+INFO: SAMPLE 8: <w> d a i r </w>  Cost/Len/Avg 9.67075157166/7/1.38153593881
+INFO: SAMPLE 9: <w> d e n s </w>  Cost/Len/Avg 8.19388198853/7/1.17055456979
+INFO: SAMPLE 10: <w> d a n t </w>  Cost/Len/Avg 8.15468597412/7/1.16495513916
+INFO: SAMPLE 11: <w> d a n s </w>  Cost/Len/Avg 0.00113636627793/7/0.000162338039705
+INFO: SOURCE: <w> u e s <s> d e <s> l a <s> v i l l e <s> d e <s> <lc> H o m s <rc> <s> d a n s <s> l e <s> c e n t r e <s> d e <s> </w> 
+INFO: TARGET: <w> H o m s </w>       
+INFO: SAMPLE 0: <w> G o m s </w>  Cost/Len/Avg 8.9068479538/7/1.27240685054
+INFO: SAMPLE 1: <w> b o m s </w>  Cost/Len/Avg 8.76996231079/7/1.25285175868
+INFO: SAMPLE 2: <w> S o m s </w>  Cost/Len/Avg 8.50965213776/7/1.21566459111
+INFO: SAMPLE 3: <w> M o m s </w>  Cost/Len/Avg 8.48537731171/7/1.21219675882
+INFO: SAMPLE 4: <w> k o m s </w>  Cost/Len/Avg 8.15188694/7/1.16455527714
+INFO: SAMPLE 5: <w> g o m s </w>  Cost/Len/Avg 8.00217628479/7/1.14316804068
+INFO: SAMPLE 6: <w> C o m s </w>  Cost/Len/Avg 7.08593225479/7/1.0122760364
+INFO: SAMPLE 7: <w> c o m s </w>  Cost/Len/Avg 6.77771806717/7/0.968245438167
+INFO: SAMPLE 8: <w> H o m </w>  Cost/Len/Avg 6.28746080399/6/1.047910134
+INFO: SAMPLE 9: <w> z o m s </w>  Cost/Len/Avg 6.15443229675/7/0.879204613822
+INFO: SAMPLE 10: <w> h o m s </w>  Cost/Len/Avg 4.73510980606/7/0.676444258009
+INFO: SAMPLE 11: <w> H o m s </w>  Cost/Len/Avg 0.0170635636896/7/0.00243765195566
+INFO: SOURCE: <w> n t <s> d e <s> l e <s> L o i r e t <s> l a <s> <lc> m ê m e <rc> <s> a n n é e <s> s o n t <s> r e p r é s e </w> 
+INFO: TARGET: <w> m ê m e </w>       
+INFO: SAMPLE 0: <w> m ê b e </w>  Cost/Len/Avg 9.70922470093/7/1.38703210013
+INFO: SAMPLE 1: <w> m è m e </w>  Cost/Len/Avg 9.47875213623/7/1.35410744803
+INFO: SAMPLE 2: <w> m s m e </w>  Cost/Len/Avg 8.73934173584/7/1.24847739083
+INFO: SAMPLE 3: <w> m o m e r </w>  Cost/Len/Avg 8.4152173996/8/1.05190217495
+INFO: SAMPLE 4: <w> m ê p e </w>  Cost/Len/Avg 8.37465000153/7/1.19637857165
+INFO: SAMPLE 5: <w> s ê m e </w>  Cost/Len/Avg 8.17921924591/7/1.16845989227
+INFO: SAMPLE 6: <w> m ê z e </w>  Cost/Len/Avg 7.82287168503/7/1.11755309786
+INFO: SAMPLE 7: <w> m ê h e </w>  Cost/Len/Avg 7.51417303085/7/1.07345329012
+INFO: SAMPLE 8: <w> m ê m e r </w>  Cost/Len/Avg 7.32794427872/8/0.91599303484
+INFO: SAMPLE 9: <w> m o m e </w>  Cost/Len/Avg 7.0378370285/7/1.00540528979
+INFO: SAMPLE 10: <w> m ê m e </w>  Cost/Len/Avg 0.00434984080493/7/0.000621405829276
+INFO: SAMPLE 11: <w> m ê m e v o i r </w>  Cost/Len/Avg 8.28792285919/11/0.753447532654
+INFO: SOURCE: <w> d u i t <s> l e s <s> d e u x <s> J e d i <s> <lc> d a n s <rc> <s> l a <s> c i t é <s> d ' <s> O t o h <s> G u </w> 
+INFO: TARGET: <w> d a n s </w>       
+INFO: SAMPLE 0: <w> v a n s </w>  Cost/Len/Avg 10.9273319244/7/1.56104741778
+INFO: SAMPLE 1: <w> d a î t r e </w>  Cost/Len/Avg 10.8077640533/9/1.20086267259
+INFO: SAMPLE 2: <w> d a i s </w>  Cost/Len/Avg 10.4281730652/7/1.48973900931
+INFO: SAMPLE 3: <w> l a n s </w>  Cost/Len/Avg 10.3129224777/7/1.47327463967
+INFO: SAMPLE 4: <w> d a n s s </w>  Cost/Len/Avg 10.2741985321/8/1.28427481651
+INFO: SAMPLE 5: <w> d a n i r </w>  Cost/Len/Avg 10.1917314529/8/1.27396643162
+INFO: SAMPLE 6: <w> d a n s i r </w>  Cost/Len/Avg 10.1097841263/9/1.12330934736
+INFO: SAMPLE 7: <w> d a i r </w>  Cost/Len/Avg 10.0283870697/7/1.43262672424
+INFO: SAMPLE 8: <w> c a n s </w>  Cost/Len/Avg 9.79325294495/7/1.39903613499
+INFO: SAMPLE 9: <w> d e n s </w>  Cost/Len/Avg 8.76844120026/7/1.25263445718
+INFO: SAMPLE 10: <w> d a n t </w>  Cost/Len/Avg 8.52685546875/7/1.21812220982
+INFO: SAMPLE 11: <w> d a n s </w>  Cost/Len/Avg 0.000951421330683/7/0.000135917332955
+INFO: SOURCE: <w> <s> o u <s> n a r r o w <s> c h a n n e l <s> <lc> p u i s <rc> <s> e n <s> f o n c t i o n <s> d e <s> s a <s> </w> 
+INFO: TARGET: <w> p u i s </w>       
+INFO: SAMPLE 0: <w> p </w>  Cost/Len/Avg 9.16417121887/4/2.29104280472
+INFO: SAMPLE 1: <w> p s i s </w>  Cost/Len/Avg 7.704246521/7/1.10060664586
+INFO: SAMPLE 2: <w> p o u s </w>  Cost/Len/Avg 7.3638920784/7/1.05198458263
+INFO: SAMPLE 3: <w> p o u </w>  Cost/Len/Avg 7.29886722565/6/1.21647787094
+INFO: SAMPLE 4: <w> p u e t t r e </w>  Cost/Len/Avg 6.6157002449/10/0.66157002449
+INFO: SAMPLE 5: <w> p l i s </w>  Cost/Len/Avg 6.22990655899/7/0.889986651284
+INFO: SAMPLE 6: <w> p o u t </w>  Cost/Len/Avg 6.04442405701/7/0.863489151001
+INFO: SAMPLE 7: <w> p o u x </w>  Cost/Len/Avg 6.02909755707/7/0.86129965101
+INFO: SAMPLE 8: <w> p o u n d r e </w>  Cost/Len/Avg 4.55765151978/10/0.455765151978
+INFO: SAMPLE 9: <w> p o u r </w>  Cost/Len/Avg 2.09610533714/7/0.299443619592
+INFO: SAMPLE 10: <w> p o u v o i r </w>  Cost/Len/Avg 1.97083437443/10/0.197083437443
+INFO: SAMPLE 11: <w> p u i s </w>  Cost/Len/Avg 0.340998113155/7/0.0487140161651
+INFO: Starting epoch 240
+INFO: Starting epoch 241
+INFO: Starting epoch 242
+INFO: Starting epoch 243
+INFO: Starting epoch 244
+INFO: Starting epoch 245
+INFO: [2018-06-20 21:13:48] Epoch: 245 Update: 41000 Loss/word: 0.0329733809263 Words/sec: 1681.58006705 Sents/sec: 219.58812793
+INFO: Starting epoch 246
+INFO: Starting epoch 247
+INFO: Starting epoch 248
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.425251631435 3402.01305148 8000
+INFO:tensorflow:./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: ./models_10/French-20-char-context-base2/model.npz is not in all_model_checkpoint_paths. Manually adding it.
+INFO: Starting epoch 249
+INFO: Starting epoch 250
+INFO: Starting epoch 251
+INFO: [2018-06-20 21:18:38] Epoch: 251 Update: 42000 Loss/word: 0.0319349302749 Words/sec: 1582.75613787 Sents/sec: 206.624235664
+INFO: Starting epoch 252
+INFO: Starting epoch 253
+INFO: Starting epoch 254
+INFO: Starting epoch 255
+INFO: Starting epoch 256
+INFO: Starting epoch 257
+INFO: [2018-06-20 21:23:26] Epoch: 257 Update: 43000 Loss/word: 0.0305024083058 Words/sec: 1593.1093405 Sents/sec: 208.195956589
+INFO: Starting epoch 258
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.43364566166 3469.16529328 8000
+INFO: Starting epoch 259
+INFO: Starting epoch 260
+INFO: Starting epoch 261
+INFO: Starting epoch 262
+INFO: Starting epoch 263
+INFO: [2018-06-20 21:28:27] Epoch: 263 Update: 44000 Loss/word: 0.0299834755384 Words/sec: 1520.22073462 Sents/sec: 198.494606676
+INFO: Starting epoch 264
+INFO: Starting epoch 265
+INFO: Starting epoch 266
+INFO: Starting epoch 267
+INFO: Starting epoch 268
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.437513634639 3500.10907711 8000
+INFO: Starting epoch 269
+INFO: [2018-06-20 21:33:32] Epoch: 269 Update: 45000 Loss/word: 0.0284799943039 Words/sec: 1504.45123544 Sents/sec: 196.361516063
+INFO: Starting epoch 270
+INFO: Starting epoch 271
+INFO: Starting epoch 272
+INFO: Starting epoch 273
+INFO: Starting epoch 274
+INFO: Starting epoch 275
+INFO: [2018-06-20 21:38:24] Epoch: 275 Update: 46000 Loss/word: 0.0277813783013 Words/sec: 1573.32591699 Sents/sec: 205.369417641
+INFO: Starting epoch 276
+INFO: Starting epoch 277
+INFO: Starting epoch 278
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.431752004703 3454.01603762 8000
+INFO: Starting epoch 279
+INFO: Starting epoch 280
+INFO: Starting epoch 281
+INFO: [2018-06-20 21:43:25] Epoch: 281 Update: 47000 Loss/word: 0.0259374167478 Words/sec: 1526.05788908 Sents/sec: 199.022416396
+INFO: Starting epoch 282
+INFO: Starting epoch 283
+INFO: Starting epoch 284
+INFO: Starting epoch 285
+INFO: Starting epoch 286
+INFO: Starting epoch 287
+INFO: [2018-06-20 21:48:19] Epoch: 287 Update: 48000 Loss/word: 0.025530938332 Words/sec: 1559.92648665 Sents/sec: 203.315437133
+INFO: Starting epoch 288
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.433422493556 3467.37994845 8000
+INFO: Starting epoch 289
+INFO: Starting epoch 290
+INFO: Starting epoch 291
+INFO: Starting epoch 292
+INFO: Starting epoch 293
+INFO: [2018-06-20 21:53:20] Epoch: 293 Update: 49000 Loss/word: 0.0244475204728 Words/sec: 1522.78217531 Sents/sec: 198.865911611
+INFO: Starting epoch 294
+INFO: Starting epoch 295
+INFO: Starting epoch 296
+INFO: Starting epoch 297
+INFO: Starting epoch 298
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.448603799851 3588.83039881 8000
+INFO: Starting epoch 299
+INFO: [2018-06-20 21:58:21] Epoch: 299 Update: 50000 Loss/word: 0.0235439965026 Words/sec: 1527.96679044 Sents/sec: 199.223638693
+INFO: SOURCE: <w> è s <s> d e <s> l e <s> c o r p s <s> p a s <s> <lc> p l u s <rc> <s> l o i n <s> q u ' <s> u n e <s> m a i n <s> </w> 
+INFO: TARGET: <w> p l u s </w>        
+INFO: SAMPLE: <w> p l u s </w> 
+INFO: SOURCE: <w> o i t <s> l e s <s> v i s i t e s <s> d e <s> <lc> c é l è b r e s <rc> <s> c o n t r e b a n d i e r s </w> 
+INFO: TARGET: <w> c é l è b r e </w>     
+INFO: SAMPLE: <w> c é l è b r e </w> 
+INFO: SOURCE: <w> e <s> f r a n ç a i s e <s> s i t u é e <s> <lc> d a n s <rc> <s> l e <s> d é p a r t e m e n t <s> d e <s> </w> 
+INFO: TARGET: <w> d a n s </w>        
+INFO: SAMPLE: <w> d a n s </w> 
+INFO: SOURCE: <w> è s <s> B e n j a m i n <s> r a m è n e <s> <lc> c h e z <rc> <s> e u x <s> s o n <s> t o u t <s> j e u n e </w> 
+INFO: TARGET: <w> c h e z </w>        
+INFO: SAMPLE: <w> c h e z </w> 
+INFO: SOURCE: <w> c o n o m i q u e <s> a v e c <s> l e s <s> <lc> p a y s <rc> <s> d e <s> l ' <s> A f r i q u e <s> d e <s> l </w> 
+INFO: TARGET: <w> p a y s </w>        
+INFO: SAMPLE: <w> p a y s </w> 
+INFO: SOURCE: <w> i o n s <s> d i p l o m a t i q u e s <s> <lc> a v e c <rc> <s> d e s <s> p a y s <s> c o m m e <s> l e <s> </w> 
+INFO: TARGET: <w> a v e c </w>        
+INFO: SAMPLE: <w> a v e c </w> 
+INFO: SOURCE: <w> h e z <s> s o n <s> a d v e r s a i r e <s> <lc> l o r s <rc> <s> d e <s> l a <s> s e c o n d e <s> r e n c </w> 
+INFO: TARGET: <w> l o r s </w>        
+INFO: SAMPLE: <w> l o r s </w> 
+INFO: SOURCE: <w> F i t z r o y <s> é t a i t <s> <lc> c o n v a i n c u <rc> <s> q u e <s> l ' <s> é l e c t r i c i t é </w> 
+INFO: TARGET: <w> c o n v a i n c r e </w>  
+INFO: SAMPLE: <w> c o n v a i n c r e </w> 
+INFO: SOURCE: <w> l e <s> t r a v e s t i s s e m e n t <s> <lc> s o i t <rc> <s> l ' <s> é t a p e <s> h a b i t u e l l </w> 
+INFO: TARGET: <w> ê t r e </w>        
+INFO: SAMPLE: <w> ê t r e </w> 
+INFO: SOURCE: <w> r e m i e r s <s> A V N <s> A w a r d s <s> <lc> s o n t <rc> <s> d é c e r n é s <s> e n <s> f é v r i e </w> 
+INFO: TARGET: <w> ê t r e </w>        
+INFO: SAMPLE: <w> ê t r e </w> 
+INFO: SOURCE: <w> è s <s> d e <s> l e <s> c o r p s <s> p a s <s> <lc> p l u s <rc> <s> l o i n <s> q u ' <s> u n e <s> m a i n <s> </w> 
+INFO: TARGET: <w> p l u s </w>        
+INFO: SAMPLE 0: <w> p l u s e </w>  Cost/Len/Avg 11.528878212/8/1.4411097765
+INFO: SAMPLE 1: <w> p L u s </w>  Cost/Len/Avg 11.3734998703/7/1.62478569576
+INFO: SAMPLE 2: <w> p l u x </w>  Cost/Len/Avg 11.2221374512/7/1.60316249302
+INFO: SAMPLE 3: <w> p l u c </w>  Cost/Len/Avg 11.1738500595/7/1.59626429422
+INFO: SAMPLE 4: <w> p l a s </w>  Cost/Len/Avg 11.1345739365/7/1.59065341949
+INFO: SAMPLE 5: <w> p l u s i r </w>  Cost/Len/Avg 11.001791954/9/1.22242132823
+INFO: SAMPLE 6: <w> p l e s s </w>  Cost/Len/Avg 10.813580513/8/1.35169756413
+INFO: SAMPLE 7: <w> p a l u s </w>  Cost/Len/Avg 10.6937541962/8/1.33671927452
+INFO: SAMPLE 8: <w> p l o s </w>  Cost/Len/Avg 10.2419548035/7/1.4631364005
+INFO: SAMPLE 9: <w> p l u t </w>  Cost/Len/Avg 10.0184164047/7/1.43120234353
+INFO: SAMPLE 10: <w> p l o s s </w>  Cost/Len/Avg 8.95290374756/8/1.11911296844
+INFO: SAMPLE 11: <w> p l u s </w>  Cost/Len/Avg 0.000477990717627/7/6.82843882324e-05
+INFO: SOURCE: <w> o i t <s> l e s <s> v i s i t e s <s> d e <s> <lc> c é l è b r e s <rc> <s> c o n t r e b a n d i e r s </w> 
+INFO: TARGET: <w> c é l è b r e </w>     
+INFO: SAMPLE 0: <w> c é l è g r e </w>  Cost/Len/Avg 9.36713409424/10/0.936713409424
+INFO: SAMPLE 1: <w> C é l è b r e </w>  Cost/Len/Avg 9.17543983459/10/0.917543983459
+INFO: SAMPLE 2: <w> c é l o b r e </w>  Cost/Len/Avg 9.16652965546/10/0.916652965546
+INFO: SAMPLE 3: <w> c é l i b r e </w>  Cost/Len/Avg 9.13703346252/10/0.913703346252
+INFO: SAMPLE 4: <w> c é l É b r e </w>  Cost/Len/Avg 8.8803768158/10/0.88803768158
+INFO: SAMPLE 5: <w> c é l I b r e </w>  Cost/Len/Avg 8.8681640625/10/0.88681640625
+INFO: SAMPLE 6: <w> c é l è b r e s </w>  Cost/Len/Avg 8.1263256073/11/0.738756873391
+INFO: SAMPLE 7: <w> c é l è b r e r </w>  Cost/Len/Avg 7.70457935333/11/0.700416304848
+INFO: SAMPLE 8: <w> c e l è b r e </w>  Cost/Len/Avg 7.4686999321/10/0.74686999321
+INFO: SAMPLE 9: <w> c é l e b r e </w>  Cost/Len/Avg 6.68605709076/10/0.668605709076
+INFO: SAMPLE 10: <w> c é l é b r e </w>  Cost/Len/Avg 3.88875484467/10/0.388875484467
+INFO: SAMPLE 11: <w> c é l è b r e </w>  Cost/Len/Avg 0.0249275304377/10/0.00249275304377
+INFO: SOURCE: <w> e <s> f r a n ç a i s e <s> s i t u é e <s> <lc> d a n s <rc> <s> l e <s> d é p a r t e m e n t <s> d e <s> </w> 
+INFO: TARGET: <w> d a n s </w>        
+INFO: SAMPLE 0: <w> d a r s </w>  Cost/Len/Avg 11.8848524094/7/1.69783605848
+INFO: SAMPLE 1: <w> d a n s i r </w>  Cost/Len/Avg 11.8124570847/9/1.31249523163
+INFO: SAMPLE 2: <w> d a n m </w>  Cost/Len/Avg 11.5947380066/7/1.6563911438
+INFO: SAMPLE 3: <w> d a n c </w>  Cost/Len/Avg 11.440237999/7/1.63431971414
+INFO: SAMPLE 4: <w> d a î t r e </w>  Cost/Len/Avg 11.4178237915/9/1.26864708794
+INFO: SAMPLE 5: <w> c a n s </w>  Cost/Len/Avg 11.3892374039/7/1.62703391484
+INFO: SAMPLE 6: <w> d a n q </w>  Cost/Len/Avg 11.086432457/7/1.58377606528
+INFO: SAMPLE 7: <w> d o n s </w>  Cost/Len/Avg 10.7234516144/7/1.5319216592
+INFO: SAMPLE 8: <w> d a i s </w>  Cost/Len/Avg 10.4797077179/7/1.49710110256
+INFO: SAMPLE 9: <w> d a n t </w>  Cost/Len/Avg 10.4605922699/7/1.49437032427
+INFO: SAMPLE 10: <w> d e n s </w>  Cost/Len/Avg 6.74676418304/7/0.963823454721
+INFO: SAMPLE 11: <w> d a n s </w>  Cost/Len/Avg 0.00144715548959/7/0.000206736498512
+INFO: SOURCE: <w> è s <s> B e n j a m i n <s> r a m è n e <s> <lc> c h e z <rc> <s> e u x <s> s o n <s> t o u t <s> j e u n e </w> 
+INFO: TARGET: <w> c h e z </w>        
+INFO: SAMPLE 0: <w> c h e s </w>  Cost/Len/Avg 11.3229951859/7/1.61757074084
+INFO: SAMPLE 1: <w> c z e z </w>  Cost/Len/Avg 11.2807826996/7/1.61154038565
+INFO: SAMPLE 2: <w> c h e j </w>  Cost/Len/Avg 11.2629079819/7/1.60898685455
+INFO: SAMPLE 3: <w> c h i z </w>  Cost/Len/Avg 11.1419916153/7/1.5917130879
+INFO: SAMPLE 4: <w> c h e b </w>  Cost/Len/Avg 11.0673494339/7/1.58104991913
+INFO: SAMPLE 5: <w> c h e </w>  Cost/Len/Avg 11.0134944916/6/1.83558241526
+INFO: SAMPLE 6: <w> c h e H </w>  Cost/Len/Avg 10.6892976761/7/1.52704252516
+INFO: SAMPLE 7: <w> d h e z </w>  Cost/Len/Avg 10.5634298325/7/1.50906140464
+INFO: SAMPLE 8: <w> c ô e z </w>  Cost/Len/Avg 10.1836261749/7/1.45480373928
+INFO: SAMPLE 9: <w> C h e z </w>  Cost/Len/Avg 9.25672149658/7/1.32238878523
+INFO: SAMPLE 10: <w> c h e m </w>  Cost/Len/Avg 9.13078403473/7/1.30439771925
+INFO: SAMPLE 11: <w> c h e z </w>  Cost/Len/Avg 0.000486692122649/7/6.95274460928e-05
+INFO: SOURCE: <w> c o n o m i q u e <s> a v e c <s> l e s <s> <lc> p a y s <rc> <s> d e <s> l ' <s> A f r i q u e <s> d e <s> l </w> 
+INFO: TARGET: <w> p a y s </w>        
+INFO: SAMPLE 0: <w> r a y s </w>  Cost/Len/Avg 12.3854551315/7/1.76935073308
+INFO: SAMPLE 1: <w> p a i s </w>  Cost/Len/Avg 12.3481826782/7/1.76402609689
+INFO: SAMPLE 2: <w> p a y c </w>  Cost/Len/Avg 12.1485004425/7/1.73550006321
+INFO: SAMPLE 3: <w> p a y t </w>  Cost/Len/Avg 11.9885902405/7/1.71265574864
+INFO: SAMPLE 4: <w> p â y s </w>  Cost/Len/Avg 11.3871994019/7/1.62674277169
+INFO: SAMPLE 5: <w> p a y s e </w>  Cost/Len/Avg 11.2757167816/8/1.4094645977
+INFO: SAMPLE 6: <w> p a j s </w>  Cost/Len/Avg 11.1373004913/7/1.59104292733
+INFO: SAMPLE 7: <w> p a y s i </w>  Cost/Len/Avg 11.1164150238/8/1.38955187798
+INFO: SAMPLE 8: <w> p A y s </w>  Cost/Len/Avg 11.0920944214/7/1.58458491734
+INFO: SAMPLE 9: <w> P a y s </w>  Cost/Len/Avg 10.8646583557/7/1.55209405082
+INFO: SAMPLE 10: <w> p o y s </w>  Cost/Len/Avg 10.1941757202/7/1.45631081717
+INFO: SAMPLE 11: <w> p a y s </w>  Cost/Len/Avg 0.000196333101485/7/2.80475859264e-05
+INFO: SOURCE: <w> i o n s <s> d i p l o m a t i q u e s <s> <lc> a v e c <rc> <s> d e s <s> p a y s <s> c o m m e <s> l e <s> </w> 
+INFO: TARGET: <w> a v e c </w>        
+INFO: SAMPLE 0: <w> a v E c </w>  Cost/Len/Avg 11.7001304626/7/1.67144720895
+INFO: SAMPLE 1: <w> a v e a r </w>  Cost/Len/Avg 11.6442193985/8/1.45552742481
+INFO: SAMPLE 2: <w> a v e d </w>  Cost/Len/Avg 11.6087675095/7/1.65839535849
+INFO: SAMPLE 3: <w> a v o c </w>  Cost/Len/Avg 11.5165071487/7/1.64521530696
+INFO: SAMPLE 4: <w> a v a c </w>  Cost/Len/Avg 11.4598865509/7/1.63712665013
+INFO: SAMPLE 5: <w> a v e m </w>  Cost/Len/Avg 11.2592029572/7/1.60845756531
+INFO: SAMPLE 6: <w> a v r e </w>  Cost/Len/Avg 10.2931957245/7/1.47045653207
+INFO: SAMPLE 7: <w> a v é c </w>  Cost/Len/Avg 10.2111825943/7/1.45874037061
+INFO: SAMPLE 8: <w> a v ' c </w>  Cost/Len/Avg 10.0375061035/7/1.43392944336
+INFO: SAMPLE 9: <w> a v e C </w>  Cost/Len/Avg 9.94335842133/7/1.42047977448
+INFO: SAMPLE 10: <w> a v i c </w>  Cost/Len/Avg 9.54969406128/7/1.36424200875
+INFO: SAMPLE 11: <w> a v e c </w>  Cost/Len/Avg 0.000381197023671/7/5.44567176673e-05
+INFO: SOURCE: <w> h e z <s> s o n <s> a d v e r s a i r e <s> <lc> l o r s <rc> <s> d e <s> l a <s> s e c o n d e <s> r e n c </w> 
+INFO: TARGET: <w> l o r s </w>        
+INFO: SAMPLE 0: <w> l o î t r e </w>  Cost/Len/Avg 11.7270956039/9/1.30301062266
+INFO: SAMPLE 1: <w> l o r c </w>  Cost/Len/Avg 11.6847276688/7/1.66924680982
+INFO: SAMPLE 2: <w> l o v o i r </w>  Cost/Len/Avg 11.6513309479/9/1.29459232754
+INFO: SAMPLE 3: <w> L o r s </w>  Cost/Len/Avg 11.5393791199/7/1.64848273141
+INFO: SAMPLE 4: <w> l o t s </w>  Cost/Len/Avg 11.3899030685/7/1.62712900979
+INFO: SAMPLE 5: <w> l o u r </w>  Cost/Len/Avg 11.3753042221/7/1.6250434603
+INFO: SAMPLE 6: <w> l e r s </w>  Cost/Len/Avg 11.0172071457/7/1.5738867351
+INFO: SAMPLE 7: <w> l o u s </w>  Cost/Len/Avg 10.9816246033/7/1.56880351475
+INFO: SAMPLE 8: <w> l o n s </w>  Cost/Len/Avg 10.373339653/7/1.48190566472
+INFO: SAMPLE 9: <w> l o r </w>  Cost/Len/Avg 10.2648115158/6/1.7108019193
+INFO: SAMPLE 10: <w> l o i r </w>  Cost/Len/Avg 9.8591709137/7/1.40845298767
+INFO: SAMPLE 11: <w> l o r s </w>  Cost/Len/Avg 0.000291449658107/7/4.16356654439e-05
+INFO: SOURCE: <w> F i t z r o y <s> é t a i t <s> <lc> c o n v a i n c u <rc> <s> q u e <s> l ' <s> é l e c t r i c i t é </w> 
+INFO: TARGET: <w> c o n v a i n c r e </w>  
+INFO: SAMPLE 0: <w> c o n v a i n c r </w>  Cost/Len/Avg 7.04263782501/12/0.586886485418
+INFO: SAMPLE 1: <w> c o n v a i n c l </w>  Cost/Len/Avg 6.99200630188/12/0.582667191823
+INFO: SAMPLE 2: <w> c o n v a i n c r r </w>  Cost/Len/Avg 6.72993087769/13/0.517686990591
+INFO: SAMPLE 3: <w> c o n v a i n c u </w>  Cost/Len/Avg 6.55506896973/12/0.546255747477
+INFO: SAMPLE 4: <w> c o n v a i n c </w>  Cost/Len/Avg 6.39897108078/11/0.581724643707
+INFO: SAMPLE 5: <w> c o n v a i n c r ' </w>  Cost/Len/Avg 6.03991889954/13/0.464609146118
+INFO: SAMPLE 6: <w> c o n v a i n c e r </w>  Cost/Len/Avg 5.18850183487/13/0.399115525759
+INFO: SAMPLE 7: <w> c o n v a i n c u r </w>  Cost/Len/Avg 3.04033184052/13/0.23387168004
+INFO: SAMPLE 8: <w> c o n v a i n c r e </w>  Cost/Len/Avg 0.100908353925/13/0.00776218107113
+INFO: SAMPLE 9: <w> c o n v a i n c r e r </w>  Cost/Len/Avg 3.66698884964/14/0.261927774974
+INFO: SAMPLE 10: <w> c o n v a i n c r i r </w>  Cost/Len/Avg 6.63852787018/14/0.474180562156
+INFO: SAMPLE 11: <w> c o n v a i n c l r e </w>  Cost/Len/Avg 6.78402471542/14/0.484573193959
+INFO: SOURCE: <w> l e <s> t r a v e s t i s s e m e n t <s> <lc> s o i t <rc> <s> l ' <s> é t a p e <s> h a b i t u e l l </w> 
+INFO: TARGET: <w> ê t r e </w>        
+INFO: SAMPLE 0: <w> s o i v r e </w>  Cost/Len/Avg 11.0694465637/9/1.22993850708
+INFO: SAMPLE 1: <w> s o n d </w>  Cost/Len/Avg 10.8939981461/7/1.55628544944
+INFO: SAMPLE 2: <w> s o v o i r </w>  Cost/Len/Avg 10.4769096375/9/1.16410107083
+INFO: SAMPLE 3: <w> ê t r i r </w>  Cost/Len/Avg 10.2782058716/8/1.28477573395
+INFO: SAMPLE 4: <w> s o n d r e </w>  Cost/Len/Avg 9.70348644257/9/1.07816516029
+INFO: SAMPLE 5: <w> ê t r ' </w>  Cost/Len/Avg 9.67049407959/7/1.38149915423
+INFO: SAMPLE 6: <w> s o u t </w>  Cost/Len/Avg 9.3172826767/7/1.33104038239
+INFO: SAMPLE 7: <w> s o i r e </w>  Cost/Len/Avg 8.01573085785/8/1.00196635723
+INFO: SAMPLE 8: <w> ê t r i </w>  Cost/Len/Avg 7.93081760406/7/1.13297394344
+INFO: SAMPLE 9: <w> s o n t </w>  Cost/Len/Avg 7.03249263763/7/1.00464180538
+INFO: SAMPLE 10: <w> s o i t </w>  Cost/Len/Avg 6.26868009567/7/0.895525727953
+INFO: SAMPLE 11: <w> ê t r e </w>  Cost/Len/Avg 0.00391205912456/7/0.000558865589223
+INFO: SOURCE: <w> r e m i e r s <s> A V N <s> A w a r d s <s> <lc> s o n t <rc> <s> d é c e r n é s <s> e n <s> f é v r i e </w> 
+INFO: TARGET: <w> ê t r e </w>        
+INFO: SAMPLE 0: <w> ê t </w>  Cost/Len/Avg 12.5842218399/5/2.51684436798
+INFO: SAMPLE 1: <w> ê t t r e </w>  Cost/Len/Avg 12.3687782288/8/1.54609727859
+INFO: SAMPLE 2: <w> a ê t r e </w>  Cost/Len/Avg 12.2266101837/8/1.52832627296
+INFO: SAMPLE 3: <w> a a v o i r </w>  Cost/Len/Avg 11.7338666916/9/1.30376296573
+INFO: SAMPLE 4: <w> ê t r r </w>  Cost/Len/Avg 11.6448802948/7/1.66355432783
+INFO: SAMPLE 5: <w> ê t r i r </w>  Cost/Len/Avg 11.4747648239/8/1.43434560299
+INFO: SAMPLE 6: <w> ê t r ' </w>  Cost/Len/Avg 10.8467102051/7/1.5495300293
+INFO: SAMPLE 7: <w> ê t r e r </w>  Cost/Len/Avg 10.0573644638/8/1.25717055798
+INFO: SAMPLE 8: <w> a l l e r </w>  Cost/Len/Avg 9.87993144989/8/1.23499143124
+INFO: SAMPLE 9: <w> ê t r i </w>  Cost/Len/Avg 9.41849517822/7/1.34549931117
+INFO: SAMPLE 10: <w> s o n t </w>  Cost/Len/Avg 7.35343408585/7/1.05049058369
+INFO: SAMPLE 11: <w> ê t r e </w>  Cost/Len/Avg 0.000915252487175/7/0.000130750355311
+INFO: Starting epoch 300
+INFO: Starting epoch 301
+INFO: Starting epoch 302
+INFO: Starting epoch 303
+INFO: Starting epoch 304
+INFO: Starting epoch 305
+INFO: [2018-06-20 22:03:15] Epoch: 305 Update: 51000 Loss/word: 0.0231556556682 Words/sec: 1560.70823284 Sents/sec: 203.729067395
+INFO: Starting epoch 306
+INFO: Starting epoch 307
+INFO: Starting epoch 308
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.44544587236 3563.56697888 8000
+INFO: Starting epoch 309
+INFO: Starting epoch 310
+INFO: Starting epoch 311
+INFO: [2018-06-20 22:08:22] Epoch: 311 Update: 52000 Loss/word: 0.0225475992515 Words/sec: 1491.9446193 Sents/sec: 194.836593353
+INFO: Starting epoch 312
+INFO: Starting epoch 313
+INFO: Starting epoch 314
+INFO: Starting epoch 315
+INFO: Starting epoch 316
+INFO: Starting epoch 317
+INFO: [2018-06-20 22:13:06] Epoch: 317 Update: 53000 Loss/word: 0.0216972460175 Words/sec: 1613.15573923 Sents/sec: 210.786284031
+INFO: Starting epoch 318
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.441492839214 3531.94271371 8000
+INFO: Starting epoch 319
+INFO: Starting epoch 320
+INFO: Starting epoch 321
+INFO: Starting epoch 322
+INFO: Starting epoch 323
+INFO: [2018-06-20 22:18:05] Epoch: 323 Update: 54000 Loss/word: 0.0212904518623 Words/sec: 1537.13805321 Sents/sec: 200.6024506
+INFO: Starting epoch 324
+INFO: Starting epoch 325
+INFO: Starting epoch 326
+INFO: Starting epoch 327
+INFO: Starting epoch 328
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.438817314463 3510.5385157 8000
+INFO: Starting epoch 329
+INFO: [2018-06-20 22:23:01] Epoch: 329 Update: 55000 Loss/word: 0.0209555821287 Words/sec: 1545.84644182 Sents/sec: 201.918916245
+INFO: Starting epoch 330
+INFO: Starting epoch 331
+INFO: Starting epoch 332
+INFO: Starting epoch 333
+INFO: Starting epoch 334
+INFO: Starting epoch 335
+INFO: [2018-06-20 22:27:43] Epoch: 335 Update: 56000 Loss/word: 0.0186709993419 Words/sec: 1630.81881641 Sents/sec: 212.875474352
+INFO: Starting epoch 336
+INFO: Starting epoch 337
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.445630861999 3565.04689599 8000
+INFO: Starting epoch 338
+INFO: Starting epoch 339
+INFO: Starting epoch 340
+INFO: Starting epoch 341
+INFO: [2018-06-20 22:32:28] Epoch: 341 Update: 57000 Loss/word: 0.0198264486047 Words/sec: 1608.6388077 Sents/sec: 209.915732801
+INFO: Starting epoch 342
+INFO: Starting epoch 343
+INFO: Starting epoch 344
+INFO: Starting epoch 345
+INFO: Starting epoch 346
+INFO: Starting epoch 347
+INFO: [2018-06-20 22:36:54] Epoch: 347 Update: 58000 Loss/word: 0.0180986800321 Words/sec: 1728.39096039 Sents/sec: 225.352959114
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.450869264526 3606.95411621 8000
+INFO: Starting epoch 348
+INFO: Starting epoch 349
+INFO: Starting epoch 350
+INFO: Starting epoch 351
+INFO: Starting epoch 352
+INFO: Starting epoch 353
+INFO: [2018-06-20 22:41:31] Epoch: 353 Update: 59000 Loss/word: 0.0178141672592 Words/sec: 1656.56269479 Sents/sec: 216.110113168
+INFO: Starting epoch 354
+INFO: Starting epoch 355
+INFO: Starting epoch 356
+INFO: Starting epoch 357
+INFO: Seen 80
+INFO: Seen 160
+INFO: Seen 240
+INFO: Seen 320
+INFO: Seen 400
+INFO: Seen 480
+INFO: Seen 560
+INFO: Seen 640
+INFO: Seen 720
+INFO: Seen 800
+INFO: Seen 880
+INFO: Seen 960
+INFO: Seen 1040
+INFO: Seen 1120
+INFO: Seen 1200
+INFO: Seen 1280
+INFO: Seen 1360
+INFO: Seen 1440
+INFO: Seen 1520
+INFO: Seen 1600
+INFO: Seen 1680
+INFO: Seen 1760
+INFO: Seen 1840
+INFO: Seen 1920
+INFO: Seen 2000
+INFO: Seen 2080
+INFO: Seen 2160
+INFO: Seen 2240
+INFO: Seen 2320
+INFO: Seen 2400
+INFO: Seen 2480
+INFO: Seen 2560
+INFO: Seen 2640
+INFO: Seen 2720
+INFO: Seen 2800
+INFO: Seen 2880
+INFO: Seen 2960
+INFO: Seen 3040
+INFO: Seen 3120
+INFO: Seen 3200
+INFO: Seen 3280
+INFO: Seen 3360
+INFO: Seen 3440
+INFO: Seen 3520
+INFO: Seen 3600
+INFO: Seen 3680
+INFO: Seen 3760
+INFO: Seen 3840
+INFO: Seen 3920
+INFO: Seen 4000
+INFO: Seen 4080
+INFO: Seen 4160
+INFO: Seen 4240
+INFO: Seen 4320
+INFO: Seen 4400
+INFO: Seen 4480
+INFO: Seen 4560
+INFO: Seen 4640
+INFO: Seen 4720
+INFO: Seen 4800
+INFO: Seen 4880
+INFO: Seen 4960
+INFO: Seen 5040
+INFO: Seen 5120
+INFO: Seen 5200
+INFO: Seen 5280
+INFO: Seen 5360
+INFO: Seen 5440
+INFO: Seen 5520
+INFO: Seen 5600
+INFO: Seen 5680
+INFO: Seen 5760
+INFO: Seen 5840
+INFO: Seen 5920
+INFO: Seen 6000
+INFO: Seen 6080
+INFO: Seen 6160
+INFO: Seen 6240
+INFO: Seen 6320
+INFO: Seen 6400
+INFO: Seen 6480
+INFO: Seen 6560
+INFO: Seen 6640
+INFO: Seen 6720
+INFO: Seen 6800
+INFO: Seen 6880
+INFO: Seen 6960
+INFO: Seen 7040
+INFO: Seen 7120
+INFO: Seen 7200
+INFO: Seen 7280
+INFO: Seen 7360
+INFO: Seen 7440
+INFO: Seen 7520
+INFO: Seen 7600
+INFO: Seen 7680
+INFO: Seen 7760
+INFO: Seen 7840
+INFO: Seen 7920
+INFO: Seen 8000
+INFO: Validation loss (AVG/SUM/N_SENT): 0.462639045324 3701.11236259 8000
+INFO: Early Stop!
+('SOURCE DICTIONARIES: ', ['./models_10/French-20-char-context-base2/data/train-sources.json'])

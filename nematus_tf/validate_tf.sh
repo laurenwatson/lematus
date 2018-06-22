@@ -1,7 +1,7 @@
 #!/bin/sh
 
-model_type=models_full
-lang=Hungarian
+model_type=Full_model
+lang=English
 
 python translate.py \
      -m ${model_type}/${lang}-20-char-context-base1/model.npz \

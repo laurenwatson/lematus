@@ -3,6 +3,7 @@ models/
 models_20/
 models_10/
 models_1/
+models_full/
 models_test/
 venv/
 theano/
@@ -17,6 +18,7 @@ mtl_nematus/tiny_data
 __pycache__/
 *.py[cod]
 *$py.class
+mtl_nematus/tiny_data
 
 # C extensions
 *.so
