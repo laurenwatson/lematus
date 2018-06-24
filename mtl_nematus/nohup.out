@@ -19,3 +19,46 @@ Processing ./models_10/English-20-char-context-ae100-2/data/test-ae-targets
 Done
 Starting training
 End of training
+cp: ./validate.sh: No such file or directory
+Copying data sets
+Building Dictionaries
+Processing ./models_10/English-20-char-context-ae100-2/data/train-sources
+Done
+Processing ./models_10/English-20-char-context-ae100-2/data/train-targets
+Done
+Processing ./models_10/English-20-char-context-ae100-2/data/train-sources
+Done
+Processing ./models_10/English-20-char-context-ae100-2/data/train-ae-targets
+Done
+Processing ./models_10/English-20-char-context-ae100-2/data/dev-sources
+Done
+Processing ./models_10/English-20-char-context-ae100-2/data/dev-ae-targets
+Done
+Processing ./models_10/English-20-char-context-ae100-2/data/test-sources
+Done
+Processing ./models_10/English-20-char-context-ae100-2/data/test-ae-targets
+Done
+Starting training
+./train_10k_ae_100.sh: line 88: id}.txt: command not found
+End of training
+cp: ./validate.sh: No such file or directory
+Copying data sets
+Building Dictionaries
+Processing ./models_10/Turkish-20-char-context-ae_100p_run1/data/train-sources
+Done
+Processing ./models_10/Turkish-20-char-context-ae_100p_run1/data/train-targets
+Done
+Processing ./models_10/Turkish-20-char-context-ae_100p_run1/data/train-sources
+Done
+Processing ./models_10/Turkish-20-char-context-ae_100p_run1/data/train-ae-targets
+Done
+Processing ./models_10/Turkish-20-char-context-ae_100p_run1/data/dev-sources
+Done
+Processing ./models_10/Turkish-20-char-context-ae_100p_run1/data/dev-ae-targets
+Done
+Processing ./models_10/Turkish-20-char-context-ae_100p_run1/data/test-sources
+Done
+Processing ./models_10/Turkish-20-char-context-ae_100p_run1/data/test-ae-targets
+Done
+Starting training
+End of training

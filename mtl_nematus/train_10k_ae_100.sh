@@ -1,8 +1,8 @@
 #!/bin/sh
 
-lang='English'
+lang='Turkish'
 type='20-char-context'
-experiment_id='ae100-2'
+experiment_id='ae_100p_run1'
 
 basedir=.
 datadir=tiny_data/languages_10
@@ -30,8 +30,8 @@ python ../data/build_dictionary.py ${modeldir}/data/dev-sources ${modeldir}/data
 python ../data/build_dictionary.py ${modeldir}/data/test-sources ${modeldir}/data/test-ae-targets
 
 
-dim_word=50
-dim=20
+dim_word=300
+dim=100
 batch_size=60
 
 n_words_src=($(wc -l ${modeldir}/data/train-sources.json))
@@ -47,9 +47,9 @@ maxlen=75
 
 optimizer="adam"
 
-dispFreq=100
+dispFreq=1000
 
-validate_every_n_epochs=20 #increase to make training faster
+validate_every_n_epochs=10 #increase to make training faster
 valid_freq=($(wc -l ${modeldir}/data/train-sources))
 valid_freq=$((valid_freq / batch_size * ${validate_every_n_epochs}))
 

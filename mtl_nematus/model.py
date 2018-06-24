@@ -782,6 +782,7 @@ class AEModel(object):
         #variable dimensions
         seqLen = None
         batch_size = None
+        alpha = 0.5
 
         #for autoencoding still only need 2 prior_variables
         #autoencoding maps x to x as opposed to x to y
@@ -908,7 +909,7 @@ class AEModel(object):
             self.mean_loss = tf.reduce_mean(self.loss_per_sentence, keep_dims=False)
             self.ae_mean_loss = tf.reduce_mean(self.ae_loss_per_sentence, keep_dims=False)
             #try just adding them?
-            self.objective = self.mean_loss + self.ae_mean_loss
+            self.objective = alpha*self.mean_loss + (1-alpha)*self.ae_mean_loss
 
             #ignore for now
             self.l2_loss = tf.constant(0.0, dtype=tf.float32)

@@ -1314,7 +1314,7 @@ if __name__ == "__main__":
             validate_helper_ae(config, sess)
         elif config.run_alternate==1:
             logging.info('AE TRAINING')
-            train_alternate_batch(config, sess)
+            train(config, sess)
         else:
             logging.info('NORMAL TRAINING')
             train(config, sess)

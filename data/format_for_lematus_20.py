@@ -33,9 +33,11 @@ def readFile(fname):
 def write_data_to_files(data, fName):
     with open(fName + '-sources', "w") as s:
         with open(fName + '-targets', "w") as t:
-            for context, surface_form, lemma, in data:
-                s.write("{} {} {}\n".format(WBEGIN, trim_input(context, n, " ".join([l for l in surface_form])), WEND))
-                t.write("{} {} {}\n".format(WBEGIN, " ".join([l for l in lemma]), WEND))
+            with open(fName + '-ae-targets', "w") as at:
+                for context, surface_form, lemma, in data:
+                    s.write("{} {} {}\n".format(WBEGIN, trim_input(context, n, " ".join([l for l in surface_form])), WEND))
+                    t.write("{} {} {}\n".format(WBEGIN, " ".join([l for l in lemma]), WEND))
+                    at.write("{} {} {}\n".format(WBEGIN, " ".join([l for l in surface_form]), WEND))
 
 def trim_input(inp, n, surface_form):
     if n > 0:
