@@ -7,6 +7,7 @@ import os
 import logging
 import time
 import argparse
+import random
 
 import tensorflow as tf
 import tensorflow.contrib.slim as slim
@@ -711,14 +712,22 @@ def train_alternate_batch(config, sess):
             write_summary_for_this_batch = config.summaryFreq and ((progress.uidx % config.summaryFreq == 0) or (config.finish_after and progress.uidx % config.finish_after == 0))
             (factors, seqLen, batch_size) = x_in.shape
             inn = {x:x_in, y:y_in, x_mask:x_mask_in, y_mask:y_mask_in, ae_y:ae_y_in, ae_y_mask:ae_y_mask_in, training:True}
-            if ae:
+            #if ae:
+            #    out = [t, apply_grads, objective, lemma_loss, ae_loss]
+                #logging.info('Doing normal training')
+            #    ae=False
+            #else:
+            #    out = [t, apply_ae_grads, ae_objective, lemma_loss, ae_loss]
+            #    #logging.info('Doing ae training')
+            #    ae=True
+            if random.random()>=1.0/3:
                 out = [t, apply_grads, objective, lemma_loss, ae_loss]
                 #logging.info('Doing normal training')
-                ae=False
+            #    ae=False
             else:
                 out = [t, apply_ae_grads, ae_objective, lemma_loss, ae_loss]
-                #logging.info('Doing ae training')
-                ae=True
+            #    #logging.info('Doing ae training')
+            #    ae=True
             if write_summary_for_this_batch:
                 out += [merged]
             out_values = sess.run(out, feed_dict=inn)
@@ -1299,7 +1308,7 @@ if __name__ == "__main__":
 
     config = parse_args()
     logging.info(config)
-    with tf.Session() as sess:
+    with tf.Session(config=tf.ConfigProto(log_device_placement=True)) as sess:
         if config.translate_valid and config.run_alternate==0:
             logging.info("NORMAL TRANSLATE")
             translate(config, sess)
@@ -1314,7 +1323,7 @@ if __name__ == "__main__":
             validate_helper_ae(config, sess)
         elif config.run_alternate==1:
             logging.info('AE TRAINING')
-            train(config, sess)
+            train_alternate_batch(config, sess)
         else:
             logging.info('NORMAL TRAINING')
             train(config, sess)
