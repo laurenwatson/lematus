@@ -108,3 +108,11 @@ Processing ./models_10/Hungarian-20-char-context-base1/data/train-targets
 Done
 Starting training
 End of training
+Copying data sets
+Building Dictionaries
+Processing ./models_10/Turkish-20-char-context-base1/data/train-sources
+Done
+Processing ./models_10/Turkish-20-char-context-base1/data/train-targets
+Done
+Starting training
+End of training
