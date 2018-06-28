@@ -2,12 +2,12 @@
 
 lang='Turkish'
 type='20-char-context'
-experiment_id='ae_100p_run1'
+experiment_id='test1'
 
 basedir=.
-datadir=tiny_data/languages_10
-modeldir=${basedir}/models_10/${lang}-${type}-${experiment_id}
-datadir=${basedir}/tiny_data/languages_10/${lang}-${type}
+datadir=tiny_data/languages_1
+modeldir=${basedir}/models_1/${lang}-${type}-${experiment_id}
+datadir=${basedir}/tiny_data/languages_1/${lang}-${type}
 
 mkdir -p ${modeldir}
 mkdir -p ${modeldir}/data

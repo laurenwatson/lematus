@@ -5,7 +5,7 @@ from collections import defaultdict
 
 model_name = '20-char-context-base1'
 data_set = 'dev' # either dev or test
-langs=[ 'English', 'Turkish']
+langs=[ 'English', 'Turkish', 'Hindi', 'French', 'Croatian', 'Hungarian']
 
 for lang in langs:
     model= lang + "-" + model_name
@@ -46,11 +46,11 @@ for lang in langs:
     total_should_have_been_copied = 0.0
     ambiguous_should_have_been_copied = 0.0
     unambiguous_should_have_been_copied = 0.0
-    total_incorrect_unseen = 0.0
+    total_incorrect_unseen = 1.0
     blah = 0.0
     with open("data/languages_10/"+lang+"-20-char-context/dev-sources".format(model,data_set), "r") as i:
         with open("data/languages_10/"+lang+"-20-char-context/dev-targets".format(model,data_set), "r") as o:
-            with open("data/languages_10/"+lang+"-20-char-context/dev-hypothesis-base1".format(model,data_set), "r") as p:
+            with open("data/languages_10/"+lang+"-20-char-context/dev-targets".format(model,data_set), "r") as p:
                 for line in i:
                     try:
                         inflection = "".join(line.split("<lc>")[1].split("<rc>")[0].strip().split()).lower()
@@ -114,6 +114,7 @@ for lang in langs:
     results.append(( "{:.2f}%".format(100*float(blah) / total_incorrect_unseen)))
 
     print('percent unseen', total_unseen_tokens/total_number_of_tokens)
+    print('percent copied', copied_tokens/total_number_of_tokens)
 
     print(model, data_set, " ".join(results))
 print('correct amb', 'correct unseen', 'correct unam', 'total correct', 'total copied', 'unseen SHBC',
