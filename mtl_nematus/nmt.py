@@ -293,14 +293,17 @@ def load_data(config):
     return text_iterator, valid_text_iterator
 
 def load_dictionaries(config):
-    print('SOURCE DICTIONARIES: ', config.source_dicts)
     source_to_num = [load_dict(d) for d in config.source_dicts]
-    target_to_num = load_dict(config.target_dict)
-
+    target_to_num = load_dict(config.dictionaries[-2])
     ae_target_to_num = load_dict(config.ae_target_dict)
+
     num_to_source = [reverse_dict(d) for d in source_to_num]
     num_to_target = reverse_dict(target_to_num)
     num_to_ae_target = reverse_dict(ae_target_to_num)
+
+    print(num_to_target)
+    print(num_to_ae_target)
+
     return source_to_num, target_to_num, ae_target_to_num, num_to_source, num_to_target, num_to_ae_target
 
 def read_all_lines(config, sentences):
@@ -720,7 +723,7 @@ def train_alternate_batch(config, sess):
             #    out = [t, apply_ae_grads, ae_objective, lemma_loss, ae_loss]
             #    #logging.info('Doing ae training')
             #    ae=True
-            if random.random()>=1.0/3:
+            if random.random()>=1.0/11:
                 out = [t, apply_grads, objective, lemma_loss, ae_loss]
                 #logging.info('Doing normal training')
             #    ae=False
@@ -1290,10 +1293,10 @@ def parse_args():
 
     config.source_dicts = config.dictionaries[:-2]
     config.source_vocab_sizes = vocab_sizes[:-2]
-    config.target_dict = config.dictionaries[-1]
-    config.target_vocab_size = vocab_sizes[-1]
-    config.ae_target_dict = config.dictionaries[-2]
-    config.ae_target_vocab_size = vocab_sizes[-2]
+    config.target_dict = config.dictionaries[-2]
+    config.target_vocab_size = vocab_sizes[-2]
+    config.ae_target_dict = config.dictionaries[-1]
+    config.ae_target_vocab_size = vocab_sizes[-1]
 
     # set the model version
     config.model_version = 0.2
@@ -1308,7 +1311,7 @@ if __name__ == "__main__":
 
     config = parse_args()
     logging.info(config)
-    with tf.Session(config=tf.ConfigProto(log_device_placement=True)) as sess:
+    with tf.Session() as sess:
         if config.translate_valid and config.run_alternate==0:
             logging.info("NORMAL TRANSLATE")
             translate(config, sess)

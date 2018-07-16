@@ -283,7 +283,7 @@ class AEDecoder(object):
             if config.tie_decoder_embeddings:
                 W = self.y_emb_layer.get_embeddings()
                 W = tf.transpose(W)
-            self.predictor = Predictor(config, batch_size, dropout_embedding,
+            self.predictor = AEPredictor(config, batch_size, dropout_embedding,
                                        dropout_hidden, hidden_to_logits_W=W)
 
 
@@ -677,7 +677,6 @@ class StandardModel(object):
             #calculate loss from this prediction given true value and mask above
             #the forward step does cost = sparse_softmax_cross_entropy_with_logits on
             #y and logits, multiplies by y_mask
-            #returns summed cost for dimensions loss_per_sentence
             self.loss_per_sentence = self.loss_layer.forward(self.logits)
             #gets mean loss over all sentences
             self.mean_loss = tf.reduce_mean(self.loss_per_sentence, keep_dims=False)
@@ -782,7 +781,7 @@ class AEModel(object):
         #variable dimensions
         seqLen = None
         batch_size = None
-        alpha = 0.5
+        alpha = 0.2
 
         #for autoencoding still only need 2 prior_variables
         #autoencoding maps x to x as opposed to x to y
@@ -887,10 +886,7 @@ class AEModel(object):
             # for example create a dense layer with linear activation
             #so assuming logits are the final output aka the prediction
             self.loss_layer = Masked_cross_entropy_loss(self.y, self.y_mask)
-            print('Size of y', self.y.get_shape())
-            print('Size of y_mask', self.y_mask.get_shape())
-            print('Size of ae_y', self.ae_y.get_shape())
-            print('Size of ae_y_mask', self.ae_y_mask.get_shape())
+
             #oops I was trying to see if the input was equal not the output word!
             #i actually want to write the data to a new one ae_target and use that
             #then need this new output y thing!
@@ -1128,7 +1124,6 @@ class AEModel_Alternate(object):
             #the forward step does cost = sparse_softmax_cross_entropy_with_logits on
             #y and logits, multiplies by y_mask
 
-            #returns summed cost for dimensions loss_per_sentence
             self.loss_per_sentence = self.loss_layer.forward(self.logits)
             self.ae_loss_per_sentence = self.ae_loss_layer.forward(self.ae_logits)
             #gets mean loss over all sentences

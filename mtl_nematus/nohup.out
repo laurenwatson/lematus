@@ -192,3 +192,129 @@ Processing ./models_10/English-20-char-context-ae-50p-run3/data/test-ae-targets
 Done
 Starting training
 End of training
+cp: ./validate.sh: No such file or directory
+Copying data sets
+Building Dictionaries
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run1/data/train-sources
+Done
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run1/data/train-targets
+Done
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run1/data/train-sources
+Done
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run1/data/train-ae-targets
+Done
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run1/data/dev-sources
+Done
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run1/data/dev-ae-targets
+Done
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run1/data/test-sources
+Done
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run1/data/test-ae-targets
+Done
+Starting training
+End of training
+cp: ./validate.sh: No such file or directory
+Copying data sets
+Building Dictionaries
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run2/data/train-sources
+Done
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run2/data/train-targets
+Done
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run2/data/train-sources
+Done
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run2/data/train-ae-targets
+Done
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run2/data/dev-sources
+Done
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run2/data/dev-ae-targets
+Done
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run2/data/test-sources
+Done
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run2/data/test-ae-targets
+Done
+Starting training
+End of training
+cp: ./validate.sh: No such file or directory
+Copying data sets
+Building Dictionaries
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run3/data/train-sources
+Done
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run3/data/train-targets
+Done
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run3/data/train-sources
+Done
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run3/data/train-ae-targets
+Done
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run3/data/dev-sources
+Done
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run3/data/dev-ae-targets
+Done
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run3/data/test-sources
+Done
+Processing ./models_10/English-20-char-context-ae-joint-100p-a20-run3/data/test-ae-targets
+Done
+Starting training
+End of training
+cp: ./validate.sh: No such file or directory
+Copying data sets
+Building Dictionaries
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run1/data/train-sources
+Done
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run1/data/train-targets
+Done
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run1/data/train-sources
+Done
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run1/data/train-ae-targets
+Done
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run1/data/dev-sources
+Done
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run1/data/dev-ae-targets
+Done
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run1/data/test-sources
+Done
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run1/data/test-ae-targets
+Done
+Starting training
+End of training
+cp: ./validate.sh: No such file or directory
+Copying data sets
+Building Dictionaries
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run2/data/train-sources
+Done
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run2/data/train-targets
+Done
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run2/data/train-sources
+Done
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run2/data/train-ae-targets
+Done
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run2/data/dev-sources
+Done
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run2/data/dev-ae-targets
+Done
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run2/data/test-sources
+Done
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run2/data/test-ae-targets
+Done
+Starting training
+End of training
+cp: ./validate.sh: No such file or directory
+Copying data sets
+Building Dictionaries
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run3/data/train-sources
+Done
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run3/data/train-targets
+Done
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run3/data/train-sources
+Done
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run3/data/train-ae-targets
+Done
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run3/data/dev-sources
+Done
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run3/data/dev-ae-targets
+Done
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run3/data/test-sources
+Done
+Processing ./models_10/Turkish-20-char-context-ae-joint-100p-a20-run3/data/test-ae-targets
+Done
+Starting training
+End of training

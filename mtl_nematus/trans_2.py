@@ -20,7 +20,7 @@ from compat import fill_options
 from hypgraph import HypGraphRenderer
 from settings import TranslationSettings
 
-from nmt import create_model_alternate, load_dictionaries, read_all_lines
+from nmt import create_model, load_dictionaries, read_all_lines
 
 import inference
 import exception
@@ -78,8 +78,6 @@ class Translator(object):
         #_, _, _,_, self._num_to_target = load_dictionaries(self._options[0])
         _, _,_,  _, self._num_to_target, self._num_to_ae_target = load_dictionaries(self._options[0])
 
-        print('num to target', self._num_to_target)
-        print('num to ae target', self._num_to_ae_target )
     def _init_queues(self):
         """
         Sets up shared queues for inter-process communication.
@@ -124,7 +122,7 @@ class Translator(object):
         models = []
         for i, options in enumerate(self._options):
             with tf.name_scope("model%d" % i) as scope:
-                model, saver = create_model_alternate(options, sess, ensemble_scope=scope)
+                model, saver = create_model(options, sess, ensemble_scope=scope)
                 models.append(model)
 
         logging.info("NOTE: Length of translations is capped to {}".format(self._options[0].translation_maxlen))
