@@ -76,7 +76,7 @@ class Translator(object):
             self._options.append(argparse.Namespace(**config))
 
         #_, _, _,_, self._num_to_target = load_dictionaries(self._options[0])
-        _, _, _,  _, self._num_to_target, self._num_to_ae_target = load_dictionaries(self._options[0])
+        _, _, _,  _, _, self._num_to_target, self._num_to_ae_target, self._num_to_pos_target = load_dictionaries(self._options[0])
 
     def _init_queues(self):
         """
@@ -166,7 +166,7 @@ class Translator(object):
         y_dummy = numpy.zeros(shape=(len(x),1))
         x, x_mask, _, _ = prepare_data(x, y_dummy, maxlen=None)
 
-        sample = inference.mtl_beam_search(models, sess, x, x_mask, k)
+        sample = inference.pos_beam_search(models, sess, x, x_mask, k)
 
         return sample
 
@@ -262,17 +262,17 @@ class Translator(object):
                 for j, (sent, cost) in enumerate(beam):
                     translation = Translation(sentence_id=i,
                                               source_words=source_segments[i],
-                                              target_words=seq2words(sent, self._num_to_ae_target, join=False),
+                                              target_words=seq2words(sent, self._num_to_pos_target, join=False),
                                               score=cost,
                                               hypothesis_id=j)
                     n_best_list.append(translation)
                 translations.append(n_best_list)
             else:
                 best_hypo, cost = beam[0]
-                target_words = seq2words(best_hypo, self._num_to_ae_target)
+                target_words = seq2words(best_hypo, self._num_to_pos_target)
                 translation = Translation(sentence_id=i,
                                             source_words=source_segments[i],
-                                            target_words=seq2words(best_hypo, self._num_to_ae_target, join=False),
+                                            target_words=seq2words(best_hypo, self._num_to_pos_target, join=False),
                                             score=cost)
                 translations.append(translation)
 
