@@ -20,6 +20,8 @@ else:
 
 WBEGIN = '<w>'
 WEND = '</w>'
+PBEGIN = '<pos>'
+PEND='</pos>'
 
 LC = '<lc>'
 RC = '<rc>'
@@ -34,11 +36,13 @@ def write_data_to_files(data, fName):
     with open(fName + '-sources', "w") as s:
         with open(fName + '-targets', "w") as t:
             with open(fName + '-ae-targets', "w") as at:
-                for context, surface_form, lemma, in data:
-                    s.write("{} {} {}\n".format(WBEGIN, trim_input(context, n, " ".join([l for l in surface_form])), WEND))
-                    t.write("{} {} {}\n".format(WBEGIN, " ".join([l for l in lemma]), WEND))
-                    at.write("{} {} {}\n".format(WBEGIN, " ".join([l for l in surface_form]), WEND))
-
+                with open(fName+'-pos-targets', "w") as pt:
+                    for context, surface_form, lemma, POS in data:
+                        s.write("{} {} {}\n".format(WBEGIN, trim_input(context, n, " ".join([l for l in surface_form])), WEND))
+                        t.write("{} {} {}\n".format(WBEGIN, " ".join([l for l in lemma]), WEND))
+                        at.write("{} {} {}\n".format(WBEGIN, " ".join([l for l in surface_form]), WEND))
+                        pt.write("{} {} {}\n".format(PBEGIN, " ".join([l for l in POS]), PEND))
+                        
 def trim_input(inp, n, surface_form):
     if n > 0:
         cs = inp.split("<SURFACE_FORM>")
@@ -69,13 +73,13 @@ for line in data:
             if any([True if d in lemma else False for d in "0987654321-/"]):
                 continue
             surface_form2lemma[surface_form].append(lemma)
-            surface_form2sent[surface_form].append((sentence, lemma))
+            surface_form2sent[surface_form].append((sentence, lemma, POS))
         except:
             pass
     line_count+=1
 data = []
 for surface_form, lemmas in surface_form2lemma.items():
-    for sentence, lemma in surface_form2sent[surface_form]:
-       data.append((sentence, surface_form, lemma))
+    for sentence, lemma, POS in surface_form2sent[surface_form]:
+       data.append((sentence, surface_form, lemma, POS))
 
 write_data_to_files(data, "{}".format(ftype))

@@ -1,24 +1,16 @@
 #!/bin/sh
 
-langs=(English Turkish)
+langs=(Hindi Hungarian French English Croatian Turkish)
+nums=(1 2 3)
 
-for lang in "${languages[@]}"
+for lang in "${langs[@]}"
 do
-  python nematus_tf/translate.py \
-       -m ../Dissertation_Results/AutoEncoding/10k/${lang}-20-char-context-ae-100p-run1/model.npz \
-       -i ../Dissertation_Results/AutoEncoding/10k/${lang}-20-char-context-ae-100p-run1/data/dev-sources \
-       -o ../Dissertation_Results/AutoEncoding/10k/${lang}-20-char-context-ae-100p-run1/data/dev-hypothesis-base1 \
-       -k 12 -n -p 1
-
-  python nematus_tf/translate.py \
-      -m ../Dissertation_Results/AutoEncoding/10k/${lang}-20-char-context-ae-100p-run2/model.npz \
-      -i ../Dissertation_Results/AutoEncoding/10k/${lang}-20-char-context-ae-100p-run2/data/dev-sources \
-      -o ../Dissertation_Results/AutoEncoding/10k/${lang}-20-char-context-ae-100p-run2/data/dev-hypothesis-base2 \
-      -k 12 -n -p 1
-
-  python nematus_tf/translate.py \
-      -m ../Dissertation_Results/AutoEncoding/10k/${lang}-20-char-context-ae-100p-run3/model.npz \
-      -i ../Dissertation_Results/AutoEncoding/10k/${lang}-20-char-context-ae-100p-run3/data/dev-sources \
-      -o ../Dissertation_Results/AutoEncoding/10k/${lang}-20-char-context-ae-100p-run3/data/dev-hypothesis-base3 \
-      -k 12 -n -p 1
+  for num in "${nums[@]}"
+  do
+    python nematus_tf/translate.py \
+         -m ../Dissertation_Results/Baselines/1k/${lang}/${lang}-20-char-context-base${num}/model.npz \
+         -i ../Dissertation_Results/Baselines/1k/${lang}/${lang}-20-char-context-base${num}/data/dev-sources \
+         -o ../Dissertation_Results/Baselines/1k/${lang}/${lang}-20-char-context-base${num}/data/dev-hypothesis-base${num} \
+         -k 12 -n -p 1
+  done
 done

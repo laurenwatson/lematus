@@ -120,6 +120,11 @@ for index, lem in enumerate(lemmas):
 if ambiguous>0:
     print(lang, 'overall acc ', correct/len(predictions), ' seen acc ', seen_correct/seen, ' unseen acc ', unseen_correct/unseen, 'amb', amb_correct/ambiguous, ambiguous)
     print('copied',copied/len(predictions), 'seen copied',seen_copied/seen, 'unseen copied', unseen_copied/unseen, 'amb copied', amb_copied/ambiguous )
+    print("{0:.2f}\% & {1:.2f}\% &{2:.2f}\% &{3:.2f}\%".format(correct*100/len(predictions), seen_correct*100/seen, unseen_correct*100/unseen,amb_correct*100/ambiguous))
+    print("{0:.2f}\% & {1:.2f}\% &{2:.2f}\% &{3:.2f}\%".format(copied*100/len(predictions),seen_copied*100/seen, unseen_copied*100/unseen,amb_copied*100/ambiguous))
+
 else:
     print(lang, 'overall acc ', correct/len(predictions), ' seen acc ', seen_correct/seen, ' unseen acc ', unseen_correct/unseen, 'amb', ambiguous)
     print('copied',copied/len(predictions), 'seen copied',seen_copied/seen, 'unseen copied', unseen_copied/unseen )
+    print("{0:.2f}\% & {1:.2f}\% &{2:.2f}\% &{3:.2f}\%".format(correct*100/len(predictions), seen_correct*100/seen, unseen_correct*100/unseen,ambiguous))
+    print("{0:.2f}\% & {1:.2f}\% &{2:.2f}\% &{3:.2f}\%".format(copied*100/len(predictions),seen_copied*100/seen, unseen_copied*100/unseen,ambiguous))

@@ -294,15 +294,16 @@ def load_data(config):
 
 def load_dictionaries(config):
     source_to_num = [load_dict(d) for d in config.source_dicts]
-    target_to_num = load_dict(config.dictionaries[-2])
+    #target_to_num = load_dict(config.dictionaries[-2])
+    target_to_num = load_dict(config.target_dict)
+    print(config.target_dict)
     ae_target_to_num = load_dict(config.ae_target_dict)
-
+    print(config.ae_target_dict)
     num_to_source = [reverse_dict(d) for d in source_to_num]
     num_to_target = reverse_dict(target_to_num)
     num_to_ae_target = reverse_dict(ae_target_to_num)
 
-    print(num_to_target)
-    print(num_to_ae_target)
+
 
     return source_to_num, target_to_num, ae_target_to_num, num_to_source, num_to_target, num_to_ae_target
 
@@ -1293,10 +1294,19 @@ def parse_args():
 
     config.source_dicts = config.dictionaries[:-2]
     config.source_vocab_sizes = vocab_sizes[:-2]
-    config.target_dict = config.dictionaries[-2]
-    config.target_vocab_size = vocab_sizes[-2]
-    config.ae_target_dict = config.dictionaries[-1]
-    config.ae_target_vocab_size = vocab_sizes[-1]
+    #config.target_dict = config.dictionaries[-2]
+    #config.target_vocab_size = vocab_sizes[-2]
+    #config.ae_target_dict = config.dictionaries[-1]
+    #config.ae_target_vocab_size = vocab_sizes[-1]
+    config.target_dict = config.dictionaries[-1]
+    config.target_vocab_size = vocab_sizes[-1]
+    print(config.target_dict)
+    print(config.target_vocab_size)
+
+    config.ae_target_dict = config.dictionaries[-2]
+    config.ae_target_vocab_size = vocab_sizes[-2]
+    print(config.ae_target_dict)
+    print(config.ae_target_vocab_size)
 
     # set the model version
     config.model_version = 0.2

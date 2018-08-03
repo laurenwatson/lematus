@@ -116,5 +116,9 @@ for index, lem in enumerate(lemmas):
                 amb_correct+=1
 if ambiguous>0:
     print(lang, 'overall acc ', correct/len(predictions), ' seen acc ', seen_correct/seen, ' unseen acc ', unseen_correct/unseen, 'amb', amb_correct/ambiguous, ambiguous)
+    print('accs')
+    print("{0:.2f}\% & {1:.2f}\% &{2:.2f}\% &{3:.2f}\%".format(correct*100/len(predictions), seen_correct*100/seen, unseen_correct*100/unseen,amb_correct*100/ambiguous))
+    #print('copies')
+    #print("{0:.2f}\% & {1:.2f}\% &{2:.2f}\% &{3:.2f}\%".format(sum(copies)*100/3,sum(seen_copies*100)/3, sum(unseen_copies*100)/3,sum(amb_copies*100)/3 ))
 else:
     print(lang, 'overall acc ', correct/len(predictions), ' seen acc ', seen_correct/seen, ' unseen acc ', unseen_correct/unseen, 'amb', ambiguous)
