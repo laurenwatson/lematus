@@ -252,14 +252,17 @@ def load_data(config):
                         source=config.source_dataset,
                         target=config.target_dataset,
                         ae_target = config.ae_target_dataset,
+                        pos_target = config.pos_target_dataset,
                         source_dicts=config.source_dicts,
                         target_dict=config.target_dict,
                         ae_target_dict = config.ae_target_dict,
+                        pos_target_dict = config.pos_target_dict,
                         batch_size=config.batch_size,
                         maxlen=config.maxlen,
                         source_vocab_sizes=config.source_vocab_sizes,
                         target_vocab_size=config.target_vocab_size,
                         ae_target_vocab_size=config.ae_target_vocab_size,
+                        pos_target_vocab_size=config.pos_target_vocab_size,
                         skip_empty=True,
                         shuffle_each_epoch=config.shuffle_each_epoch,
                         sort_by_length=config.sort_by_length,
@@ -273,14 +276,17 @@ def load_data(config):
                             source=config.valid_source_dataset,
                             target=config.valid_target_dataset,
                             ae_target = config.valid_ae_target_dataset,
+                            pos_target = config.valid_pos_target_dataset,
                             source_dicts=config.source_dicts,
                             target_dict=config.target_dict,
                             ae_target_dict=config.ae_target_dict,
+                            pos_target_dict=config.pos_target_dict,
                             batch_size=config.valid_batch_size,
                             maxlen=config.maxlen,
                             source_vocab_sizes=config.source_vocab_sizes,
                             target_vocab_size=config.target_vocab_size,
                             ae_target_vocab_size=config.ae_target_vocab_size,
+                            pos_target_vocab_size=config.pos_target_vocab_size,
                             shuffle_each_epoch=False,
                             sort_by_length=True,
                             use_factor=(config.factors > 1),
@@ -294,21 +300,25 @@ def load_data(config):
 
 def load_dictionaries(config):
     source_to_num = [load_dict(d) for d in config.source_dicts]
-    target_to_num = load_dict(config.dictionaries[-2])
+    target_to_num = load_dict(config.dictionaries[-3])
     #target_to_num = load_dict(config.target_dict)
-    print(config.target_dict)
-    ae_target_to_num = load_dict(config.ae_target_dict)
-    print(config.ae_target_dict)
+    #print(config.target_dict)
+    ae_target_to_num = load_dict(config.dictionaries[-2])
+    pos_target_to_num = load_dict(config.dictionaries[-1])
+
+    #print(config.ae_target_dict)
     num_to_source = [reverse_dict(d) for d in source_to_num]
     num_to_target = reverse_dict(target_to_num)
     num_to_ae_target = reverse_dict(ae_target_to_num)
+    num_to_pos_target = reverse_dict(pos_target_to_num)
 
 
 
-    return source_to_num, target_to_num, ae_target_to_num, num_to_source, num_to_target, num_to_ae_target
+
+    return source_to_num, target_to_num, ae_target_to_num, pos_target_to_num, num_to_source, num_to_target, num_to_ae_target, num_to_pos_target
 
 def read_all_lines(config, sentences):
-    source_to_num, _ , _ , _ , _ , _ = load_dictionaries(config)
+    source_to_num, _ , _ , _ , _ , _ , _, _= load_dictionaries(config)
     lines = []
     for sent in sentences:
         line = []
@@ -354,7 +364,7 @@ def train(config, sess):
     # returns these from StandardModel
     # x is the source data, y is the target data
     # all initialized to be of size seqlen x batch size
-    x,x_mask,y,y_mask,ae_y,ae_y_mask,training = model.get_score_inputs()
+    x,x_mask,y,y_mask,ae_y,ae_y_mask,pos_y,pos_y_mask,training = model.get_score_inputs()
     # self.optimizer.apply_gradients(grad_vars) where grad_vars come from self.optimizer.compute_gradients(self.mean_loss)
     # grads are clipped by global norm
     apply_grads = model.get_apply_grads()
@@ -371,6 +381,8 @@ def train(config, sess):
     objective = model.get_objective()
     lemma_loss = model.get_mean_loss()
     ae_loss = model.get_mean_ae_loss()
+    pos_loss = model.get_mean_pos_loss()
+
 
     if config.summaryFreq:
         summary_dir = config.summary_dir if (config.summary_dir != None) else (os.path.abspath(os.path.dirname(config.saveto)))
@@ -384,41 +396,45 @@ def train(config, sess):
     json.dump(config_as_dict, open('%s.json' % config.saveto, 'wb'), indent=2)
 
     text_iterator, valid_text_iterator = load_data(config)
-    _, _,_,  num_to_source, num_to_target, num_to_ae_target = load_dictionaries(config)
+    _, _,_, _, num_to_source, num_to_target, num_to_ae_target,num_to_pos_target  = load_dictionaries(config)
     total_loss = 0.
     total_lemma_loss = 0.
     total_ae_loss = 0.
+    total_pos_loss = 0.
     n_sents, n_words = 0, 0
     last_time = time.time()
     logging.info("Initial uidx={}".format(progress.uidx))
     for progress.eidx in xrange(progress.eidx, config.max_epochs):
         logging.info('Starting epoch {0}'.format(progress.eidx))
         #check these are of len() batch size
-        for source_sents, target_sents, ae_target_sents in text_iterator:
+        for source_sents, target_sents, ae_target_sents, pos_target_sents in text_iterator:
             #logging.info('LEN SOURCE SENTS {}'.format(len(source_sents)))
             if len(source_sents[0][0]) != config.factors:
                 logging.error('Mismatch between number of factors in settings ({0}), and number in training corpus ({1})\n'.format(config.factors, len(source_sents[0][0])))
                 sys.exit(1)
             x_in, x_mask_in, y_in, y_mask_in = prepare_data(source_sents, target_sents, maxlen=None)
             x_in, x_mask_in, ae_y_in, ae_y_mask_in = prepare_data(source_sents, ae_target_sents, maxlen=None)
+            x_in, x_mask_in, pos_y_in, pos_y_mask_in = prepare_data(source_sents, pos_target_sents, maxlen=None)
 
             if x_in is None:
                 logging.info('Minibatch with zero sample under length {0}'.format(config.maxlen))
                 continue
             write_summary_for_this_batch = config.summaryFreq and ((progress.uidx % config.summaryFreq == 0) or (config.finish_after and progress.uidx % config.finish_after == 0))
             (factors, seqLen, batch_size) = x_in.shape
-            inn = {x:x_in, y:y_in, x_mask:x_mask_in, y_mask:y_mask_in, ae_y:ae_y_in, ae_y_mask:ae_y_mask_in, training:True}
-            out = [t, apply_grads, objective, lemma_loss, ae_loss]
+            inn = {x:x_in, y:y_in, x_mask:x_mask_in, y_mask:y_mask_in, ae_y:ae_y_in, ae_y_mask:ae_y_mask_in,pos_y:pos_y_in, pos_y_mask:pos_y_mask_in, training:True}
+            out = [t, apply_grads, objective, lemma_loss, ae_loss, pos_los]
             if write_summary_for_this_batch:
                 out += [merged]
             out_values = sess.run(out, feed_dict=inn)
             objective_value = out_values[2]
             loss_value = out_values[3]
             ae_loss_value = out_values[4]
+            pos_loss_value = out_values[5]
 
             total_loss += objective_value*batch_size
             total_lemma_loss += loss_value*batch_size
             total_ae_loss += ae_loss_value*batch_size
+            total_pos_loss += pos_loss_value*batch_size
             n_sents += batch_size
             n_words += int(numpy.sum(y_mask_in))
             progress.uidx += 1
@@ -428,11 +444,12 @@ def train(config, sess):
             if config.dispFreq and progress.uidx % config.dispFreq == 0:
                 duration = time.time() - last_time
                 disp_time = datetime.now().strftime('[%Y-%m-%d %H:%M:%S]')
-                logging.info('{0} Epoch: {1} Update: {2} Loss/word: {3} Loss/Word Lemma: {4} Loss/word AE: {5} Words/sec: {6} Sents/sec: {7}'.format(disp_time, progress.eidx, progress.uidx, total_loss/n_words, total_lemma_loss/n_words, total_ae_loss/n_words, n_words/duration, n_sents/duration))
+                logging.info('{0} Epoch: {1} Update: {2} Loss/word: {3} Loss/Word Lemma: {4} Loss/word AE: {5} Loss/word AE: {6} Words/sec: {7} Sents/sec: {8}'.format(disp_time, progress.eidx, progress.uidx, total_loss/n_words, total_lemma_loss/n_words, total_ae_loss/n_words, total_pos_loss/n_words,n_words/duration, n_sents/duration))
                 last_time = time.time()
                 total_loss = 0.
                 total_lemma_loss = 0
                 total_ae_loss = 0.
+                total_pos_loss = 0.
                 n_sents = 0
                 n_words = 0
 
@@ -488,7 +505,7 @@ def train(config, sess):
                 break
         if progress.estop:
             break
-
+'''
 def train_alternate(config, sess):
     assert (config.prior_model != None and (tf.train.checkpoint_exists(os.path.abspath(config.prior_model))) or (config.map_decay_c==0.0)), \
     "MAP training requires a prior model file: Use command-line option --prior_model"
@@ -643,7 +660,7 @@ def train_alternate(config, sess):
                 break
         if progress.estop:
             break
-
+'''
 def train_alternate_batch(config, sess):
     assert (config.prior_model != None and (tf.train.checkpoint_exists(os.path.abspath(config.prior_model))) or (config.map_decay_c==0.0)), \
     "MAP training requires a prior model file: Use command-line option --prior_model"
@@ -659,11 +676,13 @@ def train_alternate_batch(config, sess):
     # returns these from StandardModel
     # x is the source data, y is the target data
     # all initialized to be of size seqlen x batch size
-    x,x_mask,y,y_mask,ae_y,ae_y_mask,training = model.get_score_inputs()
+    x,x_mask,y,y_mask,ae_y,ae_y_mask,pos_y,pos_y_mask,training = model.get_score_inputs()
     # self.optimizer.apply_gradients(grad_vars) where grad_vars come from self.optimizer.compute_gradients(self.mean_loss)
     # grads are clipped by global norm
     apply_grads = model.get_apply_grads()
     apply_ae_grads = model.get_apply_ae_grads()
+    apply_pos_grads = model.get_apply_pos_grads()
+
 
     # self.t = tf.Variable(0, name='time', trainable=False, dtype=tf.int32)
     t = model.get_global_step()
@@ -676,8 +695,10 @@ def train_alternate_batch(config, sess):
     loss_per_sentence = model.get_loss()
     objective = model.get_objective()
     ae_objective = model.get_ae_objective()
+    pos_objective = model.get_pos_objective()
     lemma_loss = model.get_mean_loss()
     ae_loss = model.get_mean_ae_loss()
+    pos_loss = model.get_mean_pos_loss()
 
     if config.summaryFreq:
         summary_dir = config.summary_dir if (config.summary_dir != None) else (os.path.abspath(os.path.dirname(config.saveto)))
@@ -691,31 +712,34 @@ def train_alternate_batch(config, sess):
     json.dump(config_as_dict, open('%s.json' % config.saveto, 'wb'), indent=2)
 
     text_iterator, valid_text_iterator = load_data(config)
-    _, _,_,  num_to_source, num_to_target, num_to_ae_target = load_dictionaries(config)
+    _, _,_, _, num_to_source, num_to_target, num_to_ae_target, num_to_pos_target = load_dictionaries(config)
     total_loss = 0.
     total_lemma_loss = 0.
     total_ae_loss = 0.
+    total_pos_loss = 0.
     n_sents, n_words = 0, 0
     last_time = time.time()
     logging.info("Initial uidx={}".format(progress.uidx))
     for progress.eidx in xrange(progress.eidx, config.max_epochs):
         logging.info('Starting epoch {0}'.format(progress.eidx))
         #is text iterator in batches?
-        ae=True
-        for source_sents, target_sents, ae_target_sents in text_iterator:
+        #ae=True
+        for source_sents, target_sents, ae_target_sents, pos_target_sents in text_iterator:
             #logging.info('LEN SOURCE SENTS {}'.format(len(source_sents)))
             if len(source_sents[0][0]) != config.factors:
                 logging.error('Mismatch between number of factors in settings ({0}), and number in training corpus ({1})\n'.format(config.factors, len(source_sents[0][0])))
                 sys.exit(1)
             x_in, x_mask_in, y_in, y_mask_in = prepare_data(source_sents, target_sents, maxlen=None)
             x_in, x_mask_in, ae_y_in, ae_y_mask_in = prepare_data(source_sents, ae_target_sents, maxlen=None)
+            x_in, x_mask_in, pos_y_in, pos_y_mask_in = prepare_data(source_sents, pos_target_sents, maxlen=None)
+
 
             if x_in is None:
                 logging.info('Minibatch with zero sample under length {0}'.format(config.maxlen))
                 continue
             write_summary_for_this_batch = config.summaryFreq and ((progress.uidx % config.summaryFreq == 0) or (config.finish_after and progress.uidx % config.finish_after == 0))
             (factors, seqLen, batch_size) = x_in.shape
-            inn = {x:x_in, y:y_in, x_mask:x_mask_in, y_mask:y_mask_in, ae_y:ae_y_in, ae_y_mask:ae_y_mask_in, training:True}
+            inn = {x:x_in, y:y_in, x_mask:x_mask_in, y_mask:y_mask_in, ae_y:ae_y_in, ae_y_mask:ae_y_mask_in, pos_y:pos_y_in, pos_y_mask:pos_y_mask_in,training:True}
             #if ae:
             #    out = [t, apply_grads, objective, lemma_loss, ae_loss]
                 #logging.info('Doing normal training')
@@ -724,12 +748,15 @@ def train_alternate_batch(config, sess):
             #    out = [t, apply_ae_grads, ae_objective, lemma_loss, ae_loss]
             #    #logging.info('Doing ae training')
             #    ae=True
-            if random.random()>=1.0/11:
-                out = [t, apply_grads, objective, lemma_loss, ae_loss]
+            randnum=random.random()
+            if randnum>2.0/11:
+                out = [t, apply_grads, objective, lemma_loss, ae_loss, pos_loss]
                 #logging.info('Doing normal training')
             #    ae=False
+            elif randnum<=2.0/11 and randnum>1.0/11:
+                out = [t, apply_ae_grads, ae_objective, lemma_loss, ae_loss, pos_loss]
             else:
-                out = [t, apply_ae_grads, ae_objective, lemma_loss, ae_loss]
+                out = [t, apply_pos_grads, pos_objective, lemma_loss, ae_loss, pos_loss]
             #    #logging.info('Doing ae training')
             #    ae=True
             if write_summary_for_this_batch:
@@ -738,10 +765,13 @@ def train_alternate_batch(config, sess):
             objective_value = out_values[2]
             loss_value = out_values[3]
             ae_loss_value = out_values[4]
+            pos_loss_value = out_values[5]
 
             total_loss += objective_value*batch_size
             total_lemma_loss += loss_value*batch_size
             total_ae_loss += ae_loss_value*batch_size
+            total_pos_loss += pos_loss_value*batch_size
+
             n_sents += batch_size
             n_words += int(numpy.sum(y_mask_in))
             progress.uidx += 1
@@ -751,11 +781,12 @@ def train_alternate_batch(config, sess):
             if config.dispFreq and progress.uidx % config.dispFreq == 0:
                 duration = time.time() - last_time
                 disp_time = datetime.now().strftime('[%Y-%m-%d %H:%M:%S]')
-                logging.info('{0} Epoch: {1} Update: {2} Loss/word: {3} Loss/Word Lemma: {4} Loss/word AE: {5} Words/sec: {6} Sents/sec: {7}'.format(disp_time, progress.eidx, progress.uidx, total_loss/n_words, total_lemma_loss/n_words, total_ae_loss/n_words, n_words/duration, n_sents/duration))
+                logging.info('{0} Epoch: {1} Update: {2} Loss/word: {3} Loss/Word Lemma: {4} Loss/word AE: {5} Loss/word POS: {6} Words/sec: {7} Sents/sec: {8}'.format(disp_time, progress.eidx, progress.uidx, total_loss/n_words, total_lemma_loss/n_words, total_ae_loss/n_words, total_pos_loss/n_words,n_words/duration, n_sents/duration))
                 last_time = time.time()
                 total_loss = 0.
                 total_lemma_loss = 0
                 total_ae_loss = 0.
+                total_pos_loss = 0.
                 n_sents = 0
                 n_words = 0
 
@@ -815,7 +846,7 @@ def train_alternate_batch(config, sess):
 def translate(config, sess):
     model, saver = create_model(config, sess)
     start_time = time.time()
-    _, _, _, _, num_to_target, num_to_ae_target = load_dictionaries(config)
+    _, _, _, _, _, num_to_target, num_to_ae_target , num_to_pos_target = load_dictionaries(config)
     logging.info("NOTE: Length of translations is capped to {}".format(config.translation_maxlen))
 
     n_sent = 0
@@ -879,7 +910,7 @@ def translate(config, sess):
 def translate_ae(config, sess):
     model, saver = create_model_alternate(config, sess)
     start_time = time.time()
-    _, _, _, _, num_to_target, num_to_ae_target = load_dictionaries(config)
+    _, _, _, _, _, num_to_target, num_to_ae_target , num_to_pos_target= load_dictionaries(config)
     logging.info("NOTE: Length of translations is capped to {}".format(config.translation_maxlen))
 
     n_sent = 0
@@ -945,9 +976,9 @@ def validate(config, sess, valid_text_iterator, model, normalization_alpha=0):
     costs = []
     total_loss = 0.
     total_seen = 0
-    x,x_mask,y,y_mask,ae_y,ae_y_mask,training = model.get_score_inputs()
+    x,x_mask,y,y_mask,ae_y,ae_y_mask,pos_y,pos_y_mask, training = model.get_score_inputs()
     loss_per_sentence = model.get_loss()
-    for x_v, y_v, ae_y_v in valid_text_iterator:
+    for x_v, y_v, ae_y_v, pos_y_v in valid_text_iterator:
         if len(x_v[0][0]) != config.factors:
             logging.error('Mismatch between number of factors in settings ({0}), and number in validation corpus ({1})\n'.format(config.factors, len(x_v[0][0])))
             sys.exit(1)
@@ -971,36 +1002,46 @@ def validate_ae(config, sess, valid_text_iterator, model, normalization_alpha=0)
     costs = []
     total_loss = 0.
     total_ae_loss = 0.
+    total_pos_loss = 0.
     total_lem_loss = 0.
     total_seen = 0
-    x,x_mask,y,y_mask,ae_y,ae_y_mask,training = model.get_score_inputs()
+    x,x_mask,y,y_mask,ae_y,ae_y_mask,pos_y,pos_y_mask,training = model.get_score_inputs()
     loss_per_sentence = model.get_loss()
     loss_per_sentence_ae = model.get_ae_loss()
-    for x_v, y_v, ae_y_v in valid_text_iterator:
+    loss_per_sentence_pos = model.get_pos_loss()
+
+    for x_v, y_v, ae_y_v, pos_y_v in valid_text_iterator:
         if len(x_v[0][0]) != config.factors:
             logging.error('Mismatch between number of factors in settings ({0}), and number in validation corpus ({1})\n'.format(config.factors, len(x_v[0][0])))
             sys.exit(1)
         x_v_in, x_v_mask_in, y_v_in, y_v_mask_in = prepare_data(x_v, y_v, maxlen=None)
         x_v_in, x_v_mask_in, ae_y_v_in, ae_y_v_mask_in = prepare_data(x_v, ae_y_v, maxlen=None)
+        x_v_in, x_v_mask_in, pos_y_v_in, pos_y_v_mask_in = prepare_data(x_v, pos_y_v, maxlen=None)
 
-        feeds = {x:x_v_in, x_mask:x_v_mask_in, y:y_v_in, y_mask:y_v_mask_in, ae_y:ae_y_v_in, ae_y_mask:ae_y_v_mask_in, training:False}
+        feeds = {x:x_v_in, x_mask:x_v_mask_in, y:y_v_in, y_mask:y_v_mask_in, ae_y:ae_y_v_in, ae_y_mask:ae_y_v_mask_in, pos_y:pos_y_v_in, pos_y_mask:pos_y_v_mask_in, training:False}
         loss_per_sentence_out = sess.run(loss_per_sentence, feed_dict=feeds)
         loss_per_sentence_out_ae = sess.run(loss_per_sentence_ae, feed_dict=feeds)
-        loss_per_sentence_out_total = loss_per_sentence_out_ae + loss_per_sentence_out
+        loss_per_sentence_out_pos = sess.run(loss_per_sentence_pos, feed_dict=feeds)
+
+        loss_per_sentence_out_total = loss_per_sentence_out_ae + loss_per_sentence_out + loss_per_sentence_out_pos
         # normalize scores according to output length
         if normalization_alpha:
             adjusted_lengths = numpy.array([numpy.count_nonzero(s) ** normalization_alpha for s in y_v_mask_in.T])
             loss_per_sentence_out_total /= adjusted_lengths
             loss_per_sentence_out_ae /= adjusted_lengths
+            loss_per_sentence_out_pos /= adjusted_lengths
+
             loss_per_sentence_out /= adjusted_lengths
         total_loss += loss_per_sentence_out_total.sum()
         total_ae_loss += loss_per_sentence_out_ae.sum()
+        total_pos_loss += loss_per_sentence_out_pos.sum()
         total_lem_loss += loss_per_sentence_out.sum()
         total_seen += x_v_in.shape[2]
         costs += list(loss_per_sentence_out_total)
         logging.info( "Seen {0}".format(total_seen))
     logging.info('Validation loss from total (AVG/SUM/N_SENT): {0} {1} {2}'.format(total_loss/total_seen, total_loss, total_seen))
     logging.info('Validation loss from ae (AVG/SUM/N_SENT): {0} {1} {2}'.format(total_ae_loss/total_seen, total_ae_loss, total_seen))
+    logging.info('Validation loss from pos (AVG/SUM/N_SENT): {0} {1} {2}'.format(total_pos_loss/total_seen, total_pos_loss, total_seen))
     logging.info('Validation loss from lemmatization (AVG/SUM/N_SENT): {0} {1} {2}'.format(total_lem_loss/total_seen, total_lem_loss, total_seen))
     return costs
 
@@ -1010,14 +1051,20 @@ def validate_helper(config, sess):
                         source=config.valid_source_dataset,
                         target=config.valid_target_dataset,
                         ae_target=config.valid_ae_target_dataset,
+                        pos_target=config.valid_pos_target_dataset,
+
                         source_dicts=config.source_dicts,
                         target_dict=config.target_dict,
                         target_ae_dict=config.target_ae_dict,
+                        target_pos_dict=config.target_pos_dict,
+
                         batch_size=config.valid_batch_size,
                         maxlen=config.maxlen,
                         source_vocab_sizes=config.source_vocab_sizes,
                         target_vocab_size=config.target_vocab_size,
                         ae_target_vocab_size=config.ae_target_vocab_size,
+                        pos_target_vocab_size=config.pos_target_vocab_size,
+
                         shuffle_each_epoch=False,
                         sort_by_length=False, #TODO
                         use_factor=(config.factors > 1),
@@ -1034,14 +1081,17 @@ def validate_helper_ae(config, sess):
                         source=config.valid_source_dataset,
                         target=config.valid_target_dataset,
                         ae_target=config.valid_ae_target_dataset,
+                        pos_target=config.valid_pos_target_dataset,
                         source_dicts=config.source_dicts,
                         target_dict=config.target_dict,
                         target_ae_dict=config.target_ae_dict,
+                        target_pos_dict=config.target_pos_dict,
                         batch_size=config.valid_batch_size,
                         maxlen=config.maxlen,
                         source_vocab_sizes=config.source_vocab_sizes,
                         target_vocab_size=config.target_vocab_size,
                         ae_target_vocab_size=config.ae_target_vocab_size,
+                        pos_target_vocab_size=config.pos_target_vocab_size,
                         shuffle_each_epoch=False,
                         sort_by_length=False, #TODO
                         use_factor=(config.factors > 1),
@@ -1064,8 +1114,10 @@ def parse_args():
                          help="parallel training corpus (target)")
     data.add_argument('--ae_target_dataset', type=str, metavar='PATH',
                          help="parallel training corpus (target)")
+    data.add_argument('--pos_target_dataset', type=str, metavar='PATH',
+                         help="parallel training corpus (target)")
     # parallel training corpus (source and target). Hidden option for backward compatibility
-    data.add_argument('--datasets', type=str, metavar='PATH', nargs=3,
+    data.add_argument('--datasets', type=str, metavar='PATH', nargs=4,
                          help=argparse.SUPPRESS)
     data.add_argument('--dictionaries', type=str, required=True, metavar='PATH', nargs="+",
                          help="network vocabularies (one per source factor, plus target vocabulary)")
@@ -1095,6 +1147,8 @@ def parse_args():
                          help="target vocabulary size (default: %(default)s)")
     network.add_argument('--ae_target_vocab_size', '--n_words_ae', type=int, default=-1, metavar='INT',
                          help="target ae vocabulary size (default: %(default)s)")
+    network.add_argument('--pos_target_vocab_size', '--n_words_pos', type=int, default=-1, metavar='INT',
+                         help="target pos vocabulary size (default: %(default)s)")
     network.add_argument('--factors', type=int, default=1, metavar='INT',
                          help="number of input factors (default: %(default)s)")
 
@@ -1124,6 +1178,8 @@ def parse_args():
                          help="dropout target words (0: no dropout) (default: %(default)s)")
     network.add_argument('--dropout_ae_target', type=float, default=0, metavar="FLOAT",
                          help="dropout ae target words (0: no dropout) (default: %(default)s)")
+    network.add_argument('--dropout_pos_target', type=float, default=0, metavar="FLOAT",
+                         help="dropout pos target words (0: no dropout) (default: %(default)s)")
     network.add_argument('--use_layer_norm', '--layer_normalisation', action="store_true", dest="use_layer_norm",
                          help="Set to use layer normalization in encoder and decoder")
     network.add_argument('--tie_decoder_embeddings', action="store_true", dest="tie_decoder_embeddings",
@@ -1174,8 +1230,10 @@ def parse_args():
                          help="target validation corpus (default: %(default)s)")
     validation.add_argument('--valid_ae_target_dataset', type=str, default=None, metavar='PATH',
                          help="target validation corpus (default: %(default)s)")
+    validation.add_argument('--valid_pos_target_dataset', type=str, default=None, metavar='PATH',
+                         help="target validation corpus (default: %(default)s)")
     # parallel validation corpus (source and target). Hidden option for backward compatibility
-    validation.add_argument('--valid_datasets', type=str, default=None, metavar='PATH', nargs=3,
+    validation.add_argument('--valid_datasets', type=str, default=None, metavar='PATH', nargs=4,
                          help=argparse.SUPPRESS)
     validation.add_argument('--valid_batch_size', type=int, default=80, metavar='INT',
                          help="validation minibatch size (default: %(default)s)")
@@ -1213,13 +1271,15 @@ def parse_args():
 
     # allow "--datasets" for backward compatibility
     if config.datasets:
-        if config.source_dataset or config.target_dataset or config.ae_target_dataset:
+        if config.source_dataset or config.target_dataset or config.ae_target_dataset or config.pos_target_dataset:
             logging.error('argument clash: --datasets is mutually exclusive with --source_dataset and --target_dataset')
             sys.exit(1)
         else:
             config.source_dataset = config.datasets[0]
             config.target_dataset = config.datasets[1]
             config.ae_target_dataset = config.datasets[2]
+            config.pos_target_dataset = config.datasets[3]
+
     elif not config.source_dataset:
         logging.error('--source_dataset is required')
         sys.exit(1)
@@ -1228,6 +1288,9 @@ def parse_args():
         sys.exit(1)
     elif not config.ae_target_dataset:
         logging.error('--ae_target_dataset is required')
+        sys.exit(1)
+    elif not config.pos_target_dataset:
+        logging.error('--pos_target_dataset is required')
         sys.exit(1)
 
     # allow "--valid_datasets" for backward compatibility
@@ -1239,6 +1302,8 @@ def parse_args():
             config.valid_source_dataset = config.valid_datasets[0]
             config.valid_target_dataset = config.valid_datasets[1]
             config.valid_ae_target_dataset = config.valid_datasets[2]
+            config.valid_pos_target_dataset = config.valid_datasets[3]
+
 
     # check factor-related options are consistent
 
@@ -1257,7 +1322,7 @@ def parse_args():
         logging.error('mismatch between \'--embedding_size\' ({0}) and \'--dim_per_factor\' (sums to {1})\n'.format(config.embedding_size, sum(config.dim_per_factor)))
         sys.exit(1)
 
-    if len(config.dictionaries) != config.factors + 2:
+    if len(config.dictionaries) != config.factors + 3:
         logging.error('\'--dictionaries\' must specify one dictionary per source factor and one target dictionary\n')
         sys.exit(1)
 
@@ -1277,10 +1342,16 @@ def parse_args():
         vocab_sizes.append(-1)
     else:
         vocab_sizes.append(config.target_vocab_size)
+
     if config.ae_target_vocab_size == -1:
         vocab_sizes.append(-1)
     else:
         vocab_sizes.append(config.ae_target_vocab_size)
+
+    if config.pos_target_vocab_size == -1:
+        vocab_sizes.append(-1)
+    else:
+        vocab_sizes.append(config.pos_target_vocab_size)
 
     # for unspecified vocabulary sizes, determine sizes from vocabulary dictionaries
     for i, vocab_size in enumerate(vocab_sizes):
@@ -1292,12 +1363,14 @@ def parse_args():
             logging.error('failed to determine vocabulary size from file: {0}'.format(config.dictionaries[i]))
         vocab_sizes[i] = max(d.values()) + 1
 
-    config.source_dicts = config.dictionaries[:-2]
-    config.source_vocab_sizes = vocab_sizes[:-2]
-    config.target_dict = config.dictionaries[-2]
-    config.target_vocab_size = vocab_sizes[-2]
-    config.ae_target_dict = config.dictionaries[-1]
-    config.ae_target_vocab_size = vocab_sizes[-1]
+    config.source_dicts = config.dictionaries[:-3]
+    config.source_vocab_sizes = vocab_sizes[:-3]
+    config.target_dict = config.dictionaries[-3]
+    config.target_vocab_size = vocab_sizes[-3]
+    config.ae_target_dict = config.dictionaries[-2]
+    config.ae_target_vocab_size = vocab_sizes[-2]
+    config.pos_target_dict = config.dictionaries[-1]
+    config.pos_target_vocab_size = vocab_sizes[-1]
     #config.target_dict = config.dictionaries[-1]
     #config.target_vocab_size = vocab_sizes[-1]
     #print(config.target_dict)
